@@ -9,11 +9,23 @@
 import UIKit
 
 class ViewController: UIViewController {
+    var states = [String:[String]]()
     
     override func awakeFromNib() {
         super.awakeFromNib()
         //初始化statedictionary.plish
-        print("awakeFromNib")
+        /*
+        if let path = Bundle.main.path(forResource: "statedictionary", ofType: "plist"){
+            print(path);
+        }else{
+            print("檔案有問題");
+        }
+ */
+        let path = Bundle.main.path(forResource: "statedictionary", ofType: "plist")!
+        
+        
+       
+        
     }
     
     override func viewDidLoad() {
