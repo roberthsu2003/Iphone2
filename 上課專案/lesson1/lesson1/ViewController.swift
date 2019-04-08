@@ -9,10 +9,16 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        //初始化statedictionary.plish
+        print("awakeFromNib")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("hello!world")
+        print("viewDidLoad")
     }
 
 
