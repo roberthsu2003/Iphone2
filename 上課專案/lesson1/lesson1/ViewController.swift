@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     var states = [String:[String]]()
+    var stateNames = [String]();
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,7 +28,15 @@ class ViewController: UIViewController {
         states = myState as! [String:[String]]
  */
         states = NSDictionary(contentsOfFile: path) as! [String:[String]]
-        print(states)
+        //print(states)
+        //print(states.keys)
+        stateNames = [String](states.keys).sorted()
+        print(stateNames)
+        for name in stateNames{
+            print("\(name)州")
+        }
+       
+        
         
         
        
