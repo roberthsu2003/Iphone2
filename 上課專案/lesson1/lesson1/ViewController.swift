@@ -22,6 +22,12 @@ class ViewController: UIViewController {
         }
  */
         let path = Bundle.main.path(forResource: "statedictionary", ofType: "plist")!
+        /*
+        let myState = NSDictionary(contentsOfFile: path);
+        states = myState as! [String:[String]]
+ */
+        states = NSDictionary(contentsOfFile: path) as! [String:[String]]
+        print(states)
         
         
        
