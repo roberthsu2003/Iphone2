@@ -48,7 +48,44 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="24" y="170"/>
+            <point key="canvasLocation" x="-328" y="176"/>
+        </scene>
+        <!--My View Controller-->
+        <scene sceneID="fhj-86-dqN">
+            <objects>
+                <viewController id="2pn-Uu-Mdz" customClass="MyViewController" customModule="lesson1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NRW-tH-QMG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zK0-Xc-0hy">
+                                <rect key="frame" x="0.0" y="39" width="320" height="199"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fzf-1i-97I">
+                                <rect key="frame" x="0.0" y="281" width="320" height="199"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="199" id="KNc-RX-UeA"/>
+                                </constraints>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Fzf-1i-97I" firstAttribute="bottom" secondItem="smH-Ba-WAu" secondAttribute="bottom" id="012-9p-HA4"/>
+                            <constraint firstItem="zK0-Xc-0hy" firstAttribute="trailing" secondItem="smH-Ba-WAu" secondAttribute="trailing" id="3pI-Z4-znE"/>
+                            <constraint firstItem="Fzf-1i-97I" firstAttribute="leading" secondItem="smH-Ba-WAu" secondAttribute="leading" id="FuS-uz-oFU"/>
+                            <constraint firstItem="zK0-Xc-0hy" firstAttribute="top" secondItem="smH-Ba-WAu" secondAttribute="top" constant="19" id="hHO-AI-Twj"/>
+                            <constraint firstItem="Fzf-1i-97I" firstAttribute="trailing" secondItem="smH-Ba-WAu" secondAttribute="trailing" id="t6f-eb-BQd"/>
+                            <constraint firstItem="Fzf-1i-97I" firstAttribute="top" secondItem="zK0-Xc-0hy" secondAttribute="bottom" constant="43" id="vZJ-rH-YiG"/>
+                            <constraint firstItem="zK0-Xc-0hy" firstAttribute="leading" secondItem="smH-Ba-WAu" secondAttribute="leading" id="wXO-RO-BOP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="smH-Ba-WAu"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cHm-NS-FFb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="528.75" y="161.25"/>
         </scene>
     </scenes>
 </document>
