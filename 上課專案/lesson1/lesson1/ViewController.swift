@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet var tableView:UITableView!
     var states = [String:[String]]()
     var stateNames = [String]();
     
