@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UITableViewDataSource {
     @IBOutlet var tableView:UITableView!
     var states = [String:[String]]()
     var stateNames = [String]();
@@ -46,6 +46,7 @@ class ViewController: UIViewController {
         
         
         
+        
        
         
     }
@@ -53,9 +54,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("viewDidLoad")
+        tableView.dataSource = self
+    }
+    
+    
+    //UITableViewDataSource
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         
     }
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        
+    }
 
 }
 
