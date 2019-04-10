@@ -59,12 +59,31 @@ class ViewController: UIViewController,UITableViewDataSource {
     
     
     //UITableViewDataSource
+    func numberOfSections(in tableView: UITableView) -> Int{
+        return stateNames.count;
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        
+        let stateName = stateNames[section];
+        let postNums = states[stateName]!;
+        return postNums.count;
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        let section = indexPath.section
+        let row = indexPath.row
+        let stateName = stateNames[section]
+        let postNums = states[stateName]!
+        let postNumber = postNums[row]
         
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
+        cell.textLabel!.text = postNumber;
+        return cell;
+        
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?{
+        return stateNames[section]
     }
 
 }
