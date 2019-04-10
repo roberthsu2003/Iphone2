@@ -34,6 +34,12 @@ class ViewController: UIViewController {
         print(stateNames)
         for name in stateNames{
             print("\(name)州")
+            print("================");
+            let postNums = states[name]!
+            for postNum in postNums{
+                print(postNum)
+            }
+            print("================");
         }
        
         
@@ -46,6 +52,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("viewDidLoad")
+        
     }
 
 
