@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController,UITableViewDataSource {
+class ViewController: UIViewController {
     @IBOutlet var tableView:UITableView!
     var states = [String:[String]]()
     var stateNames = [String]();
@@ -58,7 +58,12 @@ class ViewController: UIViewController,UITableViewDataSource {
     }
     
     
-    //UITableViewDataSource
+    
+
+}
+
+extension ViewController:UITableViewDataSource{
+    
     func numberOfSections(in tableView: UITableView) -> Int{
         return stateNames.count;
     }
@@ -88,7 +93,7 @@ class ViewController: UIViewController,UITableViewDataSource {
     
     func sectionIndexTitles(for tableView: UITableView) -> [String]?{
         return stateNames;
-    }
+    }}
 
-}
+
 
