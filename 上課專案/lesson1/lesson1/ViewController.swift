@@ -54,7 +54,7 @@ class ViewController: UIViewController,UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("viewDidLoad")
-        tableView.dataSource = self
+        tableView.dataSource = self //step1
     }
     
     
@@ -84,6 +84,10 @@ class ViewController: UIViewController,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?{
         return stateNames[section]
+    }
+    
+    func sectionIndexTitles(for tableView: UITableView) -> [String]?{
+        return stateNames;
     }
 
 }
