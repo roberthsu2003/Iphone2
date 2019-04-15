@@ -7,13 +7,19 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
+    var ref: DatabaseReference!
     
-
+    override func awakeFromNib() {
+        super.awakeFromNib();
+        ref = Database.database().reference()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
 
 
