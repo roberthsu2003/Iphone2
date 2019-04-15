@@ -24,29 +24,42 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ak-vc-kWi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1384" y="178"/>
+            <point key="canvasLocation" x="1733" y="158"/>
         </scene>
-        <!--View Controller-->
+        <!--小房間燈泡控制-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ios1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LightViewController" customModule="ios1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mkh-Ex-tdO">
+                                <rect key="frame" x="103.5" y="154.5" width="113" height="171"/>
+                                <state key="normal" image="close_light"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Mkh-Ex-tdO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="OXs-1g-0ig"/>
+                            <constraint firstItem="Mkh-Ex-tdO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dMT-H3-3PN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="K3N-yv-vZR"/>
+                    <navigationItem key="navigationItem" title="小房間燈泡控制" id="K3N-yv-vZR"/>
+                    <connections>
+                        <outlet property="lightBtn" destination="Mkh-Ex-tdO" id="KXw-eC-o0i"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1854" y="-651"/>
+            <point key="canvasLocation" x="1852.5" y="-651.25"/>
         </scene>
         <!--Relay-->
         <scene sceneID="8N9-8n-Mig">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Y4k-U7-vJD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Relay" id="hDx-Pm-tQY"/>
+                    <tabBarItem key="tabBarItem" title="Relay" image="lightIcon" id="hDx-Pm-tQY"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MrT-gk-LiK">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
@@ -96,7 +109,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n5y-fA-UNc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="746" y="169"/>
+            <point key="canvasLocation" x="1095" y="149"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="close_light" width="113" height="171"/>
+        <image name="lightIcon" width="21" height="31"/>
+    </resources>
 </document>
