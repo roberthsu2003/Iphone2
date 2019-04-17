@@ -26,7 +26,14 @@ class LightViewController: UIViewController {
             //print(snapshot.value ?? "沒有東西")
             //optional binding
             if let relayValue = snapshot.value as? [String:Bool]{
-                print(relayValue["D1"]!)//force unwrapping
+               let d1State = relayValue["D1"]!//force unwrapping
+                if d1State {
+                    self.navigationItem.prompt = "目前狀態:開啟";
+                    self.lightBtn.setImage(UIImage.init(named: "open_light"), for: UIControl.State.normal)
+                }else{
+                    self.navigationItem.prompt = "目前狀態:關閉";
+                    self.lightBtn.setImage(UIImage.init(named: "close_light"), for: UIControl.State.normal)
+                }
             }else{
                 print("連線有問題");
             }
