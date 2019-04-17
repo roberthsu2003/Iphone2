@@ -21,11 +21,14 @@ class LightViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let relayHandler = relayRef.observe(.value){
-            (snapShot:DataSnapshot) in
-            let relayValue = snapShot.value as? [String:Bool]
-            if relayValue != nil{
-                print(relayValue!["D1"]!)
+        relayRef.observe(.value){
+            (snapshot:DataSnapshot) -> Void in
+            //print(snapshot.value ?? "沒有東西")
+            //optional binding
+            if let relayValue = snapshot.value as? [String:Bool]{
+                print(relayValue["D1"]!)//force unwrapping
+            }else{
+                print("連線有問題");
             }
             
         }
