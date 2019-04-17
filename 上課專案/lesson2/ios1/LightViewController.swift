@@ -21,6 +21,8 @@ class LightViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        lightBtn.addTarget(self, action: #selector(userChangeState(_:)), for: UIControl.Event.touchUpInside)
+        
         relayRef.observe(.value){
             (snapshot:DataSnapshot) -> Void in
             //print(snapshot.value ?? "沒有東西")
@@ -41,7 +43,9 @@ class LightViewController: UIViewController {
         }
     }
     
-
+    @objc func userChangeState(_ btn:UIButton){
+        print("userClick");
+    }
    
 
 }
