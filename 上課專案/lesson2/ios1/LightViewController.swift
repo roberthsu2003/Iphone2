@@ -24,7 +24,7 @@ class LightViewController: UIViewController {
         lightBtn.addTarget(self, action: #selector(userChangeState(_:)), for: UIControl.Event.touchUpInside)
         
         relayRef.observe(.value){
-            (snapshot:DataSnapshot) -> Void in
+            (snapshot:DataSnapshot) in
             //print(snapshot.value ?? "沒有東西")
             //optional binding
             if let relayValue = snapshot.value as? [String:Bool]{
@@ -44,7 +44,12 @@ class LightViewController: UIViewController {
     }
     
     @objc func userChangeState(_ btn:UIButton){
-        print("userClick");
+        relayRef.observeSingleEvent(of: DataEventType.value) { (snapshot:DataSnapshot) in
+            if let relayValue = snapshot.value as? [String:Bool]{
+                let d1Value = relayValue["D1"]!
+                self.relayRef.setValue(["D1":!d1Value])
+            }
+        }
     }
    
 
