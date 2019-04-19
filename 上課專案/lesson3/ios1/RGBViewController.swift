@@ -10,7 +10,7 @@ import UIKit
 import Color_Picker_for_iOS
 
 class RGBViewController: UIViewController {
-    var colorPickerView = HRColorPickerView()
+    let colorPickerView = HRColorPickerView()
     
     
     override func viewDidLoad() {
@@ -25,6 +25,12 @@ class RGBViewController: UIViewController {
     
 
     @objc func colorChange(_ sender:HRColorPickerView){
-        print("change color")
+        var rValue:CGFloat = 0;
+        var gValue:CGFloat = 0;
+        var bValue:CGFloat = 0;
+        var aValue:CGFloat = 0;
+        
+       colorPickerView.color.getRed(&rValue, green: &gValue, blue: &bValue, alpha: &aValue)
+        print("r:\(rValue),g:\(gValue),b:\(bValue),a:\(aValue)");
     }
 }
