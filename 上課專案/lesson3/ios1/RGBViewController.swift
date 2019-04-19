@@ -4,12 +4,14 @@
 //
 //  Created by Robert on 2019/4/19.
 //  Copyright © 2019 Gjun. All rights reserved.
-//
+//ios color picker
 
 import UIKit
+import Color_Picker_for_iOS
 
 class RGBViewController: UIViewController {
-
+    var colorPickerView = HRColorPickerView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
