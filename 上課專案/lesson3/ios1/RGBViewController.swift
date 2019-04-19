@@ -21,6 +21,14 @@ class RGBViewController: UIViewController {
         colorPickerView.frame.origin.y = 20
         view.addSubview(colorPickerView)
         colorPickerView.addTarget(self, action: #selector(colorChange(_:)), for: UIControl.Event.valueChanged)
+        rgbRef.observeSingleEvent(of: DataEventType.value) { (snapshot:DataSnapshot) in
+        let rgbValues = snapshot.value as! [String:CGFloat]
+        let r = rgbValues["R"]!
+        let g = rgbValues["G"]!
+        let b = rgbValues["B"]!
+        self.colorPickerView.color = UIColor(red: r/255.0, green: g/255.0, blue: b/255.0, alpha: 1.0)
+            
+        }
     
     }
     
