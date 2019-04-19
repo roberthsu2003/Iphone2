@@ -8,4 +8,5 @@ target 'ios1' do
   # Pods for ios1
   pod 'Firebase/Core'
   pod 'Firebase/Database'
+
 end

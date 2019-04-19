@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		93955B6E1F988AFA008DB922 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93955B6D1F988AFA008DB922 /* AppDelegate.swift */; };
-		93955B721F988AFA008DB922 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93955B711F988AFA008DB922 /* SecondViewController.swift */; };
 		93955B751F988AFA008DB922 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93955B731F988AFA008DB922 /* Main.storyboard */; };
 		93955B771F988AFA008DB922 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93955B761F988AFA008DB922 /* Assets.xcassets */; };
 		93955B7A1F988AFA008DB922 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93955B781F988AFA008DB922 /* LaunchScreen.storyboard */; };
 		93955B821F98935A008DB922 /* LightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93955B811F98935A008DB922 /* LightViewController.swift */; };
 		B758CA3069AC7E37F6CE3489 /* Pods_ios1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A253C51B195229DDA5F86B /* Pods_ios1.framework */; };
 		E127EB302269E65E00EB5286 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E127EB2F2269E65E00EB5286 /* GoogleService-Info.plist */; };
+		E127EB322269F01500EB5286 /* RGBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E127EB312269F01500EB5286 /* RGBViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,7 +22,6 @@
 		57A253C51B195229DDA5F86B /* Pods_ios1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93955B6A1F988AFA008DB922 /* ios1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93955B6D1F988AFA008DB922 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		93955B711F988AFA008DB922 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		93955B741F988AFA008DB922 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		93955B761F988AFA008DB922 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93955B791F988AFA008DB922 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -30,6 +29,7 @@
 		93955B811F98935A008DB922 /* LightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightViewController.swift; sourceTree = "<group>"; };
 		C0F3A00F9E5AF0F9078F7C31 /* Pods-ios1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios1.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios1/Pods-ios1.release.xcconfig"; sourceTree = "<group>"; };
 		E127EB2F2269E65E00EB5286 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E127EB312269F01500EB5286 /* RGBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,11 +85,11 @@
 				E127EB2F2269E65E00EB5286 /* GoogleService-Info.plist */,
 				93955B811F98935A008DB922 /* LightViewController.swift */,
 				93955B6D1F988AFA008DB922 /* AppDelegate.swift */,
-				93955B711F988AFA008DB922 /* SecondViewController.swift */,
 				93955B731F988AFA008DB922 /* Main.storyboard */,
 				93955B761F988AFA008DB922 /* Assets.xcassets */,
 				93955B781F988AFA008DB922 /* LaunchScreen.storyboard */,
 				93955B7B1F988AFA008DB922 /* Info.plist */,
+				E127EB312269F01500EB5286 /* RGBViewController.swift */,
 			);
 			path = ios1;
 			sourceTree = "<group>";
@@ -217,7 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93955B721F988AFA008DB922 /* SecondViewController.swift in Sources */,
+				E127EB322269F01500EB5286 /* RGBViewController.swift in Sources */,
 				93955B6E1F988AFA008DB922 /* AppDelegate.swift in Sources */,
 				93955B821F98935A008DB922 /* LightViewController.swift in Sources */,
 			);
