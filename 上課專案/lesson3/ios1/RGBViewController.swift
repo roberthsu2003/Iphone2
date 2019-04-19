@@ -7,11 +7,12 @@
 //ios color picker
 
 import UIKit
+import Firebase
 import Color_Picker_for_iOS
 
 class RGBViewController: UIViewController {
     let colorPickerView = HRColorPickerView()
-    
+    let rgbRef = Database.database().reference(withPath: "RGB")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +32,13 @@ class RGBViewController: UIViewController {
         var aValue:CGFloat = 0;
         
        colorPickerView.color.getRed(&rValue, green: &gValue, blue: &bValue, alpha: &aValue)
-        print("r:\(rValue),g:\(gValue),b:\(bValue),a:\(aValue)");
+        let rInt = Int(rValue*255)
+        let gInt = Int(gValue*255)
+        let bInt = Int(bValue*255)
+        rgbRef.setValue([
+            "R":rInt,
+            "G":gInt,
+            "B":bInt,
+            ])
     }
 }
