@@ -12,21 +12,19 @@ import Color_Picker_for_iOS
 class RGBViewController: UIViewController {
     var colorPickerView = HRColorPickerView()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        colorPickerView.color = UIColor.blue
+        colorPickerView.frame = view.frame
+        colorPickerView.frame.origin.y = 20
+        view.addSubview(colorPickerView)
+        colorPickerView.addTarget(self, action: #selector(colorChange(_:)), for: UIControl.Event.valueChanged)
+    
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func colorChange(_ sender:HRColorPickerView){
+        print("change color")
     }
-    */
-
 }
