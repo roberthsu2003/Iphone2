@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
-
+    var handle:AuthStateDidChangeListenerHandle!;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("storyboard的view已經ready,可以使用了");
@@ -18,6 +20,9 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("view將出現了");
+        handle = Auth.auth().addStateDidChangeListener { (auth:Auth, user:User?) in
+            print("使用者沒有登入，所以執行這個closure")
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -27,7 +32,7 @@ class ViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated);
-        print("view要離開")
+        Auth.auth().removeStateDidChangeListener(handle)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
