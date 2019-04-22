@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 
 class ViewController: UIViewController {
+    @IBOutlet var actionButton:UIButton!;
     var handle:AuthStateDidChangeListenerHandle!;
     
     override func viewDidLoad() {
@@ -21,7 +22,14 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
         print("view將出現了");
         handle = Auth.auth().addStateDidChangeListener { (auth:Auth, user:User?) in
-            print("使用者沒有登入，所以執行這個closure")
+            if let myuser = user{
+                self.title = myuser.uid
+                print("做用者的uid:\(myuser.uid)");
+            }else{
+                self.actionButton.setTitle("暱名登入", for: UIControl.State.normal)
+                self.title = "暱名登入"
+            }
+            
         }
     }
     
