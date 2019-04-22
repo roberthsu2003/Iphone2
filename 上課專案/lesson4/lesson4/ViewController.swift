@@ -47,7 +47,24 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
         print("view已經離開")
     }
-
+    
+    @IBAction func userClickToButton(_ sender:UIButton){
+        switch sender.currentTitle!{
+            case "暱名登入":
+                Auth.auth().signInAnonymously { (result:AuthDataResult?, error:Error?) in
+                    guard let _ = result, error == nil else{
+                        print("暱名登入錯誤");
+                        return
+                    }
+                    print("暱名登入成功");
+                    
+                     self.actionButton.setTitle("登出", for: UIControl.State.normal)
+                    
+            }
+            default:break;
+        }
+        
+    }
 
 }
 
