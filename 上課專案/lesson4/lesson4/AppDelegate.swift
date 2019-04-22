@@ -7,13 +7,24 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    
+    override init(){
+        super.init()
+        FirebaseApp.configure();
+        if let user = Auth.auth().currentUser{
+            print("登入的使用者的uid是:\(user.uid)");
+        }else{
+            print("沒有登入");
+        }
+    }
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
