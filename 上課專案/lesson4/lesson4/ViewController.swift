@@ -25,6 +25,7 @@ class ViewController: UIViewController {
             if let myuser = user{
                 self.title = myuser.uid
                 print("做用者的uid:\(myuser.uid)");
+                self.actionButton.setTitle("登出", for: UIControl.State.normal)
             }else{
                 self.actionButton.setTitle("暱名登入", for: UIControl.State.normal)
                 self.title = "暱名登入"
@@ -48,7 +49,7 @@ class ViewController: UIViewController {
         print("view已經離開")
     }
     
-    @IBAction func userClickToButton(_ sender:UIButton){
+    @IBAction func userClickToButton(_ sender:UIButton) {
         switch sender.currentTitle!{
             case "暱名登入":
                 Auth.auth().signInAnonymously { (result:AuthDataResult?, error:Error?) in
@@ -56,11 +57,21 @@ class ViewController: UIViewController {
                         print("暱名登入錯誤");
                         return
                     }
-                    print("暱名登入成功");
-                    
-                     self.actionButton.setTitle("登出", for: UIControl.State.normal)
-                    
+                   print("暱名登入成功");
             }
+            
+            case "登出":
+               
+                if (try? Auth.auth().signOut()) == nil {
+                    print("登出錯誤")
+                    return;
+                }else{
+                   print("登出成功")
+                }
+ 
+            //try! Auth.auth().signOut()
+            
+            
             default:break;
         }
         
