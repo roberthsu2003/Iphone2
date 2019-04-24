@@ -30,6 +30,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if Auth.auth().currentUser == nil{
             Auth.auth().signInAnonymously(completion: nil)
         }
+        
+        let presidentsRef = Database.database().reference(withPath: "presidents")
+        presidentsRef.observeSingleEvent(of: .value) { (snapshot:DataSnapshot) in
+            print(snapshot.value ?? "是nil");
+        }
         return true
     }
 
