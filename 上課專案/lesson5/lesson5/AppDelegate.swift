@@ -19,7 +19,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        /*
+        if let user = Auth.auth().currentUser{
+            try! Auth.auth().signOut()
+            print("已經登入了");
+        }else{
+            print("沒有登入");
+        }
+ */
+        if Auth.auth().currentUser == nil{
+            Auth.auth().signInAnonymously(completion: nil)
+        }
         return true
     }
 
