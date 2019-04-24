@@ -33,8 +33,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let presidentsRef = Database.database().reference(withPath: "presidents")
         presidentsRef.observeSingleEvent(of: .value) { (snapshot:DataSnapshot) in
-            //print(snapshot.value ?? "是nil");
-            print("有執行")
+            if !snapshot.hasChildren(){
+                print("沒有資料");
+            }
+            
         }
         return true
     }
