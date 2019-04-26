@@ -8,19 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		D2103E637220205B14ADB3C9 /* Pods_lesson5.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 488BB95D59BBBFEAEA9719A5 /* Pods_lesson5.framework */; };
+		E199EFAC22732A7300D409E3 /* PresidentList.plist in Resources */ = {isa = PBXBuildFile; fileRef = E199EFAB22732A7300D409E3 /* PresidentList.plist */; };
 		E1DAE6482270953D00E626DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DAE6472270953D00E626DB /* AppDelegate.swift */; };
 		E1DAE64A2270953D00E626DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DAE6492270953D00E626DB /* ViewController.swift */; };
 		E1DAE64D2270953D00E626DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1DAE64B2270953D00E626DB /* Main.storyboard */; };
 		E1DAE64F2270953F00E626DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1DAE64E2270953F00E626DB /* Assets.xcassets */; };
 		E1DAE6522270953F00E626DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1DAE6502270953F00E626DB /* LaunchScreen.storyboard */; };
 		E1DAE65A2270956900E626DB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E1DAE6592270956900E626DB /* GoogleService-Info.plist */; };
-		E1DAE65C2270959C00E626DB /* PresidentList.plist in Resources */ = {isa = PBXBuildFile; fileRef = E1DAE65B2270959C00E626DB /* PresidentList.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		488BB95D59BBBFEAEA9719A5 /* Pods_lesson5.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lesson5.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFDD8F2B2147E1A5156B65C8 /* Pods-lesson5.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lesson5.release.xcconfig"; path = "Target Support Files/Pods-lesson5/Pods-lesson5.release.xcconfig"; sourceTree = "<group>"; };
 		C8ED9CA468C3F95C0EC75E4E /* Pods-lesson5.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lesson5.debug.xcconfig"; path = "Target Support Files/Pods-lesson5/Pods-lesson5.debug.xcconfig"; sourceTree = "<group>"; };
+		E199EFAB22732A7300D409E3 /* PresidentList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PresidentList.plist; path = "../../../白板/0424/PresidentList.plist"; sourceTree = "<group>"; };
 		E1DAE6442270953D00E626DB /* lesson5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lesson5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1DAE6472270953D00E626DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1DAE6492270953D00E626DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,7 +30,6 @@
 		E1DAE6512270953F00E626DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1DAE6532270953F00E626DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1DAE6592270956900E626DB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		E1DAE65B2270959C00E626DB /* PresidentList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PresidentList.plist; path = "../../../白板/0424/PresidentList.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +50,6 @@
 				C8ED9CA468C3F95C0EC75E4E /* Pods-lesson5.debug.xcconfig */,
 				BFDD8F2B2147E1A5156B65C8 /* Pods-lesson5.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -83,7 +82,7 @@
 		E1DAE6462270953D00E626DB /* lesson5 */ = {
 			isa = PBXGroup;
 			children = (
-				E1DAE65B2270959C00E626DB /* PresidentList.plist */,
+				E199EFAB22732A7300D409E3 /* PresidentList.plist */,
 				E1DAE6592270956900E626DB /* GoogleService-Info.plist */,
 				E1DAE6472270953D00E626DB /* AppDelegate.swift */,
 				E1DAE6492270953D00E626DB /* ViewController.swift */,
@@ -158,7 +157,7 @@
 				E1DAE6522270953F00E626DB /* LaunchScreen.storyboard in Resources */,
 				E1DAE65A2270956900E626DB /* GoogleService-Info.plist in Resources */,
 				E1DAE64F2270953F00E626DB /* Assets.xcassets in Resources */,
-				E1DAE65C2270959C00E626DB /* PresidentList.plist in Resources */,
+				E199EFAC22732A7300D409E3 /* PresidentList.plist in Resources */,
 				E1DAE64D2270953D00E626DB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
