@@ -28,7 +28,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
  */
         if Auth.auth().currentUser == nil{
-            Auth.auth().signInAnonymously(completion: nil)
+            //Auth.auth().signInAnonymously(completion: nil)
+            Auth.auth().signInAnonymously { (result:AuthDataResult?, error:Error?) in
+                
+                if error != nil{
+                    print("======================")
+                    print (error!.localizedDescription)
+                }
+                if result != nil{
+                    print(result!.user.uid);
+                }else{
+                    print("沒有result");
+                }
+            }
         }
         
         let presidentsRef = Database.database().reference(withPath: "presidents")
