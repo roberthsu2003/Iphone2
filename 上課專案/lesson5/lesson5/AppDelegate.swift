@@ -34,10 +34,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let presidentsRef = Database.database().reference(withPath: "presidents")
         presidentsRef.observeSingleEvent(of: .value) { (snapshot:DataSnapshot)  in
             if !snapshot.exists(){
-               let pathString = Bundle.main.path(forResource: "PresidentList", ofType: "plist")!
-               let allDic = NSDictionary(contentsOfFile: pathString) as! [String:Any]
-               let presidents = allDic["presidents"] as! [[String:String]]
-               print(presidents)
+              let pathString = Bundle.main.path(forResource: "PresidentList", ofType: "plist")!
+              let allDic = NSDictionary(contentsOfFile: pathString) as! [String:Any]
+              let presidents = allDic["presidents"] as! [[String:String]]
+              presidentsRef.setValue(presidents)
+            }else{
+                print("遠端有資料了")
             }
             
         }
