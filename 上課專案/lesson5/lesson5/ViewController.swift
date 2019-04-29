@@ -43,18 +43,21 @@ extension ViewController:UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
+        
         if presidents.count == 0 {
-            cell.textLabel!.text = "資料正在下載中";
+             let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
+             cell.textLabel!.text = "資料正在下載中";
+            return cell;
         }else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MYCELL", for: indexPath) as! MyCell
             let president = presidents[indexPath.row]
-            cell.textLabel!.text = president["name"]
-            cell.detailTextLabel!.text = president["url"];
-            
+            cell.nameLabel.text = president["name"]
+            cell.urlLabel.text = president["url"];
+            return cell;
         }
         
         
-        return cell;
+        
     }
 }
 
