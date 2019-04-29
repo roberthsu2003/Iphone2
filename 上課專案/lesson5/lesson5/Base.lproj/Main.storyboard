@@ -77,6 +77,10 @@
                                                 <constraint firstItem="e9F-Oj-rrP" firstAttribute="top" secondItem="2Ow-YU-xm2" secondAttribute="topMargin" constant="5" id="hQ7-yH-QIi"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="hAX-cR-ENj" id="QE7-ZW-lUM"/>
+                                            <outlet property="urlLabel" destination="qFO-KX-WOI" id="TXd-xJ-jQg"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

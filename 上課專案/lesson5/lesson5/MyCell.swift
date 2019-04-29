@@ -9,7 +9,9 @@
 import UIKit
 
 class MyCell: UITableViewCell {
-
+    @IBOutlet var nameLabel:UILabel!
+    @IBOutlet var urlLabel:UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
