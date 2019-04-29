@@ -33,6 +33,13 @@ class ViewController: UIViewController {
         //tableView.dataSource = self;
         //tableView.delegate = self;
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("segueId:\(segue.identifier ?? "沒名字")");
+        let selectedPresident = sender as! [String:String]
+        print("president name:\(selectedPresident["name"]!)")
+        print("president url:\(selectedPresident["url"]!)");
+    }
 
 
 }
@@ -64,6 +71,8 @@ extension ViewController:UITableViewDataSource{
 extension ViewController:UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         print("您現在點到:\(indexPath.row)")
+        let selectedPresident = presidents[indexPath.row];
+        performSegue(withIdentifier: "goDetail", sender: selectedPresident)
     }
 }
 
