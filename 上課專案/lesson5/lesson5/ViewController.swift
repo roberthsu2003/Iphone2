@@ -61,3 +61,9 @@ extension ViewController:UITableViewDataSource{
     }
 }
 
+extension ViewController:UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        print("您現在點到:\(indexPath.row)")
+    }
+}
+
