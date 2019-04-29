@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         title = Auth.auth().currentUser!.uid
         presidentsRef.observe(.value){
             (snapshot:DataSnapshot) in
-           self.presidents = snapshot.value as! [[String:String]]
+            self.presidents = snapshot.value as! [[String:String]]
             print("下載完畢")
             print(self.presidents);
             //我的資料下載完畢,請tableView重新整理資料
