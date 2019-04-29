@@ -7,15 +7,19 @@
 //
 
 import UIKit
+import WebKit
 
 class DetailViewController: UIViewController {
     var president:[String:String]!
+    @IBOutlet var webView:WKWebView!;
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = president["name"]!
+        let url = URL(string: president["url"]!)!
+        let req = URLRequest(url: url);
+        webView.load(req);
         
-        print("president url:\(president["url"]!)");
     }
     
 
