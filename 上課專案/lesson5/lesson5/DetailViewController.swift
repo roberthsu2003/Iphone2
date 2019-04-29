@@ -9,11 +9,13 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
+    var president:[String:String]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        print("president name:\(president["name"]!)")
+        print("president url:\(president["url"]!)");
     }
     
 

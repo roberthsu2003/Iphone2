@@ -35,10 +35,14 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("segueId:\(segue.identifier ?? "沒名字")");
-        let selectedPresident = sender as! [String:String]
-        print("president name:\(selectedPresident["name"]!)")
-        print("president url:\(selectedPresident["url"]!)");
+        
+        if segue.identifier == "goDetail" {
+          
+            let selectedPresident = sender as! [String:String]
+           
+            let detailViewController = segue.destination as! DetailViewController
+            detailViewController.president = selectedPresident
+        }
     }
 
 
