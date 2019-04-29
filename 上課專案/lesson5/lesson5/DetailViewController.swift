@@ -13,8 +13,8 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        print("president name:\(president["name"]!)")
+        title = president["name"]!
+        
         print("president url:\(president["url"]!)");
     }
     

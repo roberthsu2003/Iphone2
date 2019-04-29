@@ -30,8 +30,7 @@ class ViewController: UIViewController {
         print("尚未下載完畢")
         print(self.presidents);
         
-        //tableView.dataSource = self;
-        //tableView.delegate = self;
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
