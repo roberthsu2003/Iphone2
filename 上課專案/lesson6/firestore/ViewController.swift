@@ -40,7 +40,22 @@ class ViewController: UITableViewController {
     }
 
     @objc func importData(_ sender:UIBarButtonItem){
-       print(presidents)
+        let batch = firestore.batch();
+        for president in presidents{
+            let documentRef = firestore.collection("presidents").document();
+            var newPresident:[String:Any] = president
+            newPresident["time"] = Date().timeIntervalSince1970
+            batch.setData(newPresident, forDocument: documentRef)
+        }
+        batch.commit { (error:Error?) in
+            if error != nil {
+                print("batch出錯了");
+                return;
+            }
+            
+            self.navigationItem.rightBarButtonItem = nil;
+        }
+        
     }
 }
 
