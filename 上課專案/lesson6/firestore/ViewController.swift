@@ -20,6 +20,8 @@ class ViewController: UITableViewController {
         return [[:]]
     }()
     
+    var queryDocuments:[QueryDocumentSnapshot] = [];
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let presidentsCols = firestore.collection("presidents")
@@ -33,6 +35,9 @@ class ViewController: UITableViewController {
                 self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "上傳資料", style: .plain, target: self, action: #selector(self.importData(_:)))
             }else{
                 print("集合已經有資料");
+                self.queryDocuments = presidentsSnapshot!.documents
+                print(self.queryDocuments);
+                self.tableView.reloadData();
             }
             
             
@@ -56,6 +61,24 @@ class ViewController: UITableViewController {
             self.navigationItem.rightBarButtonItem = nil;
         }
         
+    }
+}
+
+extension ViewController{
+    //UITableViewDataSource
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        return queryDocuments.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        
+        let queryDocumentSnapshot = queryDocuments[indexPath.row]
+        let dataDict = queryDocumentSnapshot.data();
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
+        cell.textLabel!.text = dataDict["name"] as? String;
+        cell.detailTextLabel!.text = dataDict["url"] as? String;
+        return cell;
     }
 }
 
