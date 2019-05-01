@@ -11,6 +11,14 @@ import Firebase
 
 class ViewController: UITableViewController {
     let firestore = Firestore.firestore()
+    let presidents:[[String:String]] = {
+        let path = Bundle.main.path(forResource: "PresidentList", ofType: "plist")!
+        if let rootDictionary = NSDictionary(contentsOfFile: path) as? [String:Any]{
+            let presidents = rootDictionary["presidents"] as! [[String:String]]
+            return presidents
+        }
+        return [[:]]
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +40,7 @@ class ViewController: UITableViewController {
     }
 
     @objc func importData(_ sender:UIBarButtonItem){
-        print("上傳資料");
+       print(presidents)
     }
 }
 
