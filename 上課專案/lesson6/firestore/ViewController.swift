@@ -10,7 +10,8 @@ import UIKit
 import Firebase
 
 class ViewController: UITableViewController {
-    let firestore = Firestore.firestore()
+    lazy var firestore = Firestore.firestore()
+    lazy var presidentsCols = firestore.collection("presidents")
     let presidents:[[String:String]] = {
         let path = Bundle.main.path(forResource: "PresidentList", ofType: "plist")!
         if let rootDictionary = NSDictionary(contentsOfFile: path) as? [String:Any]{
@@ -20,12 +21,12 @@ class ViewController: UITableViewController {
         return [[:]]
     }()
     
-    var queryDocuments:[QueryDocumentSnapshot] = [];
+    var queryDocuments:[QueryDocumentSnapshot] = []; //提供tableView資料
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let presidentsCols = firestore.collection("presidents")
-        presidentsCols.addSnapshotListener { (presidentsSnapshot:QuerySnapshot?, error:Error?) in
+        //let presidentsCols = firestore.collection("presidents")
+        let _ = presidentsCols.addSnapshotListener { (presidentsSnapshot:QuerySnapshot?, error:Error?) in
             if error != nil {
                 print("error:\(error!.localizedDescription)");
                 return;
@@ -73,12 +74,26 @@ extension ViewController{
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         
         let queryDocumentSnapshot = queryDocuments[indexPath.row]
-        let dataDict = queryDocumentSnapshot.data();
+        let presidentsDict = queryDocumentSnapshot.data();
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
-        cell.textLabel!.text = dataDict["name"] as? String;
-        cell.detailTextLabel!.text = dataDict["url"] as? String;
+        cell.textLabel!.text = presidentsDict["name"] as? String;
+        cell.detailTextLabel!.text = presidentsDict["url"] as? String;
         return cell;
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath){
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            let queryDocumentSnapshot = queryDocuments[indexPath.row];
+            let documentId = queryDocumentSnapshot.documentID;
+            presidentsCols.document(documentId).delete { (error:Error?) in
+                if error != nil {
+                    print("刪除錯誤");
+                }else{
+                    print("刪除成功");
+                }
+            }
+        }
     }
 }
 
