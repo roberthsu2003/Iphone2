@@ -11,18 +11,30 @@ import Firebase
 
 class EditViewController: UITableViewController {
     var queryDocumentSnapshot:QueryDocumentSnapshot!;
+    var documentId:String!;
+    
     @IBOutlet var nameField:UITextField!;
     @IBOutlet var urlField:UITextField!;
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       print(queryDocumentSnapshot.documentID)
+      
        let presidentDic = queryDocumentSnapshot.data()
         nameField.text = presidentDic["name"] as? String;
         urlField.text = presidentDic["url"] as? String;
+        documentId = queryDocumentSnapshot.documentID
     }
 
-   
+    @IBAction func userPressDone(_ sender:UIBarButtonItem){
+        let collections = Firestore.firestore().collection("presidents");
+        collections.document(documentId).updateData([
+            "name" : nameField.text!,
+            "url"  : urlField.text!
+            
+        ])
+        
+        navigationController!.popViewController(animated: true)
+    }
 
 }
