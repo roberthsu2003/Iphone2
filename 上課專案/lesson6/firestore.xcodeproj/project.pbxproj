@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		830FBE428BA341E6484CF318 /* Pods_firestore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3771AF9577166B026D998118 /* Pods_firestore.framework */; };
+		E125400E227C70AF007F23D6 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E125400D227C70AF007F23D6 /* EditViewController.swift */; };
 		E1C755F82279BA1B0028E6D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C755F72279BA1B0028E6D1 /* AppDelegate.swift */; };
 		E1C755FA2279BA1B0028E6D1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C755F92279BA1B0028E6D1 /* ViewController.swift */; };
 		E1C755FD2279BA1B0028E6D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1C755FB2279BA1B0028E6D1 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 		0CE68EB70935E2F0DE573BE4 /* Pods-firestore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firestore.release.xcconfig"; path = "Target Support Files/Pods-firestore/Pods-firestore.release.xcconfig"; sourceTree = "<group>"; };
 		3771AF9577166B026D998118 /* Pods_firestore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_firestore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		705314532BA9642230B10697 /* Pods-firestore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firestore.debug.xcconfig"; path = "Target Support Files/Pods-firestore/Pods-firestore.debug.xcconfig"; sourceTree = "<group>"; };
+		E125400D227C70AF007F23D6 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		E1C755F42279BA1B0028E6D1 /* firestore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = firestore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1C755F72279BA1B0028E6D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1C755F92279BA1B0028E6D1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,7 +52,6 @@
 				705314532BA9642230B10697 /* Pods-firestore.debug.xcconfig */,
 				0CE68EB70935E2F0DE573BE4 /* Pods-firestore.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -91,6 +92,7 @@
 				E1C755FE2279BA1D0028E6D1 /* Assets.xcassets */,
 				E1C756002279BA1D0028E6D1 /* LaunchScreen.storyboard */,
 				E1C756032279BA1D0028E6D1 /* Info.plist */,
+				E125400D227C70AF007F23D6 /* EditViewController.swift */,
 			);
 			path = firestore;
 			sourceTree = "<group>";
@@ -233,6 +235,7 @@
 			files = (
 				E1C755FA2279BA1B0028E6D1 /* ViewController.swift in Sources */,
 				E1C755F82279BA1B0028E6D1 /* AppDelegate.swift in Sources */,
+				E125400E227C70AF007F23D6 /* EditViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

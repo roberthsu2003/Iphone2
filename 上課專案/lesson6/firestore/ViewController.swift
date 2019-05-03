@@ -102,7 +102,7 @@ extension ViewController{
 extension ViewController{
     //UITableViewDelegate
     override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath){
-        print(indexPath.row);
+        performSegue(withIdentifier: "goDetail", sender: indexPath)
     }
 }
 
