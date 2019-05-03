@@ -77,6 +77,7 @@ extension ViewController{
         let presidentsDict = queryDocumentSnapshot.data();
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
+        cell.accessoryType = .detailButton;
         cell.textLabel!.text = presidentsDict["name"] as? String;
         cell.detailTextLabel!.text = presidentsDict["url"] as? String;
         return cell;
@@ -87,6 +88,7 @@ extension ViewController{
             let queryDocumentSnapshot = queryDocuments[indexPath.row];
             let documentId = queryDocumentSnapshot.documentID;
             presidentsCols.document(documentId).delete { (error:Error?) in
+                
                 if error != nil {
                     print("刪除錯誤");
                 }else{
@@ -94,6 +96,13 @@ extension ViewController{
                 }
             }
         }
+    }
+}
+
+extension ViewController{
+    //UITableViewDelegate
+    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath){
+        print(indexPath.row);
     }
 }
 
