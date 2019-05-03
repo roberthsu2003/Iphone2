@@ -7,17 +7,15 @@
 //
 
 import UIKit
+import Firebase
 
 class EditViewController: UITableViewController {
-
+    var queryDocumentSnapshot:QueryDocumentSnapshot!;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+       print(queryDocumentSnapshot.documentID)
     }
 
     // MARK: - Table view data source

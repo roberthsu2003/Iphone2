@@ -44,6 +44,16 @@ class ViewController: UITableViewController {
             
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goEdit"{
+            let indexPath = sender as! IndexPath
+            let queryDocumentSnapshot = queryDocuments[indexPath.row]
+            let editViewController = segue.destination as! EditViewController
+            editViewController.queryDocumentSnapshot = queryDocumentSnapshot
+            
+        }
+    }
 
     @objc func importData(_ sender:UIBarButtonItem){
         let batch = firestore.batch();
@@ -102,7 +112,7 @@ extension ViewController{
 extension ViewController{
     //UITableViewDelegate
     override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath){
-        performSegue(withIdentifier: "goDetail", sender: indexPath)
+        performSegue(withIdentifier: "goEdit", sender: indexPath)
     }
 }
 

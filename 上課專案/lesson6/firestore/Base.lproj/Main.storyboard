@@ -15,7 +15,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rfH-qv-QZX" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Kd8-V8-mJM">
-                        <rect key="frame" x="0.0" y="20" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -68,7 +68,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="PAO-d4-Exg"/>
                     <connections>
-                        <segue destination="Auy-wL-T2K" kind="show" identifier="goDetail" id="bcA-i4-JWJ"/>
+                        <segue destination="Auy-wL-T2K" kind="show" identifier="goEdit" id="bcA-i4-JWJ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BMA-Hf-5Rr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -101,7 +101,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5lv-0L-Kxf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1292" y="354"/>
+            <point key="canvasLocation" x="1258" y="354"/>
         </scene>
     </scenes>
 </document>
