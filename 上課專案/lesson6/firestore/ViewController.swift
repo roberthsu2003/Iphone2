@@ -53,6 +53,10 @@ class ViewController: UITableViewController {
             editViewController.queryDocumentSnapshot = queryDocumentSnapshot
             
         }
+        
+        if segue.identifier == "goAdd"{
+            print("執行goAdd");
+        }
     }
 
     @objc func importData(_ sender:UIBarButtonItem){
