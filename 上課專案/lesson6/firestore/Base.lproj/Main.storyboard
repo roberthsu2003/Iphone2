@@ -142,7 +142,13 @@
                             <outlet property="delegate" destination="iIH-uM-1V3" id="bZf-Yg-ThG"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Add" id="sUA-oW-hVD"/>
+                    <navigationItem key="navigationItem" title="Add" id="sUA-oW-hVD">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="9o6-Tv-jgG">
+                            <connections>
+                                <action selector="addUser:" destination="iIH-uM-1V3" id="JbI-7W-l1r"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="nameField" destination="iIV-ee-xnY" id="Z9f-Kw-G4I"/>
                         <outlet property="urlField" destination="ZUH-qN-94B" id="ThT-hg-PCv"/>
