@@ -16,6 +16,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     override init() {
         super.init()
         FirebaseApp.configure();
+        if Auth.auth().currentUser == nil{
+            print("沒有登入");
+            Auth.auth().signInAnonymously { (result:AuthDataResult?, error:Error?) in
+                guard let _ = result, error == nil else{
+                    print("login 錯誤")
+                    return
+                }
+                
+                print("login成功")
+                
+            }
+        }else{
+            print("已經登入");
+        }
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
