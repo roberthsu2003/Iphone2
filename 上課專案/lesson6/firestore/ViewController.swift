@@ -26,7 +26,7 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //let presidentsCols = firestore.collection("presidents")
-        let _ = presidentsCols.addSnapshotListener { (presidentsSnapshot:QuerySnapshot?, error:Error?) in
+        let _ = presidentsCols.order(by: "time", descending: true).addSnapshotListener { (presidentsSnapshot:QuerySnapshot?, error:Error?) in
             if error != nil {
                 print("error:\(error!.localizedDescription)");
                 return;
