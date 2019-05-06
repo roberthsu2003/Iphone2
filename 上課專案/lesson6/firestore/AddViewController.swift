@@ -18,19 +18,35 @@ class AddViewController: UITableViewController {
     }
 
     @IBAction func addUser(_ sender:UIBarButtonItem){
+        var message =  "";
         switch(nameField.text!, urlField.text!){
             case ("",""):
-                print("不能是空的");
-                return;
+                
+                message = "不能是空的"
             case (_,""):
-                print("url不能是空的");
-                return
+              
+                message = "url不能是空的"
+            
             case ("",_):
-                print("name不能是空的");
-                return
+                
+                message = "name不能是空的"
+            
             case let(name,url):
                 print("\(name),\(url)")
+                return;
         }
+        
+        if message != ""{
+            let alertController = UIAlertController(title: "警告", message: message, preferredStyle: .alert);
+            let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertController.addAction(alertAction);
+            
+            //presend
+            present(alertController, animated: true, completion: nil)
+            
+        }
+        
+        
         
     }
 }
