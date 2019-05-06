@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
-
+    let storage = Storage.storage()
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        let imagesRef = storage.reference(withPath: "n135/images/Akihabara.jpg");
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
 
 
