@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class AddViewController: UITableViewController {
     @IBOutlet var nameField:UITextField!;
@@ -32,7 +33,11 @@ class AddViewController: UITableViewController {
                 message = "name不能是空的"
             
             case let(name,url):
-                print("\(name),\(url)")
+                saveToFireStore(userData: [
+                    "name":name,
+                    "url":url,
+                    "time":Date().timeIntervalSince1970
+                    ])
                 return;
         }
         
@@ -46,7 +51,19 @@ class AddViewController: UITableViewController {
             
         }
         
+       
         
         
+        
+    }
+    func saveToFireStore(userData users:[String:Any]){
+        let _ = Firestore.firestore().collection("presidents").addDocument(data: users) { (error:Error?) in
+            if let error = error{
+                print("error:\(error)");
+            }else{
+                print("新增成功")
+                let _ = self.navigationController!.popViewController(animated: true)
+            }
+        }
     }
 }
