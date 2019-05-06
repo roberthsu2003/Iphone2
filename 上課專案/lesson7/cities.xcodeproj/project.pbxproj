@@ -13,6 +13,8 @@
 		E18BE6E62280663B00072D47 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E18BE6E42280663B00072D47 /* Main.storyboard */; };
 		E18BE6E82280663C00072D47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E18BE6E72280663C00072D47 /* Assets.xcassets */; };
 		E18BE6EB2280663C00072D47 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E18BE6E92280663C00072D47 /* LaunchScreen.storyboard */; };
+		E18BE6F32280687600072D47 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E18BE6F22280687600072D47 /* GoogleService-Info.plist */; };
+		E18BE6FB22806A1800072D47 /* citylist.plist in Resources */ = {isa = PBXBuildFile; fileRef = E18BE6FA22806A1700072D47 /* citylist.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		E18BE6E72280663C00072D47 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E18BE6EA2280663C00072D47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E18BE6EC2280663C00072D47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E18BE6F22280687600072D47 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E18BE6FA22806A1700072D47 /* citylist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = citylist.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 		E18BE6DF2280663B00072D47 /* cities */ = {
 			isa = PBXGroup;
 			children = (
+				E18BE6FA22806A1700072D47 /* citylist.plist */,
+				E18BE6F22280687600072D47 /* GoogleService-Info.plist */,
 				E18BE6E02280663B00072D47 /* AppDelegate.swift */,
 				E18BE6E22280663B00072D47 /* ViewController.swift */,
 				E18BE6E42280663B00072D47 /* Main.storyboard */,
@@ -85,7 +91,6 @@
 				4130FAC7D0A0D9106D9D6542 /* Pods-cities.debug.xcconfig */,
 				7160050E20C29A12A38A75A6 /* Pods-cities.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -150,6 +155,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E18BE6EB2280663C00072D47 /* LaunchScreen.storyboard in Resources */,
+				E18BE6F32280687600072D47 /* GoogleService-Info.plist in Resources */,
+				E18BE6FB22806A1800072D47 /* citylist.plist in Resources */,
 				E18BE6E82280663C00072D47 /* Assets.xcassets in Resources */,
 				E18BE6E62280663B00072D47 /* Main.storyboard in Resources */,
 			);
