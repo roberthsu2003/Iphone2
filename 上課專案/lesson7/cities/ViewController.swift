@@ -59,7 +59,7 @@ class ViewController: UITableViewController {
     
     @objc func displayCities(){
         let cityCollection = firestore.collection("cities")
-        cityCollection.getDocuments { (querySnapshot:QuerySnapshot?, error:Error?) in
+        cityCollection.order(by: "City").limit(to: 2).getDocuments { (querySnapshot:QuerySnapshot?, error:Error?) in
             guard error == nil, let snapshot = querySnapshot else{
                 
                 return;
@@ -98,7 +98,7 @@ extension ViewController{
                 return;
             }
             let image = UIImage(data: imageData)
-            cell.imageView?.image = image;           
+            cell.imageView?.image = image;
             
         }
         return cell;
