@@ -90,6 +90,17 @@ extension ViewController{
         let city = cities[indexPath.row]
         cell.textLabel?.text = city["City"]
         cell.detailTextLabel?.text = city["Country"]
+        let imageName = city["Image"]!
+        let imagePathRef = storage.reference(withPath: "n135/images/\(imageName)")
+        imagePathRef.getData(maxSize: 1 * 1024 * 1024) { (imageData:Data?, error:Error?) in
+            guard let imageData = imageData, error == nil else{
+                print(error!.localizedDescription);
+                return;
+            }
+            let image = UIImage(data: imageData)
+            cell.imageView?.image = image;           
+            
+        }
         return cell;
         
     }
