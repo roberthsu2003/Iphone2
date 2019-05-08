@@ -12,6 +12,7 @@ import Firebase
 class ViewController: UITableViewController {
     let storage = Storage.storage()
     let firestore = Firestore.firestore();
+    var cities = [[String:String]]()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,7 +23,7 @@ class ViewController: UITableViewController {
                 print(data ?? "沒有資料")
                 self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "上傳圖片資料", style: .plain, target: self, action: #selector(self.upLoadCities))
             }else{
-                print("有圖片");
+               self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "顯示資料", style: .plain, target: self, action: #selector(self.displayCities));
             }
         }
     }
@@ -57,7 +58,22 @@ class ViewController: UITableViewController {
     }
     
     @objc func displayCities(){
-        
+        let cityCollection = firestore.collection("cities")
+        cityCollection.getDocuments { (querySnapshot:QuerySnapshot?, error:Error?) in
+            guard error == nil, let snapshot = querySnapshot else{
+                
+                return;
+            }
+            
+            for documentSnapShot in snapshot.documents{
+                let cityDic = documentSnapShot.data() as! [String:String]
+                self.cities.append(cityDic)
+            }
+            
+            self.tableView.reloadData();
+            
+            
+        }
     }
 
 
@@ -66,11 +82,17 @@ class ViewController: UITableViewController {
 extension ViewController{
     // UITableViewDataSourece
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        
+        return cities.count;
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
+        let city = cities[indexPath.row]
+        cell.textLabel?.text = city["City"]
+        cell.detailTextLabel?.text = city["Country"]
+        return cell;
         
     }
 }
+
 
