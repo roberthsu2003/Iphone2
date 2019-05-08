@@ -11,6 +11,7 @@ import Firebase
 
 class ViewController: UIViewController {
     let storage = Storage.storage()
+    let firestore = Firestore.firestore();
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,13 +30,34 @@ class ViewController: UIViewController {
     @objc func upLoadCities(){
         let cityPath = Bundle.main.path(forResource: "citylist", ofType: "plist")!
         let citys = NSArray(contentsOfFile: cityPath) as! [[String:String]]
+        let cityCollection = firestore.collection("cities")
+        let storageImageRef = storage.reference(withPath: "n135/images");
         for city in citys{
-            print(city)
+            cityCollection.addDocument(data: city) { (error:Error?) in
+                if let error = error {
+                    print(error.localizedDescription)
+                }
+            }
+           let cityImgageName = city["Image"]!
+           let cityImage = UIImage(named: cityImgageName)!
+           let cityImageData = cityImage.jpegData(compressionQuality: 1.0)
+           let metaData = StorageMetadata();
+           metaData.contentType = "image/jpg";
+           let imageNameRef = storageImageRef.child(cityImgageName)
+           imageNameRef.putData(cityImageData!, metadata: metaData)
+           
         }
+        
+        self.navigationItem.rightBarButtonItem = nil;
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "顯示資料", style: .plain, target: self, action: #selector(self.displayCities));
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    }
+    
+    @objc func displayCities(){
+        print("顯示資料");
     }
 
 
