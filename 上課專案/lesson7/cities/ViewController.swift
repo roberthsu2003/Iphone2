@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
     let storage = Storage.storage()
     let firestore = Firestore.firestore();
     
@@ -57,9 +57,20 @@ class ViewController: UIViewController {
     }
     
     @objc func displayCities(){
-        print("顯示資料");
+        
     }
 
 
+}
+
+extension ViewController{
+    // UITableViewDataSourece
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        
+    }
 }
 
