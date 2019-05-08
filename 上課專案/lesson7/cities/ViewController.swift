@@ -27,7 +27,11 @@ class ViewController: UIViewController {
     }
     
     @objc func upLoadCities(){
-        print("開始上傳圖片");
+        let cityPath = Bundle.main.path(forResource: "citylist", ofType: "plist")!
+        let citys = NSArray(contentsOfFile: cityPath) as! [[String:String]]
+        for city in citys{
+            print(city)
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
