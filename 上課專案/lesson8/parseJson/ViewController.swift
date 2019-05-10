@@ -9,12 +9,22 @@
 import UIKit
 
 class ViewController: UIViewController {
-    let json = "https://iostest-64ed7.firebaseapp.com/gjun.json"
+    let jsonURI = "https://iostest-64ed7.firebaseapp.com/gjun.json"
     var urlSession:URLSession!;
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         urlSession = URLSession.shared;
+        guard let jsonURL = URL(string: jsonURI) else{
+            //false區塊
+            print("url有問題")
+            return;
+        }
+        
+        let downloadTask = urlSession.downloadTask(with: jsonURL, completionHandler: {
+            (url:URL?, response:URLResponse?, error:Error?) in
+            
+        })
     }
     override func awakeFromNib() {
         super.awakeFromNib();
