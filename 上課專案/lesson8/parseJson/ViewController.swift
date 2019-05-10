@@ -7,6 +7,17 @@
 //
 
 import UIKit
+struct Stations:Codable{
+    struct Station:Codable {
+        let region:String;
+        let name:String;
+        let tel:String;
+        let add:String;
+        let lat:Double;
+        let long:Double;
+    }
+    let allstations:[Station]
+}
 
 class ViewController: UIViewController {
     let jsonURI = "https://iostest-64ed7.firebaseapp.com/gjun.json"
@@ -24,7 +35,35 @@ class ViewController: UIViewController {
         let downloadTask = urlSession.downloadTask(with: jsonURL, completionHandler: {
             (url:URL?, response:URLResponse?, error:Error?) in
             
+            guard let url = url, error == nil else{
+                print("url和error出錯");
+                return
+            }
+            
+            guard let response = response,(response as! HTTPURLResponse).statusCode == 200 else{
+                print("respone出錯");
+                return
+            }
+            
+            guard let jsonData = try? Data(contentsOf: url) else{
+                print("Data出問題");
+                return
+            }
+            
+            DispatchQueue.main.sync {
+                print(String(data: jsonData, encoding: String.Encoding.utf8)!)
+                let jsonDecoder = JSONDecoder();
+                guard let allStations = try? jsonDecoder.decode(Stations.self, from: jsonData) else{
+                    print("解析出錯");
+                    return;
+                }
+                print(allStations);
+            }
+            
+            
         })
+        
+        downloadTask.resume();
     }
     override func awakeFromNib() {
         super.awakeFromNib();
