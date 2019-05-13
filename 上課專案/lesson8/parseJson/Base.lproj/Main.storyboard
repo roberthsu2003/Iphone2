@@ -74,6 +74,13 @@
                                     <constraint firstItem="nSQ-Wt-71W" firstAttribute="leading" secondItem="fGv-Xf-sVl" secondAttribute="leading" id="mR3-iE-7IJ"/>
                                     <constraint firstAttribute="trailing" secondItem="nSQ-Wt-71W" secondAttribute="trailing" id="rQE-on-onH"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="addLabel" destination="mqf-S1-bqD" id="1io-YC-2gz"/>
+                                    <outlet property="mapView" destination="nSQ-Wt-71W" id="d8z-on-EDv"/>
+                                    <outlet property="nameLabel" destination="g42-SE-8g4" id="Vfj-7V-355"/>
+                                    <outlet property="regionLabel" destination="h2L-LC-5MW" id="Dwl-us-4ju"/>
+                                    <outlet property="telLabel" destination="DcJ-jS-F0e" id="Egs-cF-ooO"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
