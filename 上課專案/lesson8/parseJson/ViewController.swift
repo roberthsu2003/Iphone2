@@ -62,7 +62,7 @@ class ViewController: UIViewController {
                     return;
                 }
                 self.allStations = allStation
-                self.myStations = self[keyPath:self.allStationsPath]
+                self.myStations = self[keyPath:\ViewController.allStations.allStations]
                 print(self.myStations);
             }
             
