@@ -26,6 +26,7 @@ class ViewController: UICollectionViewController {
     var allStations:AllStation!;
     let allStationsPath = \ViewController.allStations.allStations
     var myStations = [AllStation.Station]()
+    //var myStations:[AllStation.Station]!;
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -65,6 +66,7 @@ class ViewController: UICollectionViewController {
                 //self.myStations = self[keyPath:\ViewController.allStations.allStations]
                 self.myStations = self.allStations.allStations
                 print(self.myStations);
+                self.collectionView.reloadData();
             }
             
             
@@ -88,12 +90,18 @@ class ViewController: UICollectionViewController {
 extension ViewController{
     // MARK: UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
-        
+        return myStations.count;
     }
     
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
-        
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CELL", for: indexPath) as! CustomCell
+        let station = myStations[indexPath.row]
+        cell.regionLabel.text = "縣市:\(station.region)"
+        cell.nameLabel.text = "分校名:\(station.name)"
+        cell.addLabel.text = "地址:\(station.add)"
+        cell.telLabel.text = "電話:\(station.tel)"
+        return cell;
     }
 }
 
