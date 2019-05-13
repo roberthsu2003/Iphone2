@@ -7,8 +7,9 @@
 //
 
 import UIKit
-struct Stations:Codable{
-    struct Station:Codable {
+struct AllStation:Codable{
+    let allStations:[Station];
+    struct Station:Codable{
         let region:String;
         let name:String;
         let tel:String;
@@ -16,7 +17,7 @@ struct Stations:Codable{
         let lat:Double;
         let long:Double;
     }
-    let allstations:[Station]
+    
 }
 
 class ViewController: UIViewController {
@@ -53,7 +54,7 @@ class ViewController: UIViewController {
             DispatchQueue.main.sync {
                 print(String(data: jsonData, encoding: String.Encoding.utf8)!)
                 let jsonDecoder = JSONDecoder();
-                guard let allStations = try? jsonDecoder.decode(Stations.self, from: jsonData) else{
+                guard let allStations = try? jsonDecoder.decode(AllStation.self, from: jsonData) else{
                     print("解析出錯");
                     return;
                 }
