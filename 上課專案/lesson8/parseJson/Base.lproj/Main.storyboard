@@ -31,41 +31,48 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="418"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" alignment="top" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="GgZ-9N-zZp">
-                                            <rect key="frame" x="6" y="55" width="308" height="194"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="GgZ-9N-zZp">
+                                            <rect key="frame" x="6" y="40" width="308" height="151"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="region: &quot;高雄市&quot;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h2L-LC-5MW">
-                                                    <rect key="frame" x="0.0" y="0.0" width="123.5" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="縣市: &quot;高雄市&quot;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h2L-LC-5MW">
+                                                    <rect key="frame" x="0.0" y="0.0" width="110" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name: &quot;三多分校&quot;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g42-SE-8g4">
-                                                    <rect key="frame" x="0.0" y="43.5" width="135" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分校名: &quot;三多分校&quot;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g42-SE-8g4">
+                                                    <rect key="frame" x="0.0" y="43.5" width="144.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tel: &quot;(07)338-3381&quot;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DcJ-jS-F0e">
-                                                    <rect key="frame" x="0.0" y="87" width="150.5" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="電話l: &quot;(07)338-3381&quot;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DcJ-jS-F0e">
+                                                    <rect key="frame" x="0.0" y="87" width="170.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tel:高雄市苓雅區三多三路214-15號" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqf-S1-bqD">
-                                                    <rect key="frame" x="0.0" y="130.5" width="267.5" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="地址:高雄市苓雅區三多三路214-15號" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqf-S1-bqD">
+                                                    <rect key="frame" x="0.0" y="130.5" width="283.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </stackView>
+                                        <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="nSQ-Wt-71W">
+                                            <rect key="frame" x="0.0" y="223" width="320" height="195"/>
+                                        </mapView>
                                     </subviews>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="GgZ-9N-zZp" firstAttribute="top" secondItem="fGv-Xf-sVl" secondAttribute="top" constant="55" id="ZnD-hl-TqG"/>
-                                    <constraint firstItem="GgZ-9N-zZp" firstAttribute="leading" secondItem="fGv-Xf-sVl" secondAttribute="leading" constant="6" id="fnx-R4-2oa"/>
-                                    <constraint firstAttribute="trailing" secondItem="GgZ-9N-zZp" secondAttribute="trailing" constant="6" id="hqH-ED-TUL"/>
+                                    <constraint firstItem="nSQ-Wt-71W" firstAttribute="top" secondItem="GgZ-9N-zZp" secondAttribute="bottom" constant="32" id="7Ht-rq-Mro"/>
+                                    <constraint firstItem="GgZ-9N-zZp" firstAttribute="leading" secondItem="fGv-Xf-sVl" secondAttribute="leading" constant="6" id="IK1-5m-VMB"/>
+                                    <constraint firstAttribute="trailing" secondItem="GgZ-9N-zZp" secondAttribute="trailing" constant="6" id="KWG-Ry-6w2"/>
+                                    <constraint firstItem="GgZ-9N-zZp" firstAttribute="top" secondItem="fGv-Xf-sVl" secondAttribute="top" constant="40" id="PUm-dP-WY3"/>
+                                    <constraint firstAttribute="bottom" secondItem="nSQ-Wt-71W" secondAttribute="bottom" id="REn-Xf-OjV"/>
+                                    <constraint firstItem="nSQ-Wt-71W" firstAttribute="leading" secondItem="fGv-Xf-sVl" secondAttribute="leading" id="mR3-iE-7IJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="nSQ-Wt-71W" secondAttribute="trailing" id="rQE-on-onH"/>
                                 </constraints>
                             </collectionViewCell>
                         </cells>
