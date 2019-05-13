@@ -23,6 +23,7 @@ struct AllStation:Codable{
 class ViewController: UIViewController {
     let jsonURI = "https://iostest-64ed7.firebaseapp.com/gjun.json"
     var urlSession:URLSession!;
+    var allStations:AllStation!;
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -54,11 +55,11 @@ class ViewController: UIViewController {
             DispatchQueue.main.sync {
                 print(String(data: jsonData, encoding: String.Encoding.utf8)!)
                 let jsonDecoder = JSONDecoder();
-                guard let allStations = try? jsonDecoder.decode(AllStation.self, from: jsonData) else{
+                guard let allStation = try? jsonDecoder.decode(AllStation.self, from: jsonData) else{
                     print("解析出錯");
                     return;
                 }
-                print(allStations);
+                self.allStations = allStation
             }
             
             
