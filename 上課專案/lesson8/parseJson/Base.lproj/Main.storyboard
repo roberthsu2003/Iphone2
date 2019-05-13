@@ -12,7 +12,7 @@
         <!--巨匠分校-->
         <scene sceneID="HpG-9F-jpt">
             <objects>
-                <collectionViewController id="fF3-ga-KwU" sceneMemberID="viewController">
+                <collectionViewController id="fF3-ga-KwU" customClass="ViewController" customModule="parseJson" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="jMb-y1-dXM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

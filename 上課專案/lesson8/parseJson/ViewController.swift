@@ -20,7 +20,7 @@ struct AllStation:Codable{
     
 }
 
-class ViewController: UIViewController {
+class ViewController: UICollectionViewController {
     let jsonURI = "https://iostest-64ed7.firebaseapp.com/gjun.json"
     var urlSession:URLSession!;
     var allStations:AllStation!;
@@ -83,5 +83,17 @@ class ViewController: UIViewController {
     }
 
 
+}
+
+extension ViewController{
+    // MARK: UICollectionViewDataSource
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
+        
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
+        
+    }
 }
 
