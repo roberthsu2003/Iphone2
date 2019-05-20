@@ -32,24 +32,30 @@ class BranchViewController: UICollectionViewController {
         collectionViewFlowLayout.itemSize = self.view.bounds.size;
         
         //建立連線
+        
         guard let url = URL(string: "https://iostest-64ed7.firebaseapp.com/gjun.json") else {
+            print("url有問題")
             return;
         }
         urlSession = URLSession.shared;
         let downloadTask = urlSession.downloadTask(with: url) { (url:URL?, response:URLResponse?, error:Error?) in
             guard let url = url, let response = response else {
+                print("出錯了1");
                 return;
             }
             
             guard error == nil else {
+                print("出錯了2");
                 return;
             }
             
             guard (response as! HTTPURLResponse).statusCode == 200  else {
+                print("出錯了3");
                 return;
             }
             
             guard let data = try? Data.init(contentsOf: url) else {
+                 print("出錯了4");
                 return;
             }
             
