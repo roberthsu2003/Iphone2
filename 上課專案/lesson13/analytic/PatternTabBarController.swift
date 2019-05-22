@@ -14,6 +14,8 @@ class PatternTabBarController: UITabBarController {
         super.viewDidLoad()
 
         let favoriteFood  = UserDefaults.standard.value(forKey: "favorite_food") as? String;
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        print("path:\(paths.first!)");
         if favoriteFood == nil {
             print("使用者，還沒設定喜歡的食物");
             performSegue(withIdentifier: "pickFavoriteFood", sender: nil);
