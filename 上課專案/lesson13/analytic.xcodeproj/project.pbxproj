@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		18867ED5B6B9D4AA8D0FDA5F /* Pods_analytic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A14843C24AE5498B68C6FA79 /* Pods_analytic.framework */; };
 		E1D6F09D2295718E00E946F0 /* PatternTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D6F09C2295718E00E946F0 /* PatternTabBarController.swift */; };
+		E1D6F09F2295775A00E946F0 /* FoodPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D6F09E2295775A00E946F0 /* FoodPickerViewController.swift */; };
 		E1DCCCE52292E4540039B7D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DCCCE42292E4540039B7D1 /* AppDelegate.swift */; };
 		E1DCCCE72292E4540039B7D1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DCCCE62292E4540039B7D1 /* ViewController.swift */; };
 		E1DCCCEA2292E4540039B7D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1DCCCE82292E4540039B7D1 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 		A14843C24AE5498B68C6FA79 /* Pods_analytic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_analytic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF92F8A1BC253509F704F639 /* Pods-analytic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-analytic.release.xcconfig"; path = "Target Support Files/Pods-analytic/Pods-analytic.release.xcconfig"; sourceTree = "<group>"; };
 		E1D6F09C2295718E00E946F0 /* PatternTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternTabBarController.swift; sourceTree = "<group>"; };
+		E1D6F09E2295775A00E946F0 /* FoodPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPickerViewController.swift; sourceTree = "<group>"; };
 		E1DCCCE12292E4540039B7D1 /* analytic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = analytic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1DCCCE42292E4540039B7D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1DCCCE62292E4540039B7D1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				E1DCCCED2292E4550039B7D1 /* LaunchScreen.storyboard */,
 				E1DCCCF02292E4550039B7D1 /* Info.plist */,
 				E1D6F09C2295718E00E946F0 /* PatternTabBarController.swift */,
+				E1D6F09E2295775A00E946F0 /* FoodPickerViewController.swift */,
 			);
 			path = analytic;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 			files = (
 				E1D6F09D2295718E00E946F0 /* PatternTabBarController.swift in Sources */,
 				E1DCCCE72292E4540039B7D1 /* ViewController.swift in Sources */,
+				E1D6F09F2295775A00E946F0 /* FoodPickerViewController.swift in Sources */,
 				E1DCCCE52292E4540039B7D1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
