@@ -13,7 +13,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        title="FirstViewContorller"
+        recordScreenView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -25,6 +26,17 @@ class ViewController: UIViewController {
             AnalyticsParameterItemName: title! as NSObject,
             AnalyticsParameterContentType:"cont" as NSObject,
             ])
+    }
+    
+    func recordScreenView(){
+        guard let screenName = title else{
+            return
+        }
+        let screenClass = classForCoder.description()
+        print("screenName:\(screenName)")
+        print("screenClass:\(screenClass)");
+        Analytics.setScreenName(screenName, screenClass: screenClass);
+        
     }
 
 
