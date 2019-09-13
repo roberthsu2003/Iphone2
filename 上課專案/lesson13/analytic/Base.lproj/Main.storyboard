@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HOK-gZ-C7u">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Food Picker View Controller-->
+        <scene sceneID="bxV-6Z-Kw3">
+            <objects>
+                <viewController id="oJz-hr-Nbb" customClass="FoodPickerViewController" customModule="analytic" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6hs-TQ-pdm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="選擇您喜歡的食物" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dY6-d3-n4k">
+                                <rect key="frame" x="90.5" y="54" width="139" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7C3-T7-sfa">
+                                <rect key="frame" x="0.0" y="115" width="320" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="oJz-hr-Nbb" id="GQ4-W3-dHe"/>
+                                    <outlet property="delegate" destination="oJz-hr-Nbb" id="8jn-3Z-gHw"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7C3-T7-sfa" firstAttribute="trailing" secondItem="vrh-Q0-hKs" secondAttribute="trailing" id="Arg-Eo-alL"/>
+                            <constraint firstItem="7C3-T7-sfa" firstAttribute="top" secondItem="dY6-d3-n4k" secondAttribute="bottom" constant="40" id="Zgz-sH-oej"/>
+                            <constraint firstItem="dY6-d3-n4k" firstAttribute="top" secondItem="vrh-Q0-hKs" secondAttribute="top" constant="34" id="bXZ-Ga-75V"/>
+                            <constraint firstItem="7C3-T7-sfa" firstAttribute="leading" secondItem="vrh-Q0-hKs" secondAttribute="leading" id="xIl-g1-c1t"/>
+                            <constraint firstItem="dY6-d3-n4k" firstAttribute="centerX" secondItem="6hs-TQ-pdm" secondAttribute="centerX" id="xYH-zF-XGf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vrh-Q0-hKs"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3FY-QO-wqb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1074" y="-750"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="analytic" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="mBY-4p-cjb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="6"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="FMy-ge-xSq">
+            <objects>
+                <navigationController id="HOK-gZ-C7u" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6Tx-1w-scr">
+                        <rect key="frame" x="0.0" y="20" width="320" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="voi-fF-V8t" kind="relationship" relationship="rootViewController" id="d2v-Yh-SFa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lhk-cj-xYa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-523" y="6"/>
+        </scene>
+        <!--數據分析-->
+        <scene sceneID="nSn-gr-o7E">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="voi-fF-V8t" customClass="PatternTabBarController" customModule="analytic" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="數據分析" id="fU5-59-PPz"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Tqo-9z-hw1">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="co9-eb-s9y"/>
+                        <segue destination="oJz-hr-Nbb" kind="presentation" identifier="pickFavoriteFood" id="u4f-lT-d6c"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jcF-Yn-dn7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="288.75" y="6.25"/>
+        </scene>
+    </scenes>
+</document>
