@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,30 +17,10 @@
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hjs-Uq-EqR">
-                                <rect key="frame" x="72" y="104.5" width="176" height="272"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="176" id="DG6-J5-HBd"/>
-                                    <constraint firstAttribute="height" constant="272" id="RN3-fm-AMx"/>
-                                </constraints>
-                                <state key="normal" image="close_light"/>
-                                <connections>
-                                    <action selector="userChangeLight:" destination="9pv-A4-QxB" eventType="touchUpInside" id="S2z-jc-GZh"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="hjs-Uq-EqR" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="7dN-Lr-XG9"/>
-                            <constraint firstItem="hjs-Uq-EqR" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="eez-eB-iDz"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <navigationItem key="navigationItem" title="小房間燈泡控制" prompt="目前狀況" id="0zJ-dB-qV5"/>
-                    <connections>
-                        <outlet property="lightBtn" destination="hjs-Uq-EqR" id="sty-Ag-mwt"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -140,7 +121,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="close_light" width="113" height="171"/>
         <image name="lightIcon" width="21" height="31"/>
         <image name="second" width="30" height="30"/>
     </resources>
