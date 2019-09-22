@@ -30,9 +30,9 @@ class RGBViewController: UIViewController {
         
         RGBRef.observeSingleEvent(of: .value) { (snapshot:DataSnapshot) in
             if let colorValue = snapshot.value as? [String:CGFloat]{
-                let r = colorValue["R"]! / 100;
-                let g = colorValue["G"]! / 100;
-                let b = colorValue["B"]! / 100;
+                let r = colorValue["R"]! / 255;
+                let g = colorValue["G"]! / 255;
+                let b = colorValue["B"]! / 255;
                 self.colorPickerView.color  = UIColor(red:r , green: g, blue: b, alpha: 1)
             }
         }
@@ -54,6 +54,17 @@ class RGBViewController: UIViewController {
         var alphaValue = CGFloat();
         pickerColor?.getRed(&rValue, green: &gValue, blue: &bValue, alpha: &alphaValue)
         print("r=\(rValue),g=\(gValue), b=\(bValue), alpha=\(alphaValue)");
+        
+        RGBRef.setValue([
+            "R":Int(rValue * 255),
+            "G":Int(gValue * 255),
+            "B":Int(bValue * 255)
+        ]) {
+            (error:Error?, dbReference:DatabaseReference) in
+            if error == nil{
+                print("更新成功");
+            }
+        }
     }
     
 
