@@ -205,6 +205,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="Yhk-sh-qQt"/>
                     <size key="freeformSize" width="320" height="800"/>
+                    <connections>
+                        <outletCollection property="textFields" destination="MGH-Te-Gnd" collectionClass="NSMutableArray" id="G0W-fH-6pI"/>
+                        <outletCollection property="textFields" destination="Dr1-2C-lWz" collectionClass="NSMutableArray" id="vle-hX-OcV"/>
+                        <outletCollection property="textFields" destination="Tob-k3-Zlw" collectionClass="NSMutableArray" id="Tyv-ph-jyL"/>
+                        <outletCollection property="textFields" destination="huS-1f-DNu" collectionClass="NSMutableArray" id="1VA-l6-fSB"/>
+                        <outletCollection property="textFields" destination="pd0-L6-RvO" collectionClass="NSMutableArray" id="NJV-mD-7Kr"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BH9-bw-6Sb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

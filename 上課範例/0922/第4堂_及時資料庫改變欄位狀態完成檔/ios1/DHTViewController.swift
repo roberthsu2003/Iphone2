@@ -9,11 +9,17 @@
 import UIKit
 
 class DHTViewController: UITableViewController {
-
+    @IBOutlet var textFields:[UITextField]!;
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        tableView.allowsSelection = false;
+        tableView.bounces = false;
+        for textField in textFields{
+            textField.isEnabled = false;
+            textField.text = "10.10c"
+        }
+        
     }
     
 
