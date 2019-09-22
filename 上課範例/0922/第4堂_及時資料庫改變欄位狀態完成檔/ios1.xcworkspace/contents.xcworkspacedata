@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/robert/Documents/gitHub/2019Iphone2/&#x4e0a;&#x8ab2;&#x7bc4;&#x4f8b;/0922/&#x7b2c;4&#x5802;_&#x53ca;&#x6642;&#x8cc7;&#x6599;&#x5eab;&#x6539;&#x8b8a;&#x6b04;&#x4f4d;&#x72c0;&#x614b;&#x5b8c;&#x6210;&#x6a94;/ios1/RGBViewController.swift">
-   </FileRef>
-   <FileRef
       location = "group:ios1.xcodeproj">
    </FileRef>
    <FileRef

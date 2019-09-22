@@ -15,6 +15,7 @@
 		E171CDB72337147B00D4124C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E171CDB62337147A00D4124C /* GoogleService-Info.plist */; };
 		E171CDB9233718DA00D4124C /* LightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E171CDB8233718DA00D4124C /* LightViewController.swift */; };
 		E171CDBB23374A7400D4124C /* RGBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E171CDBA23374A7400D4124C /* RGBViewController.swift */; };
+		E171CDBD2337695500D4124C /* DHTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E171CDBC2337695500D4124C /* DHTViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		E171CDB62337147A00D4124C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E171CDB8233718DA00D4124C /* LightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightViewController.swift; sourceTree = "<group>"; };
 		E171CDBA23374A7400D4124C /* RGBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RGBViewController.swift; path = "/Users/robert/Documents/gitHub/2019Iphone2/上課範例/0922/第4堂_及時資料庫改變欄位狀態完成檔/ios1/RGBViewController.swift"; sourceTree = "<absolute>"; };
+		E171CDBC2337695500D4124C /* DHTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DHTViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				93955B7B1F988AFA008DB922 /* Info.plist */,
 				E171CDBA23374A7400D4124C /* RGBViewController.swift */,
 				E171CDB8233718DA00D4124C /* LightViewController.swift */,
+				E171CDBC2337695500D4124C /* DHTViewController.swift */,
 			);
 			path = ios1;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E171CDBB23374A7400D4124C /* RGBViewController.swift in Sources */,
+				E171CDBD2337695500D4124C /* DHTViewController.swift in Sources */,
 				E171CDB9233718DA00D4124C /* LightViewController.swift in Sources */,
 				93955B6E1F988AFA008DB922 /* AppDelegate.swift in Sources */,
 			);
