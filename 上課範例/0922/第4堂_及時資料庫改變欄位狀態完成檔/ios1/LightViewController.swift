@@ -13,21 +13,9 @@ class LightViewController: UIViewController {
     @IBOutlet var lightBtn:UIButton!
     var relayRef = Database.database().reference().child("Relay");
     var relayHandle:UInt!;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        /*
-        let relayHandle = relayRef.observeSingleEvent(of: .value){
-            (snapshot:DataSnapshot) -> Void in
-            let relayNode = snapshot.value as! [String: Bool]
-            let d1Value = relayNode["D1"]!
-            if d1Value{
-                self.lightBtn.setImage(UIImage(named: "open_light"), for: .normal)
-            }else{
-                self.lightBtn.setImage(UIImage(named: "close_light"), for: .normal)
-            }
-        }
- */
-        
         
         
     }
@@ -43,11 +31,14 @@ class LightViewController: UIViewController {
                 self.lightBtn.setImage(UIImage(named: "close_light"), for: .normal)
             }
         }
+        
+        print("viewWillAppear");
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated);
-        
+        relayRef.removeObserver(withHandle: relayHandle)
+        print("viewWillDisapper");
     }
     
     
