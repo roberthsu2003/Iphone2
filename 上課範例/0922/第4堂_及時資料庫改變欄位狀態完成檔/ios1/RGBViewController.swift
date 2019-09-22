@@ -16,7 +16,7 @@ class RGBViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(colorPickerView)
-        colorPickerView.color = UIColor.green;
+        
         colorPickerView.translatesAutoresizingMaskIntoConstraints = false;
         let colorPickerViewConstraints = [
         colorPickerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
@@ -29,7 +29,12 @@ class RGBViewController: UIViewController {
         //取得Firebase RGB節點內的資料(只有一次)
         
         RGBRef.observeSingleEvent(of: .value) { (snapshot:DataSnapshot) in
-            print(snapshot.value)
+            if let colorValue = snapshot.value as? [String:CGFloat]{
+                let r = colorValue["R"]! / 100;
+                let g = colorValue["G"]! / 100;
+                let b = colorValue["B"]! / 100;
+                self.colorPickerView.color  = UIColor(red:r , green: g, blue: b, alpha: 1)
+            }
         }
         
         //加入target Action
