@@ -95,14 +95,14 @@
             </objects>
             <point key="canvasLocation" x="750" y="-320"/>
         </scene>
-        <!--Second-->
+        <!--RGB-->
         <scene sceneID="i41-Iw-3AL">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0pb-Op-hhh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="RGB" image="rgb_icon" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nYn-ND-z2G">
-                        <rect key="frame" x="0.0" y="20" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -118,6 +118,6 @@
     <resources>
         <image name="close_light" width="113" height="171"/>
         <image name="lightIcon" width="21" height="31"/>
-        <image name="second" width="30" height="30"/>
+        <image name="rgb_icon" width="30" height="29"/>
     </resources>
 </document>
