@@ -6,10 +6,12 @@
 //
 
 import UIKit
-import Color_Picker_for_iOS;
+import Color_Picker_for_iOS
+import Firebase
 
 class RGBViewController: UIViewController {
     var colorPickerView = HRColorPickerView();
+    var RGBRef = Database.database().reference(withPath: "RGB")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +26,12 @@ class RGBViewController: UIViewController {
         ]
         
         NSLayoutConstraint.activate(colorPickerViewConstraints)
+        //取得Firebase RGB節點內的資料(只有一次)
+        
+        RGBRef.observeSingleEvent(of: .value) { (snapshot:DataSnapshot) in
+            print(snapshot.value)
+        }
+        
         //加入target Action
         colorPickerView.addTarget(self, action: #selector(colorChange), for: .valueChanged)
     }
