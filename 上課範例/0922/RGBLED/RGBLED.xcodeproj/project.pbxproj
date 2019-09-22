@@ -7,15 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E01CB3E48A8DD39BC0E9C07 /* Pods_RGBLED.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2D2FC661908EADBD122EE0A /* Pods_RGBLED.framework */; };
 		E1BD56A52337089F006C642F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BD56A42337089F006C642F /* AppDelegate.swift */; };
 		E1BD56A72337089F006C642F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BD56A62337089F006C642F /* FirstViewController.swift */; };
 		E1BD56A92337089F006C642F /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BD56A82337089F006C642F /* SecondViewController.swift */; };
 		E1BD56AC2337089F006C642F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1BD56AA2337089F006C642F /* Main.storyboard */; };
 		E1BD56AE233708A0006C642F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1BD56AD233708A0006C642F /* Assets.xcassets */; };
 		E1BD56B1233708A0006C642F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1BD56AF233708A0006C642F /* LaunchScreen.storyboard */; };
+		E1BD56B923370AD7006C642F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E1BD56B823370AD7006C642F /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D59EC13E8103AC7681EDCE98 /* Pods-RGBLED.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RGBLED.debug.xcconfig"; path = "Target Support Files/Pods-RGBLED/Pods-RGBLED.debug.xcconfig"; sourceTree = "<group>"; };
+		DC9C8DF9CA6DE75A593626CF /* Pods-RGBLED.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RGBLED.release.xcconfig"; path = "Target Support Files/Pods-RGBLED/Pods-RGBLED.release.xcconfig"; sourceTree = "<group>"; };
 		E1BD56A12337089F006C642F /* RGBLED.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RGBLED.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1BD56A42337089F006C642F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1BD56A62337089F006C642F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +28,8 @@
 		E1BD56AD233708A0006C642F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1BD56B0233708A0006C642F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1BD56B2233708A0006C642F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1BD56B823370AD7006C642F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F2D2FC661908EADBD122EE0A /* Pods_RGBLED.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RGBLED.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +37,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E01CB3E48A8DD39BC0E9C07 /* Pods_RGBLED.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		66A4BE06F206D04257BF5B9A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D59EC13E8103AC7681EDCE98 /* Pods-RGBLED.debug.xcconfig */,
+				DC9C8DF9CA6DE75A593626CF /* Pods-RGBLED.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E1BD56982337089F006C642F = {
 			isa = PBXGroup;
 			children = (
 				E1BD56A32337089F006C642F /* RGBLED */,
 				E1BD56A22337089F006C642F /* Products */,
+				66A4BE06F206D04257BF5B9A /* Pods */,
+				FBBACC2A21A26CCE5C64ED41 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +75,7 @@
 		E1BD56A32337089F006C642F /* RGBLED */ = {
 			isa = PBXGroup;
 			children = (
+				E1BD56B823370AD7006C642F /* GoogleService-Info.plist */,
 				E1BD56A42337089F006C642F /* AppDelegate.swift */,
 				E1BD56A62337089F006C642F /* FirstViewController.swift */,
 				E1BD56A82337089F006C642F /* SecondViewController.swift */,
@@ -67,6 +87,14 @@
 			path = RGBLED;
 			sourceTree = "<group>";
 		};
+		FBBACC2A21A26CCE5C64ED41 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F2D2FC661908EADBD122EE0A /* Pods_RGBLED.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +102,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E1BD56B5233708A0006C642F /* Build configuration list for PBXNativeTarget "RGBLED" */;
 			buildPhases = (
+				C340BB424E155D8A290878B2 /* [CP] Check Pods Manifest.lock */,
 				E1BD569D2337089F006C642F /* Sources */,
 				E1BD569E2337089F006C642F /* Frameworks */,
 				E1BD569F2337089F006C642F /* Resources */,
+				507BA27D69CA0B6CFBC5DC5B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,12 +156,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1BD56B1233708A0006C642F /* LaunchScreen.storyboard in Resources */,
+				E1BD56B923370AD7006C642F /* GoogleService-Info.plist in Resources */,
 				E1BD56AE233708A0006C642F /* Assets.xcassets in Resources */,
 				E1BD56AC2337089F006C642F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		507BA27D69CA0B6CFBC5DC5B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RGBLED/Pods-RGBLED-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RGBLED/Pods-RGBLED-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RGBLED/Pods-RGBLED-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C340BB424E155D8A290878B2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RGBLED-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E1BD569D2337089F006C642F /* Sources */ = {
@@ -284,6 +357,7 @@
 		};
 		E1BD56B6233708A0006C642F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D59EC13E8103AC7681EDCE98 /* Pods-RGBLED.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -302,6 +376,7 @@
 		};
 		E1BD56B7233708A0006C642F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC9C8DF9CA6DE75A593626CF /* Pods-RGBLED.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
