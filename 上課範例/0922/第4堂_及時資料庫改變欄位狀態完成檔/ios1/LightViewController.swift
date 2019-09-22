@@ -7,24 +7,28 @@
 //
 
 import UIKit
+import Firebase
 
 class LightViewController: UIViewController {
-
+    @IBOutlet var lightBtn:UIButton!
+    var relayRef: DatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        relayRef = Database.database().reference().child("Relay");
+        relayRef.observeSingleEvent(of: .value){
+            (snapshot:DataSnapshot) -> Void in
+            let relayNode = snapshot.value as! [String: Bool]
+            let d1Value = relayNode["D1"]!
+            if d1Value{
+                self.lightBtn.setImage(UIImage(named: "open_light"), for: .normal)
+            }else{
+                self.lightBtn.setImage(UIImage(named: "close_light"), for: .normal)
+            }
+        }
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+   
 
 }
