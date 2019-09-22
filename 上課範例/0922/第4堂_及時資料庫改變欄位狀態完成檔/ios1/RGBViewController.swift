@@ -24,9 +24,8 @@ class RGBViewController: UIViewController {
         ]
         
         NSLayoutConstraint.activate(colorPickerViewConstraints)
-        
-        
-       
+        //加入target Action
+        colorPickerView.addTarget(self, action: #selector(colorChange), for: .valueChanged)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,7 +33,15 @@ class RGBViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
-
+    @objc func colorChange(_ sender:HRColorPickerView){
+        let pickerColor = sender.color;
+        var rValue = CGFloat()
+        var gValue = CGFloat()
+        var bValue = CGFloat();
+        var alphaValue = CGFloat();
+        pickerColor?.getRed(&rValue, green: &gValue, blue: &bValue, alpha: &alphaValue)
+        print("r=\(rValue),g=\(gValue), b=\(bValue), alpha=\(alphaValue)");
+    }
     
 
 }
