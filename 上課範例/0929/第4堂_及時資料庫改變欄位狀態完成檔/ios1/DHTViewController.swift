@@ -32,8 +32,40 @@ class DHTViewController: UITableViewController {
         DHTref.observe(DataEventType.value){
             (snapshot:DataSnapshot) -> Void in
             let dhtDict = snapshot.value as? [String:String] ?? [String:String]();
-            let newValue = dhtDict["Humidity"] ?? "不明";
-            self.humidityField.text = newValue;
+            var newValue = dhtDict["Humidity"] ?? "不明";
+            //self.humidityField.text = newValue;
+            self.delay(targetField: self.humidityField, chageValue: newValue)
+            
+            
+             newValue = dhtDict["Fahrenheit"] ?? "不明";
+            //self.humidityField.text = newValue;
+            self.delay(targetField: self.fahrenheitField, chageValue: newValue)
+            
+            
+             newValue = dhtDict["FahrenheitIndex"] ?? "不明";
+            //self.humidityField.text = newValue;
+            self.delay(targetField: self.fahrenheitIndexField, chageValue: newValue)
+            
+            
+             newValue = dhtDict["Celsius"] ?? "不明";
+            //self.humidityField.text = newValue;
+            self.delay(targetField: self.celsiusField, chageValue: newValue)
+            
+           
+             newValue = dhtDict["CelsiusIndex"] ?? "不明";
+            //self.humidityField.text = newValue;
+            self.delay(targetField: self.celsiusIndexField, chageValue: newValue)
+        }
+        
+    }
+    
+    func delay(targetField field:UITextField,chageValue value:String){
+        field.textColor = UIColor.red;
+        field.text = value;
+        //暫停10秒
+        let when = DispatchTime.now() + 0.5;
+        DispatchQueue.main.asyncAfter(deadline: when){
+            field.textColor = UIColor.black
         }
         
     }
