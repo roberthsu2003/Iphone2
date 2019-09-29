@@ -7,9 +7,17 @@
 //
 
 import UIKit
+import Firebase
 
 class DHTViewController: UITableViewController {
     @IBOutlet var textFields:[UITextField]!;
+    @IBOutlet var humidityField:UITextField!;
+    @IBOutlet var fahrenheitField:UITextField!;
+    @IBOutlet var fahrenheitIndexField:UITextField!;
+    @IBOutlet var celsiusField:UITextField!;
+    @IBOutlet var celsiusIndexField:UITextField!;
+    
+    var DHTref:DatabaseReference = Database.database().reference(withPath: "DHT")
     override func viewDidLoad() {
         super.viewDidLoad()
 
