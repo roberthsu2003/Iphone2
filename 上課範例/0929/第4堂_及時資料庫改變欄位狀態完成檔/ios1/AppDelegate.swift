@@ -15,7 +15,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-       
+        //檢查使用者有沒有登入
+        guard Auth.auth().currentUser != nil else{
+            //使用暱名登入
+            Auth.auth().signInAnonymously { (result:AuthDataResult?, error:Error?) in
+                if result != nil, error == nil{
+                    print("登入成功");
+                }
+            }
+            return true;
+        }
+        
+        
         return true
     }
 

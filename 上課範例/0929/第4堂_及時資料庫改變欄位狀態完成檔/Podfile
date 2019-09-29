@@ -8,6 +8,7 @@ target 'ios1' do
   # Pods for ios1
   pod 'Firebase/Analytics'
   pod 'Firebase/Database'
+  pod 'Firebase/Auth'
   pod "Color-Picker-for-iOS", "~> 2.0"
 
 end

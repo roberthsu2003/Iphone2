@@ -35,38 +35,37 @@ class DHTViewController: UITableViewController {
             (snapshot:DataSnapshot) -> Void in
             let dhtDict = snapshot.value as? [String:String] ?? [String:String]();
             var newValue:String;
-            print(dhtDict["Humidity"]);
-            print(self.humidityField.text);
-            if self.humidityField.text != "濕度:\(dhtDict["Humidity"] ?? "不明")"{
+           
+            if self.humidityField.text != "\(dhtDict["Humidity"] ?? "不明")"{
                 newValue = dhtDict["Humidity"] ?? "不明";
                 
                 self.delay(targetField: self.humidityField, chageValue: newValue)
             }
             
-            print(dhtDict["Fahrenheit"]);
+            
             print(self.fahrenheitField.text);
-            if self.fahrenheitField.text != "華氏:\(dhtDict["Fahrenheit"] ?? "不明")"{
+            if self.fahrenheitField.text != "\(dhtDict["Fahrenheit"] ?? "不明")"{
                 newValue = dhtDict["Fahrenheit"] ?? "不明";
                           //self.humidityField.text = newValue;
                           self.delay(targetField: self.fahrenheitField, chageValue: newValue)
             }
            
             
-            if self.fahrenheitIndexField.text != "華氏指數:\(dhtDict["FahrenheitIndex"] ?? "不明")"{
+            if self.fahrenheitIndexField.text != "\(dhtDict["FahrenheitIndex"] ?? "不明")"{
                 newValue = dhtDict["FahrenheitIndex"] ?? "不明";
                            //self.humidityField.text = newValue;
                            self.delay(targetField: self.fahrenheitIndexField, chageValue: newValue)
             }
             
             
-            if self.celsiusField.text != "攝氏:\(dhtDict["Celsius"] ?? "不明")"{
+            if self.celsiusField.text != "\(dhtDict["Celsius"] ?? "不明")"{
                 newValue = dhtDict["Celsius"] ?? "不明";
                            //self.humidityField.text = newValue;
                            self.delay(targetField: self.celsiusField, chageValue: newValue)
             }
             
             
-            if self.celsiusIndexField.text != "攝氏指數:\(dhtDict["CelsiusIndex"] ?? "不明")"{
+            if self.celsiusIndexField.text != "\(dhtDict["CelsiusIndex"] ?? "不明")"{
                 newValue = dhtDict["CelsiusIndex"] ?? "不明";
                            //self.humidityField.text = newValue;
                            self.delay(targetField: self.celsiusIndexField, chageValue: newValue)
