@@ -52,6 +52,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="暱名登入" id="qg3-rY-H8L"/>
+                    <connections>
+                        <outlet property="loginBtn" destination="Of2-tY-vrh" id="8ph-U0-gGw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

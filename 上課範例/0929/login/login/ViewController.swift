@@ -10,15 +10,28 @@ import UIKit
 import Firebase
 
 class ViewController: UIViewController {
+    @IBOutlet var loginBtn:UIButton!;
     var databaseRef:DatabaseReference = Database.database().reference(withPath: "DHT")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if Auth.auth().currentUser != nil{
+           //有登入
+            loginBtn.setTitle("登出", for: .normal);
+        }else{
+            //沒有登入
+            loginBtn.setTitle("登入", for: .normal);
+        }
     }
     
     @IBAction func userClickTopButton(_ topButton:UIButton){
-        
+       
     }
 
     @IBAction func userClickBottomBtn(_ sender:UIButton){
