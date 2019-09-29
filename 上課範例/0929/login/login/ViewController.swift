@@ -42,7 +42,12 @@ class ViewController: UIViewController {
                 topButton.setTitle("登出", for: .normal)
             }
         case "登出":
-            print("登出");
+            if (try? Auth.auth().signOut()) == nil {
+                print("登出失敗");
+            }else{
+                print("登出成功");
+                topButton.setTitle("登入", for: .normal)
+            }
         default:
             break;
         }
