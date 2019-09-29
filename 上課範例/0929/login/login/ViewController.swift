@@ -31,7 +31,21 @@ class ViewController: UIViewController {
     }
     
     @IBAction func userClickTopButton(_ topButton:UIButton){
-       
+        switch topButton.currentTitle! {
+        case "登入":
+            Auth.auth().signInAnonymously { (result:AuthDataResult?, error:Error?) in
+                guard result != nil, error == nil else{
+                    print("暱名登入錯誤");
+                    return
+                }
+                
+                topButton.setTitle("登出", for: .normal)
+            }
+        case "登出":
+            print("登出");
+        default:
+            break;
+        }
     }
 
     @IBAction func userClickBottomBtn(_ sender:UIButton){
