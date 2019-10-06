@@ -10,7 +10,7 @@ import UIKit
 
 struct AllStation:Codable{
     struct Station:Codable{
-        let resion:String;
+        let region:String;
         let name:String;
         let tel:String;
         let add:String;
@@ -23,7 +23,8 @@ struct AllStation:Codable{
 
 class ViewController: UIViewController {
     var urlSession:URLSession!;
-
+    var allStation:AllStation!;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //建立連線
@@ -55,7 +56,12 @@ class ViewController: UIViewController {
             }
             
             print(String.init(data: data, encoding: String.Encoding.utf8)!)
-        let jsonDecoder = JSONDecoder();
+            let jsonDecoder = JSONDecoder();
+            self.allStation = try? jsonDecoder.decode(AllStation.self, from: data)
+        
+        if self.allStation != nil{
+            print(self.allStation.allStations)
+        }
             
         }
         
