@@ -92,6 +92,14 @@ extension ViewController{
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
+        let station = allStation.allStations[indexPath.item];
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CELL", for: indexPath) as! CustomCell;
+        cell.addLabel?.text = "地址:\(station.add)"
+        cell.nameLabel?.text = "分校名:\(station.name)"
+        cell.regionLabel?.text = "地區:\(station.region)"
+        cell.telLabel?.text = "電話:\(station.tel)"
+        
+        return cell;
         
     }
 }
