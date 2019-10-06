@@ -8,6 +8,19 @@
 
 import UIKit
 
+struct AllStation:Codable{
+    struct Station:Codable{
+        let resion:String;
+        let name:String;
+        let tel:String;
+        let add:String;
+        let lat:Double;
+        let long:Double;
+    }
+    
+    let allStations:[Station]
+}
+
 class ViewController: UIViewController {
     var urlSession:URLSession!;
 
@@ -42,6 +55,7 @@ class ViewController: UIViewController {
             }
             
             print(String.init(data: data, encoding: String.Encoding.utf8)!)
+        let jsonDecoder = JSONDecoder();
             
         }
         
