@@ -22,48 +22,64 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="CXa-D6-3Ww">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CELL" id="CXa-D6-3Ww" customClass="CustomCell" customModule="json" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="436"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Nzh-M5-C6r">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="436"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Region:桃園縣市" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZ0-31-BWS">
-                                            <rect key="frame" x="17" y="42" width="162" height="27"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name:中壢分校" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="waM-MH-h0O">
-                                            <rect key="frame" x="17" y="88" width="152" height="27"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="地址:桃園縣市" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a7L-LB-hJg">
-                                            <rect key="frame" x="17" y="178" width="282" height="55"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="u8B-UR-pa4">
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="td0-6F-lrF">
+                                            <rect key="frame" x="20" y="42" width="280" height="160"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Region:桃園縣市" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZ0-31-BWS">
+                                                    <rect key="frame" x="0.0" y="0.0" width="161.5" height="26.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:中壢分校" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="waM-MH-h0O">
+                                                    <rect key="frame" x="0.0" y="44.5" width="151.5" height="26.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tel:(03)427-3993" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pB2-YB-s7J">
+                                                    <rect key="frame" x="0.0" y="89" width="177" height="26.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="地址:桃園縣市" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a7L-LB-hJg">
+                                                    <rect key="frame" x="0.0" y="133.5" width="140" height="26.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="u8B-UR-pa4">
                                             <rect key="frame" x="0.0" y="249" width="320" height="187"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </mapView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tel:(03)427-3993" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pB2-YB-s7J">
-                                            <rect key="frame" x="17" y="143" width="177" height="27"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="td0-6F-lrF" secondAttribute="trailing" constant="20" id="0Sn-WR-Ez5"/>
+                                        <constraint firstItem="u8B-UR-pa4" firstAttribute="top" secondItem="td0-6F-lrF" secondAttribute="bottom" constant="47" id="89a-IJ-ieZ"/>
+                                        <constraint firstItem="td0-6F-lrF" firstAttribute="top" secondItem="Nzh-M5-C6r" secondAttribute="top" constant="42" id="OOT-4H-uhC"/>
+                                        <constraint firstAttribute="bottom" secondItem="u8B-UR-pa4" secondAttribute="bottom" id="i03-rW-1sL"/>
+                                        <constraint firstItem="td0-6F-lrF" firstAttribute="leading" secondItem="Nzh-M5-C6r" secondAttribute="leading" constant="20" id="laI-74-xZq"/>
+                                        <constraint firstItem="u8B-UR-pa4" firstAttribute="leading" secondItem="Nzh-M5-C6r" secondAttribute="leading" id="v79-iz-cAi"/>
+                                        <constraint firstAttribute="trailing" secondItem="u8B-UR-pa4" secondAttribute="trailing" id="wQY-Ch-9Hx"/>
+                                    </constraints>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="320" height="436"/>
+                                <connections>
+                                    <outlet property="addLabel" destination="pB2-YB-s7J" id="oS3-0F-HOU"/>
+                                    <outlet property="mapView" destination="u8B-UR-pa4" id="mXG-d2-Joy"/>
+                                    <outlet property="nameLabel" destination="waM-MH-h0O" id="d1v-aT-z1h"/>
+                                    <outlet property="regionLabel" destination="zZ0-31-BWS" id="8Gm-UB-cmo"/>
+                                    <outlet property="telLabel" destination="pB2-YB-s7J" id="MId-Z8-s8j"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
