@@ -21,7 +21,7 @@ struct AllStation:Codable{
     let allStations:[Station]
 }
 
-class ViewController: UIViewController {
+class ViewController: UICollectionViewController {
     var urlSession:URLSession!;
     var allStation:AllStation!;
     
@@ -59,9 +59,14 @@ class ViewController: UIViewController {
             let jsonDecoder = JSONDecoder();
             self.allStation = try? jsonDecoder.decode(AllStation.self, from: data)
         
-        if self.allStation != nil{
-            print(self.allStation.allStations)
-        }
+            if self.allStation != nil{
+                print(self.allStation.allStations)
+            }
+        
+            DispatchQueue.main.sync {
+                //跳回主執行緒
+                self.collectionView.reloadData();
+            }
             
         }
         
