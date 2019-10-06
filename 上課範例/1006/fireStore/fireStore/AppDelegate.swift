@@ -7,14 +7,26 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    override init() {
+        super.init();
+        FirebaseApp.configure();
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        let _ = Auth.auth().addStateDidChangeListener { (auth:Auth, user:User?) in
+            if user == nil {
+                Auth.auth().signInAnonymously { (authResult:AuthDataResult?, error:Error?) in
+                    print("新的暱名登入");
+                }
+            }else{
+                print("已經使用先前的暱名登入");
+            }
+        }
         return true
     }
 
