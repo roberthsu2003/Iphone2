@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 struct AllStation:Codable{
     struct Station:Codable{
@@ -98,6 +99,15 @@ extension ViewController{
         cell.nameLabel?.text = "分校名:\(station.name)"
         cell.regionLabel?.text = "地區:\(station.region)"
         cell.telLabel?.text = "電話:\(station.tel)"
+        
+        let annotation = MKPointAnnotation();
+        let coordinate = CLLocationCoordinate2D(latitude: station.lat, longitude: station.long)
+        annotation.coordinate = coordinate;
+        cell.mapView.addAnnotation(annotation);
+        //let span = MKCoordinateSpan(latitudeDelta: 250, longitudeDelta: 250)
+        let region = MKCoordinateRegion(center: coordinate, latitudinalMeters: 250, longitudinalMeters: 250);
+        
+        cell.mapView.setRegion(region, animated: false);
         
         return cell;
         
