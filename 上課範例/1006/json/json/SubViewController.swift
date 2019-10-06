@@ -19,6 +19,7 @@ class SubViewController: UIViewController {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil);
         let contentViewController = storyboard.instantiateViewController(identifier: "content");
+        
         pageViewController.setViewControllers([contentViewController], direction: .forward, animated: false, completion: nil);
         
     }
