@@ -16,8 +16,8 @@
 		E1745F2B23497F6700CD90C9 /* gjun.json in Resources */ = {isa = PBXBuildFile; fileRef = E1745F2A23497F6700CD90C9 /* gjun.json */; };
 		E1745F2D2349A04200CD90C9 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1745F2C2349A04200CD90C9 /* CustomCell.swift */; };
 		E1745F302349A0DE00CD90C9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1745F2F2349A0DE00CD90C9 /* MapKit.framework */; };
-		E1745F322349C77200CD90C9 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1745F312349C77200CD90C9 /* PageViewController.swift */; };
 		E1745F342349C9DD00CD90C9 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1745F332349C9DD00CD90C9 /* ContentViewController.swift */; };
+		E1745F362349CC1E00CD90C9 /* SubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1745F352349CC1E00CD90C9 /* SubViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,8 +32,8 @@
 		E1745F2A23497F6700CD90C9 /* gjun.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gjun.json; sourceTree = "<group>"; };
 		E1745F2C2349A04200CD90C9 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		E1745F2F2349A0DE00CD90C9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		E1745F312349C77200CD90C9 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		E1745F332349C9DD00CD90C9 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		E1745F352349CC1E00CD90C9 /* SubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +68,7 @@
 		E1745F1323497EB000CD90C9 /* json */ = {
 			isa = PBXGroup;
 			children = (
+				E1745F352349CC1E00CD90C9 /* SubViewController.swift */,
 				E1745F332349C9DD00CD90C9 /* ContentViewController.swift */,
 				E1745F2A23497F6700CD90C9 /* gjun.json */,
 				E1745F1423497EB000CD90C9 /* AppDelegate.swift */,
@@ -78,7 +79,6 @@
 				E1745F1F23497EB200CD90C9 /* LaunchScreen.storyboard */,
 				E1745F2223497EB200CD90C9 /* Info.plist */,
 				E1745F2C2349A04200CD90C9 /* CustomCell.swift */,
-				E1745F312349C77200CD90C9 /* PageViewController.swift */,
 			);
 			path = json;
 			sourceTree = "<group>";
@@ -164,9 +164,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1745F1923497EB000CD90C9 /* ViewController.swift in Sources */,
-				E1745F322349C77200CD90C9 /* PageViewController.swift in Sources */,
 				E1745F1523497EB000CD90C9 /* AppDelegate.swift in Sources */,
 				E1745F2D2349A04200CD90C9 /* CustomCell.swift in Sources */,
+				E1745F362349CC1E00CD90C9 /* SubViewController.swift in Sources */,
 				E1745F342349C9DD00CD90C9 /* ContentViewController.swift in Sources */,
 				E1745F1723497EB000CD90C9 /* SceneDelegate.swift in Sources */,
 			);
