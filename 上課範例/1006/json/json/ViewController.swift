@@ -73,6 +73,8 @@ class ViewController: UICollectionViewController {
         downloadTask.resume();
         
         
+        let collectionViewFlowLayout = self.collectionViewLayout as! UICollectionViewFlowLayout;
+        collectionViewFlowLayout.itemSize = self.view.bounds.size;
         
         
     }
