@@ -81,3 +81,18 @@ class ViewController: UICollectionViewController {
 
 }
 
+extension ViewController{
+    //UICollectionViewDataSourec
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
+        if allStation == nil{
+            return 0;
+        }else{
+            return allStation.allStations.count;
+        }
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
+        
+    }
+}
+
