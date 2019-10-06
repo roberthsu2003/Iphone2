@@ -75,7 +75,8 @@ class ViewController: UICollectionViewController {
         
         
         let collectionViewFlowLayout = self.collectionViewLayout as! UICollectionViewFlowLayout;
-        collectionViewFlowLayout.itemSize = self.view.bounds.size;   
+        collectionViewFlowLayout.itemSize = self.view.bounds.size;
+        print(collectionViewFlowLayout.itemSize)
         
     }
 
