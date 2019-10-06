@@ -12,7 +12,13 @@ class ViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        if let path = Bundle.main.path(forResource: "PresidentList", ofType: "plist"){
+            if let rootDictionary = NSDictionary(contentsOfFile: path) as? [String:Any]{
+                let presidents = rootDictionary["presidents"] as! [[String:String]]
+                print(presidents);
+                
+            }
+        }
     }
 
     @IBAction func importData(_ sender:UIBarButtonItem){

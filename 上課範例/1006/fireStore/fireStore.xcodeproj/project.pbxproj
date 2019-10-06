@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		E13734152349D721001A64D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E13734142349D721001A64D3 /* Assets.xcassets */; };
 		E13734182349D721001A64D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E13734162349D721001A64D3 /* LaunchScreen.storyboard */; };
 		E13734202349D744001A64D3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E137341F2349D744001A64D3 /* GoogleService-Info.plist */; };
+		E13734222349E2A1001A64D3 /* PresidentList.plist in Resources */ = {isa = PBXBuildFile; fileRef = E13734212349E2A1001A64D3 /* PresidentList.plist */; };
 		EE25EC8C9F8A3E085523F806 /* Pods_fireStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B356BE62844A68AAA3CB7A0 /* Pods_fireStore.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		E13734172349D721001A64D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E13734192349D721001A64D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E137341F2349D744001A64D3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E13734212349E2A1001A64D3 /* PresidentList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PresidentList.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,6 @@
 				BFE7B9637ACA879A89158FA0 /* Pods-fireStore.debug.xcconfig */,
 				6BA3C27C7395EFCECCB7A8A3 /* Pods-fireStore.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -83,6 +84,7 @@
 		E137340A2349D720001A64D3 /* fireStore */ = {
 			isa = PBXGroup;
 			children = (
+				E13734212349E2A1001A64D3 /* PresidentList.plist */,
 				E137341F2349D744001A64D3 /* GoogleService-Info.plist */,
 				E137340B2349D720001A64D3 /* AppDelegate.swift */,
 				E137340D2349D720001A64D3 /* SceneDelegate.swift */,
@@ -158,6 +160,7 @@
 				E13734182349D721001A64D3 /* LaunchScreen.storyboard in Resources */,
 				E13734202349D744001A64D3 /* GoogleService-Info.plist in Resources */,
 				E13734152349D721001A64D3 /* Assets.xcassets in Resources */,
+				E13734222349E2A1001A64D3 /* PresidentList.plist in Resources */,
 				E13734132349D720001A64D3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
