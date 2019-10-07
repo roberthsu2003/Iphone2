@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,8 @@
 		E1E19796234B650D0029D691 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1E19795234B650D0029D691 /* Assets.xcassets */; };
 		E1E19799234B650D0029D691 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1E19797234B650D0029D691 /* LaunchScreen.storyboard */; };
 		E1E197A1234B67760029D691 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E1E197A0234B67760029D691 /* GoogleService-Info.plist */; };
+		E1E82C2D234B75D0008DD7F8 /* statedictionary.plist in Resources */ = {isa = PBXBuildFile; fileRef = E1E82C2C234B75D0008DD7F8 /* statedictionary.plist */; };
+		E1E82C2F234B76CF008DD7F8 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E82C2E234B76CF008DD7F8 /* DataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		E1E19798234B650D0029D691 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1E1979A234B650D0029D691 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1E197A0234B67760029D691 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E1E82C2C234B75D0008DD7F8 /* statedictionary.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = statedictionary.plist; sourceTree = "<group>"; };
+		E1E82C2E234B76CF008DD7F8 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +54,6 @@
 				20D8E637F6E6FCD705BD45AF /* Pods-FirstProject.debug.xcconfig */,
 				0D0F96C16E25ECAE89BB600D /* Pods-FirstProject.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -83,6 +86,7 @@
 		E1E1978B234B650B0029D691 /* FirstProject */ = {
 			isa = PBXGroup;
 			children = (
+				E1E82C2C234B75D0008DD7F8 /* statedictionary.plist */,
 				E1E197A0234B67760029D691 /* GoogleService-Info.plist */,
 				E1E1978C234B650B0029D691 /* AppDelegate.swift */,
 				E1E1978E234B650B0029D691 /* SceneDelegate.swift */,
@@ -91,6 +95,7 @@
 				E1E19795234B650D0029D691 /* Assets.xcassets */,
 				E1E19797234B650D0029D691 /* LaunchScreen.storyboard */,
 				E1E1979A234B650D0029D691 /* Info.plist */,
+				E1E82C2E234B76CF008DD7F8 /* DataSource.swift */,
 			);
 			path = FirstProject;
 			sourceTree = "<group>";
@@ -155,6 +160,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1E82C2D234B75D0008DD7F8 /* statedictionary.plist in Resources */,
 				E1E19799234B650D0029D691 /* LaunchScreen.storyboard in Resources */,
 				E1E197A1234B67760029D691 /* GoogleService-Info.plist in Resources */,
 				E1E19796234B650D0029D691 /* Assets.xcassets in Resources */,
@@ -213,6 +219,7 @@
 			files = (
 				E1E19791234B650B0029D691 /* ViewController.swift in Sources */,
 				E1E1978D234B650B0029D691 /* AppDelegate.swift in Sources */,
+				E1E82C2F234B76CF008DD7F8 /* DataSource.swift in Sources */,
 				E1E1978F234B650B0029D691 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
