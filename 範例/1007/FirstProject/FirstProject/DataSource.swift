@@ -15,4 +15,8 @@ class DataSource{
     private init(){
         
     }
+    
+    var state:[String:[String]]{        
+        return [String:[String]]();
+    }
 }

@@ -9,10 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var dataSource = DataSource.main;
+    var state = DataSource.main.state
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        print("state的數量:\(state.count)")
     }
 
 
