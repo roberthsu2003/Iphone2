@@ -43,8 +43,11 @@ class ViewController: UIViewController {
                 return
             }
             
-            print(String.init(data: data, encoding: String.Encoding.utf8)!);
-        
+            
+            
+            DispatchQueue.main.sync {
+                print(String.init(data: data, encoding: String.Encoding.utf8)!);
+            }
         
         }
         downloadTask.resume();
