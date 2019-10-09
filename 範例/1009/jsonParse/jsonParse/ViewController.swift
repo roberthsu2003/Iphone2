@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    let urlPath = "https://iostest-64ed7.web.app/gjun.json"
+    let urlPath = "http://data.taipei/opendata/datalist/apiAccess?scope=resourceAquire&rid=a880adf3-d574-430a-8e29-3192a41897a5"
     var urlSession:URLSession!;
     
     override func viewDidLoad() {
