@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--小房間燈泡控制-->
+        <scene sceneID="hNz-n2-bh7">
+            <objects>
+                <viewController id="9pv-A4-QxB" customClass="LightViewController" customModule="ios1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hjs-Uq-EqR">
+                                <rect key="frame" x="72" y="104.5" width="176" height="272"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="176" id="DG6-J5-HBd"/>
+                                    <constraint firstAttribute="height" constant="272" id="RN3-fm-AMx"/>
+                                </constraints>
+                                <state key="normal" image="close_light"/>
+                                <connections>
+                                    <action selector="userChangeLight:" destination="9pv-A4-QxB" eventType="touchUpInside" id="S2z-jc-GZh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hjs-Uq-EqR" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="7dN-Lr-XG9"/>
+                            <constraint firstItem="hjs-Uq-EqR" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="eez-eB-iDz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="小房間燈泡控制" prompt="目前狀況" id="0zJ-dB-qV5"/>
+                    <connections>
+                        <outlet property="lightBtn" destination="hjs-Uq-EqR" id="sty-Ag-mwt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1492.5" y="-320"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="wg7-f3-ORb">
+            <objects>
+                <viewController id="8rJ-Kc-sve" customClass="RGBViewController" customModule="ios1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="mLr-ao-hXK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1890" y="360"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="yl2-sM-qoP">
+            <objects>
+                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
+                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="afj-yv-bMp" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="0pb-Op-hhh" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="KeH-dp-X4b" kind="relationship" relationship="viewControllers" id="dUu-kh-bmj"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+        <!--Relay-->
+        <scene sceneID="pJP-aG-I1h">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="afj-yv-bMp" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Relay" image="lightIcon" id="acW-dT-cKf"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Kd9-3n-FKg">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="qUd-Y2-guH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FA4-ig-V0x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="-320"/>
+        </scene>
+        <!--溫濕度感測器-->
+        <scene sceneID="nnI-91-73T">
+            <objects>
+                <viewController id="aoB-CJ-1Sd" customClass="DHTViewController" customModule="ios1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JZu-Up-yVw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yav-S5-n9I">
+                                <rect key="frame" x="60" y="84" width="200" height="218"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="濕度" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E5X-FM-Vnl">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="華氏" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LYh-8L-dQs">
+                                        <rect key="frame" x="0.0" y="47" width="200" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="華氏指數" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bU7-Ut-a42">
+                                        <rect key="frame" x="0.0" y="94" width="200" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="攝氏" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="APK-sb-b3y">
+                                        <rect key="frame" x="0.0" y="141" width="200" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="攝氏指數" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="osG-ai-CdC">
+                                        <rect key="frame" x="0.0" y="188" width="200" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="lgg-iy-KYb"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Yav-S5-n9I" firstAttribute="top" secondItem="b2L-4K-qKc" secondAttribute="top" constant="20" id="f5X-Ir-6wg"/>
+                            <constraint firstItem="Yav-S5-n9I" firstAttribute="centerX" secondItem="JZu-Up-yVw" secondAttribute="centerX" id="lBE-ti-bCX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="b2L-4K-qKc"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="溫濕度感測器" id="2b8-41-Lvb"/>
+                    <connections>
+                        <outlet property="CelsiusField" destination="APK-sb-b3y" id="tti-yX-WiL"/>
+                        <outlet property="CelsiusIndexField" destination="osG-ai-CdC" id="esG-HZ-o89"/>
+                        <outlet property="FahrenheitField" destination="LYh-8L-dQs" id="1uw-Oc-Mbg"/>
+                        <outlet property="FahrenheitIndexField" destination="bU7-Ut-a42" id="djd-04-f1g"/>
+                        <outlet property="HumidityField" destination="E5X-FM-Vnl" id="6Cn-fq-92m"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yo5-dS-kWd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1127" y="1074"/>
+        </scene>
+        <!--RGB-->
+        <scene sceneID="i41-Iw-3AL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0pb-Op-hhh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="RGB" image="rgb_icon" id="cPa-gy-q4n"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nYn-ND-z2G">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="rootViewController" id="pr5-qE-gVI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fCM-gK-HhH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1147.5" y="360"/>
+        </scene>
+        <!--溫度計-->
+        <scene sceneID="1we-es-sb5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KeH-dp-X4b" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="溫度計" image=" 溫度計" id="pnd-7I-S9g"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="I9d-B6-mVp">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="aoB-CJ-1Sd" kind="relationship" relationship="rootViewController" id="8Jv-Ts-rAh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zmc-ly-fjG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="386" y="1074"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name=" 溫度計" width="22" height="30"/>
+        <image name="close_light" width="113" height="171"/>
+        <image name="lightIcon" width="21" height="31"/>
+        <image name="rgb_icon" width="30" height="29"/>
+    </resources>
+</document>
