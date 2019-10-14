@@ -13,6 +13,7 @@
 		93011432234E11D300739DFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93011430234E11D300739DFD /* Main.storyboard */; };
 		93011434234E11D500739DFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93011433234E11D500739DFD /* Assets.xcassets */; };
 		93011437234E11D500739DFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93011435234E11D500739DFD /* LaunchScreen.storyboard */; };
+		935732E32354A094008CD822 /* SubCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935732E22354A094008CD822 /* SubCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		93011433234E11D500739DFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93011436234E11D500739DFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93011438234E11D500739DFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		935732E22354A094008CD822 /* SubCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				93011433234E11D500739DFD /* Assets.xcassets */,
 				93011435234E11D500739DFD /* LaunchScreen.storyboard */,
 				93011438234E11D500739DFD /* Info.plist */,
+				935732E22354A094008CD822 /* SubCollectionViewCell.swift */,
 			);
 			path = jsonParse;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 				9301142F234E11D300739DFD /* ViewController.swift in Sources */,
 				9301142B234E11D300739DFD /* AppDelegate.swift in Sources */,
 				9301142D234E11D300739DFD /* SceneDelegate.swift in Sources */,
+				935732E32354A094008CD822 /* SubCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
