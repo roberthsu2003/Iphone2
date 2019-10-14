@@ -20,7 +20,7 @@ struct AllStation:Codable{
     let allStations:[Station]
 }
 
-class ViewController: UIViewController {
+class ViewController: UICollectionViewController {
     let urlPath = "https://iostest-64ed7.web.app/gjun.json"
     var urlSession:URLSession!;
     var allStations = [AllStation.Station]();
