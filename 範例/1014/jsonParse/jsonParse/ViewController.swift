@@ -23,6 +23,7 @@ struct AllStation:Codable{
 class ViewController: UIViewController {
     let urlPath = "https://iostest-64ed7.web.app/gjun.json"
     var urlSession:URLSession!;
+    var allStations = [AllStation.Station]();
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +60,19 @@ class ViewController: UIViewController {
             
             DispatchQueue.main.sync {
                 //print(String.init(data: data, encoding: String.Encoding.utf8)!);
+                //使用JSON的decoder
+                
+                let jsonDecoder = JSONDecoder()
+                guard var allStation = try? jsonDecoder.decode(AllStation.self, from: data) else{
+                    print("轉換編碼失敗");
+                    return
+                }
+                
+                for station in allStation.allStations{
+                    print(station.name)
+                }
+                
+                self.allStations = allStation.allStations;
             }
         
         }
