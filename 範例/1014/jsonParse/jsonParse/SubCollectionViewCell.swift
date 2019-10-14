@@ -9,5 +9,8 @@
 import UIKit
 
 class SubCollectionViewCell: UICollectionViewCell {
-    
+    @IBOutlet var regionLabel:UILabel!
+    @IBOutlet var nameLabel:UILabel!
+    @IBOutlet var telLabel :UILabel!
+    @IBOutlet var addLabel:UILabel!;
 }

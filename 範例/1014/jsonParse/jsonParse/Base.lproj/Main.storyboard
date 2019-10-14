@@ -28,8 +28,50 @@
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="nRu-Jz-LNn">
                                     <rect key="frame" x="0.0" y="0.0" width="144" height="186"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hXN-aE-yeb">
+                                            <rect key="frame" x="8" y="15" width="128" height="146.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="台北市" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TXs-WN-Ti0">
+                                                    <rect key="frame" x="0.0" y="0.0" width="52" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="重慶分校" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b7v-lE-QiE">
+                                                    <rect key="frame" x="0.0" y="28.5" width="69.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(02)2331-6960" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ie0-ew-1Uu">
+                                                    <rect key="frame" x="0.0" y="57" width="120" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="台北市中正區重慶南路一段49號2F" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eem-hA-in3">
+                                                    <rect key="frame" x="0.0" y="85.5" width="125" height="61"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="hXN-aE-yeb" firstAttribute="top" secondItem="nRu-Jz-LNn" secondAttribute="top" constant="15" id="oQL-tF-fdc"/>
+                                        <constraint firstItem="hXN-aE-yeb" firstAttribute="leading" secondItem="nRu-Jz-LNn" secondAttribute="leading" constant="8" id="pg0-hr-i2H"/>
+                                        <constraint firstAttribute="trailing" secondItem="hXN-aE-yeb" secondAttribute="trailing" constant="8" id="vIz-6p-DQ8"/>
+                                    </constraints>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="144" height="186"/>
+                                <connections>
+                                    <outlet property="addLabel" destination="eem-hA-in3" id="awj-nm-skj"/>
+                                    <outlet property="nameLabel" destination="b7v-lE-QiE" id="wbi-CJ-gMX"/>
+                                    <outlet property="regionLabel" destination="TXs-WN-Ti0" id="cq8-YZ-ROh"/>
+                                    <outlet property="telLabel" destination="Ie0-ew-1Uu" id="2RZ-8B-DdJ"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
