@@ -84,14 +84,20 @@ class ViewController: UICollectionViewController {
 
 }
 
-extension ViewController:{
+extension ViewController{
     //UICollectionViewController
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
         return allStations.count;
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
-        
+        let station = allStations[indexPath.row]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CELL", for: indexPath) as! SubCollectionViewCell;
+        cell.regionLabel.text = station.region
+        cell.nameLabel.text = station.name
+        cell.telLabel.text = station.tel
+        cell.addLabel.text = station.add
+        return cell;
     }
 }
 
