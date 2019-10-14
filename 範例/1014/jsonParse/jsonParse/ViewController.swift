@@ -63,7 +63,7 @@ class ViewController: UICollectionViewController {
                 //使用JSON的decoder
                 
                 let jsonDecoder = JSONDecoder()
-                guard var allStation = try? jsonDecoder.decode(AllStation.self, from: data) else{
+                guard let allStation = try? jsonDecoder.decode(AllStation.self, from: data) else{
                     print("轉換編碼失敗");
                     return
                 }
@@ -73,6 +73,7 @@ class ViewController: UICollectionViewController {
                 }
                 
                 self.allStations = allStation.allStations;
+                self.collectionView.reloadData();
             }
         
         }
@@ -81,5 +82,16 @@ class ViewController: UICollectionViewController {
     }
 
 
+}
+
+extension ViewController:{
+    //UICollectionViewController
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
+        return allStations.count;
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
+        
+    }
 }
 
