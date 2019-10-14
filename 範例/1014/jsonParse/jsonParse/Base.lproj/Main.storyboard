@@ -15,8 +15,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wfF-mf-cg4">
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wfF-mf-cg4">
                             <size key="itemSize" width="150" height="194"/>
+                            <size key="estimatedItemSize" width="150" height="194"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -29,59 +30,54 @@
                                     <rect key="frame" x="0.0" y="0.0" width="150" height="194"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="hXN-aE-yeb">
-                                            <rect key="frame" x="8" y="15" width="134" height="164"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uOs-93-jEA">
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="194"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="台北市" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TXs-WN-Ti0">
-                                                    <rect key="frame" x="0.0" y="0.0" width="52" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DN6-gI-f9C">
+                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="35.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="重慶分校" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b7v-lE-QiE">
-                                                    <rect key="frame" x="0.0" y="26.5" width="69.5" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7nM-Ux-OPh">
+                                                    <rect key="frame" x="0.0" y="45.5" width="150" height="35.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(02)2331-6960" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ie0-ew-1Uu">
-                                                    <rect key="frame" x="0.0" y="53" width="120" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSu-6f-jh0">
+                                                    <rect key="frame" x="0.0" y="91" width="150" height="35.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="台北市中正區重慶南路一段49號2F" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eem-hA-in3">
-                                                    <rect key="frame" x="0.0" y="79.5" width="125" height="84.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="125" id="3p4-ls-aE0"/>
-                                                        <constraint firstAttribute="height" constant="84.5" id="gsm-kM-NOe"/>
-                                                    </constraints>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHW-bX-68f">
+                                                    <rect key="frame" x="0.0" y="136.5" width="150" height="57.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="b7v-lE-QiE" firstAttribute="top" secondItem="hXN-aE-yeb" secondAttribute="top" constant="26.5" id="Aok-h9-UcN"/>
-                                                <constraint firstItem="eem-hA-in3" firstAttribute="top" secondItem="hXN-aE-yeb" secondAttribute="top" constant="79.5" id="RBu-B4-Kew"/>
-                                                <constraint firstItem="Ie0-ew-1Uu" firstAttribute="top" secondItem="hXN-aE-yeb" secondAttribute="top" constant="53" id="TX6-Ny-yR7"/>
+                                                <constraint firstAttribute="height" constant="194" id="G0Z-p7-gWH"/>
+                                                <constraint firstAttribute="width" constant="150" id="YAH-vg-bqX"/>
                                             </constraints>
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="hXN-aE-yeb" firstAttribute="top" secondItem="nRu-Jz-LNn" secondAttribute="top" constant="15" id="AkG-OL-hiA"/>
-                                        <constraint firstItem="hXN-aE-yeb" firstAttribute="leading" secondItem="nRu-Jz-LNn" secondAttribute="leading" constant="8" id="Q87-mY-n79"/>
-                                        <constraint firstAttribute="bottom" secondItem="hXN-aE-yeb" secondAttribute="bottom" constant="15" id="SOs-Yg-Lt7"/>
-                                        <constraint firstAttribute="trailing" secondItem="hXN-aE-yeb" secondAttribute="trailing" constant="8" id="Utk-hS-RVF"/>
+                                        <constraint firstItem="uOs-93-jEA" firstAttribute="leading" secondItem="nRu-Jz-LNn" secondAttribute="leading" id="L0P-PG-UPR"/>
+                                        <constraint firstItem="uOs-93-jEA" firstAttribute="top" secondItem="nRu-Jz-LNn" secondAttribute="top" id="V7D-Yg-VOT"/>
+                                        <constraint firstAttribute="trailing" secondItem="uOs-93-jEA" secondAttribute="trailing" id="q1s-SY-PGw"/>
+                                        <constraint firstAttribute="bottom" secondItem="uOs-93-jEA" secondAttribute="bottom" id="rlI-9L-TEc"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <size key="customSize" width="150" height="194"/>
                                 <connections>
-                                    <outlet property="addLabel" destination="eem-hA-in3" id="awj-nm-skj"/>
-                                    <outlet property="nameLabel" destination="b7v-lE-QiE" id="wbi-CJ-gMX"/>
-                                    <outlet property="regionLabel" destination="TXs-WN-Ti0" id="cq8-YZ-ROh"/>
-                                    <outlet property="telLabel" destination="Ie0-ew-1Uu" id="2RZ-8B-DdJ"/>
+                                    <outlet property="addLabel" destination="cHW-bX-68f" id="KIj-ky-Bx8"/>
+                                    <outlet property="nameLabel" destination="7nM-Ux-OPh" id="ZfG-X1-O6w"/>
+                                    <outlet property="regionLabel" destination="DN6-gI-f9C" id="17h-7H-Aci"/>
+                                    <outlet property="telLabel" destination="cSu-6f-jh0" id="nwD-fY-wQM"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>

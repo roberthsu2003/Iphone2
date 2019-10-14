@@ -27,6 +27,9 @@ class ViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //設定itemSize
+        let collectionViewFlowLayout = self.collectionViewLayout as! UICollectionViewFlowLayout;
+        collectionViewFlowLayout.itemSize = CGSize(width: 150, height: 194)
         //建立下載任務
         urlSession = URLSession.shared;
         guard let url = URL(string: urlPath) else{
