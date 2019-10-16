@@ -22,6 +22,9 @@
                                     <constraint firstAttribute="height" constant="208" id="SaU-Bk-jod"/>
                                 </constraints>
                                 <state key="normal" image="close_light"/>
+                                <connections>
+                                    <action selector="userChangeLight:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GXS-qL-j2S"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -40,11 +43,11 @@
             </objects>
             <point key="canvasLocation" x="1485" y="-403"/>
         </scene>
-        <!--Item-->
+        <!--Relay-->
         <scene sceneID="3DI-Gd-9Nl">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rcS-YE-njN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="lightIcon" id="y2k-LD-WTK"/>
+                    <tabBarItem key="tabBarItem" title="Relay" image="lightIcon" id="y2k-LD-WTK"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MDt-Am-rkF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -67,6 +70,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="W7c-Wc-w2v">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="rcS-YE-njN" kind="relationship" relationship="viewControllers" id="mE5-LZ-62y"/>
