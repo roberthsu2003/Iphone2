@@ -9,7 +9,8 @@
 import UIKit
 
 class LightViewController: UIViewController {
-
+    @IBOutlet var lightBtn:UIButton!;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

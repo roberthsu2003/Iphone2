@@ -14,10 +14,27 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FYt-R0-kKF">
+                                <rect key="frame" x="74" y="136" width="172" height="208"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="172" id="J4x-41-K8V"/>
+                                    <constraint firstAttribute="height" constant="208" id="SaU-Bk-jod"/>
+                                </constraints>
+                                <state key="normal" image="close_light"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="FYt-R0-kKF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5Ri-Us-gaX"/>
+                            <constraint firstItem="FYt-R0-kKF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="i8x-PS-fse"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="小房間燈泡控制" id="NFb-xh-eOM"/>
+                    <navigationItem key="navigationItem" title="小房間燈泡控制" prompt="目前狀況" id="NFb-xh-eOM"/>
+                    <connections>
+                        <outlet property="lightBtn" destination="FYt-R0-kKF" id="35U-MO-2aX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -57,10 +74,11 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tXr-Vh-ghz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-41.25" y="-105"/>
+            <point key="canvasLocation" x="45" y="-404"/>
         </scene>
     </scenes>
     <resources>
+        <image name="close_light" width="113" height="171"/>
         <image name="lightIcon" width="21" height="31"/>
     </resources>
 </document>
