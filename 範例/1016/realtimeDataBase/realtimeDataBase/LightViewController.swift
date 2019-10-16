@@ -7,19 +7,28 @@
 //
 
 import UIKit
+import Firebase
 
 class LightViewController: UIViewController {
-    @IBOutlet var lightBtn:UIButton!;
+    @IBOutlet var lightBtn:UIButton!
+    var relay1Ref:DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        relay1Ref = Database.database().reference(withPath: "Relay1/D1")
         // Do any additional setup after loading the view.
     }
     
 
     @IBAction func userChangeLight(_ sender:UIButton){
-        print("user change");
+        relay1Ref.observeSingleEvent(of: .value){
+            (snapshot:DataSnapshot) -> Void in
+            if let d1State = snapshot.value as? Bool{
+                self.relay1Ref.setValue(!d1State)
+            }else{
+                print("取得錯誤");
+            }
+        }
     }
 
 }
