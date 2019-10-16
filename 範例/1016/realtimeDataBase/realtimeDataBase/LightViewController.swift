@@ -24,7 +24,17 @@ class LightViewController: UIViewController {
         relay1Ref.observeSingleEvent(of: .value){
             (snapshot:DataSnapshot) -> Void in
             if let d1State = snapshot.value as? Bool{
-                self.relay1Ref.setValue(!d1State)
+                self.relay1Ref.setValue(!d1State) { (error:Error?, d1Ref:DatabaseReference) in
+                    if error == nil {
+                        if !d1State {
+                            self.navigationItem.prompt = "目前狀態:開啟"
+                            self.lightBtn.setImage(UIImage.init(named: "open_light"), for: .normal)
+                        }else{
+                            self.navigationItem.prompt = "目前狀態:關閉"
+                            self.lightBtn.setImage(UIImage.init(named: "close_light"), for: .normal)
+                        }
+                    }
+                }
             }else{
                 print("取得錯誤");
             }
