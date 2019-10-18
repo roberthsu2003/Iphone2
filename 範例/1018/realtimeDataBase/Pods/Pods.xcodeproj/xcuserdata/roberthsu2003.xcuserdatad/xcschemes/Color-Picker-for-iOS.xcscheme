@@ -14,9 +14,9 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "159DDB6A013B9CA5E45001FF0A308045"
-               BuildableName = "Pods-realtimeDataBase.framework"
-               BlueprintName = "Pods-realtimeDataBase"
+               BlueprintIdentifier = "44CA85B9068A41C746742D5576314D0A"
+               BuildableName = "Color-Picker-for-iOS.framework"
+               BlueprintName = "Color-Picker-for-iOS"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

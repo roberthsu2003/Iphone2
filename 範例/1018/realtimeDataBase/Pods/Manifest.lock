@@ -1,4 +1,5 @@
 PODS:
+  - Color-Picker-for-iOS (2.0.2)
   - Firebase/Analytics (6.10.0):
     - Firebase/Core
   - Firebase/Core (6.10.0):
@@ -75,11 +76,13 @@ PODS:
   - nanopb/encode (0.3.901)
 
 DEPENDENCIES:
+  - Color-Picker-for-iOS (~> 2.0)
   - Firebase/Analytics
   - Firebase/Database
 
 SPEC REPOS:
   trunk:
+    - Color-Picker-for-iOS
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuthInterop
@@ -96,6 +99,7 @@ SPEC REPOS:
     - nanopb
 
 SPEC CHECKSUMS:
+  Color-Picker-for-iOS: 4980589b3e3cfe7198f227dd50be9adb02d8bc0b
   Firebase: 5e6b7b12bf9adb90986688edc06b156c37e109cd
   FirebaseAnalytics: 0e3ecff2c5d86070f7d4325e21f1edabfbd558dc
   FirebaseAuthInterop: 0ffa57668be100582bb7643d4fcb7615496c41fc
@@ -111,6 +115,6 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
 
-PODFILE CHECKSUM: 29fd6598c4d8d478881b94fbbdfc2feaf25606ac
+PODFILE CHECKSUM: ef98ce4c398a238539936eee5559bea743db1810
 
-COCOAPODS: 1.8.3
+COCOAPODS: 1.8.4

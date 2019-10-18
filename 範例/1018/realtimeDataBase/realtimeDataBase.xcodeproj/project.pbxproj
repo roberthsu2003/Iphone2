@@ -15,6 +15,7 @@
 		93130496235733B000301AF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93130494235733B000301AF0 /* LaunchScreen.storyboard */; };
 		9313049E2357340A00301AF0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9313049D2357340A00301AF0 /* GoogleService-Info.plist */; };
 		931577D823573BF500F378FE /* LightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931577D723573BF500F378FE /* LightViewController.swift */; };
+		93464CE92359DC4800A9C242 /* RGBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93464CE82359DC4800A9C242 /* RGBViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		93130497235733B000301AF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9313049D2357340A00301AF0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		931577D723573BF500F378FE /* LightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightViewController.swift; sourceTree = "<group>"; };
+		93464CE82359DC4800A9C242 /* RGBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 		93130488235733AC00301AF0 /* realtimeDataBase */ = {
 			isa = PBXGroup;
 			children = (
+				93464CE82359DC4800A9C242 /* RGBViewController.swift */,
 				9313049D2357340A00301AF0 /* GoogleService-Info.plist */,
 				93130489235733AC00301AF0 /* AppDelegate.swift */,
 				9313048B235733AC00301AF0 /* SceneDelegate.swift */,
@@ -105,7 +108,7 @@
 				93130482235733AC00301AF0 /* Sources */,
 				93130483235733AC00301AF0 /* Frameworks */,
 				93130484235733AC00301AF0 /* Resources */,
-				D86898ECE60633CC68977275 /* [CP] Embed Pods Frameworks */,
+				D3CE04203EF731C620FDA4ED /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -164,7 +167,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		D86898ECE60633CC68977275 /* [CP] Embed Pods Frameworks */ = {
+		D3CE04203EF731C620FDA4ED /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -210,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93464CE92359DC4800A9C242 /* RGBViewController.swift in Sources */,
 				9313048A235733AC00301AF0 /* AppDelegate.swift in Sources */,
 				931577D823573BF500F378FE /* LightViewController.swift in Sources */,
 				9313048C235733AC00301AF0 /* SceneDelegate.swift in Sources */,

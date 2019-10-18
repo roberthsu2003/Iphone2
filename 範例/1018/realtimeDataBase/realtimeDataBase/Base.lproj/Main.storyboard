@@ -65,7 +65,7 @@
         <!--View Controller-->
         <scene sceneID="ccX-w0-Ril">
             <objects>
-                <viewController id="rks-9d-Ng6" sceneMemberID="viewController">
+                <viewController id="rks-9d-Ng6" customClass="RGBViewController" customModule="realtimeDataBase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QaQ-eg-bMF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
