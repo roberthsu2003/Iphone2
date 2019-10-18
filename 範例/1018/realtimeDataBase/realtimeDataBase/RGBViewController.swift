@@ -16,10 +16,7 @@ class RGBViewController: UIViewController {
         super.viewDidLoad()
         colorPickerView.color = UIColor.blue;
         self.view.addSubview(colorPickerView)
-        /*
-        colorPickerView.frame = view.frame;
-        colorPickerView.frame.origin.y = 20;
- */
+                
         colorPickerView.translatesAutoresizingMaskIntoConstraints = false;
         let guide = view.safeAreaLayoutGuide
         let topConstraint = colorPickerView.topAnchor.constraint(equalTo: guide.topAnchor, constant: 0)
@@ -37,10 +34,28 @@ class RGBViewController: UIViewController {
         ])
         
         
+        colorPickerView.addTarget(self, action: #selector(colorChange), for: .valueChanged)
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    
+    @objc func colorChange(_ sender:HRColorPickerView){
+        var rValue:CGFloat = 0.0;
+        var gValue:CGFloat = 0.0;
+        var bValue:CGFloat = 0.0;
+        var aValue:CGFloat = 0.0;
+        sender.color.getRed(&rValue, green: &gValue, blue: &bValue, alpha: &aValue)
+        let r = Int(rValue*255)
+        let g = Int(gValue*255)
+        let b = Int(bValue*255)
+        
+        print("r=\(r),g=\(g),b=\(b)");
+        
     }
 }
