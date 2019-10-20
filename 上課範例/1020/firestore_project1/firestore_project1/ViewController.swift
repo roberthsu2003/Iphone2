@@ -82,3 +82,20 @@ class ViewController: UITableViewController {
 
 }
 
+extension ViewController{
+    //UITableViewDataSource
+   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        return queryDocuments.count;
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        let queryDocumentSnapshot = queryDocuments[indexPath.row]
+        let presidentDict = queryDocumentSnapshot.data()
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
+        cell.textLabel?.text = presidentDict["name"] as? String;
+        cell.detailTextLabel?.text = presidentDict["url"] as? String
+        return cell;
+    }
+}
+
