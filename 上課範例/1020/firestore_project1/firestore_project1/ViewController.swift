@@ -30,6 +30,21 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("count:\(presidents)")
+        firestore.collection("presidents").order(by: "time", descending: true).addSnapshotListener { (snapshot:QuerySnapshot?, error:Error?) in
+            guard error == nil, snapshot != nil else{
+                print("error:\(error!.localizedDescription)")
+                return
+            }
+            
+            if snapshot!.isEmpty{
+                //出現匯入資料的按鈕
+                self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "匯入資料", style: .plain, target: self, action: #selector(self.importData(_:)))
+            }
+        }
+    }
+    
+    @objc func importData(_ sender:UIBarButtonItem){
+        print("匯入資料");
     }
 
 
