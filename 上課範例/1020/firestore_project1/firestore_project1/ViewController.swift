@@ -14,6 +14,8 @@ class ViewController: UITableViewController {
     //使用closure的執行，必需明確宣告資料類型
     //在closure內要傳出資料
     
+    lazy var firestore = Firestore.firestore()
+    
     lazy var presidents:[[String:String]] = {
         let path = Bundle.main.path(forResource: "PresidentList", ofType: "plist")
         guard let rootDictionary = NSDictionary(contentsOfFile: path!) as? [String:Any] else{
