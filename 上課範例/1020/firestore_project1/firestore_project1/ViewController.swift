@@ -39,12 +39,30 @@ class ViewController: UITableViewController {
             if snapshot!.isEmpty{
                 //出現匯入資料的按鈕
                 self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "匯入資料", style: .plain, target: self, action: #selector(self.importData(_:)))
+            }else{
+                //取出資料
+                print("取出資料");
             }
         }
     }
     
     @objc func importData(_ sender:UIBarButtonItem){
-        print("匯入資料");
+        let batch = firestore.batch();
+        for president in presidents{
+            let documentRef = firestore.collection("presidents").document()
+            var newPresident:[String:Any] = president
+            newPresident["time"] = Date().timeIntervalSince1970
+            batch.setData(newPresident, forDocument: documentRef)
+        }
+        
+        batch.commit { (error:Error?) in
+            guard error == nil else{
+                print("error:\(error!.localizedDescription)");
+                return
+            }
+            print("資料匯入完成");
+            self.navigationItem.rightBarButtonItem = nil;
+        }
     }
 
 
