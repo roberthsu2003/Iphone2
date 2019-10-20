@@ -16,6 +16,8 @@ class ViewController: UITableViewController {
     
     lazy var firestore = Firestore.firestore()
     
+    var queryDocuments:[QueryDocumentSnapshot] = [];
+    
     lazy var presidents:[[String:String]] = {
         let path = Bundle.main.path(forResource: "PresidentList", ofType: "plist")
         guard let rootDictionary = NSDictionary(contentsOfFile: path!) as? [String:Any] else{
@@ -41,7 +43,9 @@ class ViewController: UITableViewController {
                 self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "匯入資料", style: .plain, target: self, action: #selector(self.importData(_:)))
             }else{
                 //取出資料
-                print("取出資料");
+                print("取出資料")
+                self.queryDocuments = snapshot!.documents
+                self.tableView.reloadData();
             }
         }
     }
@@ -62,6 +66,16 @@ class ViewController: UITableViewController {
             }
             print("資料匯入完成");
             self.navigationItem.rightBarButtonItem = nil;
+            self.firestore.collection("presidents").order(by: "time", descending: true).addSnapshotListener(includeMetadataChanges: false) { (snapshot:QuerySnapshot?, error:Error?) in
+                guard error == nil else{
+                    print("error:\(error!.localizedDescription)");
+                    return;
+                }
+                self.queryDocuments = snapshot!.documents
+                self.tableView.reloadData();
+                print("資料匯入完成後，取出資料");
+                
+            }
         }
     }
 
