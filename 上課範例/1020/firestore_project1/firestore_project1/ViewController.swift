@@ -7,12 +7,20 @@
 //
 
 import UIKit
+import Firebase
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
+    //default value當有多行時,請使用closure執行
+    //使用closure的執行，必需明確宣告資料類型
+    //在closure內要傳出資料
+    
+    lazy var presidents:[[String:String]] = {        
+        return [[String:String]]();
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        print("count:\(self.presidents.count)")
     }
 
 

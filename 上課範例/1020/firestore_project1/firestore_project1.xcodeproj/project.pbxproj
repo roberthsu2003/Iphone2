@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		931E7F80235BFB8100944153 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 931E7F7F235BFB8100944153 /* Assets.xcassets */; };
 		931E7F83235BFB8100944153 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 931E7F81235BFB8100944153 /* LaunchScreen.storyboard */; };
 		931E7F8B235BFBDE00944153 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 931E7F8A235BFBDE00944153 /* GoogleService-Info.plist */; };
+		9389299B235C0F4F00433A48 /* PresidentList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9389299A235C0F4F00433A48 /* PresidentList.plist */; };
 		F9672AA712102BC31A7B0680 /* Pods_firestore_project1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B255FCDF2488002F7368304 /* Pods_firestore_project1.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		931E7F82235BFB8100944153 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		931E7F84235BFB8100944153 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		931E7F8A235BFBDE00944153 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9389299A235C0F4F00433A48 /* PresidentList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PresidentList.plist; sourceTree = "<group>"; };
 		F7CFEFE87BBE1105EB823ECA /* Pods-firestore_project1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firestore_project1.release.xcconfig"; path = "Target Support Files/Pods-firestore_project1/Pods-firestore_project1.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,7 +60,6 @@
 				85C8FE2FEDF1C56CD4F24957 /* Pods-firestore_project1.debug.xcconfig */,
 				F7CFEFE87BBE1105EB823ECA /* Pods-firestore_project1.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -83,6 +84,7 @@
 		931E7F75235BFB8000944153 /* firestore_project1 */ = {
 			isa = PBXGroup;
 			children = (
+				9389299A235C0F4F00433A48 /* PresidentList.plist */,
 				931E7F8A235BFBDE00944153 /* GoogleService-Info.plist */,
 				931E7F76235BFB8000944153 /* AppDelegate.swift */,
 				931E7F78235BFB8000944153 /* SceneDelegate.swift */,
@@ -158,6 +160,7 @@
 				931E7F83235BFB8100944153 /* LaunchScreen.storyboard in Resources */,
 				931E7F8B235BFBDE00944153 /* GoogleService-Info.plist in Resources */,
 				931E7F80235BFB8100944153 /* Assets.xcassets in Resources */,
+				9389299B235C0F4F00433A48 /* PresidentList.plist in Resources */,
 				931E7F7E235BFB8000944153 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
