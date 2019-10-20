@@ -97,5 +97,19 @@ extension ViewController{
         cell.detailTextLabel?.text = presidentDict["url"] as? String
         return cell;
     }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath){
+        if editingStyle == .delete{
+            let queryDocumentSnapshot = queryDocuments[indexPath.row]
+            let documentId = queryDocumentSnapshot.documentID;
+            firestore.collection("presidents").document(documentId).delete { (error:Error?) in
+                guard error == nil else{
+                    print("刪除失敗");
+                    return;
+                }
+                print("刪除成功");
+            }
+        }
+    }
 }
 
