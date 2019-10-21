@@ -27,13 +27,27 @@ class DHTViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         handle = Auth.auth().addStateDidChangeListener({ (auth:Auth, user:User?) in
-            print("authListener");
+            if let user = user {
+               //已經登入
+                self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登出", style: .plain, target: self, action: #selector(self.userLogout(_:)))
+            }else{
+                //尚未登入
+                self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登入", style: .plain, target: self, action: #selector(self.userLogin(_:)))
+            }
         })
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         Auth.auth().removeStateDidChangeListener(handle)
+    }
+    
+    @objc func userLogout(_ sender:UIBarButtonItem){
+        print("logout");
+    }
+    
+    @objc func userLogin(_ sender:UIBarButtonItem){
+        print("login");
     }
 
 }
