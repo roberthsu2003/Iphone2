@@ -30,6 +30,7 @@ class DHTViewController: UIViewController {
             if let user = user {
                //已經登入
                 self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登出", style: .plain, target: self, action: #selector(self.userLogout(_:)))
+                print(user.uid);
             }else{
                 //尚未登入
                 self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登入", style: .plain, target: self, action: #selector(self.userLogin(_:)))
@@ -47,7 +48,18 @@ class DHTViewController: UIViewController {
     }
     
     @objc func userLogin(_ sender:UIBarButtonItem){
-        print("login");
+        Auth.auth().signInAnonymously { (result:AuthDataResult?, error:Error?) in
+            guard error == nil, result != nil else{
+                print("暱名登入有錯誤:\(error!.localizedDescription)");
+                return
+            }
+            
+            let user = result!.user
+            if user.isAnonymous {
+                print("暱名登入成功")
+            }
+            
+        }
     }
 
 }
