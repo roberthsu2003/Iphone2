@@ -17,10 +17,18 @@ class DHTViewController: UIViewController {
     @IBOutlet var CelsiusIndexField:UITextField!
     var handle:AuthStateDidChangeListenerHandle!
     
+    var DHTref:DatabaseReference = Database.database().reference(withPath: "DHT")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        DHTref.observe(.value, with: { (snapshot:DataSnapshot) in
+            
+        }) { (error:Error) in
+            print("error:\(error.localizedDescription)");
+        }
+        
+        
     }
     
 
