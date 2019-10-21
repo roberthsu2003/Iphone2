@@ -16,6 +16,7 @@
 		9313049E2357340A00301AF0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9313049D2357340A00301AF0 /* GoogleService-Info.plist */; };
 		931577D823573BF500F378FE /* LightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931577D723573BF500F378FE /* LightViewController.swift */; };
 		93464CE92359DC4800A9C242 /* RGBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93464CE82359DC4800A9C242 /* RGBViewController.swift */; };
+		93716020235DD25A0087BE1D /* DHTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9371601F235DD25A0087BE1D /* DHTViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		9313049D2357340A00301AF0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		931577D723573BF500F378FE /* LightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightViewController.swift; sourceTree = "<group>"; };
 		93464CE82359DC4800A9C242 /* RGBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBViewController.swift; sourceTree = "<group>"; };
+		9371601F235DD25A0087BE1D /* DHTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DHTViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				93130494235733B000301AF0 /* LaunchScreen.storyboard */,
 				93130497235733B000301AF0 /* Info.plist */,
 				931577D723573BF500F378FE /* LightViewController.swift */,
+				9371601F235DD25A0087BE1D /* DHTViewController.swift */,
 			);
 			path = realtimeDataBase;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 			files = (
 				93464CE92359DC4800A9C242 /* RGBViewController.swift in Sources */,
 				9313048A235733AC00301AF0 /* AppDelegate.swift in Sources */,
+				93716020235DD25A0087BE1D /* DHTViewController.swift in Sources */,
 				931577D823573BF500F378FE /* LightViewController.swift in Sources */,
 				9313048C235733AC00301AF0 /* SceneDelegate.swift in Sources */,
 			);
