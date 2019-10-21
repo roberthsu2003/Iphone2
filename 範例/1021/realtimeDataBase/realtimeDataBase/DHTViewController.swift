@@ -44,7 +44,11 @@ class DHTViewController: UIViewController {
     }
     
     @objc func userLogout(_ sender:UIBarButtonItem){
-        print("logout");
+        guard  (try? Auth.auth().signOut()) != nil else{
+            print("登出失敗");
+            return
+        }
+        print("登出成功");
     }
     
     @objc func userLogin(_ sender:UIBarButtonItem){
