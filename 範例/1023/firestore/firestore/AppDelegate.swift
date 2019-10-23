@@ -7,10 +7,22 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
+    override init() {
+        super.init()
+        FirebaseApp.configure()
+        let _ = Auth.auth().addStateDidChangeListener { (auth:Auth, user:User?) in
+            if user == nil {
+                print("error:沒有任何人登入");
+            }else{
+                print("user:\(user!.uid)")
+            }
+        }
+    }
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
