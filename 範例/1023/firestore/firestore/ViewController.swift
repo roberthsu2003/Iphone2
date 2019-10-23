@@ -9,20 +9,20 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var presidents:NSDictionary = {
+    var presidents:[[String:String]] = {
         guard let path = Bundle.main.path(forResource: "PresidentList", ofType: "plist") else{
             print("解析失敗");
-            return NSDictionary();
+            return [[String:String]]();
         }
         
-        let presidents = NSDictionary(contentsOfFile: path) ?? NSDictionary();
-        print(presidents);
-        return presidents;
+        let presidentsRoot = NSDictionary(contentsOfFile: path) ?? NSDictionary();
+        
+        return presidentsRoot["presidents"] as! [[String:String]]
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        print(presidents);
     }
 
 
