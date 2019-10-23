@@ -53,7 +53,12 @@ class DHTViewController: UIViewController {
     }
     
     func delay(targetField field:UITextField,changeValue value:String){
-        
+        field.textColor = UIColor.red;
+        field.text = value;
+        let when = DispatchTime.now() + 0.5;
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            field.textColor = UIColor.black
+        }
     }
     
 
