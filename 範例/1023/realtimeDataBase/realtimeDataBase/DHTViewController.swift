@@ -24,16 +24,35 @@ class DHTViewController: UIViewController {
 
         DHTref.observe(.value, with: { (snapshot:DataSnapshot) in
            let dhtDict = snapshot.value as! [String:String]
-           self.HumidityField.text = "濕度:\(dhtDict["Humidity"] ?? "不明")"
-           self.FahrenheitField.text = "華氏:\(dhtDict["Fahrenheit"] ?? "不明")"
-           self.FahrenheitIndexField.text = "華氏指數:\(dhtDict["FahrenheitIndex"] ?? "不明")"
-           self.CelsiusField.text = "攝氏:\(dhtDict["Celsius"] ?? "不明")"
-           self.CelsiusIndexField.text = "攝氏指數:\(dhtDict["CelsiusIndex"] ?? "不明")"
+            if self.HumidityField.text != "濕度:\(dhtDict["Humidity"] ?? "不明")"{
+                let newValue = "濕度:\(dhtDict["Humidity"] ?? "不明")"
+                self.delay(targetField: self.HumidityField, changeValue: newValue)
+            }
+            if self.FahrenheitField.text != "華氏:\(dhtDict["Fahrenheit"] ?? "不明")"{
+                let newValue = "華氏:\(dhtDict["Fahrenheit"] ?? "不明")"
+                self.delay(targetField: self.FahrenheitField, changeValue: newValue)
+            }
+            if self.FahrenheitIndexField.text != "華氏指數:\(dhtDict["FahrenheitIndex"] ?? "不明")"{
+                let newValue = "華氏指數:\(dhtDict["FahrenheitIndex"] ?? "不明")"
+                self.delay(targetField: self.FahrenheitIndexField, changeValue: newValue)
+            }
+            if self.CelsiusField.text != "攝氏:\(dhtDict["Celsius"] ?? "不明")"{
+                let newValue = "攝氏:\(dhtDict["Celsius"] ?? "不明")"
+                self.delay(targetField: self.CelsiusField, changeValue: newValue)
+            }
+            if self.CelsiusIndexField.text != "攝氏指數:\(dhtDict["CelsiusIndex"] ?? "不明")"{
+                let newValue = "攝氏指數:\(dhtDict["CelsiusIndex"] ?? "不明")"
+                self.delay(targetField: self.CelsiusIndexField, changeValue: newValue)
+            }
             
         }) { (error:Error) in
             print("error:\(error.localizedDescription)");
         }
         
+        
+    }
+    
+    func delay(targetField field:UITextField,changeValue value:String){
         
     }
     
