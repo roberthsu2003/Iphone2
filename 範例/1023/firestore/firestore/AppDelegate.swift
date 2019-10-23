@@ -17,9 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         let _ = Auth.auth().addStateDidChangeListener { (auth:Auth, user:User?) in
             if user == nil {
-                print("error:沒有任何人登入");
+                Auth.auth().signInAnonymously { (result:AuthDataResult?, error:Error?) in
+                    guard result != nil, error == nil else{
+                        print("登入失敗");
+                        return
+                    }
+                    print("暱名登入成功uid:\(result!.user.uid)");
+                }
             }else{
-                print("user:\(user!.uid)")
+                print("使用者已經登入");
             }
         }
     }
