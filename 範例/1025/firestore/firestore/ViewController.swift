@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
     var presidents:[[String:String]] = {
         guard let path = Bundle.main.path(forResource: "PresidentList", ofType: "plist") else{
             print("解析失敗");
@@ -58,7 +58,8 @@ class ViewController: UIViewController {
             
             if snapshot!.isEmpty{
                 //匯入資料
-                print("匯入資料");
+                //print("匯入資料");
+                self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "匯入資料", style: .plain, target: self, action: #selector(self.importData(_:)))
             }else{
                 //資料已經匯入
                 print("資料已經匯入");
@@ -71,7 +72,10 @@ class ViewController: UIViewController {
         super.viewWillDisappear(animated)
         handler.remove();
     }
-
+    
+    @objc func importData(_ sender:UIBarButtonItem){
+        print("匯入資料");
+    }
 
 }
 
