@@ -16,6 +16,7 @@
 		9368241B2360770000FF8A46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 936824192360770000FF8A46 /* LaunchScreen.storyboard */; };
 		936824232360775C00FF8A46 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 936824222360775B00FF8A46 /* GoogleService-Info.plist */; };
 		9368242523608D1E00FF8A46 /* PresidentList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9368242423608D1E00FF8A46 /* PresidentList.plist */; };
+		93B5ED0723632EFD004CAA2E /* ShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B5ED0623632EFD004CAA2E /* ShowViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		9368241C2360770000FF8A46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		936824222360775B00FF8A46 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9368242423608D1E00FF8A46 /* PresidentList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PresidentList.plist; sourceTree = "<group>"; };
+		93B5ED0623632EFD004CAA2E /* ShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowViewController.swift; sourceTree = "<group>"; };
 		DA98B9452CBD3B491F2FC8DA /* Pods-firestore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firestore.debug.xcconfig"; path = "Target Support Files/Pods-firestore/Pods-firestore.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				9368242423608D1E00FF8A46 /* PresidentList.plist */,
+				93B5ED0623632EFD004CAA2E /* ShowViewController.swift */,
 				936824222360775B00FF8A46 /* GoogleService-Info.plist */,
 				9368240E236076FD00FF8A46 /* AppDelegate.swift */,
 				93682410236076FD00FF8A46 /* SceneDelegate.swift */,
@@ -217,6 +220,7 @@
 				93682413236076FD00FF8A46 /* ViewController.swift in Sources */,
 				9368240F236076FD00FF8A46 /* AppDelegate.swift in Sources */,
 				93682411236076FD00FF8A46 /* SceneDelegate.swift in Sources */,
+				93B5ED0723632EFD004CAA2E /* ShowViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
