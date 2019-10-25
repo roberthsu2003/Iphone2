@@ -110,3 +110,29 @@ class ViewController: UITableViewController {
 
 }
 
+extension ViewController{
+    //UITableViewDataSource
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        return queryDocuments.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        let document = queryDocuments[indexPath.row]
+        let president = document.data()
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
+        cell.textLabel?.text = president["name"] as? String
+        //轉換timestamp為date字串格式
+        let unixtimeInterval = president["time"] as? Double ?? 0.0
+        let date = Date(timeIntervalSince1970: unixtimeInterval)
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(abbreviation: "GMT+8") //Set timezone that you want
+        dateFormatter.locale = NSLocale.current
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm" //Specify your format that you want
+        let strDate = dateFormatter.string(from: date)
+        
+        cell.detailTextLabel?.text = strDate
+        return cell;
+    }
+}
+
