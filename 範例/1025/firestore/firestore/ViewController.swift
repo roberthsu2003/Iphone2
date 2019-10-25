@@ -23,6 +23,7 @@ class ViewController: UITableViewController {
     
     var firestore = Firestore.firestore()
     var handler:ListenerRegistration!;
+    var queryDocuments = [QueryDocumentSnapshot]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +64,8 @@ class ViewController: UITableViewController {
             }else{
                 //資料已經匯入
                 print("資料已經匯入");
+                self.queryDocuments = snapshot!.documents
+                self.tableView.reloadData();
             }
         
         }
@@ -90,9 +93,20 @@ class ViewController: UITableViewController {
                 return;
             }
             self.navigationItem.rightBarButtonItem = nil;
-            print("匯入成功");
+            //getDocuments只會執行一次
+            self.firestore.collection("presidents").getDocuments { (snapshot:QuerySnapshot?, error:Error?) in
+                guard snapshot != nil, error == nil else{
+                    print("get presidents 錯誤");
+                    return;
+                }
+                 self.queryDocuments = snapshot!.documents
+                 self.tableView.reloadData();
+                }
+            
+            }
+            
         }
-    }
+    
 
 }
 
