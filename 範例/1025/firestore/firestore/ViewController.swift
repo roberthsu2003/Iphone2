@@ -107,6 +107,14 @@ class ViewController: UITableViewController {
             
         }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goWebView" {
+            let path = sender as? String ?? "";
+            let showViewController = segue.destination as! ShowViewController
+            showViewController.webPath = path;
+        }
+    }
+    
 
 }
 
@@ -133,6 +141,17 @@ extension ViewController{
         
         cell.detailTextLabel?.text = strDate
         return cell;
+    }
+}
+
+
+extension ViewController{
+    //UITableViewDelegate
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        let document = queryDocuments[indexPath.row]
+        let president = document.data()
+        let path = president["url"] as? String ?? ""
+        performSegue(withIdentifier: "goWebView", sender: path)
     }
 }
 
