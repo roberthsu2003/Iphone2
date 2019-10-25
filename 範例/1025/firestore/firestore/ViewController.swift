@@ -22,9 +22,12 @@ class ViewController: UIViewController {
     }()
     
     var firestore = Firestore.firestore()
+    var handler:ListenerRegistration!;
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        /*
+        //getDocuments只會執行一次
         firestore.collection("presidents").getDocuments { (snapshot:QuerySnapshot?, error:Error?) in
             guard snapshot != nil, error == nil else{
                 print("get presidents 錯誤");
@@ -38,7 +41,35 @@ class ViewController: UIViewController {
                 //資料已經匯入
                 print("資料已經匯入");
             }
+        
         }
+ */
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //最少會執行一次，資料改變時，都會自動執行
+        handler =  firestore.collection("presidents").addSnapshotListener { (snapshot:QuerySnapshot?, error:Error?) in
+            guard snapshot != nil, error == nil else{
+                print("get presidents 錯誤");
+                return;
+            }
+            
+            if snapshot!.isEmpty{
+                //匯入資料
+                print("匯入資料");
+            }else{
+                //資料已經匯入
+                print("資料已經匯入");
+            }
+        
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        handler.remove();
     }
 
 
