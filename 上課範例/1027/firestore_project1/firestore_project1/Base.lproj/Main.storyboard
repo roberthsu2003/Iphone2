@@ -202,7 +202,13 @@
                             <outlet property="delegate" destination="GZz-kK-D3b" id="Sat-t9-Xxu"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Edit" id="C7q-ft-xri"/>
+                    <navigationItem key="navigationItem" title="Edit" id="C7q-ft-xri">
+                        <barButtonItem key="rightBarButtonItem" title="update" id="xpY-L8-4cQ">
+                            <connections>
+                                <action selector="userPressUpdate:" destination="GZz-kK-D3b" id="Z82-EY-uIo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="nameField" destination="K3x-Qy-CyF" id="uga-r4-Q0C"/>
                         <outlet property="urlField" destination="3E0-kP-oiw" id="7uH-wF-z5Y"/>
