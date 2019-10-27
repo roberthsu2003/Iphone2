@@ -67,6 +67,15 @@ class ViewController: UITableViewController {
         lintenerHandler.remove();
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goShowWeb" {
+            let webPath = sender as? String ?? "";
+            let showWebViewController = segue.destination as! ShowWebViewController
+            showWebViewController.webPath = webPath;
+            
+        }
+    }
+    
     @objc func importData(_ sender:UIBarButtonItem){
         let batch = firestore.batch();
         for president in presidents{

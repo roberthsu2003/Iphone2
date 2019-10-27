@@ -7,13 +7,23 @@
 //
 
 import UIKit
+import WebKit
 
 class ShowWebViewController: UIViewController {
-
+    @IBOutlet var webView:WKWebView!;
+    var webPath:String!;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        guard let webURL = URL(string: webPath) else{
+            print("url有錯誤");
+            return
+        }
+        
+        let webRequest = URLRequest(url: webURL);
+        let _ = webView.load(webRequest)
+        
+        
     }
     
 
