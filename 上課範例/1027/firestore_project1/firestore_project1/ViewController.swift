@@ -117,7 +117,14 @@ extension ViewController{
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
         cell.textLabel?.text = presidentDict["name"] as? String;
-        cell.detailTextLabel?.text = presidentDict["url"] as? String
+        let addTimestamp = presidentDict["time"] as? Double ?? 0.0;
+        let date = Date(timeIntervalSince1970: addTimestamp)
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(abbreviation: "GMT+8") //Set timezone that you want
+        dateFormatter.locale = NSLocale.current
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm" //Specify your format that you want
+        let strDate = dateFormatter.string(from: date)
+        cell.detailTextLabel?.text = strDate
         return cell;
     }
     
