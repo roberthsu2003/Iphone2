@@ -85,7 +85,8 @@ class ViewController: UITableViewController {
             self.navigationItem.rightBarButtonItems = [
                 UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.addData(_:)))
             ];
-            self.firestore.collection("presidents").order(by: "time", descending: true).addSnapshotListener(includeMetadataChanges: false) { (snapshot:QuerySnapshot?, error:Error?) in
+           
+            self.firestore.collection("presidents").order(by: "time", descending: true).getDocuments { (snapshot:QuerySnapshot?, error:Error?) in
                 guard error == nil else{
                     print("error:\(error!.localizedDescription)");
                     return;
@@ -93,7 +94,6 @@ class ViewController: UITableViewController {
                 self.queryDocuments = snapshot!.documents
                 self.tableView.reloadData();
                 print("資料匯入完成後，取出資料");
-                
             }
         }
     }
