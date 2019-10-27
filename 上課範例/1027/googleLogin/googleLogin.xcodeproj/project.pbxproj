@@ -1,0 +1,433 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7CA4D0561402187B8E53A879 /* Pods_googleLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE0BD65FD53B871A72AAE53E /* Pods_googleLogin.framework */; };
+		93CE2EE423658EBE005DDDCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CE2EE323658EBE005DDDCC /* AppDelegate.swift */; };
+		93CE2EE623658EBE005DDDCC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CE2EE523658EBE005DDDCC /* SceneDelegate.swift */; };
+		93CE2EE823658EBE005DDDCC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CE2EE723658EBE005DDDCC /* ViewController.swift */; };
+		93CE2EEB23658EBE005DDDCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93CE2EE923658EBE005DDDCC /* Main.storyboard */; };
+		93CE2EED23658EC0005DDDCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93CE2EEC23658EC0005DDDCC /* Assets.xcassets */; };
+		93CE2EF023658EC0005DDDCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93CE2EEE23658EC0005DDDCC /* LaunchScreen.storyboard */; };
+		93CE2EF823658FF3005DDDCC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93CE2EF723658FF3005DDDCC /* GoogleService-Info.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		93CE2EE023658EBE005DDDCC /* googleLogin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = googleLogin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		93CE2EE323658EBE005DDDCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		93CE2EE523658EBE005DDDCC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		93CE2EE723658EBE005DDDCC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		93CE2EEA23658EBE005DDDCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		93CE2EEC23658EC0005DDDCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		93CE2EEF23658EC0005DDDCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		93CE2EF123658EC0005DDDCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93CE2EF723658FF3005DDDCC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C549B910D912FDF230F6AB35 /* Pods-googleLogin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-googleLogin.release.xcconfig"; path = "Target Support Files/Pods-googleLogin/Pods-googleLogin.release.xcconfig"; sourceTree = "<group>"; };
+		C8EEEA84B25DA9CA2FB2E05C /* Pods-googleLogin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-googleLogin.debug.xcconfig"; path = "Target Support Files/Pods-googleLogin/Pods-googleLogin.debug.xcconfig"; sourceTree = "<group>"; };
+		DE0BD65FD53B871A72AAE53E /* Pods_googleLogin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_googleLogin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		93CE2EDD23658EBE005DDDCC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CA4D0561402187B8E53A879 /* Pods_googleLogin.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4868AAA2FFA9A6B5CD9EF567 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C8EEEA84B25DA9CA2FB2E05C /* Pods-googleLogin.debug.xcconfig */,
+				C549B910D912FDF230F6AB35 /* Pods-googleLogin.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		93CE2ED723658EBE005DDDCC = {
+			isa = PBXGroup;
+			children = (
+				93CE2EE223658EBE005DDDCC /* googleLogin */,
+				93CE2EE123658EBE005DDDCC /* Products */,
+				4868AAA2FFA9A6B5CD9EF567 /* Pods */,
+				942B49C6495484A41138F096 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		93CE2EE123658EBE005DDDCC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				93CE2EE023658EBE005DDDCC /* googleLogin.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		93CE2EE223658EBE005DDDCC /* googleLogin */ = {
+			isa = PBXGroup;
+			children = (
+				93CE2EF723658FF3005DDDCC /* GoogleService-Info.plist */,
+				93CE2EE323658EBE005DDDCC /* AppDelegate.swift */,
+				93CE2EE523658EBE005DDDCC /* SceneDelegate.swift */,
+				93CE2EE723658EBE005DDDCC /* ViewController.swift */,
+				93CE2EE923658EBE005DDDCC /* Main.storyboard */,
+				93CE2EEC23658EC0005DDDCC /* Assets.xcassets */,
+				93CE2EEE23658EC0005DDDCC /* LaunchScreen.storyboard */,
+				93CE2EF123658EC0005DDDCC /* Info.plist */,
+			);
+			path = googleLogin;
+			sourceTree = "<group>";
+		};
+		942B49C6495484A41138F096 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DE0BD65FD53B871A72AAE53E /* Pods_googleLogin.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		93CE2EDF23658EBE005DDDCC /* googleLogin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93CE2EF423658EC0005DDDCC /* Build configuration list for PBXNativeTarget "googleLogin" */;
+			buildPhases = (
+				ACD5AF03D053D218030D5023 /* [CP] Check Pods Manifest.lock */,
+				93CE2EDC23658EBE005DDDCC /* Sources */,
+				93CE2EDD23658EBE005DDDCC /* Frameworks */,
+				93CE2EDE23658EBE005DDDCC /* Resources */,
+				963EFAC7AC002D1606E714CF /* [CP] Embed Pods Frameworks */,
+				3302DF8792781BC60CEBBBA7 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = googleLogin;
+			productName = googleLogin;
+			productReference = 93CE2EE023658EBE005DDDCC /* googleLogin.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		93CE2ED823658EBE005DDDCC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1110;
+				LastUpgradeCheck = 1110;
+				ORGANIZATIONNAME = "徐國堂";
+				TargetAttributes = {
+					93CE2EDF23658EBE005DDDCC = {
+						CreatedOnToolsVersion = 11.1;
+					};
+				};
+			};
+			buildConfigurationList = 93CE2EDB23658EBE005DDDCC /* Build configuration list for PBXProject "googleLogin" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 93CE2ED723658EBE005DDDCC;
+			productRefGroup = 93CE2EE123658EBE005DDDCC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				93CE2EDF23658EBE005DDDCC /* googleLogin */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		93CE2EDE23658EBE005DDDCC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93CE2EF023658EC0005DDDCC /* LaunchScreen.storyboard in Resources */,
+				93CE2EF823658FF3005DDDCC /* GoogleService-Info.plist in Resources */,
+				93CE2EED23658EC0005DDDCC /* Assets.xcassets in Resources */,
+				93CE2EEB23658EBE005DDDCC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3302DF8792781BC60CEBBBA7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-googleLogin/Pods-googleLogin-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-googleLogin/Pods-googleLogin-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-googleLogin/Pods-googleLogin-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		963EFAC7AC002D1606E714CF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-googleLogin/Pods-googleLogin-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-googleLogin/Pods-googleLogin-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-googleLogin/Pods-googleLogin-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ACD5AF03D053D218030D5023 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-googleLogin-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		93CE2EDC23658EBE005DDDCC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93CE2EE823658EBE005DDDCC /* ViewController.swift in Sources */,
+				93CE2EE423658EBE005DDDCC /* AppDelegate.swift in Sources */,
+				93CE2EE623658EBE005DDDCC /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		93CE2EE923658EBE005DDDCC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				93CE2EEA23658EBE005DDDCC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		93CE2EEE23658EC0005DDDCC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				93CE2EEF23658EC0005DDDCC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		93CE2EF223658EC0005DDDCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		93CE2EF323658EC0005DDDCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		93CE2EF523658EC0005DDDCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8EEEA84B25DA9CA2FB2E05C /* Pods-googleLogin.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = googleLogin/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.roberthsu2003.ios1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		93CE2EF623658EC0005DDDCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C549B910D912FDF230F6AB35 /* Pods-googleLogin.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = googleLogin/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.roberthsu2003.ios1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		93CE2EDB23658EBE005DDDCC /* Build configuration list for PBXProject "googleLogin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93CE2EF223658EC0005DDDCC /* Debug */,
+				93CE2EF323658EC0005DDDCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93CE2EF423658EC0005DDDCC /* Build configuration list for PBXNativeTarget "googleLogin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93CE2EF523658EC0005DDDCC /* Debug */,
+				93CE2EF623658EC0005DDDCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 93CE2ED823658EBE005DDDCC /* Project object */;
+}
