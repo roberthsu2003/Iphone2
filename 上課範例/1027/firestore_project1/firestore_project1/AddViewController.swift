@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import Firebase
 
 class AddViewController: UITableViewController {
     @IBOutlet var nameField:UITextField!
     @IBOutlet var urlField:UITextField!
+    let firestore = Firestore.firestore();
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +40,15 @@ class AddViewController: UITableViewController {
     }
     
     func saveToFireStore(userData user:[String:Any]){
-        print(user)
+        firestore.collection("presidents").document().setData(user) { (error:Error?) in
+            guard error == nil else{
+                print(error!.localizedDescription);
+                return;
+            }
+            
+            print("資料加入成功");
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
 }
