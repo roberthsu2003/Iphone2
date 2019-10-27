@@ -19,7 +19,26 @@ class AddViewController: UITableViewController {
     }
     
     @IBAction func userAdd(_ sender:UIBarButtonItem){
-        
+        switch(nameField.text!, urlField.text!){
+            case ("",""):
+                print("不能是空的欄位");
+            
+            case(_,""):
+                print("url欄位是空的");
+            
+            case("",_):
+                print("name欄位不能是空的");
+          case let(name,url):
+                saveToFireStore(userData: [
+                    "name":name,
+                    "url":url,
+                    "time":Date().timeIntervalSince1970
+                ])
+        }
+    }
+    
+    func saveToFireStore(userData user:[String:Any]){
+        print(user)
     }
     
 }
