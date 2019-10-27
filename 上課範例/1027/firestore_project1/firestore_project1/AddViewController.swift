@@ -9,6 +9,12 @@
 import UIKit
 import Firebase
 
+enum Media {
+  case Book(title: String, author: String, year: Int)
+  case Movie(title: String, director: String, year: Int)
+  case WebSite(urlString: String)
+}
+
 class AddViewController: UITableViewController {
     @IBOutlet var nameField:UITextField!
     @IBOutlet var urlField:UITextField!
@@ -16,8 +22,18 @@ class AddViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
+        let m = Media.Movie(title: "Captain America: Civil War", director: "Russo Brothers", year: 2016)
+        /*
+        switch m {
+        case let Media.Movie(title, _, _):
+            print(title)
+        default:
+            print("no")
+        }
+ */
+        if case let Media.Movie(title,  _,  _) = m{
+            print(title)
+        }
     }
     
     @IBAction func userAdd(_ sender:UIBarButtonItem){
