@@ -128,6 +128,8 @@ extension ViewController{
         let presidentDict = queryDocumentSnapshot.data()
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
+        //cell.accessoryView = UIImageView(image: UIImage(named: "editBtn"))
+        cell.accessoryType = .detailButton;
         cell.textLabel?.text = presidentDict["name"] as? String;
         let addTimestamp = presidentDict["time"] as? Double ?? 0.0;
         let date = Date(timeIntervalSince1970: addTimestamp)
@@ -163,6 +165,11 @@ extension ViewController{
         let webPath = presidentDic["url"] as? String ?? "https://www.google.com.tw"
         performSegue(withIdentifier: "goShowWeb", sender: webPath);
         
+    }
+    
+    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath){
+         let president = queryDocuments[indexPath.row]
+         performSegue(withIdentifier: "goEdit", sender: president)
     }
 }
 
