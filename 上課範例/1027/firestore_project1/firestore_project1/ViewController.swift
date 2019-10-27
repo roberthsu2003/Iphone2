@@ -77,6 +77,12 @@ class ViewController: UITableViewController {
             showWebViewController.webPath = webPath;
             
         }
+        
+        if segue.identifier == "goEdit"{
+            let president = sender as! QueryDocumentSnapshot
+            let editViewController = segue.destination as! EditViewController
+            editViewController.president = president;
+        }
     }
     
     @objc func importData(_ sender:UIBarButtonItem){

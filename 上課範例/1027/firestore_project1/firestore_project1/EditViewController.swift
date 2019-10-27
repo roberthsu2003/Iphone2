@@ -7,15 +7,18 @@
 //
 
 import UIKit
+import Firebase
 
 class EditViewController: UITableViewController {
     @IBOutlet var nameField:UITextField!
     @IBOutlet var urlField:UITextField!
+    var president:QueryDocumentSnapshot!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let presidentDic = president.data()
+        print("presidentDic:\(presidentDic)")
     }
     
 
