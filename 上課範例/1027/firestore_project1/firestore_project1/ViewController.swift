@@ -29,10 +29,18 @@ class ViewController: UITableViewController {
         return presidents;
     }()
     
+    var lintenerHandler:ListenerRegistration!;
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("count:\(presidents)")
-        firestore.collection("presidents").order(by: "time", descending: true).addSnapshotListener { (snapshot:QuerySnapshot?, error:Error?) in
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        lintenerHandler = firestore.collection("presidents").order(by: "time", descending: true).addSnapshotListener { (snapshot:QuerySnapshot?, error:Error?) in
             guard error == nil, snapshot != nil else{
                 print("error:\(error!.localizedDescription)")
                 return
@@ -51,6 +59,12 @@ class ViewController: UITableViewController {
                 self.tableView.reloadData();
             }
         }
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated);
+        lintenerHandler.remove();
     }
     
     @objc func importData(_ sender:UIBarButtonItem){
@@ -87,13 +101,13 @@ class ViewController: UITableViewController {
     @objc func addData(_ sender:UIBarButtonItem){
         print("add");
     }
-
-
+    
+    
 }
 
 extension ViewController{
     //UITableViewDataSource
-   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return queryDocuments.count;
     }
     
