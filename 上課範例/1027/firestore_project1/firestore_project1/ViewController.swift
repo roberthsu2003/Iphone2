@@ -57,6 +57,9 @@ class ViewController: UITableViewController {
                 print("取出資料")
                 self.queryDocuments = snapshot!.documents
                 self.tableView.reloadData();
+                self.navigationItem.rightBarButtonItems = [
+                    UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.addData(_:)))
+                ];
             }
         }
         
@@ -108,7 +111,7 @@ class ViewController: UITableViewController {
     }
     
     @objc func addData(_ sender:UIBarButtonItem){
-        print("add");
+        performSegue(withIdentifier: "goAdd", sender: nil);
     }
     
     

@@ -21,8 +21,7 @@ class ShowWebViewController: UIViewController {
         }
         
         let webRequest = URLRequest(url: webURL);
-        let _ = webView.load(webRequest)
-        
+        let _ = webView.load(webRequest)       
         
     }
     
