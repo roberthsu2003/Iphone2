@@ -16,6 +16,7 @@
 		931E7F8B235BFBDE00944153 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 931E7F8A235BFBDE00944153 /* GoogleService-Info.plist */; };
 		9389299B235C0F4F00433A48 /* PresidentList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9389299A235C0F4F00433A48 /* PresidentList.plist */; };
 		939F81AC236544240045734F /* ShowWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939F81AB236544240045734F /* ShowWebViewController.swift */; };
+		939F81AE236553180045734F /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939F81AD236553180045734F /* AddViewController.swift */; };
 		F9672AA712102BC31A7B0680 /* Pods_firestore_project1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B255FCDF2488002F7368304 /* Pods_firestore_project1.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		931E7F8A235BFBDE00944153 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9389299A235C0F4F00433A48 /* PresidentList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PresidentList.plist; sourceTree = "<group>"; };
 		939F81AB236544240045734F /* ShowWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowWebViewController.swift; sourceTree = "<group>"; };
+		939F81AD236553180045734F /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		F7CFEFE87BBE1105EB823ECA /* Pods-firestore_project1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firestore_project1.release.xcconfig"; path = "Target Support Files/Pods-firestore_project1/Pods-firestore_project1.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,6 +98,7 @@
 				931E7F81235BFB8100944153 /* LaunchScreen.storyboard */,
 				931E7F84235BFB8100944153 /* Info.plist */,
 				939F81AB236544240045734F /* ShowWebViewController.swift */,
+				939F81AD236553180045734F /* AddViewController.swift */,
 			);
 			path = firestore_project1;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				939F81AE236553180045734F /* AddViewController.swift in Sources */,
 				939F81AC236544240045734F /* ShowWebViewController.swift in Sources */,
 				931E7F7B235BFB8000944153 /* ViewController.swift in Sources */,
 				931E7F77235BFB8000944153 /* AppDelegate.swift in Sources */,
