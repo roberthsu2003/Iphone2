@@ -143,3 +143,14 @@ extension ViewController{
     }
 }
 
+extension ViewController{
+    //UITableViewDelegate
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        let president = queryDocuments[indexPath.row]
+        let presidentDic = president.data()
+        let webPath = presidentDic["url"] as? String ?? "https://www.google.com.tw"
+        performSegue(withIdentifier: "goShowWeb", sender: webPath);
+        
+    }
+}
+
