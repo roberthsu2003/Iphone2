@@ -152,6 +152,18 @@ extension ViewController{
         cell.detailTextLabel?.text = strDate
         return cell;
     }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath){
+        let document = queryDocuments[indexPath.row]
+        let documentID = document.documentID
+        firestore.collection("presidents").document(documentID).delete { (error:Error?) in
+            guard error == nil else{
+                print(error!.localizedDescription);
+                return
+            }
+            print("刪除成功");
+        }
+    }
 }
 
 
@@ -163,6 +175,8 @@ extension ViewController{
         let path = president["url"] as? String ?? ""
         performSegue(withIdentifier: "goWebView", sender: path)
     }
+    
+    
 }
 
 
