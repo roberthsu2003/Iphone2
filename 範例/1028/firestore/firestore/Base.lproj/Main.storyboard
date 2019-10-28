@@ -49,7 +49,9 @@
                     <navigationItem key="navigationItem" id="jo7-CW-3Ff"/>
                     <connections>
                         <segue destination="79K-RR-q8A" kind="show" identifier="goWebView" id="koG-xl-VNw"/>
-                        <segue destination="pYu-Rm-y3n" kind="presentation" identifier="goAdd" id="OM9-v9-pAC"/>
+                        <segue destination="pYu-Rm-y3n" kind="popoverPresentation" identifier="goAdd" popoverAnchorView="jxY-rf-8rL" id="4Ll-kE-VoK">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xng-1P-LLA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

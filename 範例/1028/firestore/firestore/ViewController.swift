@@ -113,6 +113,8 @@ class ViewController: UITableViewController {
             let path = sender as? String ?? "";
             let showViewController = segue.destination as! ShowViewController
             showViewController.webPath = path;
+        } else if segue.identifier == "goAdd" {
+            segue.destination.popoverPresentationController?.delegate = self;
         }
     }
     
@@ -157,6 +159,13 @@ extension ViewController{
         let president = document.data()
         let path = president["url"] as? String ?? ""
         performSegue(withIdentifier: "goWebView", sender: path)
+    }
+}
+
+
+extension ViewController:UIPopoverPresentationControllerDelegate{
+    func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle{
+        return .none;
     }
 }
 
