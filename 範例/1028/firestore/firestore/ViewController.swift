@@ -139,6 +139,7 @@ extension ViewController{
         let president = document.data()
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
+        cell.accessoryType = .detailButton
         cell.textLabel?.text = president["name"] as? String
         //轉換timestamp為date字串格式
         let unixtimeInterval = president["time"] as? Double ?? 0.0
@@ -176,6 +177,9 @@ extension ViewController{
         performSegue(withIdentifier: "goWebView", sender: path)
     }
     
+    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath){
+        print(indexPath.row);
+    }
     
 }
 
