@@ -119,7 +119,8 @@ class ViewController: UITableViewController {
             
         }else if segue.identifier == "goEdit"{
             let documentSnapshot = sender as! QueryDocumentSnapshot;
-            let editViewController = segue.destination as! EditViewController
+            let navigationController = segue.destination as! UINavigationController
+            let editViewController = navigationController.topViewController! as! EditViewController
             editViewController.documentSnapshot = documentSnapshot
         }
     }
