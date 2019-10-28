@@ -117,7 +117,7 @@ class ViewController: UITableViewController {
     }
     
     @objc func addPresident(_ sender:UIBarButtonItem){
-        print("addPresident");
+        performSegue(withIdentifier: "goAdd", sender: nil)
     }
     
 
