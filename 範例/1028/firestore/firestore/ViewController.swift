@@ -115,6 +115,7 @@ class ViewController: UITableViewController {
             showViewController.webPath = path;
         } else if segue.identifier == "goAdd" {
             segue.destination.popoverPresentationController?.delegate = self;
+            
         }
     }
     
@@ -166,6 +167,10 @@ extension ViewController{
 extension ViewController:UIPopoverPresentationControllerDelegate{
     func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle{
         return .none;
+    }
+    
+    func presentationControllerShouldDismiss(_ presentationController: UIPresentationController) -> Bool{
+        return false;
     }
 }
 

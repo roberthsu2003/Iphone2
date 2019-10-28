@@ -9,7 +9,9 @@
 import UIKit
 
 class AddViewController: UITableViewController {
-
+    @IBOutlet var nameField:UITextField!
+    @IBOutlet var urlField:UITextField!;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
