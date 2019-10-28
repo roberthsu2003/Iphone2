@@ -114,6 +114,8 @@ class ViewController: UITableViewController {
             let showViewController = segue.destination as! ShowViewController
             showViewController.webPath = path;
         } else if segue.identifier == "goAdd" {
+            segue.destination.preferredContentSize = CGSize(width: 300, height: 220)          
+            
             segue.destination.popoverPresentationController?.delegate = self;
             
         }

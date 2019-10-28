@@ -51,7 +51,7 @@
                     </navigationItem>
                     <connections>
                         <segue destination="79K-RR-q8A" kind="show" identifier="goWebView" id="koG-xl-VNw"/>
-                        <segue destination="pYu-Rm-y3n" kind="popoverPresentation" identifier="goAdd" popoverAnchorBarButtonItem="UfC-Eh-POY" id="4Ll-kE-VoK">
+                        <segue destination="pYu-Rm-y3n" kind="popoverPresentation" identifier="goAdd" popoverAnchorBarButtonItem="UfC-Eh-POY" id="m60-0w-HMs">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                         </segue>
                     </connections>
@@ -60,7 +60,7 @@
             </objects>
             <point key="canvasLocation" x="412.5" y="-185"/>
         </scene>
-        <!--Add View Controller-->
+        <!--AddPresident-->
         <scene sceneID="5ud-5I-31X">
             <objects>
                 <tableViewController id="LwD-rB-EGr" customClass="AddViewController" customModule="firestore" customModuleProvider="target" sceneMemberID="viewController">
@@ -124,7 +124,9 @@
                             <outlet property="delegate" destination="LwD-rB-EGr" id="hif-H8-JSG"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="rrp-ED-lMG"/>
+                    <navigationItem key="navigationItem" title="AddPresident" id="rrp-ED-lMG">
+                        <barButtonItem key="rightBarButtonItem" title="完成" id="C7p-Fg-5vY"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="nameField" destination="HrG-Fs-rfg" id="1w3-j2-rFk"/>
                         <outlet property="urlField" destination="8uu-Fy-uOs" id="eTT-bv-c8B"/>
@@ -175,7 +177,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="o6Z-C0-vcF" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4YG-A6-E70">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
