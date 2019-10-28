@@ -7,19 +7,22 @@
 //
 
 import UIKit
+import Firebase
 
 class EditViewController: UITableViewController {
+    var documentSnapshot:QueryDocumentSnapshot!;
+    
     @IBOutlet var nameField:UITextField!
     @IBOutlet var urlField:UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        let data = documentSnapshot.data()
+        print(data);
     }
     
 
     @IBAction func userDone(_ sender:UIBarButtonItem){
-        print("Done")
+        dismiss(animated: true, completion: nil)
     }
 
 }

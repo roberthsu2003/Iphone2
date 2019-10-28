@@ -114,10 +114,13 @@ class ViewController: UITableViewController {
             let showViewController = segue.destination as! ShowViewController
             showViewController.webPath = path;
         } else if segue.identifier == "goAdd" {
-            segue.destination.preferredContentSize = CGSize(width: 300, height: 220)          
-            
+            segue.destination.preferredContentSize = CGSize(width: 300, height: 220)
             segue.destination.popoverPresentationController?.delegate = self;
             
+        }else if segue.identifier == "goEdit"{
+            let documentSnapshot = sender as! QueryDocumentSnapshot;
+            let editViewController = segue.destination as! EditViewController
+            editViewController.documentSnapshot = documentSnapshot
         }
     }
     
@@ -178,7 +181,9 @@ extension ViewController{
     }
     
     override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath){
-        performSegue(withIdentifier: "goEdit", sender: nil)
+        let documentSnapshot = queryDocuments[indexPath.row]
+        
+        performSegue(withIdentifier: "goEdit", sender: documentSnapshot)
     }
     
 }
