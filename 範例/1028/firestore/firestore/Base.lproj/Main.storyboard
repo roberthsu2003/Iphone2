@@ -125,7 +125,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="AddPresident" id="rrp-ED-lMG">
-                        <barButtonItem key="rightBarButtonItem" title="完成" id="C7p-Fg-5vY"/>
+                        <barButtonItem key="rightBarButtonItem" title="完成" id="C7p-Fg-5vY">
+                            <connections>
+                                <action selector="userDone:" destination="LwD-rB-EGr" id="YFu-4R-U5w"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="nameField" destination="HrG-Fs-rfg" id="1w3-j2-rFk"/>

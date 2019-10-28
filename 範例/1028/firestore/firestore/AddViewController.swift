@@ -19,6 +19,8 @@ class AddViewController: UITableViewController {
     }
     
 
-    
+    @IBAction func userDone(_ sender:UIBarButtonItem){
+        dismiss(animated: true, completion: nil)
+    }
 
 }
