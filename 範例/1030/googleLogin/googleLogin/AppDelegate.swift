@@ -29,6 +29,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return true
     }
+    
+    @available(iOS 9.0, *)
+    func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any])
+      -> Bool {
+        
+        return GIDSignIn.sharedInstance().handle(url)
+    
+       
+    }
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        return GIDSignIn.sharedInstance().handle(url)
+    }
 
     // MARK: UISceneSession Lifecycle
 
@@ -58,7 +71,13 @@ extension AppDelegate:GIDSignInDelegate{
       guard let authentication = user.authentication else { return }
       let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                         accessToken: authentication.accessToken)
-      // ...
+      Auth.auth().signIn(with: credential) { (authResult, error) in
+        if let error = error {
+            print("登入firebase錯誤:\(error.localizedDescription)")
+          return
+        }
+        print("使用者google登入成功");
+      }
     }
 }
 
