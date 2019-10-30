@@ -8,5 +8,6 @@ target 'googleLogin' do
   # Pods for googleLogin
   pod 'Firebase/Auth'
   pod 'GoogleSignIn'
+  pod 'Firebase/Analytics'
 
 end

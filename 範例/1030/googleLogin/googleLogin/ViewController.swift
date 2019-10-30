@@ -20,10 +20,14 @@ class ViewController: UIViewController {
         }
         
         //登入會執行這裏
-        print(Auth.auth().currentUser?.uid);
+        //print(Auth.auth().currentUser?.uid);
         
         
         
+    }
+    
+    @IBAction func userPressLoggingEvent(_ sender:UIButton){
+        print("LoggingEvent");
     }
 
 
