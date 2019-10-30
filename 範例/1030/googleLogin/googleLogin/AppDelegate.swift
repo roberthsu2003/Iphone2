@@ -77,6 +77,8 @@ extension AppDelegate:GIDSignInDelegate{
           return
         }
         print("使用者google登入成功");
+        UIApplication.shared.windows.first?.rootViewController?.dismiss(animated: true, completion: nil)
+        
       }
     }
 }
