@@ -34,23 +34,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GAB-gP-pVZ">
-                                <rect key="frame" x="114.5" y="215" width="91" height="30"/>
-                                <state key="normal" title="Google Login"/>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2N4-N3-4LF" customClass="GIDSignInButton">
+                                <rect key="frame" x="67" y="202" width="186" height="56"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="186" id="8B8-43-hfi"/>
+                                    <constraint firstAttribute="height" constant="56" id="wMw-Ic-c14"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="GAB-gP-pVZ" firstAttribute="centerY" secondItem="uRF-Fa-rfg" secondAttribute="centerY" id="Rya-qe-YmN"/>
-                            <constraint firstItem="GAB-gP-pVZ" firstAttribute="centerX" secondItem="uRF-Fa-rfg" secondAttribute="centerX" id="ram-em-7cI"/>
+                            <constraint firstItem="2N4-N3-4LF" firstAttribute="centerY" secondItem="uRF-Fa-rfg" secondAttribute="centerY" id="9SO-p7-e80"/>
+                            <constraint firstItem="2N4-N3-4LF" firstAttribute="centerX" secondItem="uRF-Fa-rfg" secondAttribute="centerX" id="Oc6-CS-iLZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8qs-5J-LpA"/>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="dnv-IE-XKt"/>
+                    <connections>
+                        <outlet property="signInButton" destination="2N4-N3-4LF" id="zrX-ly-Ojg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iUN-HP-QYi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2614" y="145"/>
+            <point key="canvasLocation" x="2613.75" y="145"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yD2-wu-qmf">
