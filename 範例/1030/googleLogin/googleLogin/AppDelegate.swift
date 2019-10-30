@@ -19,7 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        let auth = Auth.auth();
+        do{
+            try auth.signOut()
+        }catch let logoutError as NSError{
+            print(logoutError.localizedDescription);
+        }
         return true
     }
 
