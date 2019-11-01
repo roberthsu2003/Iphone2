@@ -40,7 +40,5 @@ extension FoodPickerViewController:UIPickerViewDelegate{
         UserDefaults.standard.synchronize()
         Analytics.setUserProperty(food, forName: "favorite_food")
         performSegue(withIdentifier: "unwindToHome", sender: nil)
-        
-        
     }
 }
