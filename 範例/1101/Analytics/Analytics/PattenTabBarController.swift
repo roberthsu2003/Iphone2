@@ -13,10 +13,27 @@ class PattenTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        var path = paths.last ?? ""
+        
+        print(path);
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if getUserFavorieFood() == nil{
+            askForFavoriteFood()
+        }
     }
     
 
-   
+    func getUserFavorieFood() -> String?{
+        return UserDefaults.standard.value(forKey: "favorite_food") as? String
+    }
+    
+    func askForFavoriteFood(){
+        //跳出一個新的撰取畫面
+        
+    }
 
 }
