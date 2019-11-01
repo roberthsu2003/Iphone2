@@ -7,6 +7,21 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="8Ls-Bq-7Ed">
+            <objects>
+                <viewController id="Hrg-cZ-4OR" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ryx-ZS-DFA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="RHn-d4-dvk"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wun-cq-xw1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="921" y="-598"/>
+        </scene>
         <!--ItemA-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -30,7 +45,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="871.875" y="125"/>
+            <point key="canvasLocation" x="1170" y="138"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nvH-H7-4ps">
@@ -54,8 +69,11 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="HEg-c6-B8R" customClass="PattenTabBarController" customModule="Analytics" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="2mH-nE-tcs"/>
+                    <navigationItem key="navigationItem" id="2mH-nE-tcs">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="5h2-6Y-uaQ"/>
+                    </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AjE-Yf-hq3">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="selectedImageTintColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -65,11 +83,14 @@
                         <segue destination="CuU-EB-TJb" kind="relationship" relationship="viewControllers" id="pUh-BU-eVg"/>
                         <segue destination="Onc-EQ-lB5" kind="relationship" relationship="viewControllers" id="rzC-jh-EfL"/>
                         <segue destination="enG-JU-A38" kind="relationship" relationship="viewControllers" id="x83-gU-iXM"/>
+                        <segue destination="Hrg-cZ-4OR" kind="popoverPresentation" identifier="goFood" popoverAnchorBarButtonItem="5h2-6Y-uaQ" id="pH2-lD-mTd">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ER-DS-3Hw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138.75" y="126.25"/>
+            <point key="canvasLocation" x="111" y="125"/>
         </scene>
         <!--ItemB-->
         <scene sceneID="v6t-hQ-Ikf">

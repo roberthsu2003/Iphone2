@@ -21,19 +21,19 @@ class PattenTabBarController: UITabBarController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if getUserFavorieFood() == nil{
+        if getUserFavoriteFood() == nil{
             askForFavoriteFood()
         }
     }
     
 
-    func getUserFavorieFood() -> String?{
+    func getUserFavoriteFood() -> String?{
         return UserDefaults.standard.value(forKey: "favorite_food") as? String
     }
     
     func askForFavoriteFood(){
         //跳出一個新的撰取畫面
-        
+        performSegue(withIdentifier: "goFood", sender: nil)
     }
 
 }
