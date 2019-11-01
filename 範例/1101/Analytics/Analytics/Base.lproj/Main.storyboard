@@ -14,14 +14,28 @@
                     <view key="view" contentMode="scaleToFill" id="Ryx-ZS-DFA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rq3-cB-Pmb">
+                                <rect key="frame" x="0.0" y="56" width="320" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Hrg-cZ-4OR" id="7GG-vT-gx3"/>
+                                    <outlet property="delegate" destination="Hrg-cZ-4OR" id="nHt-Cq-Ios"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="rq3-cB-Pmb" firstAttribute="top" secondItem="RHn-d4-dvk" secondAttribute="top" id="Qj2-fP-zfm"/>
+                            <constraint firstItem="rq3-cB-Pmb" firstAttribute="trailing" secondItem="RHn-d4-dvk" secondAttribute="trailing" id="kkX-TU-gME"/>
+                            <constraint firstItem="rq3-cB-Pmb" firstAttribute="leading" secondItem="RHn-d4-dvk" secondAttribute="leading" id="woH-JJ-Epd"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="RHn-d4-dvk"/>
                     </view>
                     <navigationItem key="navigationItem" title="選擇您喜歡的食物" id="5KQ-qc-Th4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wun-cq-xw1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1050" y="-645"/>
+            <point key="canvasLocation" x="1170" y="-645"/>
         </scene>
         <!--ItemA-->
         <scene sceneID="tne-QT-ifu">
@@ -184,7 +198,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XPx-Tp-Wpx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="360" y="-645"/>
+            <point key="canvasLocation" x="529" y="-645"/>
         </scene>
     </scenes>
     <resources>

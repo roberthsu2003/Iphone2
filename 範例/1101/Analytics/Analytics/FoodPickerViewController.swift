@@ -9,22 +9,27 @@
 import UIKit
 
 class FoodPickerViewController: UIViewController {
-
+    let foodStuffs = ["Hot Dogs", "Hamburger", " Pizza"]
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension FoodPickerViewController:UIPickerViewDataSource{
+    func numberOfComponents(in pickerView: UIPickerView) -> Int{
+        return 1;
     }
-    */
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return foodStuffs.count
+    }
+}
 
+extension FoodPickerViewController:UIPickerViewDelegate{
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?{
+        return foodStuffs[row]
+    }
 }
