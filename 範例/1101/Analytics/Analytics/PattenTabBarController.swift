@@ -14,7 +14,7 @@ class PattenTabBarController: UITabBarController {
         super.viewDidLoad()
 
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-        var path = paths.last ?? ""
+        let path = paths.last ?? ""
         
         print(path);
     }

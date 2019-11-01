@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class FoodPickerViewController: UIViewController {
     let foodStuffs = ["Hot Dogs", "Hamburger", " Pizza"]
@@ -31,5 +32,14 @@ extension FoodPickerViewController:UIPickerViewDataSource{
 extension FoodPickerViewController:UIPickerViewDelegate{
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?{
         return foodStuffs[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
+        let food = foodStuffs[row]
+        UserDefaults.standard.set(food, forKey: "favorite_food")
+        UserDefaults.standard.synchronize()
+        performSegue(withIdentifier: "unwindToHome", sender: nil)
+        
+        
     }
 }

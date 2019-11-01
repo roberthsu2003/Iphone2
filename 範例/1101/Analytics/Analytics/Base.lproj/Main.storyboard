@@ -32,8 +32,12 @@
                         <viewLayoutGuide key="safeArea" id="RHn-d4-dvk"/>
                     </view>
                     <navigationItem key="navigationItem" title="選擇您喜歡的食物" id="5KQ-qc-Th4"/>
+                    <connections>
+                        <segue destination="cGZ-p4-0jz" kind="unwind" identifier="unwindToHome" unwindAction="unwindToHome:" id="mvU-Hm-y1k"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wun-cq-xw1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="cGZ-p4-0jz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1170" y="-645"/>
         </scene>
@@ -67,7 +71,7 @@
             <objects>
                 <navigationController id="sbP-If-cFP" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sAV-gp-VGI">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
