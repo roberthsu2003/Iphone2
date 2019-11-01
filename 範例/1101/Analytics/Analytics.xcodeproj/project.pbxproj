@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,7 @@
 		93F1740E236C498A00A8A1E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93F1740D236C498A00A8A1E4 /* Assets.xcassets */; };
 		93F17411236C498A00A8A1E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93F1740F236C498A00A8A1E4 /* LaunchScreen.storyboard */; };
 		93F17419236C49B700A8A1E4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93F17418236C49B600A8A1E4 /* GoogleService-Info.plist */; };
+		93F1741B236C517700A8A1E4 /* PattenTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F1741A236C517700A8A1E4 /* PattenTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		93F17410236C498A00A8A1E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93F17412236C498A00A8A1E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93F17418236C49B600A8A1E4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		93F1741A236C517700A8A1E4 /* PattenTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PattenTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				93F1740D236C498A00A8A1E4 /* Assets.xcassets */,
 				93F1740F236C498A00A8A1E4 /* LaunchScreen.storyboard */,
 				93F17412236C498A00A8A1E4 /* Info.plist */,
+				93F1741A236C517700A8A1E4 /* PattenTabBarController.swift */,
 			);
 			path = Analytics;
 			sourceTree = "<group>";
@@ -83,7 +86,6 @@
 				5B96126294755D06770B8A98 /* Pods-Analytics.debug.xcconfig */,
 				6A045EA6314028EA7E52F91A /* Pods-Analytics.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -214,6 +216,7 @@
 				93F17409236C498900A8A1E4 /* ViewController.swift in Sources */,
 				93F17405236C498900A8A1E4 /* AppDelegate.swift in Sources */,
 				93F17407236C498900A8A1E4 /* SceneDelegate.swift in Sources */,
+				93F1741B236C517700A8A1E4 /* PattenTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
