@@ -38,6 +38,7 @@ extension FoodPickerViewController:UIPickerViewDelegate{
         let food = foodStuffs[row]
         UserDefaults.standard.set(food, forKey: "favorite_food")
         UserDefaults.standard.synchronize()
+        Analytics.setUserProperty(food, forName: "favorite_food")
         performSegue(withIdentifier: "unwindToHome", sender: nil)
         
         
