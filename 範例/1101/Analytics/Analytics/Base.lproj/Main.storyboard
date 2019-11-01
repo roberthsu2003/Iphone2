@@ -7,20 +7,21 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--選擇您喜歡的食物-->
         <scene sceneID="8Ls-Bq-7Ed">
             <objects>
-                <viewController id="Hrg-cZ-4OR" sceneMemberID="viewController">
+                <viewController id="Hrg-cZ-4OR" customClass="FoodPickerViewController" customModule="Analytics" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ryx-ZS-DFA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="RHn-d4-dvk"/>
                     </view>
+                    <navigationItem key="navigationItem" title="選擇您喜歡的食物" id="5KQ-qc-Th4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wun-cq-xw1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="921" y="-598"/>
+            <point key="canvasLocation" x="1050" y="-645"/>
         </scene>
         <!--ItemA-->
         <scene sceneID="tne-QT-ifu">
@@ -83,7 +84,7 @@
                         <segue destination="CuU-EB-TJb" kind="relationship" relationship="viewControllers" id="pUh-BU-eVg"/>
                         <segue destination="Onc-EQ-lB5" kind="relationship" relationship="viewControllers" id="rzC-jh-EfL"/>
                         <segue destination="enG-JU-A38" kind="relationship" relationship="viewControllers" id="x83-gU-iXM"/>
-                        <segue destination="Hrg-cZ-4OR" kind="popoverPresentation" identifier="goFood" popoverAnchorBarButtonItem="5h2-6Y-uaQ" id="pH2-lD-mTd">
+                        <segue destination="Wht-6W-RHb" kind="popoverPresentation" identifier="goFood" popoverAnchorBarButtonItem="5h2-6Y-uaQ" id="pH2-lD-mTd">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                         </segue>
                     </connections>
@@ -166,6 +167,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kfU-pA-t1p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="872" y="883"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="A6M-WQ-UkG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Wht-6W-RHb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="k0Q-v2-JUV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Hrg-cZ-4OR" kind="relationship" relationship="rootViewController" id="Fnj-wJ-Bu7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XPx-Tp-Wpx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="360" y="-645"/>
         </scene>
     </scenes>
     <resources>

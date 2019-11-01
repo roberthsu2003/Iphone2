@@ -35,5 +35,9 @@ class PattenTabBarController: UITabBarController {
         //跳出一個新的撰取畫面
         performSegue(withIdentifier: "goFood", sender: nil)
     }
+    
+    @IBAction func unwindToHome(_ sender:UIStoryboardSegue){
+        
+    }
 
 }
