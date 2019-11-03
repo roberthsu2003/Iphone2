@@ -39,6 +39,7 @@ extension PickerSexViewController:UIPickerViewDelegate{
             let selectedValue = sexs[row]
             print("selected Sex:\(selectedValue)");
             UserDefaults.standard.set(selectedValue, forKey: "sex")
+            //下星期要加了analytic的資料
             
         }
         
