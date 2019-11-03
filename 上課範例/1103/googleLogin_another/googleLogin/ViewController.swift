@@ -12,6 +12,8 @@ import GoogleSignIn
 
 class ViewController: UIViewController {
     @IBOutlet var loginView:UIView!;
+    weak var signInViewController:SignInViewController!;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let loginViewHeight = loginView.frame.size.height
@@ -38,11 +40,15 @@ class ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goSignin"{
-            let signInViewController = segue.destination as! SignInViewController
+            signInViewController = segue.destination as! SignInViewController
             signInViewController.viewController = self;
             
         }
         
+    }
+    
+    @IBAction func userChangeSignIn(_ sender:UIBarButtonItem){
+        signInViewController.view.backgroundColor = UIColor.white
     }
 
 

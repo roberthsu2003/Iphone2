@@ -13,7 +13,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LGS-g5-rXJ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rTQ-ml-kbA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -51,7 +51,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eKm-T7-FRg"/>
                     </view>
-                    <navigationItem key="navigationItem" id="c6Z-Pc-JkO"/>
+                    <navigationItem key="navigationItem" id="c6Z-Pc-JkO">
+                        <barButtonItem key="rightBarButtonItem" title="changeSignIn" id="fm9-iF-27s">
+                            <connections>
+                                <action selector="userChangeSignIn:" destination="p4a-aA-fRv" id="uyN-yt-dAn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="loginView" destination="fLE-Vn-gZO" id="b7X-Pv-mMm"/>
                     </connections>
@@ -96,7 +102,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YQa-oR-Eg1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1275" y="318"/>
+            <point key="canvasLocation" x="1217" y="318"/>
         </scene>
     </scenes>
 </document>
