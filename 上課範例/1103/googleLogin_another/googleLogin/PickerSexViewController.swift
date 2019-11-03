@@ -21,14 +21,20 @@ class PickerSexViewController: UIViewController {
 
 extension PickerSexViewController:UIPickerViewDataSource{
     func numberOfComponents(in pickerView: UIPickerView) -> Int{
-        
+        return 1;
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
-        
+        return sexs.count
     }
 }
 
 extension PickerSexViewController:UIPickerViewDelegate{
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?{
+        return sexs[row]
+    }
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
+        print("selected Sex:\(sexs[row])");
+    }
 }
