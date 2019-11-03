@@ -36,7 +36,10 @@ extension PickerSexViewController:UIPickerViewDelegate{
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
         if row != 0{
-            print("selected Sex:\(sexs[row])");
+            let selectedValue = sexs[row]
+            print("selected Sex:\(selectedValue)");
+            UserDefaults.standard.set(selectedValue, forKey: "sex")
+            
         }
         
     }

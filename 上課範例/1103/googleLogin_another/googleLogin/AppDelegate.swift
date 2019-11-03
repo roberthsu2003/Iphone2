@@ -90,6 +90,11 @@ extension AppDelegate:GIDSignInDelegate{
             UIView.animate(withDuration: 0.5) {
                 viewControll?.loginView.transform = CGAffineTransform(translationX: 0, y: 175)
             }
+            
+            guard let _ = UserDefaults.standard.value(forKey: "sex") as? String else{
+                viewControll?.displayPickerSexView()
+                return;
+            }
         }
         
         

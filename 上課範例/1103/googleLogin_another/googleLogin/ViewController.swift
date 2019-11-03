@@ -72,8 +72,7 @@ class ViewController: UIViewController {
         UIView.animate(withDuration: 0.5) {
             let positionY = self.pickerSexView.frame.origin.y
             let pickerSexHeight = self.pickerSexView.frame.size.height;
-            self.pickerSexView.transform = CGAffineTransform(translationX: 0, y: -(positionY + pickerSexHeight))
-                  
+            self.pickerSexView.transform = CGAffineTransform(translationX: 0, y: -(positionY + pickerSexHeight))                  
        }
     }
     
