@@ -9,7 +9,7 @@
 import UIKit
 
 class PickerSexViewController: UIViewController {
-    var sexs = [ "Male", "Female"]
+    var sexs = ["Sexs", "Male", "Female"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +35,9 @@ extension PickerSexViewController:UIPickerViewDelegate{
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
-        print("selected Sex:\(sexs[row])");
+        if row != 0{
+            print("selected Sex:\(sexs[row])");
+        }
+        
     }
 }
