@@ -26,6 +26,10 @@ class ViewController: UIViewController {
                    //沒有登入
                    print("沒有登入，顯示登入畫面");
                    //performSegue(withIdentifier: "goLogin", sender: nil)
+            UIView.animate(withDuration: 0.5) {
+                self.loginView.transform = CGAffineTransform.identity
+            }
+            
                }else{
                    //已經登入
                    print("\(Auth.auth().currentUser!.uid)")
