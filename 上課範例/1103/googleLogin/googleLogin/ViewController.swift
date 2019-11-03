@@ -45,5 +45,10 @@ extension ViewController:UIPopoverPresentationControllerDelegate{
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle{
         return .none
     }
+    
+   
+    func presentationControllerShouldDismiss(_ presentationController: UIPresentationController) -> Bool{
+        return false;
+    }
 }
 
