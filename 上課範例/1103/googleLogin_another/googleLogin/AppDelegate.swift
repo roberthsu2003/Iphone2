@@ -79,8 +79,16 @@ extension AppDelegate:GIDSignInDelegate{
       }
         
         let window = UIApplication.shared.windows.first
-        let navigationController = window?.rootViewController
-        navigationController?.dismiss(animated: true, completion: nil)
+        let navigationController = window?.rootViewController as? UINavigationController
+        let viewControll = navigationController?.topViewController as? ViewController
+        let time = DispatchTime.now() + 0.5
+        DispatchQueue.main.asyncAfter(deadline: time) {
+            UIView.animate(withDuration: 0.5) {
+                viewControll?.loginView.transform = CGAffineTransform(translationX: 0, y: 175)
+            }
+        }
+        
+        
 
       guard let authentication = user.authentication else { return }
       let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
