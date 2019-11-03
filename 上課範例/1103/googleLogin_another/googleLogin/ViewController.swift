@@ -37,12 +37,12 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goLogin" {
-            let destination = segue.destination
-            destination.popoverPresentationController?.delegate = self;
+        if segue.identifier == "goSignin"{
+            let signInViewController = segue.destination as! SignInViewController
+            signInViewController.viewController = self;
             
-            destination.preferredContentSize = CGSize(width: 300, height: 300);
         }
+        
     }
 
 
