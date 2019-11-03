@@ -19,7 +19,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?)  -> Bool {
+        
+        do{
+           try Auth.auth().signOut()
+           print("登出成功");
+        }catch let error as NSError{
+            print("登出失敗");
+            print(error.localizedDescription)
+        }
+ 
+        /*
+        if (try? Auth.auth().signOut()) == nil{
+            print("登出失敗");
+        }
+ */
+        
+        
+        
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
         return true

@@ -14,13 +14,19 @@ class ViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         if Auth.auth().currentUser == nil {
-            //沒有登入
-            print("沒有登入，顯示登入畫面");
-        }else{
-            //已經登入
-            print("\(Auth.auth().currentUser!.uid)")
-        }
+                   //沒有登入
+                   print("沒有登入，顯示登入畫面");
+               }else{
+                   //已經登入
+                   print("\(Auth.auth().currentUser!.uid)")
+               }
     }
 
 
