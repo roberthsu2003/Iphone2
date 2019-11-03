@@ -29,7 +29,21 @@ class ViewController: UITableViewController {
                    print("\(Auth.auth().currentUser!.uid)")
                }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goLogin" {
+            let destination = segue.destination
+            destination.popoverPresentationController?.delegate = self;
+            destination.preferredContentSize = CGSize(width: 300, height: 300);
+        }
+    }
 
 
+}
+
+extension ViewController:UIPopoverPresentationControllerDelegate{
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle{
+        return .none
+    }
 }
 

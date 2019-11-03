@@ -30,9 +30,13 @@
                             <outlet property="delegate" destination="5Mo-Ak-SXk" id="NIQ-JV-U0u"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Fow-72-jOC"/>
+                    <navigationItem key="navigationItem" id="Fow-72-jOC">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="xbT-Jf-OsP"/>
+                    </navigationItem>
                     <connections>
-                        <segue destination="Qcp-zG-1zl" kind="presentation" identifier="goLogin" id="rL1-Lm-G0W"/>
+                        <segue destination="Qcp-zG-1zl" kind="popoverPresentation" identifier="goLogin" popoverAnchorBarButtonItem="xbT-Jf-OsP" id="rL1-Lm-G0W">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xBV-Nh-ncM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -52,7 +56,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rqK-eB-2Bt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1223" y="114"/>
+            <point key="canvasLocation" x="1238" y="128"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dfg-ql-NbU">
@@ -60,7 +64,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LGS-g5-rXJ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rTQ-ml-kbA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
