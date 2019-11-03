@@ -13,11 +13,17 @@ import GoogleSignIn
 class ViewController: UIViewController {
     @IBOutlet var loginView:UIView!;
     weak var signInViewController:SignInViewController!;
+    @IBOutlet var pickerSexView:UIView!;
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let loginViewHeight = loginView.frame.size.height
         loginView.transform = CGAffineTransform(translationX: 0, y: loginViewHeight)
+        
+        //改變pickerViewController的位置
+        let positionY = pickerSexView.frame.origin.y
+        let pickerSexHeight = pickerSexView.frame.size.height;
+        pickerSexView.transform = CGAffineTransform(translationX: 0, y: -(positionY + pickerSexHeight))
        
     }
     
