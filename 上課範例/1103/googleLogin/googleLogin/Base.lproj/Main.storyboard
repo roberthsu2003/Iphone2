@@ -3,6 +3,7 @@
     <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -30,10 +31,28 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Fow-72-jOC"/>
+                    <connections>
+                        <segue destination="Qcp-zG-1zl" kind="presentation" identifier="goLogin" id="rL1-Lm-G0W"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xBV-Nh-ncM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="375" y="128"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="AIh-JB-tpT">
+            <objects>
+                <viewController id="Qcp-zG-1zl" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fhi-SO-AgU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="4ZG-Cy-b7o"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rqK-eB-2Bt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1223" y="114"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dfg-ql-NbU">
@@ -41,7 +60,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LGS-g5-rXJ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rTQ-ml-kbA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

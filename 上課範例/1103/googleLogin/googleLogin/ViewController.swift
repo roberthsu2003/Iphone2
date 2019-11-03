@@ -23,6 +23,7 @@ class ViewController: UITableViewController {
         if Auth.auth().currentUser == nil {
                    //沒有登入
                    print("沒有登入，顯示登入畫面");
+                   performSegue(withIdentifier: "goLogin", sender: nil)
                }else{
                    //已經登入
                    print("\(Auth.auth().currentUser!.uid)")
