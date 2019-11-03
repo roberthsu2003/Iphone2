@@ -34,6 +34,7 @@ class ViewController: UITableViewController {
         if segue.identifier == "goLogin" {
             let destination = segue.destination
             destination.popoverPresentationController?.delegate = self;
+            
             destination.preferredContentSize = CGSize(width: 300, height: 300);
         }
     }

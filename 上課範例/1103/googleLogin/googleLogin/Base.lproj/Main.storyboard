@@ -34,7 +34,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" id="xbT-Jf-OsP"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="Qcp-zG-1zl" kind="popoverPresentation" identifier="goLogin" popoverAnchorBarButtonItem="xbT-Jf-OsP" id="rL1-Lm-G0W">
+                        <segue destination="VeO-Vr-Ab9" kind="popoverPresentation" identifier="goLogin" popoverAnchorBarButtonItem="xbT-Jf-OsP" id="rL1-Lm-G0W">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                         </segue>
                     </connections>
@@ -43,20 +43,37 @@
             </objects>
             <point key="canvasLocation" x="375" y="128"/>
         </scene>
-        <!--View Controller-->
+        <!--GoogleSignIn-->
         <scene sceneID="AIh-JB-tpT">
             <objects>
-                <viewController id="Qcp-zG-1zl" sceneMemberID="viewController">
+                <viewController id="Qcp-zG-1zl" customClass="SignInViewController" customModule="googleLogin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fhi-SO-AgU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UGG-QX-6MX">
+                                <rect key="frame" x="94" y="206.5" width="132" height="47"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="132" id="Fwk-H9-Xnd"/>
+                                    <constraint firstAttribute="height" constant="47" id="ecV-Pr-oeu"/>
+                                </constraints>
+                                <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <state key="normal" title="Google SignIn"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="UGG-QX-6MX" firstAttribute="centerY" secondItem="Fhi-SO-AgU" secondAttribute="centerY" id="Vb5-NK-gJl"/>
+                            <constraint firstItem="UGG-QX-6MX" firstAttribute="centerX" secondItem="Fhi-SO-AgU" secondAttribute="centerX" id="oYL-6b-67U"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="4ZG-Cy-b7o"/>
                     </view>
+                    <navigationItem key="navigationItem" title="GoogleSignIn" id="Qyy-v1-ODu"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rqK-eB-2Bt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1238" y="128"/>
+            <point key="canvasLocation" x="2235" y="127.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dfg-ql-NbU">
@@ -75,6 +92,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UdN-2y-eHH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-332" y="128"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="PNf-9e-plw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VeO-Vr-Ab9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fJa-En-wYB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Qcp-zG-1zl" kind="relationship" relationship="rootViewController" id="rEk-Xu-B4F"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DAz-jQ-b5z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1237.5" y="127.5"/>
         </scene>
     </scenes>
 </document>
