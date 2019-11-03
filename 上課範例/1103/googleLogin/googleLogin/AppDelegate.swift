@@ -41,6 +41,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GIDSignIn.sharedInstance().delegate = self
         return true
     }
+    
+    @available(iOS 9.0, *)
+    func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any])
+      -> Bool {
+       // return GIDSignIn.sharedInstance().handle(url,                                sourceApplication:options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,annotation: [:])
+        return GIDSignIn.sharedInstance().handle(url)
+    }
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        return GIDSignIn.sharedInstance().handle(url)
+    }
 
     // MARK: UISceneSession Lifecycle
 
@@ -66,10 +77,23 @@ extension AppDelegate:GIDSignInDelegate{
         print("error:\(error.localizedDescription)")
         return
       }
+        
+        let window = UIApplication.shared.windows.first
+        let navigationController = window?.rootViewController
+        navigationController?.dismiss(animated: true, completion: nil)
 
       guard let authentication = user.authentication else { return }
       let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                         accessToken: authentication.accessToken)
+    
+        Auth.auth().signIn(with: credential) { (authResult, error) in
+          if let error = error {
+            print("error:\(error.localizedDescription)");
+            return
+          }
+            print("displayName=\(authResult?.user.displayName)")
+            print("displayName=\(authResult?.user.email)")
+        }
      
     }
 

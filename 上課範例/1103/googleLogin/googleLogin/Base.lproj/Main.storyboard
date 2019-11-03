@@ -60,6 +60,9 @@
                                 </constraints>
                                 <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <state key="normal" title="Google SignIn"/>
+                                <connections>
+                                    <action selector="userPressSign:" destination="Qcp-zG-1zl" eventType="touchUpInside" id="xzy-58-dHA"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -73,7 +76,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rqK-eB-2Bt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2235" y="127.5"/>
+            <point key="canvasLocation" x="1999" y="115"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dfg-ql-NbU">
