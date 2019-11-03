@@ -21,11 +21,16 @@ class ViewController: UIViewController {
         loginView.transform = CGAffineTransform(translationX: 0, y: loginViewHeight)
         
         //改變pickerViewController的位置
+        
         let positionY = pickerSexView.frame.origin.y
         let pickerSexHeight = pickerSexView.frame.size.height;
         pickerSexView.transform = CGAffineTransform(translationX: 0, y: -(positionY + pickerSexHeight))
+
+        
        
     }
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -56,6 +61,23 @@ class ViewController: UIViewController {
     @IBAction func userChangeSignIn(_ sender:UIBarButtonItem){
         signInViewController.view.backgroundColor = UIColor.white
     }
+    
+    func displayPickerSexView(){
+        UIView.animate(withDuration: 0.5) {
+            self.pickerSexView.transform = CGAffineTransform.identity;
+        }
+    }
+    
+    func disappearPickerSexView(){
+        UIView.animate(withDuration: 0.5) {
+            let positionY = self.pickerSexView.frame.origin.y
+            let pickerSexHeight = self.pickerSexView.frame.size.height;
+            self.pickerSexView.transform = CGAffineTransform(translationX: 0, y: -(positionY + pickerSexHeight))
+                  
+       }
+    }
+    
+    
 
 
 }
