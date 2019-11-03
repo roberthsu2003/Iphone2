@@ -11,9 +11,11 @@ import Firebase
 import GoogleSignIn
 
 class ViewController: UIViewController {
-
+    @IBOutlet var loginView:UIView!;
     override func viewDidLoad() {
         super.viewDidLoad()
+        let loginViewHeight = loginView.frame.size.height
+        loginView.transform = CGAffineTransform(translationX: 0, y: loginViewHeight)
        
     }
     
