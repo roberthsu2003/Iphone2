@@ -13,7 +13,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LGS-g5-rXJ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rTQ-ml-kbA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -42,12 +42,24 @@
                                     <segue destination="5Cb-No-Kve" kind="embed" identifier="goSignin" id="QLA-Bi-HWD"/>
                                 </connections>
                             </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JkE-JU-txY">
+                                <rect key="frame" x="0.0" y="44" width="320" height="218"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="218" id="ROT-00-TCT"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="i55-td-Agq" kind="embed" id="0BB-58-Ys7"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="fLE-Vn-gZO" firstAttribute="leading" secondItem="eKm-T7-FRg" secondAttribute="leading" id="2kA-aW-aPs"/>
+                            <constraint firstItem="JkE-JU-txY" firstAttribute="leading" secondItem="eKm-T7-FRg" secondAttribute="leading" id="C0h-hH-kmh"/>
                             <constraint firstItem="fLE-Vn-gZO" firstAttribute="trailing" secondItem="eKm-T7-FRg" secondAttribute="trailing" id="dYs-0q-8PO"/>
+                            <constraint firstItem="JkE-JU-txY" firstAttribute="top" secondItem="eKm-T7-FRg" secondAttribute="top" id="ez4-bB-q0W"/>
                             <constraint firstItem="fLE-Vn-gZO" firstAttribute="bottom" secondItem="dGJ-qK-Bw5" secondAttribute="bottom" id="nKI-N8-29f"/>
+                            <constraint firstItem="JkE-JU-txY" firstAttribute="trailing" secondItem="eKm-T7-FRg" secondAttribute="trailing" id="nvv-yW-bC4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eKm-T7-FRg"/>
                     </view>
@@ -64,7 +76,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nZv-Bf-aSK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="407" y="128"/>
+            <point key="canvasLocation" x="406.875" y="127.5"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="0lR-rr-qcl">
@@ -103,6 +115,30 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YQa-oR-Eg1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1217" y="318"/>
+        </scene>
+        <!--Picker Sex View Controller-->
+        <scene sceneID="P18-qr-dHp">
+            <objects>
+                <viewController id="i55-td-Agq" customClass="PickerSexViewController" customModule="googleLogin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nPb-yz-ZYW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="218"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uET-Hv-FsF">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="162"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="uET-Hv-FsF" secondAttribute="trailing" id="FLK-HW-DTu"/>
+                            <constraint firstItem="uET-Hv-FsF" firstAttribute="leading" secondItem="nPb-yz-ZYW" secondAttribute="leading" id="jMK-a7-ljS"/>
+                            <constraint firstItem="uET-Hv-FsF" firstAttribute="top" secondItem="nPb-yz-ZYW" secondAttribute="top" id="jaz-3O-wun"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JaW-yz-jII" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1166" y="-444"/>
         </scene>
     </scenes>
 </document>

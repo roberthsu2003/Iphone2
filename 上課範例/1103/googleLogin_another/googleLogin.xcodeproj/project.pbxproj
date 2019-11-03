@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7CA4D0561402187B8E53A879 /* Pods_googleLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE0BD65FD53B871A72AAE53E /* Pods_googleLogin.framework */; };
+		93C69EEA236EBBBA008F3C43 /* PickerSexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C69EE9236EBBBA008F3C43 /* PickerSexViewController.swift */; };
 		93CE2EE423658EBE005DDDCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CE2EE323658EBE005DDDCC /* AppDelegate.swift */; };
 		93CE2EE623658EBE005DDDCC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CE2EE523658EBE005DDDCC /* SceneDelegate.swift */; };
 		93CE2EE823658EBE005DDDCC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CE2EE723658EBE005DDDCC /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		93C69EE9236EBBBA008F3C43 /* PickerSexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerSexViewController.swift; sourceTree = "<group>"; };
 		93CE2EE023658EBE005DDDCC /* googleLogin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = googleLogin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93CE2EE323658EBE005DDDCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93CE2EE523658EBE005DDDCC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				93CE2EEE23658EC0005DDDCC /* LaunchScreen.storyboard */,
 				93CE2EF123658EC0005DDDCC /* Info.plist */,
 				93D7B922236E7C9800328622 /* SignInViewController.swift */,
+				93C69EE9236EBBBA008F3C43 /* PickerSexViewController.swift */,
 			);
 			path = googleLogin;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93D7B923236E7C9800328622 /* SignInViewController.swift in Sources */,
+				93C69EEA236EBBBA008F3C43 /* PickerSexViewController.swift in Sources */,
 				93CE2EE823658EBE005DDDCC /* ViewController.swift in Sources */,
 				93CE2EE423658EBE005DDDCC /* AppDelegate.swift in Sources */,
 				93CE2EE623658EBE005DDDCC /* SceneDelegate.swift in Sources */,
