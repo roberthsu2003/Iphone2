@@ -126,6 +126,10 @@
                         <subviews>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uET-Hv-FsF">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="162"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="i55-td-Agq" id="fQs-8D-2uC"/>
+                                    <outlet property="delegate" destination="i55-td-Agq" id="IqY-co-Fs6"/>
+                                </connections>
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
