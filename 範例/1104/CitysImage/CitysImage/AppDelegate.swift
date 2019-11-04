@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         guard Auth.auth().currentUser == nil else{
             print("已經登入UID:\(Auth.auth().currentUser!.uid)");
+            let _ = DataSource.dataSource;            
             return;
         }
         
