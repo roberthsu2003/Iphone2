@@ -11,6 +11,7 @@ import Firebase
 
 class DataSource{
     var firestore = Firestore.firestore()
+    var storage = Storage.storage()
     var createUpLoadButton:(() -> Void)!
     
     static var dataSource:DataSource = {
@@ -72,6 +73,22 @@ class DataSource{
             }
             
             print("資料已經全部上傳至firestore citys");
+            let cityImagesRef = self.storage.reference(withPath: "cityImages")
+            cityImagesRef.getData(maxSize: 1024*1024) { (data:Data?, error:Error?) in
+                guard data != nil else{
+                    print("data是nil");
+                    //出現上傳圖片的按鈕
+                    return;
+                }
+                
+                guard error == nil else{
+                    print("error:\(error!.localizedDescription)");
+                    return
+                }
+                
+            
+            }
+        
         }
     }
 }
