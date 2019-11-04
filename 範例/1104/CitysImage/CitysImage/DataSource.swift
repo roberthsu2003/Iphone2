@@ -58,10 +58,20 @@ class DataSource{
             print("解析citylist的陣列出錯");
             return
         }
-        
+        let batch = firestore.batch();
         for cityItem in cityList{
             //開始上傳資料
-            print(cityItem);
+            let documentRef = firestore.collection("citys").document();
+            batch.setData(cityItem, forDocument: documentRef)
+        }
+        
+        batch.commit { (error:Error?) in
+            guard error == nil else{
+                print("batch commit出錯:\(error!.localizedDescription)");
+                return
+            }
+            
+            print("資料已經全部上傳至firestore citys");
         }
     }
 }
