@@ -7,11 +7,29 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    override init() {
+        super.init()
+        FirebaseApp.configure()
+        guard Auth.auth().currentUser == nil else{
+            print("已經登入UID:\(Auth.auth().currentUser!.uid)");
+            return;
+        }
+        
+        Auth.auth().signInAnonymously { (result:AuthDataResult?, error:Error?) in
+            guard result != nil, error == nil else{
+                print("失敗:\(error!.localizedDescription)")
+                return
+            }
+            
+            print("login成功")
+            
+        }
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
