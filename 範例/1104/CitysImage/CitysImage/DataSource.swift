@@ -11,7 +11,7 @@ import Firebase
 
 class DataSource{
     var firestore = Firestore.firestore()
-    var viewController:ViewController!;
+    var createUpLoadButton:(() -> Void)!
     
     static var dataSource:DataSource = {
         print("執行");
@@ -37,7 +37,10 @@ class DataSource{
             if snapshot.isEmpty{
                 
                 print("snapshot是empty");
-                self.viewController.createUpLoadData()
+                if self.createUpLoadButton != nil {
+                    self.createUpLoadButton();
+                }
+                
             }
             
             

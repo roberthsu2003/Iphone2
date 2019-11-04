@@ -12,18 +12,17 @@ import Firebase
 class ViewController: UIViewController {
     override func awakeFromNib() {
         super.awakeFromNib()
-        DataSource.dataSource.viewController = self;
+       
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+         DataSource.dataSource.createUpLoadButton = {
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "上傳資料", style: .plain, target: self, action: #selector(self.uploadData(_:)))
+          }
     }
     
-    func createUpLoadData() -> Void{
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "上傳資料", style: .plain, target: self, action: #selector(uploadData(_:)))
-    }
-    
+   
     @objc func uploadData(_ sender:UIBarButtonItem){
         print("uploadData");
     }
