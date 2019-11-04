@@ -7,7 +7,10 @@
 //
 
 import Foundation
+import Firebase
+
 class DataSource{
+    var firestore = Firestore.firestore()
     static var dataSource:DataSource = {
         print("執行");
         return DataSource();
@@ -18,6 +21,22 @@ class DataSource{
     }
     
     func checkDataInFirestore(){
-        
+        firestore.collection("citys").addSnapshotListener { (snapshot:QuerySnapshot?, error:Error?) in
+            guard error == nil else{
+                print("error:\(error!.localizedDescription)");
+                return
+            }
+            
+            guard let snapshot = snapshot else{
+                print("snapshot是nil");
+                return
+            }
+            
+            if snapshot.isEmpty{
+                print("snapshot是empty");
+            }
+            
+            
+        }
     }
 }
