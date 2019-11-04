@@ -46,4 +46,22 @@ class DataSource{
             
         }
     }
+    
+    func uploadDataToFireStore(){
+        print("uploadDataToFireStore");
+        guard let cityListPath = Bundle.main.path(forResource: "citylist", ofType: "plist") else{
+            print("解析citylist路徑出錯");
+            return
+        }
+        
+        guard let cityList = NSArray(contentsOfFile: cityListPath) as? [[String:String]] else{
+            print("解析citylist的陣列出錯");
+            return
+        }
+        
+        for cityItem in cityList{
+            //開始上傳資料
+            print(cityItem);
+        }
+    }
 }

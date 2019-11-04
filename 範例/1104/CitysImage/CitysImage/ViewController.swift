@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     
    
     @objc func uploadData(_ sender:UIBarButtonItem){
-        print("uploadData");
+        DataSource.dataSource.uploadDataToFireStore()
     }
 
 }
