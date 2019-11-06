@@ -9,7 +9,8 @@
 import UIKit
 import Firebase
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
+    var citys:[[String:String]]!;
     override func awakeFromNib() {
         super.awakeFromNib()
        
@@ -24,6 +25,8 @@ class ViewController: UIViewController {
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "上傳圖片", style: .plain, target: self, action: #selector(self.uploadImage(_:)))
             
         }
+        
+        citys = DataSource.dataSource.getCityData
     }
     
    

@@ -15,6 +15,10 @@ class DataSource{
     var createUpLoadButton:(() -> Void)!
     var createImageUPLoadButton:(() -> Void)!
     var firestoreListener:ListenerRegistration!
+    var getCityData:[[String:String]]{
+        
+        return [[String:String]]();
+    }
     
     
     static var dataSource:DataSource = {
