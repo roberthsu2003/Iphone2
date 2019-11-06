@@ -97,4 +97,37 @@ class DataSource{
         
         }
     }
+    
+    func uploadImageToFireStore(){
+        firestore.collection("citys").getDocuments { (snapshot:QuerySnapshot?, error:Error?) in
+            guard let querySnapshot = snapshot, error == nil else{
+                print("firestore的getDocuments出錯:\(error!.localizedDescription)");
+                return;
+            }
+            let cityQueryDocuments = querySnapshot.documents
+            for queryDocumentsSnapshot in cityQueryDocuments{
+                let cityDic = queryDocumentsSnapshot.data() as! [String:String]
+                guard let imageName = cityDic["Image"] else{
+                    print("imageName是nil")
+                    return
+                }
+                
+                let imageData = UIImage(named: imageName)?.jpegData(compressionQuality: 1.0)
+                let uploadImageRef = self.storage.reference(withPath: "h2/\(imageName)")
+                let metaData = StorageMetadata()
+                metaData.contentType = "image/jpg"
+                //uploadImageRef.putData(imageData!, metadata: metaData)
+                uploadImageRef.putData(imageData!, metadata: metaData) { (storageMetadata:StorageMetadata?, error:Error?) in
+                    guard error == nil else{
+                        print("上傳失敗")
+                        return
+                    }
+                    print("上傳成功");
+                }
+            }
+            
+            print("圖片上傳完");
+            
+        }
+    }
 }

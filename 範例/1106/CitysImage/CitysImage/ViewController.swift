@@ -32,7 +32,8 @@ class ViewController: UIViewController {
     }
     
     @objc func uploadImage(_ sender:UIBarButtonItem){
-        print("上傳圖片")
+        DataSource.dataSource.uploadImageToFireStore()
+        navigationItem.rightBarButtonItem = nil;
     }
 
 }
