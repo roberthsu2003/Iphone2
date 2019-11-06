@@ -14,6 +14,7 @@ class DataSource{
     var storage = Storage.storage()
     var createUpLoadButton:(() -> Void)!
     var createImageUPLoadButton:(() -> Void)!
+    var firestoreListener:ListenerRegistration!
     
     
     static var dataSource:DataSource = {
@@ -26,7 +27,7 @@ class DataSource{
     }
     
     func checkDataInFirestore(){
-        firestore.collection("citys").addSnapshotListener { (snapshot:QuerySnapshot?, error:Error?) in
+        firestoreListener = firestore.collection("citys").addSnapshotListener { (snapshot:QuerySnapshot?, error:Error?) in
             guard error == nil else{
                 print("error:\(error!.localizedDescription)");
                 return
@@ -80,7 +81,9 @@ class DataSource{
                 guard data != nil else{
                     print("data是nil");
                     //出現上傳圖片的按鈕
-                    self.createImageUPLoadButton();
+                    self.createImageUPLoadButton()
+                    //解除firestore的註冊
+                    self.firestoreListener.remove()
                     return;
                 }
                 
