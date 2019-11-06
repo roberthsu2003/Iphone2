@@ -20,11 +20,19 @@ class ViewController: UIViewController {
          DataSource.dataSource.createUpLoadButton = {
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "上傳資料", style: .plain, target: self, action: #selector(self.uploadData(_:)))
           }
+        DataSource.dataSource.createImageUPLoadButton = {
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "上傳圖片", style: .plain, target: self, action: #selector(self.uploadImage(_:)))
+            
+        }
     }
     
    
     @objc func uploadData(_ sender:UIBarButtonItem){
         DataSource.dataSource.uploadDataToFireStore()
+    }
+    
+    @objc func uploadImage(_ sender:UIBarButtonItem){
+        print("上傳圖片")
     }
 
 }

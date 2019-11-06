@@ -13,6 +13,8 @@ class DataSource{
     var firestore = Firestore.firestore()
     var storage = Storage.storage()
     var createUpLoadButton:(() -> Void)!
+    var createImageUPLoadButton:(() -> Void)!
+    
     
     static var dataSource:DataSource = {
         print("執行");
@@ -78,6 +80,7 @@ class DataSource{
                 guard data != nil else{
                     print("data是nil");
                     //出現上傳圖片的按鈕
+                    self.createImageUPLoadButton();
                     return;
                 }
                 
