@@ -26,7 +26,14 @@ class ViewController: UITableViewController {
             
         }
         
-        citys = DataSource.dataSource.getCityData
+        DataSource.dataSource.passToViewControllerCityData = {
+            (citys:[QueryDocumentSnapshot]) -> Void in
+            self.citys = citys;
+            print(self.citys!)
+            self.tableView.reloadData();
+        }
+        
+        DataSource.dataSource.getCityData()
     }
     
    

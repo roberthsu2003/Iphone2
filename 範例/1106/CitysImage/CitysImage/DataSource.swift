@@ -14,19 +14,20 @@ class DataSource{
     var storage = Storage.storage()
     var createUpLoadButton:(() -> Void)!
     var createImageUPLoadButton:(() -> Void)!
+    var passToViewControllerCityData:(([QueryDocumentSnapshot]) -> Void)!
     var firestoreListener:ListenerRegistration!
     
-    var getCityData:[QueryDocumentSnapshot]{
-        var cityQueryDocuments:[QueryDocumentSnapshot]!
+    func getCityData(){
+       
         firestore.collection("citys").getDocuments { (snapshot:QuerySnapshot?, error:Error?) in
                    guard let querySnapshot = snapshot, error == nil else{
                        print("firestore的getDocuments出錯:\(error!.localizedDescription)");
                        return;
                    }
-                  cityQueryDocuments = querySnapshot.documents
-                   
+                  let cityQueryDocuments = querySnapshot.documents
+                  self.passToViewControllerCityData(cityQueryDocuments)
                }
-        return cityQueryDocuments;
+       
     }
     
     
