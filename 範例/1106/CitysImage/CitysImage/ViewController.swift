@@ -48,3 +48,19 @@ class ViewController: UITableViewController {
 
 }
 
+extension ViewController{
+    //UITableViewDataSource
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        return citys.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        let city = citys[indexPath.row].data() as! [String:String]
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
+        cell.textLabel?.text = city["City"]
+        return cell;
+        
+    }
+}
+
