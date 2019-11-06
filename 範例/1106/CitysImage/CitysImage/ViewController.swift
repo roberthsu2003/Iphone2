@@ -11,6 +11,8 @@ import Firebase
 
 class ViewController: UITableViewController {
     var citys = [QueryDocumentSnapshot]()
+    var storage = Storage.storage()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
        
@@ -56,9 +58,16 @@ extension ViewController{
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let city = citys[indexPath.row].data() as! [String:String]
+        let imageName = city["Image"]
+        let imageRef = storage.reference(withPath: "h2/\(imageName!)")
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
+        imageRef.getData(maxSize: 1024*1024) { (imageData:Data?, error:Error?) in
+            let image = UIImage(data: imageData!)
+            cell.imageView?.image = image;
+        }
         cell.textLabel?.text = city["City"]
+        
         return cell;
         
     }
