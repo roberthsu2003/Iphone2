@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 class ViewController: UITableViewController {
-    var citys:[[String:String]]!;
+    var citys:[QueryDocumentSnapshot]!;
     override func awakeFromNib() {
         super.awakeFromNib()
        
