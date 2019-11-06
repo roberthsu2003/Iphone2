@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 class ViewController: UITableViewController {
-    var citys:[QueryDocumentSnapshot]!;
+    var citys = [QueryDocumentSnapshot]()
     override func awakeFromNib() {
         super.awakeFromNib()
        
@@ -29,7 +29,7 @@ class ViewController: UITableViewController {
         DataSource.dataSource.passToViewControllerCityData = {
             (citys:[QueryDocumentSnapshot]) -> Void in
             self.citys = citys;
-            print(self.citys!)
+            print(self.citys)
             self.tableView.reloadData();
         }
         
