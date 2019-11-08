@@ -7,14 +7,35 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
-
+    var uid:String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        userLogin()
     }
+    
+    func userLogin(){
+        guard let user = Auth.auth().currentUser else{
+            Auth.auth().signInAnonymously { (resuld:AuthDataResult?, error:Error?) in
+                guard resuld != nil, error == nil else{
+                    print("暱名登入失敗");
+                    return
+                }
+                print("暱名登入成功");
+            }
+            
+            return
+        }
+        uid = user.uid
+        print("uid=\(uid!)")
+    }
+    
 
 
 }
+
+
 
