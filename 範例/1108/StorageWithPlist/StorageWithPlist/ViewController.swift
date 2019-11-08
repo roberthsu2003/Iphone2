@@ -9,9 +9,11 @@
 import UIKit
 import Firebase
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
     var uid:String!
     let plistName = "citylist.plist"
+    var citys = [[String:String]]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +51,9 @@ class ViewController: UIViewController {
             print("沒有citylist.plist");
             //下載公用版的plist
             downloadPublicPlistAndSave(plistURL: url)
+        }else{
+            //getCitylistFromDocuments
+            getCitylistFromDocuments()
         }
         
     }
@@ -66,10 +71,27 @@ class ViewController: UIViewController {
             do{
              try plistData.write(to: plistURL)
             }catch let error as NSError{
-                print("寫入plistToDocument有誤:\(error.localizedDescription)");              
+                print("寫入plistToDocument有誤:\(error.localizedDescription)");
             }
             print("下載儲存完成")
+            self.getCitylistFromDocuments()
         }
+    }
+    
+    func getCitylistFromDocuments(){
+        let fileManager = FileManager.default;
+        guard var url = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else{
+            print("url有錯誤");
+            return
+        }
+        url.appendPathComponent(plistName)
+        guard let citys = NSArray(contentsOf: url) as? [[String:String]] else{
+            print("轉Array失敗");
+            return;
+        }
+        self.citys = citys;
+        
+        tableView.reloadData();
     }
     
 
