@@ -7,10 +7,26 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    override init() {
+        super.init()
+        FirebaseApp.configure()
+        
+        guard let user = Auth.auth().currentUser else{
+            Auth.auth().signInAnonymously { (resuld:AuthDataResult?, error:Error?) in
+                guard resuld != nil, error == nil else{
+                    print("暱名登入失敗");
+                    return
+                }
+                print("暱名登入成功");
+            }
+            return
+        }
+        print("有登入,UID=\(user.uid)");
+    }
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
