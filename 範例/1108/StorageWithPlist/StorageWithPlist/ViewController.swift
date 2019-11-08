@@ -48,11 +48,23 @@ class ViewController: UIViewController {
         if !fileManager.fileExists(atPath: url.path){
             print("沒有citylist.plist");
             //下載公用版的plist
+            downloadPublicPlistAndSave(plistURL: url)
         }
         
-        
-        
-        
+    }
+    
+    func downloadPublicPlistAndSave(plistURL:URL){
+        //下載storang -> h2/cityPlist
+        let plistRef = Storage.storage().reference(withPath: "h2/\(plistName)")
+        plistRef.getData(maxSize: 1024*1024) { (data:Data?, error:Error?) in
+            guard let plistData = data,error == nil else{
+                print("下載有錯誤");
+                return;
+            }
+            
+            let plistString = String(data: plistData, encoding: .utf8)
+            
+        }
     }
     
 
