@@ -62,8 +62,13 @@ class ViewController: UIViewController {
                 return;
             }
             
-            let plistString = String(data: plistData, encoding: .utf8)
-            
+            //let plistString = String(data: plistData, encoding: .utf8)
+            do{
+             try plistData.write(to: plistURL)
+            }catch let error as NSError{
+                print("寫入plistToDocument有誤:\(error.localizedDescription)");              
+            }
+            print("下載儲存完成")
         }
     }
     
