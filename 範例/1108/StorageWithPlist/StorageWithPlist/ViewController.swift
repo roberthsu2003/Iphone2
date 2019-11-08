@@ -11,10 +11,12 @@ import Firebase
 
 class ViewController: UIViewController {
     var uid:String!
+    let plistName = "citylist.plist"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         userLogin()
+        getPlistFile()
     }
     
     func userLogin(){
@@ -31,6 +33,26 @@ class ViewController: UIViewController {
         }
         uid = user.uid
         print("uid=\(uid!)")
+    }
+    
+    func getPlistFile(){
+        //check Documents 有沒有citylist.plist
+        let fileManager = FileManager.default;
+        guard var url = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else{
+            print("url有錯誤");
+            return
+        }
+        url.appendPathComponent(plistName)
+        print(url.path);
+        
+        if !fileManager.fileExists(atPath: url.path){
+            print("沒有citylist.plist");
+            //下載公用版的plist
+        }
+        
+        
+        
+        
     }
     
 
