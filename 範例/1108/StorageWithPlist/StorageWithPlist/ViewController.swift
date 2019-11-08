@@ -74,8 +74,28 @@ class ViewController: UITableViewController {
                 print("寫入plistToDocument有誤:\(error.localizedDescription)");
             }
             print("下載儲存完成")
+            //created images directory in Documents
+            self.createImagesDirectoryInDocuments()
             self.getCitylistFromDocuments()
         }
+    }
+    
+    func createImagesDirectoryInDocuments(){
+        let fileManager = FileManager.default;
+        guard var url = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else{
+            print("url有錯誤");
+            return
+        }
+        url.appendPathComponent("images", isDirectory: true);
+        do{
+        try fileManager.createDirectory(at: url, withIntermediateDirectories: true, attributes: nil)
+            print("建立images的目錄成功");
+        }catch let error as NSError{
+            print("建立images的目錄失敗:\(error.localizedDescription)")
+        }
+        
+       
+       
     }
     
     func getCitylistFromDocuments(){
@@ -93,6 +113,19 @@ class ViewController: UITableViewController {
         
         tableView.reloadData();
     }
+
+    
+    func getImageInDocument(imageName:String) -> UIImage?{
+        let fileManager = FileManager.default;
+        guard var url = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else{
+            print("url有錯誤");
+            return nil
+        }
+        url.appendPathComponent("images", isDirectory: true);
+        url.appendPathComponent(imageName)
+        print(url.path)
+        return nil;
+    }
     
 
 
@@ -107,11 +140,16 @@ extension ViewController{
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
         let cityDic = citys[indexPath.row]
+        let imageName = cityDic["Image"]
+        let image = getImageInDocument(imageName: imageName!)
         cell.textLabel?.text = cityDic["City"]
         cell.detailTextLabel?.text = cityDic["Country"]
         return cell;
+        
     }
 }
+
+
 
 
 
