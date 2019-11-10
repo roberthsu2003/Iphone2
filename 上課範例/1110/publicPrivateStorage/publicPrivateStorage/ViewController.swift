@@ -138,3 +138,19 @@ class ViewController: UITableViewController {
 
 }
 
+extension ViewController{
+    //UITableViewDataSource
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        return citys.count;
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        let cityDic = citys[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
+        cell.textLabel?.text = cityDic["City"]
+        cell.detailTextLabel?.text = cityDic["Country"]
+        return cell;
+        
+    }
+}
+
