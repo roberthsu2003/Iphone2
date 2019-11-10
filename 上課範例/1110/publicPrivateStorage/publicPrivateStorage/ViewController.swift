@@ -25,14 +25,29 @@ class ViewController: UITableViewController {
                            print("anoonymously失敗");
                            return
                        }
+                    self.checkCityplistInDocuments()
                     
-                    self.tableView.reloadData();
                    }
-                   
-               }else{
-                   //已經認證
-                   
-               }
+                 
+        }else{
+        //已經認證
+          checkCityplistInDocuments()
+        }
+    }
+    
+    func checkCityplistInDocuments(){
+        let fileManager = FileManager.default;
+        guard let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else{
+            print("沒有取得plistURL");
+            return;
+        }
+        
+        let plistURL = documentsURL.appendingPathComponent("citylist.plist")
+        if !fileManager.fileExists(atPath: plistURL.path){
+            print("沒有這個檔");
+        }
+        
+        
     }
 
 
