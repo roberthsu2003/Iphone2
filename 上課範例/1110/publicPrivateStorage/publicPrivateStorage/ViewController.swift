@@ -38,6 +38,7 @@ class ViewController: UITableViewController {
             
             boolState = false;
                    Auth.auth().signInAnonymously { (result:AuthDataResult?, error:Error?) in
+                    //非同步執行
                        guard result != nil, error == nil else{
                            print("anoonymously失敗");
                            return
@@ -69,6 +70,8 @@ class ViewController: UITableViewController {
         if !fileManager.fileExists(atPath: plistURL.path){
             let plistInStorageRef = storage.reference(withPath: "h2/citylist.plist")
             plistInStorageRef.getData(maxSize: 1*1024*1024) { (data:Data?, error:Error?) in
+                
+                //非同步執行
                 guard let plistData = data, error == nil else {
                     print("下載plist檔案有錯");
                     boolState = false;
@@ -99,6 +102,10 @@ class ViewController: UITableViewController {
                     return;
                 }
                 
+                self.citys = self.parsePlistInDocument() ?? [[String:String]]()
+                print(self.citys)
+                self.tableView.reloadData();
+                
                 
                 
             }
@@ -124,6 +131,8 @@ class ViewController: UITableViewController {
         guard let plistURL = getCityplistURLInDocument() else{
             return nil;
         }
+        
+        let path = plistURL.path
         
         guard let citys = NSArray(contentsOf: plistURL) as? [[String:String]] else{
             print("解析plist出錯");
