@@ -132,7 +132,7 @@ class ViewController: UITableViewController {
             return nil;
         }
         
-        let path = plistURL.path
+        
         
         guard let citys = NSArray(contentsOf: plistURL) as? [[String:String]] else{
             print("解析plist出錯");
@@ -163,7 +163,7 @@ extension ViewController{
             cell.imageView?.image = UIImage(contentsOfFile: imageURL.path)
         }else{
             //fireStorage downloadImage
-            
+            downloadImageFileToDocuments(imageName: cityDic["Image"]!, indexPath: indexPath)
         }
         /*
         guard let cityImage = UIImage(named: cityDic["Image"]!) else{
@@ -189,6 +189,25 @@ extension ViewController{
             return true;
         }
         return false;
+    }
+    
+    func downloadImageFileToDocuments(imageName:String,indexPath:IndexPath){
+        let imageFileRef = storage.reference(withPath: "h2/images/\(imageName)")
+        imageFileRef.getData(maxSize: 1 * 1024 * 1024) { (data:Data?, error:Error?) in
+            //非同步
+            guard let imageData = data, error == nil else{
+                print("DownloadImage有錯:\(imageName):\(error!.localizedDescription)");
+                return;
+            }
+            let imageURLInDocuments = self.getImageURLInDocuments(imageName: imageName)
+            do{
+                try imageData.write(to: imageURLInDocuments)
+                self.tableView.reloadRows(at: [indexPath], with: .automatic)
+            }catch let error as NSError{
+                print("image:\(imageName)寫入Document/images失敗:\(error.localizedDescription)");
+            }
+            
+        }
     }
     
     
