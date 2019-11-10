@@ -158,8 +158,39 @@ extension ViewController{
         let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
         cell.textLabel?.text = cityDic["City"]
         cell.detailTextLabel?.text = cityDic["Country"]
+        if checkImageFileExist(imageName:cityDic["Image"]!) {
+            let imageURL = getImageURLInDocuments(imageName: cityDic["Image"]!)
+            cell.imageView?.image = UIImage(contentsOfFile: imageURL.path)
+        }else{
+            //fireStorage downloadImage
+            
+        }
+        /*
+        guard let cityImage = UIImage(named: cityDic["Image"]!) else{
+            
+        }
+ */
+        
         return cell;
         
     }
+    
+    func getImageURLInDocuments(imageName:String) -> URL{
+        let documentURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
+        let imageFolderURL = documentURL.appendingPathComponent("images", isDirectory: true)
+        let imageURL = imageFolderURL.appendingPathComponent(imageName)
+        print(imageURL.path)
+        return imageURL
+    }
+    
+    func checkImageFileExist(imageName:String) -> Bool{
+         let imageURL = getImageURLInDocuments(imageName: imageName)
+        if FileManager.default.fileExists(atPath: imageURL.path) {
+            return true;
+        }
+        return false;
+    }
+    
+    
 }
 
