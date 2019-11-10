@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -18,6 +19,28 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        guard  let navi = window?.rootViewController as? UINavigationController else{
+                   print("navigation出錯了");
+                   return
+               }
+        let rootViewController = navi.topViewController as! ViewController
+        
+        if Auth.auth().currentUser == nil {
+            //尚未認證
+            Auth.auth().signInAnonymously { (result:AuthDataResult?, error:Error?) in
+                guard result != nil, error == nil else{
+                    print("anoonymously失敗");
+                    return
+                }
+                rootViewController.finishAuthtication();
+            }
+            
+        }else{
+            //已經認證
+            rootViewController.finishAuthtication();
+        }
+       
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
