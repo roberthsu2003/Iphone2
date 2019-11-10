@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 class ViewController: UITableViewController {
     let storage = Storage.storage()
+    var citys = [[String:String]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,9 +19,14 @@ class ViewController: UITableViewController {
             return
            
         }
-        parsePlistInDocument()
-            
+        /*
+        guard let citys = parsePlistInDocument() else{
+            return;
+        }*/
         
+        self.citys = parsePlistInDocument() ?? [[String:String]]()
+        print(self.citys)
+        self.tableView.reloadData();
     }
     
    
@@ -36,8 +42,10 @@ class ViewController: UITableViewController {
                            print("anoonymously失敗");
                            return
                        }
+                        
                         if self.checkCityplistInDocuments(){
-                            self.parsePlistInDocument()
+                            self.citys = self.parsePlistInDocument() ?? [[String:String]]()
+                            self.tableView.reloadData();
                         }
                     
                    }
@@ -53,12 +61,11 @@ class ViewController: UITableViewController {
     func checkCityplistInDocuments() -> Bool{
         var boolState:Bool = true;
         let fileManager = FileManager.default;
-        guard let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else{
-            print("沒有取得documentsURL");
-            return false;
+       
+        guard let plistURL = getCityplistURLInDocument() else{
+            boolState = false;
+            return boolState;
         }
-        
-        let plistURL = documentsURL.appendingPathComponent("citylist.plist")
         if !fileManager.fileExists(atPath: plistURL.path){
             let plistInStorageRef = storage.reference(withPath: "h2/citylist.plist")
             plistInStorageRef.getData(maxSize: 1*1024*1024) { (data:Data?, error:Error?) in
@@ -73,6 +80,12 @@ class ViewController: UITableViewController {
                     print("寫入plist有錯:\(error.localizedDescription)")
                     boolState = false;
                     return
+                }
+                
+                guard let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else{
+                    print("沒有取得documentsURL");
+                    boolState = false;
+                    return;
                 }
                 
                 let imagesDirectoryURL = documentsURL.appendingPathComponent("images", isDirectory: true)
@@ -95,9 +108,31 @@ class ViewController: UITableViewController {
         return boolState;
     }
     
+    func getCityplistURLInDocument() -> URL?{
+        let fileManager = FileManager.default;
+        guard let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else{
+            print("沒有取得documentsURL");
+            return nil;
+        }
+        let plistURL = documentsURL.appendingPathComponent("citylist.plist")
+        return plistURL
+    }
     
-    func parsePlistInDocument(){
-        print("parsePlistInDocument")
+    
+    
+    func parsePlistInDocument() -> [[String:String]]?{
+        guard let plistURL = getCityplistURLInDocument() else{
+            return nil;
+        }
+        
+        guard let citys = NSArray(contentsOf: plistURL) as? [[String:String]] else{
+            print("解析plist出錯");
+            return nil
+        }
+        
+        return citys
+        
+        
     }
 
 
