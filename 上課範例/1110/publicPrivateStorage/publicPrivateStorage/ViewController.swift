@@ -13,18 +13,24 @@ class ViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if userAuthentication() {
-            //parse Plist in Documents
-            parsePlistInDocument()
+        guard userAuthentication() == true,checkCityplistInDocuments() == true else {
+            print("出錯");
+            return
+           
         }
+        parsePlistInDocument()
+            
+        
     }
     
    
     
     func userAuthentication() -> Bool{
-        var boolState = false;
+        var boolState = true;
         if Auth.auth().currentUser == nil {
                    //尚未認證
+            
+            boolState = false;
                    Auth.auth().signInAnonymously { (result:AuthDataResult?, error:Error?) in
                        guard result != nil, error == nil else{
                            print("anoonymously失敗");
@@ -38,18 +44,14 @@ class ViewController: UITableViewController {
                  
         }else{
         //已經認證
-            if checkCityplistInDocuments() {
-                boolState = true;
-            }else{
-                boolState = false;
-            }
+            boolState = true;
         }
         
        return boolState
     }
     
     func checkCityplistInDocuments() -> Bool{
-        var boolState:Bool = false;
+        var boolState:Bool = true;
         let fileManager = FileManager.default;
         guard let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else{
             print("沒有取得documentsURL");
@@ -76,6 +78,7 @@ class ViewController: UITableViewController {
                 let imagesDirectoryURL = documentsURL.appendingPathComponent("images", isDirectory: true)
                 do{
                 try fileManager.createDirectory(at: imagesDirectoryURL, withIntermediateDirectories: true, attributes: nil)
+                   
                     
                 }catch let error as NSError{
                     print("建立images Directory有問題:\(error.localizedDescription)");
@@ -83,7 +86,7 @@ class ViewController: UITableViewController {
                     return;
                 }
                 
-                boolState = true;
+                
                 
             }
             
