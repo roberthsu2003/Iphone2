@@ -57,6 +57,14 @@ class ViewController: UITableViewController {
                     print("寫入plist有錯:\(error.localizedDescription)")
                 }
                 
+                let imagesDirectoryURL = documentsURL.appendingPathComponent("images", isDirectory: true)
+                do{
+                try fileManager.createDirectory(at: imagesDirectoryURL, withIntermediateDirectories: true, attributes: nil)
+                    
+                }catch let error as NSError{
+                    print("建立images Directory有問題:\(error.localizedDescription)");
+                }
+                
                 
             }
         }
