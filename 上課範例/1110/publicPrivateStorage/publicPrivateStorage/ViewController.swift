@@ -25,7 +25,7 @@ class ViewController: UITableViewController {
         }*/
         
         self.citys = parsePlistInDocument() ?? [[String:String]]()
-        print(self.citys)
+        
         self.tableView.reloadData();
     }
     
@@ -54,6 +54,7 @@ class ViewController: UITableViewController {
         }else{
         //已經認證
             boolState = true;
+            print("UID:\(Auth.auth().currentUser!.uid)")
         }
         
        return boolState
@@ -67,6 +68,7 @@ class ViewController: UITableViewController {
             boolState = false;
             return boolState;
         }
+        print(plistURL.path)
         if !fileManager.fileExists(atPath: plistURL.path){
             let plistInStorageRef = storage.reference(withPath: "h2/citylist.plist")
             plistInStorageRef.getData(maxSize: 1*1024*1024) { (data:Data?, error:Error?) in
@@ -165,11 +167,7 @@ extension ViewController{
             //fireStorage downloadImage
             downloadImageFileToDocuments(imageName: cityDic["Image"]!, indexPath: indexPath)
         }
-        /*
-        guard let cityImage = UIImage(named: cityDic["Image"]!) else{
-            
-        }
- */
+       
         
         return cell;
         

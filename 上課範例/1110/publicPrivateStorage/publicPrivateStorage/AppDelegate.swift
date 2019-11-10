@@ -19,7 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        //UserDefaults.standard.setValue("a1234567890", forKey: "robert")
+        //UserDefaults.standard.synchronize()
         return true
     }
 
