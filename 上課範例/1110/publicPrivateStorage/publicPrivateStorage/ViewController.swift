@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 class ViewController: UITableViewController {
+    let storage = Storage.storage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,13 +39,26 @@ class ViewController: UITableViewController {
     func checkCityplistInDocuments(){
         let fileManager = FileManager.default;
         guard let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else{
-            print("沒有取得plistURL");
+            print("沒有取得documentsURL");
             return;
         }
         
         let plistURL = documentsURL.appendingPathComponent("citylist.plist")
         if !fileManager.fileExists(atPath: plistURL.path){
-            print("沒有這個檔");
+            let plistInStorageRef = storage.reference(withPath: "h2/citylist.plist")
+            plistInStorageRef.getData(maxSize: 1*1024*1024) { (data:Data?, error:Error?) in
+                guard let plistData = data, error == nil else {
+                    print("下載plist檔案有錯");
+                    return
+                }
+                do{
+                   try plistData.write(to: plistURL)
+                }catch let error as NSError{
+                    print("寫入plist有錯:\(error.localizedDescription)")
+                }
+                
+                
+            }
         }
         
         
