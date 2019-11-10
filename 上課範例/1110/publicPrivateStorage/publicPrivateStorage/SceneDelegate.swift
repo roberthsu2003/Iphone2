@@ -23,22 +23,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                    print("navigation出錯了");
                    return
                }
-        let rootViewController = navi.topViewController as! ViewController
-        
-        if Auth.auth().currentUser == nil {
-            //尚未認證
-            Auth.auth().signInAnonymously { (result:AuthDataResult?, error:Error?) in
-                guard result != nil, error == nil else{
-                    print("anoonymously失敗");
-                    return
-                }
-                rootViewController.finishAuthtication();
-            }
-            
-        }else{
-            //已經認證
-            rootViewController.finishAuthtication();
-        }
+        let _ = navi.topViewController as! ViewController
+        /*
+       
+ */
        
         
     }

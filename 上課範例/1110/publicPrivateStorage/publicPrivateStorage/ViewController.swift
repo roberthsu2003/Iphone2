@@ -7,16 +7,32 @@
 //
 
 import UIKit
-
-class ViewController: UIViewController {
+import Firebase
+class ViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("viewDidLoad")
+        userAuthentication();
     }
     
-    func finishAuthtication(){
-        print("finishAuthtication");
+   
+    
+    func userAuthentication(){
+        if Auth.auth().currentUser == nil {
+                   //尚未認證
+                   Auth.auth().signInAnonymously { (result:AuthDataResult?, error:Error?) in
+                       guard result != nil, error == nil else{
+                           print("anoonymously失敗");
+                           return
+                       }
+                    
+                    self.tableView.reloadData();
+                   }
+                   
+               }else{
+                   //已經認證
+                   
+               }
     }
 
 
