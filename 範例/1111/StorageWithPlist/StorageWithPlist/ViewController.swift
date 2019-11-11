@@ -22,6 +22,22 @@ class ViewController: UITableViewController {
         getPlistFile()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated);
+        NotificationCenter.default.addObserver(forName: UIApplication.willResignActiveNotification, object: nil, queue: nil) { (notification:Notification) in
+            print("App 進入將進入背景");
+        }
+        
+        NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: nil) { (notification:Notification) in
+            print("App 將進入前景");
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(<#T##observer: Any##Any#>, name: <#T##NSNotification.Name?#>, object: <#T##Any?#>)
+    }
+    
     func userLogin(){
         guard let user = Auth.auth().currentUser else{
             Auth.auth().signInAnonymously { (resuld:AuthDataResult?, error:Error?) in
