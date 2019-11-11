@@ -30,8 +30,13 @@ class ViewController: UITableViewController {
         }
         
         NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: nil) { (notification:Notification) in
+            self.downloadPrivateCityPlistToDocuments();
             print("App將進入前景");
         }
+    }
+    
+    func downloadPrivateCityPlistToDocuments(){
+        print("download");
     }
     
     func uploadCityPlistToPrivateStorage(){
@@ -42,22 +47,23 @@ class ViewController: UITableViewController {
                }
       plistUrl.appendPathComponent(plistName)
       let plistRef = storage.reference(withPath: "h2/\(Auth.auth().currentUser!.uid)/\(plistName)")
+        //上傳plist
+        let metadata = StorageMetadata()
+        metadata.contentType = "application/octet-stream"
+        plistRef.putFile(from:  plistUrl, metadata: metadata) { (metadata:StorageMetadata?, error:Error?) in
+            guard metadata != nil, error == nil else{
+                print("上傳plist失敗");
+                return
+            }
+            
+            print("上傳plist成功");
+        }
+        
         plistRef.getMetadata { (metadata:StorageMetadata?, error:Error?) in
             guard metadata != nil, error == nil else{
                 //錯誤
                 if (error! as NSError).domain == StorageErrorDomain{
                     print("檔案沒有發現");
-                    //上傳plist檔案
-                    let metadata = StorageMetadata()
-                    metadata.contentType = "application/octet-stream"
-                    plistRef.putFile(from:  plistUrl, metadata: metadata) { (metadata:StorageMetadata?, error:Error?) in
-                        guard metadata != nil, error == nil else{
-                            print("上傳plist失敗");
-                            return
-                        }
-                        
-                        print("上傳plist成功");
-                    }
                     
                     //上傳圖片
                     guard var imagesUrl = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else{
