@@ -13,6 +13,7 @@ class ViewController: UITableViewController {
     var uid:String!
     let plistName = "citylist.plist"
     var citys = [[String:String]]()
+    var storage = Storage.storage()
     
     
     override func viewDidLoad() {
@@ -115,7 +116,7 @@ class ViewController: UITableViewController {
     }
 
     
-    func getImageInDocument(imageName:String) -> UIImage?{
+    func getImageInDocument(imageName:String,indexPath:IndexPath) -> UIImage?{
         let fileManager = FileManager.default;
         guard var url = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else{
             print("url有錯誤");
@@ -125,7 +126,7 @@ class ViewController: UITableViewController {
         url.appendPathComponent(imageName)
         if !fileManager.fileExists(atPath: url.path){
             //沒有這張圖
-            downloadImageFromStorageToDocuments(imageName: imageName, locationInDocuments: url)
+            downloadImageFromStorageToDocuments(imageName: imageName, locationInDocuments: url,indexpath:indexPath)
             return nil;
         }else{
            //有這一張圖
@@ -134,8 +135,21 @@ class ViewController: UITableViewController {
     }
     
     
-    func downloadImageFromStorageToDocuments(imageName:String,locationInDocuments:URL){
-        print("Download imageName:\(imageName)");
+    func downloadImageFromStorageToDocuments(imageName:String,locationInDocuments:URL,indexpath:IndexPath){
+        let imageRef = storage.reference(withPath: "h2/images/\(imageName)")
+        imageRef.getData(maxSize: 1 * 1024 * 1024) { (data:Data?, error:Error?) in
+            guard let imageData = data, error == nil else{
+                print("下載失敗");
+                return;
+            }
+            do{
+                try imageData.write(to: locationInDocuments)
+                self.tableView.reloadRows(at: [indexpath], with: .automatic)
+            }catch let error as NSError{
+                print("寫入失敗:\(error.localizedDescription)");
+                
+            }
+        }
     }
     
 
@@ -152,7 +166,7 @@ extension ViewController{
         let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
         let cityDic = citys[indexPath.row]
         let imageName = cityDic["Image"]
-        let image = getImageInDocument(imageName: imageName!)
+        let image = getImageInDocument(imageName: imageName!,indexPath:indexPath )
         cell.textLabel?.text = cityDic["City"]
         cell.detailTextLabel?.text = cityDic["Country"]
         cell.imageView?.image = image;
