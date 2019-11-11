@@ -25,12 +25,33 @@ class ViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
         NotificationCenter.default.addObserver(forName: UIApplication.willResignActiveNotification, object: nil, queue: nil) { (notification:Notification) in
-            print("App 進入將進入背景");
+            print("App進入將進入背景");
+            self.uploadCityPlistToPrivateStorage()
         }
         
         NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: nil) { (notification:Notification) in
-            print("App 將進入前景");
+            print("App將進入前景");
         }
+    }
+    
+    func uploadCityPlistToPrivateStorage(){
+       let fileManager = FileManager.default;
+               guard var plistUrl = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else{
+                   print("url有錯誤");
+                   return
+               }
+      plistUrl.appendPathComponent(plistName)
+      let plistRef = storage.reference(withPath: "h2/\(Auth.auth().currentUser!.uid)/\(plistName)")
+        plistRef.getMetadata { (metadata:StorageMetadata?, error:Error?) in
+            guard metadata != nil, error == nil else{
+                //錯誤
+                print(error!.localizedDescription)
+                return
+            }
+            
+        }
+        
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
