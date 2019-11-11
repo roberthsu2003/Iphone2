@@ -45,7 +45,23 @@ class ViewController: UITableViewController {
         plistRef.getMetadata { (metadata:StorageMetadata?, error:Error?) in
             guard metadata != nil, error == nil else{
                 //錯誤
-                print(error!.localizedDescription)
+                if (error! as NSError).domain == StorageErrorDomain{
+                    print("檔案沒有發現");
+                    //上傳檔案
+                    let metadata = StorageMetadata()
+                    metadata.contentType = "application/octet-stream"
+                    plistRef.putFile(from:  plistUrl, metadata: metadata) { (metadata:StorageMetadata?, error:Error?) in
+                        guard metadata != nil, error == nil else{
+                            print("上傳plist失敗");
+                            return
+                        }
+                        
+                        print("上傳plist成功");
+                    }
+                    
+                }
+
+             
                 return
             }
             
