@@ -47,7 +47,7 @@ class ViewController: UITableViewController {
                 //錯誤
                 if (error! as NSError).domain == StorageErrorDomain{
                     print("檔案沒有發現");
-                    //上傳檔案
+                    //上傳plist檔案
                     let metadata = StorageMetadata()
                     metadata.contentType = "application/octet-stream"
                     plistRef.putFile(from:  plistUrl, metadata: metadata) { (metadata:StorageMetadata?, error:Error?) in
@@ -57,6 +57,32 @@ class ViewController: UITableViewController {
                         }
                         
                         print("上傳plist成功");
+                    }
+                    
+                    //上傳圖片
+                    guard var imagesUrl = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else{
+                        print("url有錯誤");
+                        return
+                    }
+                    imagesUrl.appendPathComponent("images")
+                    do{
+                        let imageUrls = try fileManager.contentsOfDirectory(at: imagesUrl, includingPropertiesForKeys: nil, options: .includesDirectoriesPostOrder)
+                        for imageURL in imageUrls {
+                           let imageName = imageURL.lastPathComponent
+                           let imageRef = self.storage.reference(withPath: "h2/\(Auth.auth().currentUser!.uid)/images/\(imageName)")
+                            let imageMataData = StorageMetadata();
+                            imageMataData.contentType = "image/jpeg"
+                            imageRef.putFile(from: imageURL, metadata: imageMataData) { (metadata:StorageMetadata?, error:Error?) in
+                                guard metadata != nil,error == nil else{
+                                    print("上傳圖片出錯");
+                                    return
+                                }
+                                print("上傳圖片成功");
+                            }
+                        }
+                    }
+                    catch let error as NSError{
+                        print(error.localizedDescription)
                     }
                     
                 }
