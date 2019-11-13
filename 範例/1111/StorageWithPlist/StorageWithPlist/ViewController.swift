@@ -316,10 +316,15 @@ extension ViewController{
         imageRef.delete { (error:Error?) in
             guard error == nil else{
                 print("delecte fireStorage 失敗");
+               
                 return
             }
             print("delete 成功");
+            
+            
         }
+        
+        
         
     }
 }
