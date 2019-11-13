@@ -37,6 +37,27 @@ class ViewController: UITableViewController {
     
     func downloadPrivateCityPlistToDocuments(){
         print("download");
+        let plistRef = storage.reference(withPath: "h2/\(Auth.auth().currentUser!.uid)/\(plistName)")
+        plistRef.getData(maxSize: 1 * 1024 * 1024) { (data:Data?, error:Error?) in
+            guard let plistData = data, error == nil else{
+                print("下載plsit失敗");
+                return
+            }
+            let fileManager = FileManager.default;
+                     guard var plistUrl = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else{
+                         print("url有錯誤");
+                         return
+                     }
+            plistUrl.appendPathComponent(self.plistName)
+            do{
+                try plistData.write(to: plistUrl)
+                print("plist下載成功");
+                self.tableView.reloadData();
+            }catch let error as NSError{
+                print("plist下載失敗")
+                print(error.localizedDescription);
+            }
+        }
     }
     
     func uploadCityPlistToPrivateStorage(){
