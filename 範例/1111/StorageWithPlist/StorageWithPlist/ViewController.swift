@@ -279,6 +279,49 @@ extension ViewController{
         return cell;
         
     }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath){
+        deleteOneCityData(indexPath: indexPath)
+        tableView.deleteRows(at: [indexPath], with: .automatic)
+    }
+    
+    func deleteOneCityData(indexPath:IndexPath){
+        let deleteIndex = indexPath.row;
+        let cityImageName = citys[deleteIndex]["Image"]
+        citys.remove(at: deleteIndex)
+        //更新plist資料
+        let fileManager = FileManager.default;
+        guard var url = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else{
+            print("url有錯誤");
+            return
+        }
+        var plistURL = url
+        plistURL.appendPathComponent(plistName)
+        (citys as NSArray).write(to: url, atomically: true)
+        
+        print("Document的內容被更改");
+        //delete images
+        var imageURL = url
+        imageURL.appendPathComponent("images", isDirectory: true)
+        imageURL.appendPathComponent(cityImageName!)
+        do{
+           try fileManager.removeItem(at: imageURL)
+        }catch let error as NSError{
+            print("刪documents內的圖片失敗:\(error.localizedDescription)");
+        }
+        
+        //刪除雲端的圖片
+        let imageRef = storage.reference(withPath: "h2/\(Auth.auth().currentUser!.uid)/images/\(cityImageName!)")
+        
+        imageRef.delete { (error:Error?) in
+            guard error == nil else{
+                print("delecte fireStorage 失敗");
+                return
+            }
+            print("delete 成功");
+        }
+        
+    }
 }
 
 
