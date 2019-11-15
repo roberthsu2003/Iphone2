@@ -31,13 +31,14 @@ class ViewController: UIViewController {
         let vision = Vision.vision()
         let textRecognizer = vision.onDeviceTextRecognizer()
         guard let originImage = photoImageView.image else{
-            print("圖片有問題")
+            showMessage(message: "圖片有問題")
             return
         }
          let visionImage = VisionImage(image: originImage)
         textRecognizer.process(visionImage) { (text:VisionText?, error:Error?) in
             guard let visionText = text, error == nil else{
                 print("文字辦識出問題:\(error!.localizedDescription)");
+                self.showMessage(message: "文字辦識出問題")
                 return
             }
             
@@ -96,13 +97,13 @@ class ViewController: UIViewController {
         options.languageHints = ["en", "zh"]
         let textRecognizer = vision.cloudTextRecognizer(options: options)
         guard let originImage = photoImageView.image else{
-            print("圖片出錯");
+            showMessage(message: "圖片出錯")
             return
         }
         let visionImage = VisionImage(image: originImage)
         textRecognizer.process(visionImage) { (visionText:VisionText?, error:Error?) in
             guard let visionText = visionText , error == nil else{
-                print("辦試錯誤");
+                self.showMessage(message: "辦識錯誤")
                 return
             }
             
@@ -110,6 +111,13 @@ class ViewController: UIViewController {
             
             self.textMessage.text = resultText
         }
+    }
+    
+    func showMessage(message:String){
+        let alertController = UIAlertController(title: "錯誤", message: message, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(alertAction)
+        present(alertController, animated: true, completion: nil)
     }
 
 
@@ -119,6 +127,7 @@ extension ViewController:UIImagePickerControllerDelegate,UINavigationControllerD
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
         guard let selectedImage = info[.originalImage] as? UIImage else{
             print("取出照片出錯");
+            showMessage(message: "取出照片出錯")
             return
         }
         
