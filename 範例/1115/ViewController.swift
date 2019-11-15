@@ -11,6 +11,7 @@ import Firebase
 
 class ViewController: UIViewController {
     @IBOutlet var photoImageView:UIImageView!
+    @IBOutlet var textMessage:UITextView!;
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -64,6 +65,7 @@ class ViewController: UIViewController {
                     if let carNumber = subtractTextAndValidate(source: text){
                         print(text, terminator:" :");
                         print("車牌號碼後4碼:\(carNumber)");
+                        self.textMessage.text = "車牌是:\(text)"
                     }else{
                         print(text, terminator:" :");
                         print("不是車牌號碼)");
@@ -89,7 +91,25 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onCloundTextRecognition(_ sender:UIButton){
-        
+        let vision = Vision.vision()
+        let options = VisionCloudTextRecognizerOptions()
+        options.languageHints = ["en", "zh"]
+        let textRecognizer = vision.cloudTextRecognizer(options: options)
+        guard let originImage = photoImageView.image else{
+            print("圖片出錯");
+            return
+        }
+        let visionImage = VisionImage(image: originImage)
+        textRecognizer.process(visionImage) { (visionText:VisionText?, error:Error?) in
+            guard let visionText = visionText , error == nil else{
+                print("辦試錯誤");
+                return
+            }
+            
+            let resultText = visionText.text;
+            
+            self.textMessage.text = resultText
+        }
     }
 
 
