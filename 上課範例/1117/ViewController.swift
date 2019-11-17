@@ -32,15 +32,16 @@ class ViewController: UIViewController {
         let vision = Vision.vision()
         let textRecognizer = vision.onDeviceTextRecognizer()
         guard let originImage = photoImageView.image else{
-            print("沒有選取圖片");
+            showMessage(message: "沒有選取圖片")
             return
         }
         let visionImage = VisionImage(image: originImage)
         textRecognizer.process(visionImage) { (vistionText:VisionText?, error:Error?) in
             guard let vistionText = vistionText, error == nil else{
                 if let error = error{
-                    print(error.localizedDescription);
+                    self.showMessage(message: error.localizedDescription)
                 }
+                
                 return
             }
             
@@ -51,15 +52,19 @@ class ViewController: UIViewController {
                 let blockText = block.text
                 switch (blockText.count){
                     case 6...8:
-                        if let carNum = self.recognizeCarNum(blockStirng: blockText) {
+                        
+                        if let _ = self.recognizeCarNum(blockStirng: blockText) {
                             messageText += "carNumber:\(blockText)\n"
+                            
                             //print("carNumber:\(blockText)");
                         }else{
                             messageText += "\(blockText)這不是車牌\n"
                             //print("\(blockText)這不是車牌");
                         }
+                        
                     default:
                         messageText += "\(blockText)這不是車牌\n"
+                        break
                         //print("\(blockText)這不是車牌");
                 }
             }
@@ -67,6 +72,13 @@ class ViewController: UIViewController {
            
         }
         
+    }
+    
+    func showMessage(message:String){
+        let alertController = UIAlertController(title: "錯誤", message: message, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(alertAction)
+        present(alertController, animated: true, completion: nil)
     }
     
     func recognizeCarNum(blockStirng:String) -> Int?{
