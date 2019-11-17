@@ -37,12 +37,24 @@ class ViewController: UIViewController {
         let visionImage = VisionImage(image: originImage)
         textRecognizer.process(visionImage) { (vistionText:VisionText?, error:Error?) in
             guard let vistionText = vistionText, error == nil else{
-                print(error!.localizedDescription)
+                if let error = error{
+                    print(error.localizedDescription);
+                }
                 return
             }
             
             self.messageOfTextRecognizer.text = vistionText.text
-            
+            print(vistionText.blocks.count)
+            for block in vistionText.blocks{
+                
+                if let language = block.recognizedLanguages.first{
+                    print("這區塊的語言是=\(language.languageCode)")
+                }else{
+                     print("這區塊的語言是=無法辨識")
+                }
+                
+                print("這區塊的文字是=\(block.text)")
+            }
            
         }
         
