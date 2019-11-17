@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
     @IBOutlet var photoImageView:UIImageView!
@@ -27,6 +28,21 @@ class ViewController: UIViewController {
     }
     
     @IBAction func userOnDevice(_ sender:UIButton){
+        let vision = Vision.vision()
+        let textRecognizer = vision.onDeviceTextRecognizer()
+        guard let originImage = photoImageView.image else{
+            print("沒有選取圖片");
+            return
+        }
+        let visionImage = VisionImage(image: originImage)
+        textRecognizer.process(visionImage) { (vistionText:VisionText?, error:Error?) in
+            guard let vistionText = vistionText, error == nil else{
+                print(error!.localizedDescription)
+                return
+            }
+            
+           
+        }
         
     }
     
