@@ -28,6 +28,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func userOnDevice(_ sender:UIButton){
+        var messageText = "";
         let vision = Vision.vision()
         let textRecognizer = vision.onDeviceTextRecognizer()
         guard let originImage = photoImageView.image else{
@@ -43,19 +44,40 @@ class ViewController: UIViewController {
                 return
             }
             
-            self.messageOfTextRecognizer.text = vistionText.text
+           
             print(vistionText.blocks.count)
             for block in vistionText.blocks{
                 
-                if let language = block.recognizedLanguages.first{
-                    print("這區塊的語言是=\(language.languageCode)")
-                }else{
-                     print("這區塊的語言是=無法辨識")
+                let blockText = block.text
+                switch (blockText.count){
+                    case 6...8:
+                        if let carNum = self.recognizeCarNum(blockStirng: blockText) {
+                            messageText += "carNumber:\(blockText)\n"
+                            //print("carNumber:\(blockText)");
+                        }else{
+                            messageText += "\(blockText)這不是車牌\n"
+                            //print("\(blockText)這不是車牌");
+                        }
+                    default:
+                        messageText += "\(blockText)這不是車牌\n"
+                        //print("\(blockText)這不是車牌");
                 }
-                
-                print("這區塊的文字是=\(block.text)")
             }
+            self.messageOfTextRecognizer.text = messageText
            
+        }
+        
+    }
+    
+    func recognizeCarNum(blockStirng:String) -> Int?{
+        let endIndex = blockStirng.index(before: blockStirng.endIndex)
+        let startIndex = blockStirng.index(blockStirng.endIndex, offsetBy: -4)
+        let trackSubString = blockStirng[startIndex...endIndex]
+        let trackString = String(trackSubString)
+        if let carNumer = Int(trackString){
+            return carNumer
+        }else{
+            return nil;
         }
         
     }
