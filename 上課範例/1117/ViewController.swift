@@ -45,15 +45,27 @@ class ViewController: UIViewController {
                 return
             }
             
-           
-            print(vistionText.blocks.count)
+            //巢狀function
+            func recognizeCarNum(blockStirng:String) -> Int?{
+                let endIndex = blockStirng.index(before: blockStirng.endIndex)
+                let startIndex = blockStirng.index(blockStirng.endIndex, offsetBy: -4)
+                let trackSubString = blockStirng[startIndex...endIndex]
+                let trackString = String(trackSubString)
+                if let carNumer = Int(trackString){
+                    return carNumer
+                }else{
+                    return nil;
+                }
+                
+            }
+            
             for block in vistionText.blocks{
                 
                 let blockText = block.text
                 switch (blockText.count){
                     case 6...8:
                         
-                        if let _ = self.recognizeCarNum(blockStirng: blockText) {
+                        if let _ = recognizeCarNum(blockStirng: blockText) {
                             messageText += "carNumber:\(blockText)\n"
                             
                             //print("carNumber:\(blockText)");
@@ -74,6 +86,7 @@ class ViewController: UIViewController {
         
     }
     
+    //ViewController的method
     func showMessage(message:String){
         let alertController = UIAlertController(title: "錯誤", message: message, preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -81,18 +94,7 @@ class ViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
-    func recognizeCarNum(blockStirng:String) -> Int?{
-        let endIndex = blockStirng.index(before: blockStirng.endIndex)
-        let startIndex = blockStirng.index(blockStirng.endIndex, offsetBy: -4)
-        let trackSubString = blockStirng[startIndex...endIndex]
-        let trackString = String(trackSubString)
-        if let carNumer = Int(trackString){
-            return carNumer
-        }else{
-            return nil;
-        }
-        
-    }
+    
     
     @IBAction func userOnCloud(_ sender:UIButton){
         
