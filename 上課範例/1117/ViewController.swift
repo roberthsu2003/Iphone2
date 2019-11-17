@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet var photoImageView:UIImageView!
+    @IBOutlet var messageOfTextRecognizer:UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -24,11 +25,24 @@ class ViewController: UIViewController {
             present(imagePickerController, animated: true, completion: nil)
         }
     }
+    
+    @IBAction func userOnDevice(_ sender:UIButton){
+        
+    }
+    
+    @IBAction func userOnCloud(_ sender:UIButton){
+        
+    }
 }
 
 extension ViewController:UINavigationControllerDelegate,UIImagePickerControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
-        print("選擇圖片");
+        guard  let selectedImage = info[.originalImage] as? UIImage else{
+            print("選取的圖片失敗");
+            return
+        }
+        photoImageView.image = selectedImage
+        dismiss(animated: true, completion: nil)
     }
 }
 
