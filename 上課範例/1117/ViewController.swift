@@ -97,7 +97,23 @@ class ViewController: UIViewController {
     
     
     @IBAction func userOnCloud(_ sender:UIButton){
-        
+        let vision = Vision.vision()
+        let textRecognizer = vision.cloudTextRecognizer()
+        guard let originImage = photoImageView.image else{
+            showMessage(message: "沒有選取圖片")
+            return
+        }
+        let visionImage = VisionImage(image: originImage)
+        let option = VisionCloudTextRecognizerOptions();
+        option.languageHints = ["en", "zh"]
+        textRecognizer.process(visionImage) { (vistionText:VisionText?, error:Error?) in
+            guard let vistionText = vistionText, error == nil else{
+                self.showMessage(message: "辨識錯誤")
+                return
+            }
+            
+            self.messageOfTextRecognizer.text = vistionText.text
+        }
     }
 }
 
