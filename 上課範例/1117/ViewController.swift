@@ -16,7 +16,19 @@ class ViewController: UIViewController {
     }
 
     @IBAction func selectedImage(_ sender:UIBarButtonItem){
-        
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
+            let imagePickerController = UIImagePickerController()
+            imagePickerController.delegate = self;
+            imagePickerController.allowsEditing = false
+            imagePickerController.sourceType = .photoLibrary
+            present(imagePickerController, animated: true, completion: nil)
+        }
+    }
+}
+
+extension ViewController:UINavigationControllerDelegate,UIImagePickerControllerDelegate{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
+        print("選擇圖片");
     }
 }
 
