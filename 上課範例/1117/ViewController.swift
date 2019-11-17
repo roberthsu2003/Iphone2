@@ -9,12 +9,32 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet var photoImageView:UIImageView!
+    @IBOutlet var messageOfBarCodeRecognizer:UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
+    
+    @IBAction func selectedImage(_ sender:UIBarButtonItem){
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
+            let imagePickerController = UIImagePickerController()
+            imagePickerController.delegate = self;
+            imagePickerController.allowsEditing = false
+            imagePickerController.sourceType = .photoLibrary
+            present(imagePickerController, animated: true, completion: nil)
+        }
+    }
+    
 }
 
+extension ViewController:UINavigationControllerDelegate,UIImagePickerControllerDelegate{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
+        guard  let selectedImage = info[.originalImage] as? UIImage else{
+            print("選取的圖片失敗");
+            return
+        }
+        photoImageView.image = selectedImage
+        dismiss(animated: true, completion: nil)
+    }
+}
