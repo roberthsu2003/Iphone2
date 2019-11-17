@@ -41,6 +41,8 @@ class ViewController: UIViewController {
                 return
             }
             
+            self.messageOfTextRecognizer.text = vistionText.text
+            
            
         }
         
