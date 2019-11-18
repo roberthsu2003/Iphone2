@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
     @IBOutlet var phothImageView:UIImageView!
+    lazy var vision = Vision.vision()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -24,6 +26,33 @@ class ViewController: UIViewController {
             imagePickerController.delegate = self;
             present(imagePickerController, animated: true, completion: nil)
         }
+    }
+    
+    @IBAction func barCodeScan(_ sender:UIButton){
+        let formats = VisionBarcodeFormat.all
+        //let formats = VisionBarcodeFormat(arrayLiteral: .code39,.qrCode)
+        let barcodeOptions = VisionBarcodeDetectorOptions(formats: formats)
+        let barcodeDetector = vision.barcodeDetector(options: barcodeOptions)
+        guard let originalImage = phothImageView.image else{
+            print("沒有選擇圖片");
+            return
+        }
+        let visionImage = VisionImage(image: originalImage)
+        barcodeDetector.detect(in: visionImage) { (barcodes:[VisionBarcode]?, error:Error?) in
+            guard error == nil else{
+                print("辨識有錯誤:\(error!.localizedDescription)");
+                return
+            }
+            guard barcodes != nil,!barcodes!.isEmpty else{
+                print("沒有偵測到");
+                return
+            }
+            
+            for visionBarcode in barcodes!{
+                print(visionBarcode)
+            }
+        }
+        
     }
 }
 
