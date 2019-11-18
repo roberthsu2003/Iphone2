@@ -11,6 +11,7 @@ import Firebase
 
 class ViewController: UIViewController {
     @IBOutlet var phothImageView:UIImageView!
+    @IBOutlet var messageOfBarCodeRecognizer:UITextView!
     lazy var vision = Vision.vision()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,10 +51,19 @@ class ViewController: UIViewController {
                 self.showMessage(message: "沒有偵測到")
                 return
             }
+            var displayString = ""
             
             for visionBarcode in barcodes!{
-                print(visionBarcode)
+                if let value = visionBarcode.displayValue{
+                    displayString += value
+                    displayString += "\n"                    
+                }
+                
+                let frame = visionBarcode.frame
+                displayString += "x:\(frame.origin.x),y:\(frame.origin.y),width:\(frame.size.width),height:\(frame.size.height)"
+                displayString += "============================\n"
             }
+            self.messageOfBarCodeRecognizer.text = displayString;
         }
         
     }
