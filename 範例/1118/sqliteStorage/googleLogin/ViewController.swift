@@ -18,12 +18,20 @@ class ViewController: UIViewController {
             performSegue(withIdentifier: "goLogin", sender: nil);
             return;
         }
-        
         //登入會執行這裏
         //print(Auth.auth().currentUser?.uid);
         
         
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard let user = Auth.auth().currentUser else{
+            print("尚未登入");
+            return
+        }
+        print("user uid:\(user.uid)");
     }
     
     @IBAction func userPressLoggingEvent(_ sender:UIButton){
