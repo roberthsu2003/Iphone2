@@ -35,16 +35,19 @@ class ViewController: UIViewController {
         let barcodeDetector = vision.barcodeDetector(options: barcodeOptions)
         guard let originalImage = phothImageView.image else{
             print("沒有選擇圖片");
+            showMessage(message: "沒有選擇圖片")
             return
         }
         let visionImage = VisionImage(image: originalImage)
         barcodeDetector.detect(in: visionImage) { (barcodes:[VisionBarcode]?, error:Error?) in
             guard error == nil else{
                 print("辨識有錯誤:\(error!.localizedDescription)");
+                self.showMessage(message: "辨識有錯誤:\(error!.localizedDescription)")
                 return
             }
             guard barcodes != nil,!barcodes!.isEmpty else{
-                print("沒有偵測到");
+               
+                self.showMessage(message: "沒有偵測到")
                 return
             }
             
@@ -53,6 +56,13 @@ class ViewController: UIViewController {
             }
         }
         
+    }
+    
+    func showMessage(message:String){
+        let alertController = UIAlertController(title: "錯誤", message: message, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "OK", style: .destructive, handler: nil)
+        alertController.addAction(alertAction)
+        present(alertController, animated: true, completion: nil)
     }
 }
 
