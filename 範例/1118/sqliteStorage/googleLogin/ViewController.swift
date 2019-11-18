@@ -32,6 +32,12 @@ class ViewController: UIViewController {
             return
         }
         print("user uid:\(user.uid)");
+        //檢查firestorage 有沒有student1017/UID的節點
+        //沒有節點，下載sqlite的檔
+        //建立student1017/UID的節點
+        //上傳sqlite檔案至student1017/UID的節點內
+        
+        //有節點，就下載節點sqlite檔
     }
     
     @IBAction func userPressLoggingEvent(_ sender:UIButton){
