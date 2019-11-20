@@ -32,18 +32,39 @@ class ViewController: UIViewController {
             return
         }
         print("user uid:\(user.uid)");
-        //檢查firestorage 有沒有student1017/UID的節點
-        //沒有節點，下載sqlite的檔
-        //建立student1017/UID的節點
-        //上傳sqlite檔案至student1017/UID的節點內
+        guard let ciytsDbURL = getCitysDbURLFromDocuments()else{
+            //因為data目錄沒有Db,要下載dbFromUserId
+            downloadCityFromUserIdFolder();
+            return
+        }
+        //有citys.db
+        //操作citys.db
         
-        //有節點，就下載節點sqlite檔
-        print("viewWillAppear")
+        
     }
     
-    @IBAction func userPressLoggingEvent(_ sender:UIButton){
-        print("LoggingEvent");
+    func getCitysDbURLFromDocuments() -> URL?{
+        let fileManager = FileManager.default
+        let rootURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
+        
+        let dataFolderURL = rootURL.appendingPathComponent("data", isDirectory: true)
+        let citysDbUrl = dataFolderURL.appendingPathComponent("citys.db")
+        guard fileManager.fileExists(atPath: citysDbUrl.path) else{
+            //沒有發現citys.db
+            //下載citydb
+            print("沒有發現city.db");
+            return nil
+        }
+        
+        return citysDbUrl
+        
     }
+    
+    func downloadCityFromUserIdFolder(){
+        
+    }
+    
+    
 
 
 }
