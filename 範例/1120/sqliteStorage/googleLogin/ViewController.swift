@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 class ViewController: UIViewController {
-
+    let storage = Storage.storage()
     override func viewDidLoad() {
         super.viewDidLoad()
         guard Auth.auth().currentUser != nil else{
@@ -32,11 +32,19 @@ class ViewController: UIViewController {
             return
         }
         print("user uid:\(user.uid)");
-        guard let ciytsDbURL = getCitysDbURLFromDocuments()else{
-            //因為data目錄沒有Db,要下載dbFromUserId
-            downloadCityFromUserIdFolder();
+        guard let ciytsDbURL = getCitysDbURLFromDocuments(),let cityDbRefFromUserId = getCityDbReferenceFromUserId() else{
+            print("從root下載");
+            let rootRef = storage.reference(withPath: "student1007/citys.db")
+            rootRef.getData(maxSize: 100 * 1024 * 1024) { (data:Data?, error:Error?) in
+                guard let cityDbData = data, error == nil else{
+                    print("cityDbData下載錯誤");
+                    return;
+                }
+                print("cityDbData下載成功");
+            }
             return
         }
+        //下載cityDbRefFromUserId,並存入至ciytsDbURL
         //有citys.db
         //操作citys.db
         
@@ -60,9 +68,18 @@ class ViewController: UIViewController {
         
     }
     
-    func downloadCityFromUserIdFolder(){
-        
+    func getCityDbReferenceFromUserId() -> StorageReference?{
+        var privateCityDbRef:StorageReference? = storage.reference(withPath: "student1007/\(Auth.auth().currentUser!.uid)/citys.db")
+        privateCityDbRef?.getMetadata { (metaData:StorageMetadata?, error:Error?) in
+            if(error! as NSError).domain == StorageErrorDomain{
+                privateCityDbRef = nil
+                return
+            }
+        }
+        return privateCityDbRef
     }
+    
+    
     
     
 
