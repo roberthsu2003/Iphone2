@@ -36,11 +36,15 @@ class ViewController: UIViewController {
             print("從root下載");
             let rootRef = storage.reference(withPath: "student1007/citys.db")
             rootRef.getData(maxSize: 100 * 1024 * 1024) { (data:Data?, error:Error?) in
+                //非同步
                 guard let cityDbData = data, error == nil else{
                     print("cityDbData下載錯誤");
                     return;
                 }
                 print("cityDbData下載成功");
+                if self.saveCityDbToDocuments(cityData: cityDbData) {
+                    //上傳cityDataToProvite
+                }
             }
             return
         }
@@ -77,6 +81,33 @@ class ViewController: UIViewController {
             }
         }
         return privateCityDbRef
+    }
+    
+    func saveCityDbToDocuments(cityData:Data) -> Bool{
+        if getCitysDbURLFromDocuments() == nil{
+            //沒有這個檔
+            //建立目錄
+            let fileManager = FileManager.default
+            let rootURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
+            let dataFolderURL = rootURL.appendingPathComponent("data", isDirectory: true)
+            do{
+            try fileManager.createDirectory(at: dataFolderURL, withIntermediateDirectories: true, attributes: nil)
+            }catch let error as NSError{
+                print("建立目錄失敗:\(error.localizedDescription)");
+            }
+            print("建立目錄成功")
+            let citysDbUrl = dataFolderURL.appendingPathComponent("citys.db")
+            do{
+            try cityData.write(to: citysDbUrl)
+            }catch let error as NSError{
+                print("存db檔失敗:\(error.localizedDescription)");
+                return false
+            }
+            return true;
+        }else{
+            return true;
+        }
+
     }
     
     
