@@ -42,6 +42,7 @@ class ViewController: UIViewController {
                     return;
                 }
                 print("cityDbData下載成功");
+                
                 if self.saveCityDbToDocuments(cityData: cityDbData) {
                     //上傳cityDataToPrivate
                     let privateCityDbRef = self.storage.reference(withPath: "student1007/\(Auth.auth().currentUser!.uid)/citys.db")
@@ -54,16 +55,33 @@ class ViewController: UIViewController {
                         }
                     }
                     
-                    print("上傳成功");                    
-                    
+                    print("上傳成功");
+                    //開始操控sqlite
                 }
             }
             return
         }
+        
+        
         //下載cityDbRefFromUserId,並存入至ciytsDbURL
         //有citys.db
         //操作citys.db
-        
+        /*
+        let privateRef = storage.reference(withPath: "student1007/\(Auth.auth().currentUser!.uid)/citys.db")
+        privateRef.getData(maxSize: 100 * 1024 * 1024) { (data:Data?, error:Error?) in
+            //非同步
+            guard let cityDbData = data, error == nil else{
+                print("cityDbData下載錯誤");
+                return;
+            }
+            print("cityDbData下載成功");
+            if self.saveCityDbToDocuments(cityData: cityDbData) == true{
+                print("儲存成功");
+            }
+            
+        }
+ */
+       
         
     }
     
@@ -87,9 +105,11 @@ class ViewController: UIViewController {
     func getCityDbReferenceFromUserId() -> StorageReference?{
         var privateCityDbRef:StorageReference? = storage.reference(withPath: "student1007/\(Auth.auth().currentUser!.uid)/citys.db")
         privateCityDbRef?.getMetadata { (metaData:StorageMetadata?, error:Error?) in
-            if(error! as NSError).domain == StorageErrorDomain{
-                privateCityDbRef = nil
-                return
+            if error != nil{
+                if(error! as NSError).domain == StorageErrorDomain{
+                    privateCityDbRef = nil
+                    return
+                }
             }
         }
         return privateCityDbRef
