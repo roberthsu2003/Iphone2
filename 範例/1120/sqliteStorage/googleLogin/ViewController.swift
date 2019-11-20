@@ -43,7 +43,19 @@ class ViewController: UIViewController {
                 }
                 print("cityDbData下載成功");
                 if self.saveCityDbToDocuments(cityData: cityDbData) {
-                    //上傳cityDataToProvite
+                    //上傳cityDataToPrivate
+                    let privateCityDbRef = self.storage.reference(withPath: "student1007/\(Auth.auth().currentUser!.uid)/citys.db")
+                    let dbMetaData = StorageMetadata();
+                    dbMetaData.contentType = "application/octet-stream"
+                    privateCityDbRef.putData(cityDbData, metadata: dbMetaData) { (metadata:StorageMetadata?, error:Error?) in
+                        guard metadata != nil, error == nil else{
+                            print("上傳失敗");
+                            return
+                        }
+                    }
+                    
+                    print("上傳成功");                    
+                    
                 }
             }
             return
