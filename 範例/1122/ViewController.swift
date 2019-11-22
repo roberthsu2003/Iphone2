@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
     @IBOutlet var photoImageView:UIImageView!;
     @IBOutlet var messageTextView:UITextView!
+    lazy var vision = Vision.vision()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +34,29 @@ class ViewController: UIViewController {
             imagePicker.sourceType = .photoLibrary
             present(imagePicker, animated: true, completion: nil);
         }
+    }
+    
+    @IBAction func countFaces(_ sender:UIButton){
+        let options = VisionFaceDetectorOptions()
+        options.performanceMode = .accurate
+        let faceDetector = vision.faceDetector(options: options)
+        guard let originalImage = photoImageView.image else{
+            print("沒有選取圖片");
+            return
+        }
+        let image = VisionImage(image: originalImage)
+        faceDetector.process(image) { (visionFaces:[VisionFace]?, error:Error?) in
+            guard let visionFaces = visionFaces, !visionFaces.isEmpty, error == nil else{
+                print(error!.localizedDescription);
+                return
+            }
+            
+            for faceInfo in visionFaces{
+                print(faceInfo)
+            }
+            self.messageTextView.text = "人數=\(visionFaces.count)"
+        }
+        
     }
 
 
