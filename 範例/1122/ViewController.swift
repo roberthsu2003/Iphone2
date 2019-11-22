@@ -63,6 +63,47 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func userClassification(_ sender:UIButton){
+        let options = VisionFaceDetectorOptions();
+        options.performanceMode = .accurate
+        options.classificationMode = .all
+        let faceDetector = vision.faceDetector(options: options)
+        let faceImage = VisionImage(image: photoImageView.image!)
+        faceDetector.process(faceImage) {
+            (visionFaces:[VisionFace]?, error:Error?) in
+            guard let visionFaces = visionFaces, !visionFaces.isEmpty, error == nil else{
+                print(error?.localizedDescription);
+                return
+            }
+            
+            var message:String = "表情:"
+            for face in visionFaces{
+                if face.hasSmilingProbability{
+                    message += "開心"
+                }else{
+                    message += "嘴巴閉"
+                }
+                 message += "\n"
+                if face.hasRightEyeOpenProbability{
+                    message += "右眼開"
+                }else{
+                    message += "右眼閉"
+                }
+                message += "\n"
+                
+                if face.hasLeftEyeOpenProbability{
+                    message += "左眼開"
+                    }else{
+                    message += "左眼閉"
+                }
+                message += "===============================\n"
+            }
+            
+            self.messageTextView.text = message
+        }
+        
+    }
+    
     func drawRectangleLine(faceFrame:CGRect,originImage:UIImage) -> UIImage{
         let imageSize = originImage.size
         let scale: CGFloat = 0
