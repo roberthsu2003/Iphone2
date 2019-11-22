@@ -52,11 +52,22 @@ class ViewController: UIViewController {
             }
             
             for faceInfo in visionFaces{
-                print(faceInfo)
+                let frame = faceInfo.frame
+                print(frame)
+                self.drawRectangleLine(faceFrame: frame)
             }
+            
             self.messageTextView.text = "人數=\(visionFaces.count)"
         }
         
+    }
+    
+    func drawRectangleLine(faceFrame:CGRect){
+        let faceView = UIView(frame: CGRect(x: 40, y: 50, width: 50, height: 50))
+        faceView.backgroundColor = UIColor.clear
+        faceView.layer.borderWidth = 1
+        faceView.layer.borderColor = UIColor.red.cgColor
+        photoImageView.addSubview(faceView)
     }
 
 
