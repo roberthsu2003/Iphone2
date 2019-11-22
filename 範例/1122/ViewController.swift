@@ -40,10 +40,11 @@ class ViewController: UIViewController {
         let options = VisionFaceDetectorOptions()
         options.performanceMode = .accurate
         let faceDetector = vision.faceDetector(options: options)
-        guard let originalImage = photoImageView.image else{
+        guard var originalImage = photoImageView.image else{
             print("沒有選取圖片");
             return
         }
+        print("imageSize=\(originalImage.size)");
         let image = VisionImage(image: originalImage)
         faceDetector.process(image) { (visionFaces:[VisionFace]?, error:Error?) in
             guard let visionFaces = visionFaces, !visionFaces.isEmpty, error == nil else{
@@ -54,14 +55,30 @@ class ViewController: UIViewController {
             for faceInfo in visionFaces{
                 let frame = faceInfo.frame
                 print(frame)
-                self.drawRectangleLine(faceFrame: frame)
+                originalImage = self.drawRectangleLine(faceFrame: frame, originImage: originalImage)
             }
-            
+            self.photoImageView.image = originalImage
             self.messageTextView.text = "人數=\(visionFaces.count)"
         }
         
     }
     
+    func drawRectangleLine(faceFrame:CGRect,originImage:UIImage) -> UIImage{
+        let imageSize = originImage.size
+        let scale: CGFloat = 0
+        UIGraphicsBeginImageContextWithOptions(imageSize, false, scale)
+        let context = UIGraphicsGetCurrentContext()
+        originImage.draw(at: CGPoint.zero)
+        //let rectangle = CGRect(x: 0, y: (imageSize.height/2) - 30, width: imageSize.width, height: 60)
+        context!.setStrokeColor(UIColor.red.cgColor)
+        context!.setLineWidth(5)
+        context!.addRect(faceFrame)
+        context!.drawPath(using: .stroke)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage!
+    }
+    /*
     func drawRectangleLine(faceFrame:CGRect){
         let faceView = UIView(frame: CGRect(x: 40, y: 50, width: 50, height: 50))
         faceView.backgroundColor = UIColor.clear
@@ -69,6 +86,7 @@ class ViewController: UIViewController {
         faceView.layer.borderColor = UIColor.red.cgColor
         photoImageView.addSubview(faceView)
     }
+ */
 
 
 }
