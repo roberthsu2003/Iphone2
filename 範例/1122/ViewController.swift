@@ -13,9 +13,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let eyeView = UIView()
-        eyeView.frame = CGRect(x: 0, y: 100, width: 100, height: 20)
-        eyeView.backgroundColor = UIColor.darkGray
-        view.addSubview(eyeView)
+        eyeView.frame = CGRect(x: 0, y: 100, width: 100, height: 50)
+        eyeView.backgroundColor = UIColor.clear
+        eyeView.layer.borderColor = UIColor.red.cgColor
+        eyeView.layer.borderWidth = 2
+        photoImageView.addSubview(eyeView)
     }
 
 
