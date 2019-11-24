@@ -12,14 +12,13 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let faceView = UIView()
+        let faceView = FaceView()
         faceView.frame = CGRect(x: 0, y: 100, width: 50, height: 50)
         faceView.backgroundColor = UIColor.red
         faceView.layer.borderWidth = 2
         faceView.layer.borderColor = UIColor.red.cgColor
         faceView.layer.backgroundColor = UIColor.clear.cgColor
-        view.addSubview(faceView)
-       
+        view.addSubview(faceView)       
     }
 
 
