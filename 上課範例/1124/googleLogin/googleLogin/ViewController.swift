@@ -30,6 +30,14 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(forName: UIApplication.willResignActiveNotification, object: self, queue: nil) { _ in
+            print("進入背景");
+        }
+        
+        notificationCenter.addObserver(forName: UIApplication.willEnterForegroundNotification, object: self, queue: nil) { _ in
+            print("進入前端");
+        }
         guard let user = Auth.auth().currentUser else{
             //使用都尚未登入
             performSegue(withIdentifier: "goLogin", sender: nil);
