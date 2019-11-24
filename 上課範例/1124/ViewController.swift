@@ -87,6 +87,7 @@ class ViewController: UIViewController {
         }
         
         
+        
     }
     
     @IBAction func userSelectedImage(_ sender:UIBarButtonItem){
@@ -97,6 +98,55 @@ class ViewController: UIViewController {
             imagePicker.sourceType = .photoLibrary
             present(imagePicker, animated: true, completion: nil);
         }
+    }
+    
+    @IBAction func userClassification(_ sender:UIButton){
+        let options = VisionFaceDetectorOptions();
+        options.performanceMode = .accurate
+        options.classificationMode = .all
+        let faceDetector = vision.faceDetector(options: options)
+        guard let originalImage = photoImageView.image else{
+            print("沒有選圖片");
+            return;
+        }
+        let faceImage = VisionImage(image: originalImage)
+        faceDetector.process(faceImage) { (faces:[VisionFace]?, error:Error?) in
+            guard let visionFaces = faces, !visionFaces.isEmpty, error == nil else{
+                if let description = error?.localizedDescription{
+                    print("error:\(description)")
+                }
+                return
+            }
+            var message:String = "表情:\n"
+            for face in visionFaces{
+                if face.hasSmilingProbability {
+                   message += "開心\n"
+                }else{
+                    message += "嘴巴閉\n"
+                }
+                
+                if face.hasRightEyeOpenProbability{
+                    message += "右眼開\n";
+                }else{
+                    message += "右眼閉\n";
+                }
+                
+                if face.hasLeftEyeOpenProbability{
+                    message += "左眼開\n";
+                }else{
+                    message += "左眼閉";
+                }
+                
+                message += "=========================="
+                
+                
+                
+            }
+            
+            self.messageTextView.text = message
+            
+        }
+       
     }
 
 
