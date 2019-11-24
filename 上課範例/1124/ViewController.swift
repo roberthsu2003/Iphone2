@@ -44,9 +44,22 @@ class ViewController: UIViewController {
             }
             var message = "";
             message += "總共有:\(visionFaces.count)人\n"
+            UIGraphicsBeginImageContextWithOptions(originalImage.size, false, 0)
+            let context = UIGraphicsGetCurrentContext()!
+            originalImage.draw(at: CGPoint.zero)
+            context.setStrokeColor(UIColor.red.cgColor)
+            context.setLineWidth(5)
             for (index,face) in visionFaces.enumerated(){
                 message += "第\(index+1)臉的frame:\(face.frame)\n"
+                context.addRect(face.frame)
             }
+            context.drawPath(using: .stroke)
+            if let newImage = UIGraphicsGetImageFromCurrentImageContext(){
+                self.photoImageView.image = newImage
+            }else{
+                print("沒有畫成的圖片");
+            }
+            UIGraphicsEndImageContext()
             
             self.messageTextView.text = message
         }
