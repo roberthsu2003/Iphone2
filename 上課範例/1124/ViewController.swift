@@ -34,6 +34,7 @@ class ViewController: UIViewController {
             print("沒有選圖片");
             return;
         }
+        
         let visionImage = VisionImage(image: originalImage)
         faceDetector.process(visionImage) { (faces:[VisionFace]?, error:Error?) in
             guard let visionFaces = faces, !visionFaces.isEmpty, error == nil else{
@@ -44,6 +45,7 @@ class ViewController: UIViewController {
             }
             var message = "";
             message += "總共有:\(visionFaces.count)人\n"
+            /*
             UIGraphicsBeginImageContextWithOptions(originalImage.size, false, 0)
             let context = UIGraphicsGetCurrentContext()!
             originalImage.draw(at: CGPoint.zero)
@@ -60,7 +62,27 @@ class ViewController: UIViewController {
                 print("沒有畫成的圖片");
             }
             UIGraphicsEndImageContext()
+            */
             
+            let imageRender = UIGraphicsImageRenderer(size:originalImage.size)
+            imageRender.image { _ in
+                let context = UIGraphicsGetCurrentContext()!;
+                originalImage.draw(at: CGPoint.zero)
+                context.setStrokeColor(UIColor.red.cgColor)
+                context.setLineWidth(5)
+                for (index,face) in visionFaces.enumerated(){
+                    message += "第\(index+1)臉的frame:\(face.frame)\n"
+                    context.addRect(face.frame)
+                }
+                context.drawPath(using: .stroke)
+                if let newImage = UIGraphicsGetImageFromCurrentImageContext(){
+                    self.photoImageView.image = newImage
+                }else{
+                    print("沒有畫成的圖片");
+                }
+                
+                
+            }
             self.messageTextView.text = message
         }
         
