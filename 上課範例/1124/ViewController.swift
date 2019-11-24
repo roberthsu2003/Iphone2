@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
     @IBOutlet var  photoImageView:UIImageView!
     @IBOutlet var messageTextView:UITextView!
+    lazy var vision = Vision.vision()
     override func viewDidLoad() {
         super.viewDidLoad()
         /*
@@ -22,6 +24,33 @@ class ViewController: UIViewController {
         faceView.layer.backgroundColor = UIColor.clear.cgColor
         view.addSubview(faceView)
  */
+        
+    }
+    @IBAction func faceCount(_ sender:UIButton){
+        let options = VisionFaceDetectorOptions();
+        options.performanceMode = .accurate;
+        let faceDetector = vision.faceDetector(options: options)
+        guard let originalImage = photoImageView.image else{
+            print("沒有選圖片");
+            return;
+        }
+        let visionImage = VisionImage(image: originalImage)
+        faceDetector.process(visionImage) { (faces:[VisionFace]?, error:Error?) in
+            guard let visionFaces = faces, !visionFaces.isEmpty, error == nil else{
+                if let description = error?.localizedDescription{
+                    print("error:\(description)")
+                }
+                return
+            }
+            var message = "";
+            message += "總共有:\(visionFaces.count)人\n"
+            for (index,face) in visionFaces.enumerated(){
+                message += "第\(index+1)臉的frame:\(face.frame)\n"
+            }
+            
+            self.messageTextView.text = message
+        }
+        
         
     }
     
