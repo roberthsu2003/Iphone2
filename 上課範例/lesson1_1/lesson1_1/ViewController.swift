@@ -49,7 +49,16 @@ extension ViewController{
     
     override func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        
+        let section = indexPath.section
+        let row = indexPath.row
+        //透過names取出州名稱
+        let stateName = names[section]
+        //透過州名稱取出該州所有的區號(Array)
+        let postNums = states[stateName]!
+        let postNum = postNums[row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
+        cell.textLabel!.text = postNum
+        return cell;
     }
 }
 
