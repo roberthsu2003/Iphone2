@@ -14,7 +14,7 @@ class ViewController: UITableViewController {
         if let targetPath = Bundle.main.path(forResource: "statedictionary", ofType: "plist"){
             
             if let states = NSDictionary(contentsOfFile: targetPath) as? [String:[String]]{
-                print(states)
+                print(states["Alabama"]!)
             }
             
         }
