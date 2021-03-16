@@ -7,11 +7,17 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        if let targetPath = Bundle.main.path(forResource: "statedictionary", ofType: "plist"){
+            
+            if let states = NSDictionary(contentsOfFile: targetPath) as? [String:[String]]{
+                print(states)
+            }
+            
+        }
     }
 
 
