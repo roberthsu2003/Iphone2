@@ -20,9 +20,24 @@ class ViewController: UITableViewController {
             
         }
         
-        print(states["Alaska"]!)
+        
+        //tableView.dataSource = self;
+        
     }
 
 
+}
+
+extension ViewController{
+    //UITableViewDataSource
+    override func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int{
+        
+    }
+    
+    override func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        
+    }
 }
 
