@@ -9,19 +9,21 @@ import UIKit
 
 class ViewController: UITableViewController {
     var states:[String:[String]]!
-
+    var names:[String]!
     override func viewDidLoad() {
         super.viewDidLoad()
         if let targetPath = Bundle.main.path(forResource: "statedictionary", ofType: "plist"){
             
             if let states = NSDictionary(contentsOfFile: targetPath) as? [String:[String]]{
                 self.states = states
+                self.names = [String](states.keys)
             }
             
         }
         
         
         //tableView.dataSource = self;
+        
         
     }
 
@@ -30,10 +32,20 @@ class ViewController: UITableViewController {
 
 extension ViewController{
     //UITableViewDataSource
+    
+    override func numberOfSections(in tableView: UITableView) -> Int{
+        return self.names.count
+    }
+    
     override func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int{
-        
+        //透過names取出州名稱
+        let stateName = names[section]
+        //透過州名稱取出該州所有的區號
+        let postNums = states[stateName]!
+        return postNums.count
     }
+    
     
     override func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell{
