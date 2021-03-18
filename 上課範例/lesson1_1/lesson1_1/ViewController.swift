@@ -60,5 +60,14 @@ extension ViewController{
         cell.textLabel!.text = postNum
         return cell;
     }
+    
+    override func tableView(_ tableView: UITableView,
+                   titleForHeaderInSection section: Int) -> String?{
+        return names[section]
+    }
+    
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]?{
+        return names
+    }
 }
 
