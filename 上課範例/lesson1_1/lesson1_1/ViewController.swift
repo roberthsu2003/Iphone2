@@ -43,7 +43,14 @@ class ViewController: UITableViewController {
         }
         
         //plist copy到sandbox模型
-        
+        if !FileManager.default.fileExists(atPath: plistInDocumentsUrl.path){
+            if (try? FileManager.default.moveItem(at: targetURL, to: plistInDocumentsUrl)) == nil{
+                print("copy失敗")
+            }else{
+                print("copy成功")
+            }
+            
+        }
         
         //tableView.dataSource = self;
         
