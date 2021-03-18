@@ -12,6 +12,9 @@ class ViewController: UITableViewController {
     var names:[String]!
     override func viewDidLoad() {
         super.viewDidLoad()
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        let documents = paths.last!
+        print(documents)
         if let targetPath = Bundle.main.path(forResource: "statedictionary", ofType: "plist"){
             
             if let states = NSDictionary(contentsOfFile: targetPath) as? [String:[String]]{
