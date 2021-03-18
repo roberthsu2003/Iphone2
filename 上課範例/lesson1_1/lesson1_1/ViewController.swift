@@ -20,7 +20,9 @@ class ViewController: UITableViewController {
         let fileManager = FileManager.default
         let documentsUrl = try! fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
         print(documentsUrl.path)
-        
+        let plistInDocumentsUrl = documentsUrl.appendingPathComponent("statedictionary.plist")
+        print(plistInDocumentsUrl.path)
+        /*
         if let targetPath = Bundle.main.path(forResource: "statedictionary", ofType: "plist"){
             
             if let states = NSDictionary(contentsOfFile: targetPath) as? [String:[String]]{
@@ -29,6 +31,18 @@ class ViewController: UITableViewController {
             }
             
         }
+         */
+        
+        guard let targetURL = Bundle.main.url(forResource: "statedictionary", withExtension: "plist") else {
+            print("沒有這個檔案")
+            return
+        }
+        if let states = NSDictionary(contentsOf: targetURL) as? [String:[String]]{
+            self.states = states
+            self.names = [String](states.keys)
+        }
+        
+        //plist copy到sandbox模型
         
         
         //tableView.dataSource = self;
