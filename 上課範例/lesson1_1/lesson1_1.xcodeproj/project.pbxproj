@@ -13,7 +13,7 @@
 		9353FAD32600D16C00E30CB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9353FAD12600D16C00E30CB2 /* Main.storyboard */; };
 		9353FAD52600D16D00E30CB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9353FAD42600D16D00E30CB2 /* Assets.xcassets */; };
 		9353FAD82600D16D00E30CB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9353FAD62600D16D00E30CB2 /* LaunchScreen.storyboard */; };
-		937BBC37260373B600EC63B5 /* statedictionary.plist in Resources */ = {isa = PBXBuildFile; fileRef = 937BBC36260373B600EC63B5 /* statedictionary.plist */; };
+		93E4B9EE260613810079584E /* statedictionary.plist in Resources */ = {isa = PBXBuildFile; fileRef = 937BBC36260373B600EC63B5 /* statedictionary.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -129,7 +129,7 @@
 			files = (
 				9353FAD82600D16D00E30CB2 /* LaunchScreen.storyboard in Resources */,
 				9353FAD52600D16D00E30CB2 /* Assets.xcassets in Resources */,
-				937BBC37260373B600EC63B5 /* statedictionary.plist in Resources */,
+				93E4B9EE260613810079584E /* statedictionary.plist in Resources */,
 				9353FAD32600D16C00E30CB2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
