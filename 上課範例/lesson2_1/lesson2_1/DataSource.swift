@@ -14,11 +14,25 @@ class DataSource{
         let url = URL(string: areasHttpString)!
         print("下載")
         let downloadTask = URLSession.shared.downloadTask(with: url) { (saveURL:URL?, response:URLResponse?, error:Error?) in
-            if let saveURL=saveURL, let response = response, error == nil{
-                print("下載成功")
-            }else{
+            guard let saveURL=saveURL, let response = response, error == nil else{
                 print("下載失敗")
+                return
             }
+            
+            guard (response as! HTTPURLResponse).statusCode == 200 else{
+                print("狀態不是200")
+                return
+            }
+            
+            guard let data = try? Data(contentsOf: saveURL) else{
+                print("下載資料無法轉出")
+                return
+            }
+            
+            print(String.init(data: data, encoding: .utf8))
+            
+            
+            
         }
         downloadTask.resume()
         
