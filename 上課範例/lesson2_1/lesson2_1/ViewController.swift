@@ -12,7 +12,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let dataSource = DataSource.main
+        DataSource.main.getDownloadData = {(donwloadRegion:Region) in
+            print("region數量:\(donwloadRegion.areas.count)")
+            for item in donwloadRegion.areas{
+                print(item)
+            }
+        }
         print("viewDidLoad")
     }
 

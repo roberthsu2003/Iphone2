@@ -11,6 +11,7 @@ struct Region:Codable{
     let areas:[String]
 }
 class DataSource{
+    var getDownloadData:((Region)->Void)!
     static let areasHttpString = "https://flask-robert.herokuapp.com/youbike/"
     static var main:DataSource = { //只會執行一次
         //建立額外的動作
@@ -42,11 +43,9 @@ class DataSource{
                     return
                 }
                 print("下載成功")
-                print("region數量:\(region.areas.count)")
-                for item in region.areas{
-                    print(item)
-                }
+                
             }
+           
             
             
         }
