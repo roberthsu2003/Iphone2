@@ -16,7 +16,7 @@ class DataSource{
         //建立額外的動作
         let dataSource = DataSource()
         let url = URL(string: areasHttpString)!
-        print("下載")
+        
         let downloadTask = URLSession.shared.downloadTask(with: url) { (saveURL:URL?, response:URLResponse?, error:Error?) in
             guard let saveURL=saveURL, let response = response, error == nil else{
                 print("下載失敗")
@@ -34,17 +34,20 @@ class DataSource{
             }
             
             //print(String.init(data: data, encoding: .utf8))
-            
-            let jsonDecoder = JSONDecoder()
-            guard let region = try? jsonDecoder.decode(Region.self, from: data) else{
-                print("jsonDecoder無法轉換")
-                return
+            //跳回主執行緒
+            DispatchQueue.main.sync {
+                let jsonDecoder = JSONDecoder()
+                guard let region = try? jsonDecoder.decode(Region.self, from: data) else{
+                    print("jsonDecoder無法轉換")
+                    return
+                }
+                print("下載成功")
+                print("region數量:\(region.areas.count)")
+                for item in region.areas{
+                    print(item)
+                }
             }
             
-            print("region數量:\(region.areas.count)")
-            for item in region.areas{
-                print(item)
-            }
             
         }
         downloadTask.resume()

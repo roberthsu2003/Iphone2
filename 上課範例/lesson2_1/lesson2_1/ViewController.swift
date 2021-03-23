@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let dataSource = DataSource.main
+        print("viewDidLoad")
     }
 
 
