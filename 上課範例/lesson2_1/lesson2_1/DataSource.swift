@@ -6,6 +6,10 @@
 //
 
 import Foundation
+
+struct Region:Codable{
+    let areas:[String]
+}
 class DataSource{
     static let areasHttpString = "https://flask-robert.herokuapp.com/youbike/"
     static var main:DataSource = { //只會執行一次
@@ -29,9 +33,18 @@ class DataSource{
                 return
             }
             
-            print(String.init(data: data, encoding: .utf8))
+            //print(String.init(data: data, encoding: .utf8))
             
+            let jsonDecoder = JSONDecoder()
+            guard let region = try? jsonDecoder.decode(Region.self, from: data) else{
+                print("jsonDecoder無法轉換")
+                return
+            }
             
+            print("region數量:\(region.areas.count)")
+            for item in region.areas{
+                print(item)
+            }
             
         }
         downloadTask.resume()
