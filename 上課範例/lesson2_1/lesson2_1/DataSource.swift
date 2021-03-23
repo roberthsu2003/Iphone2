@@ -12,9 +12,16 @@ class DataSource{
         //建立額外的動作
         let dataSource = DataSource()
         let url = URL(string: areasHttpString)!
-        URLSession.shared.downloadTask(with: url) { (saveURL:URL?, response:URLResponse?, error:Error?) in
-            
+        print("下載")
+        let downloadTask = URLSession.shared.downloadTask(with: url) { (saveURL:URL?, response:URLResponse?, error:Error?) in
+            if let saveURL=saveURL, let response = response, error == nil{
+                print("下載成功")
+            }else{
+                print("下載失敗")
+            }
         }
+        downloadTask.resume()
+        
         return dataSource
     }()
 }
