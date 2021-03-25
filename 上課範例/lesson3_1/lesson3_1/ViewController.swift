@@ -24,6 +24,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         //tableView的代理人是誰
         regionTableView.dataSource = self
+        regionTableView.delegate = self
         
         let url = URL(string: areasHttpString)!
         let downloadTask = URLSession.shared.downloadTask(with: url){
@@ -74,5 +75,13 @@ extension ViewController:UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
         cell.textLabel!.text = areas[indexPath.row]
         return cell
+    }
+}
+
+extension ViewController:UITableViewDelegate{
+    func tableView(_ tableView: UITableView,
+                   didSelectRowAt indexPath: IndexPath){
+        let selectedRegion = areas[indexPath.row]
+        performSegue(withIdentifier: "goDetail", sender: selectedRegion)
     }
 }

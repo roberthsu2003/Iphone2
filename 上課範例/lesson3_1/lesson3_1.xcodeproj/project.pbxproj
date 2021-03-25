@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		930C4443260CBAFE009C0BC8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930C4442260CBAFE009C0BC8 /* DetailViewController.swift */; };
 		932F068D260A2594005D6C02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932F068C260A2594005D6C02 /* AppDelegate.swift */; };
 		932F068F260A2594005D6C02 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932F068E260A2594005D6C02 /* SceneDelegate.swift */; };
 		932F0691260A2594005D6C02 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932F0690260A2594005D6C02 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		930C4442260CBAFE009C0BC8 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		932F0689260A2594005D6C02 /* lesson3_1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lesson3_1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		932F068C260A2594005D6C02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		932F068E260A2594005D6C02 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				932F0695260A2596005D6C02 /* Assets.xcassets */,
 				932F0697260A2596005D6C02 /* LaunchScreen.storyboard */,
 				932F069A260A2596005D6C02 /* Info.plist */,
+				930C4442260CBAFE009C0BC8 /* DetailViewController.swift */,
 			);
 			path = lesson3_1;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 				932F0691260A2594005D6C02 /* ViewController.swift in Sources */,
 				932F068D260A2594005D6C02 /* AppDelegate.swift in Sources */,
 				932F068F260A2594005D6C02 /* SceneDelegate.swift in Sources */,
+				930C4443260CBAFE009C0BC8 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
