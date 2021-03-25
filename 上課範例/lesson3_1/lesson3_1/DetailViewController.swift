@@ -8,10 +8,10 @@
 import UIKit
 
 class DetailViewController: UITableViewController {
-
+    var regionName:String!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(regionName)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

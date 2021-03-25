@@ -26,6 +26,7 @@ class ViewController: UIViewController {
         regionTableView.dataSource = self
         regionTableView.delegate = self
         
+        
         let url = URL(string: areasHttpString)!
         let downloadTask = URLSession.shared.downloadTask(with: url){
             (saveURL:URL?, response:URLResponse?, error:Error?) in
@@ -60,7 +61,16 @@ class ViewController: UIViewController {
         }
         downloadTask.resume()
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let region = sender as? String
+        
+        
+        if segue.identifier == "goDetail"{
+            let detailViewController = segue.destination as! DetailViewController
+            detailViewController.regionName = region
+        }
+    }
 
 }
 
