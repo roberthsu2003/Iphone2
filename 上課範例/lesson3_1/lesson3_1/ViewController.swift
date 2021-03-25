@@ -48,9 +48,10 @@ class ViewController: UIViewController {
                     print("jsonDecoder無法轉換")
                     return
                 }
-                print("下載成功")
+                
                 
                 self.areas = region.areas
+                self.regionTableView.reloadData()
                 print(self.areas)
             }
         }
