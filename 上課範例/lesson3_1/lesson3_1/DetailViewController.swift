@@ -9,14 +9,15 @@ import UIKit
 
 class DetailViewController: UITableViewController {
     var regionName:String!
-    var baseURLString = "https://flask-robert.herokuapp.com/youbike/"
+    var baseURLString = "https://flask-robert.herokuapp.com"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        baseURLString = baseURLString + "a"
+        baseURLString = baseURLString + regionName
         print(baseURLString)
-        var detailUrl = URL(string: baseURLString)
-        print(detailUrl)
+        var detailUrl = URLComponents(string: baseURLString)!
+        detailUrl.path = "/youbike/" + regionName
+        //print(detailUrl.url)
         
     }
 
