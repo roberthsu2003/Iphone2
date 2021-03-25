@@ -12,11 +12,17 @@ struct Region:Codable{
 }
 
 class ViewController: UIViewController {
+    @IBOutlet var regionTableView:UITableView!
+    
     let areasHttpString = "https://flask-robert.herokuapp.com/youbike/"
     //var areas:[String]!
     var areas = [String]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        //tableView的代理人是誰
+        regionTableView.dataSource = self
         
         let url = URL(string: areasHttpString)!
         let downloadTask = URLSession.shared.downloadTask(with: url){
@@ -54,3 +60,14 @@ class ViewController: UIViewController {
 
 }
 
+extension ViewController:UITableViewDataSource{
+    func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int{
+        
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        
+    }
+}

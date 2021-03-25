@@ -31,6 +31,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="台北市youbike及時資訊" id="hKb-yL-fx7"/>
+                    <connections>
+                        <outlet property="regionTableView" destination="vRU-oY-IDL" id="35f-Bm-dDL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
