@@ -9,7 +9,6 @@ import UIKit
 
 class DetailViewController: UITableViewController {
     var regionName:String!
-    var baseURLString = "https://flask-robert.herokuapp.com"
     
     override func viewDidLoad() {
         super.viewDidLoad()
