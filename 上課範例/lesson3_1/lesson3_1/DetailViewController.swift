@@ -6,6 +6,19 @@
 //
 
 import UIKit
+struct YoubikeData:Codable{
+    struct Site:Codable {
+        let ar:String
+        let bemp:Int
+        let lat:Double
+        let lng:Double
+        let mday:String
+        let sbi:Int
+        let sna:String
+        let tot:Int
+    }
+    let data:[Site]
+}
 
 class DetailViewController: UITableViewController {
     var regionName:String!
@@ -58,7 +71,18 @@ extension DetailViewController:URLSessionDownloadDelegate{
             print("轉換資料有問題")
             return
         }
-        print(String(data: data, encoding: .utf8)!)
+        //print(String(data: data, encoding: .utf8)!)
+        let jsonDecoder = JSONDecoder()
+        guard let youbikeData = try? jsonDecoder.decode(YoubikeData.self, from: data) else{
+            print("json無法解析")
+            return
+        }
+        
+        for site in youbikeData.data{
+            print(site.sna)
+        }
+        
+        
     }
 }
    
