@@ -29,6 +29,8 @@ class DetailViewController: UITableViewController {
         return mySession
     }()
     
+    var sites = [YoubikeData.Site]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         var urlComponets = URLComponents()
@@ -78,11 +80,8 @@ extension DetailViewController:URLSessionDownloadDelegate{
             return
         }
         
-        for site in youbikeData.data{
-            print(site.sna)
-        }
-        
-        
+        sites = youbikeData.data
+        print(sites)
     }
 }
    
