@@ -67,6 +67,7 @@ extension DetailViewController:URLSessionDownloadDelegate{
         }
         
         sites = youbikeData.data
+        title = sites[0].mday
         tableView.reloadData()
     }
 }
@@ -81,8 +82,12 @@ extension DetailViewController{
     override func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let index = indexPath.row
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
-        cell.textLabel!.text = sites[index].sna
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SITECELL", for: indexPath) as! SiteViewCell
+        let site = sites[index]
+        cell.siteName.text = "站名:" + site.sna
+        cell.total.text = "總量數:\(site.tot)"
+        cell.rent.text = "可借:\(site.sbi)"
+        cell.returns.text = "可還:\(site.bemp)"
         return cell
     }
 }
