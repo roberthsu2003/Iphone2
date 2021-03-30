@@ -8,6 +8,11 @@
 import UIKit
 
 class SiteViewCell: UITableViewCell {
+    @IBOutlet var siteName:UILabel!
+    @IBOutlet var total:UILabel!
+    @IBOutlet var rent:UILabel!
+    @IBOutlet var returns:UILabel!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

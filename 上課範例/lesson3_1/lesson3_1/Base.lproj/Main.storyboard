@@ -117,6 +117,12 @@
                                         <constraint firstItem="AeT-sd-Zfo" firstAttribute="leading" secondItem="tyZ-lk-hA7" secondAttribute="leadingMargin" constant="12" id="x6E-0g-dIv"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="rent" destination="MA1-iV-FAQ" id="lcc-GW-Rer"/>
+                                    <outlet property="returns" destination="dAR-XB-mgk" id="va0-rB-Sfw"/>
+                                    <outlet property="siteName" destination="AeT-sd-Zfo" id="rb2-MC-usI"/>
+                                    <outlet property="total" destination="mOe-av-ifE" id="Z6o-pD-qgp"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
