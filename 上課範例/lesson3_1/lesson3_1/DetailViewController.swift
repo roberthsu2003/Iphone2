@@ -25,6 +25,9 @@ class DetailViewController: UITableViewController {
         let config = URLSessionConfiguration.ephemeral
         config.allowsExpensiveNetworkAccess = true
         self.urlSession = URLSession(configuration: config, delegate: self, delegateQueue: .main)
+        let downloadTask = urlSession.downloadTask(with: url)
+        downloadTask.resume()
+        
     }
         
         
@@ -44,8 +47,16 @@ override func tableView(_ tableView: UITableView, numberOfRowsInSection section:
 
 }
 
-extension DetailViewController:URLSessionDelegate{
-    
+extension DetailViewController:URLSessionDownloadDelegate{
+    func urlSession(_ session: URLSession,
+       downloadTask: URLSessionDownloadTask,
+       didFinishDownloadingTo location: URL){
+        guard let data = try? Data(contentsOf: location) else{
+            print("轉換資料有問題")
+            return
+        }
+        print(String(data: data, encoding: .utf8)!)
+    }
 }
    
 
