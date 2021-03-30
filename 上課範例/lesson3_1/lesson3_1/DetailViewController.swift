@@ -9,7 +9,12 @@ import UIKit
 
 class DetailViewController: UITableViewController {
     var regionName:String!
-    var urlSession:URLSession!
+    lazy var urlSession:URLSession = {
+        let config = URLSessionConfiguration.ephemeral
+        config.allowsExpensiveNetworkAccess = true
+        let mySession = URLSession(configuration: config, delegate: self, delegateQueue: OperationQueue.main)
+        return mySession
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,9 +27,7 @@ class DetailViewController: UITableViewController {
             return
         }
         print(url.absoluteString)
-        let config = URLSessionConfiguration.ephemeral
-        config.allowsExpensiveNetworkAccess = true
-        self.urlSession = URLSession(configuration: config, delegate: self, delegateQueue: .main)
+        
         let downloadTask = urlSession.downloadTask(with: url)
         downloadTask.resume()
         
