@@ -48,21 +48,7 @@ class DetailViewController: UITableViewController {
         
     }
         
-        
-        
-
-    // MARK: - Table view data source
-
-override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-
+    
 }
 
 extension DetailViewController:URLSessionDownloadDelegate{
@@ -81,11 +67,25 @@ extension DetailViewController:URLSessionDownloadDelegate{
         }
         
         sites = youbikeData.data
-        print(sites)
+        tableView.reloadData()
     }
 }
    
-
+extension DetailViewController{
+    //UITableViewDataSource
+    override func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int{
+        return sites.count
+    }
+    
+    override func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        let index = indexPath.row
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
+        cell.textLabel!.text = sites[index].sna
+        return cell
+    }
+}
     
     
 
