@@ -9,6 +9,7 @@ import UIKit
 
 class DetailViewController: UITableViewController {
     var regionName:String!
+    var urlSession:URLSession!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +22,9 @@ class DetailViewController: UITableViewController {
             return
         }
         print(url.absoluteString)
-        
+        let config = URLSessionConfiguration.ephemeral
+        config.allowsExpensiveNetworkAccess = true
+        self.urlSession = URLSession(configuration: config, delegate: self, delegateQueue: .main)
     }
         
         
@@ -39,6 +42,10 @@ override func tableView(_ tableView: UITableView, numberOfRowsInSection section:
         return 0
     }
 
+}
+
+extension DetailViewController:URLSessionDelegate{
+    
 }
    
 
