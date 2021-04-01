@@ -14,6 +14,7 @@
 		930CF1EE2615E1FE00DA7F1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 930CF1ED2615E1FE00DA7F1B /* Assets.xcassets */; };
 		930CF1F12615E1FE00DA7F1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 930CF1EF2615E1FE00DA7F1B /* LaunchScreen.storyboard */; };
 		930CF1FB2615E4D600DA7F1B /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930CF1FA2615E4D600DA7F1B /* FirstViewController.swift */; };
+		930CF1FE2615FDE100DA7F1B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930CF1FD2615FDE100DA7F1B /* SecondViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		930CF1F02615E1FE00DA7F1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		930CF1F22615E1FE00DA7F1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		930CF1FA2615E4D600DA7F1B /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		930CF1FD2615FDE100DA7F1B /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				930CF1EF2615E1FE00DA7F1B /* LaunchScreen.storyboard */,
 				930CF1F22615E1FE00DA7F1B /* Info.plist */,
 				930CF1FA2615E4D600DA7F1B /* FirstViewController.swift */,
+				930CF1FD2615FDE100DA7F1B /* SecondViewController.swift */,
 			);
 			path = "傳回資料";
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 				930CF1E92615E1FD00DA7F1B /* ViewController.swift in Sources */,
 				930CF1E52615E1FD00DA7F1B /* AppDelegate.swift in Sources */,
 				930CF1E72615E1FD00DA7F1B /* SceneDelegate.swift in Sources */,
+				930CF1FE2615FDE100DA7F1B /* SecondViewController.swift in Sources */,
 				930CF1FB2615E4D600DA7F1B /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
