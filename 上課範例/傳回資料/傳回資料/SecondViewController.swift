@@ -7,7 +7,7 @@
 
 import UIKit
 
-typealias Transform = (String,String) -> Void
+typealias Transform = (String,String,Error?) -> Void
 
 class SecondViewController: UITableViewController {
     @IBOutlet var nameField:UITextField!
@@ -27,7 +27,7 @@ class SecondViewController: UITableViewController {
         
         let name = nameField.text!
         let password = passwordField.text!
-        passBack(name,password)
+        passBack(name,password,nil)
         navigationController?.popToRootViewController(animated: true)
     }
 

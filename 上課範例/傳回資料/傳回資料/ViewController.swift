@@ -17,9 +17,14 @@ class ViewController: UIViewController {
         
         if segue.identifier == "SECOND"{
             let secondViewController = segue.destination as! SecondViewController
-            secondViewController.connectToSecond { (name:String, password:String) in
-                print("name:\(name)")
-                print("password:\(password)")
+            secondViewController.connectToSecond { (name:String, password:String, error:Error?) in
+                guard error == nil else{
+                    print("出錯的")
+                    return
+                }
+                print(name)
+                print(password)
+               
             }
         }
         
