@@ -24,6 +24,9 @@
                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="自訂代理人機制"/>
+                                        <connections>
+                                            <segue destination="SaE-JY-3XU" kind="show" identifier="FIRST" id="zgX-Fy-7QN"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VA0-dB-VL5">
                                         <rect key="frame" x="0.0" y="60" width="138" height="30"/>
@@ -60,7 +63,7 @@
         <scene sceneID="GbU-7B-s86">
             <objects>
                 <tableViewController id="SaE-JY-3XU" customClass="FirstViewController" customModule="傳回資料" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="imy-ED-veS">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="imy-ED-veS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -121,6 +124,17 @@
                             <outlet property="delegate" destination="SaE-JY-3XU" id="AT7-tv-fw4"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="UM6-97-5Da">
+                        <barButtonItem key="leftBarButtonItem" title="&lt; 確定" id="NWa-hO-dMT">
+                            <connections>
+                                <action selector="userOk:" destination="SaE-JY-3XU" id="bKp-uH-H8H"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="nameField" destination="kx4-vy-1zK" id="Z7V-ab-RBj"/>
+                        <outlet property="passwordField" destination="W1l-xW-KOg" id="clr-ZC-KYo"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sis-rv-Bnw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
