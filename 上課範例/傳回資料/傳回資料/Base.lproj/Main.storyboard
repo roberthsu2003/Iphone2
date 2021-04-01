@@ -34,7 +34,7 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="closures變數"/>
                                         <connections>
-                                            <segue destination="Prj-dS-NdR" kind="show" id="dQT-v6-etp"/>
+                                            <segue destination="Prj-dS-NdR" kind="show" identifier="SECOND" id="dQT-v6-etp"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LC6-vG-WHZ">

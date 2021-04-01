@@ -14,6 +14,16 @@ class ViewController: UIViewController {
             let firstViewController = segue.destination as! FirstViewController
             firstViewController.delegate = self
         }
+        
+        if segue.identifier == "SECOND"{
+            let secondViewController = segue.destination as! SecondViewController
+            secondViewController.passBack = {
+                (name:String,password:String)->() in
+                print("name:\(name)")
+                print("password:\(password)")
+            }
+        }
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
