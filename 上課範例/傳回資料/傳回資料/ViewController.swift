@@ -17,8 +17,7 @@ class ViewController: UIViewController {
         
         if segue.identifier == "SECOND"{
             let secondViewController = segue.destination as! SecondViewController
-            secondViewController.passBack = {
-                (name:String,password:String)->() in
+            secondViewController.connectToSecond { (name:String, password:String) in
                 print("name:\(name)")
                 print("password:\(password)")
             }

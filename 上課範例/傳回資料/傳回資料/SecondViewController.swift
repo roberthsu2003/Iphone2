@@ -18,6 +18,10 @@ class SecondViewController: UITableViewController {
 
         
     }
+    
+    func connectToSecond(c:@escaping Transform){
+        passBack = c
+    }
 
     @IBAction func userOk(_ sender:UIBarButtonItem){
         
