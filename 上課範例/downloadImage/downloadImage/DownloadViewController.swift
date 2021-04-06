@@ -27,7 +27,31 @@ class DownloadViewController: UIViewController {
     
 
     @IBAction func doElaborateHTTP(_ sender:UIButton){
-        
+        cityImageView.image = nil
+        let url = URL(string: pathString)!
+        let task = session.downloadTask(with: url) { (url:URL?, response:URLResponse?, error:Error?) in
+            guard let url = url, let response = response, error == nil else{
+                print("下載出現問題")
+                return
+            }
+            
+            print("下載完成")
+            
+            let status = (response as! HTTPURLResponse).statusCode
+            if status != 200{
+                print("下載失敗")
+                return
+            }
+            
+            if let data = try? Data(contentsOf: url){
+                let cityImage = UIImage(data: data)
+                DispatchQueue.main.async {
+                    self.cityImageView.image = cityImage
+                }
+            }
+            
+        }
+        task.resume()
     }
 
 }
