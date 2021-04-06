@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    
     let downloader:Downloader = {
         let config = URLSessionConfiguration.ephemeral
         config.allowsCellularAccess = true
@@ -26,6 +27,13 @@ class ViewController: UIViewController {
             "https://flask-robert.herokuapp.com/static/cityImage/Berlin.jpg",
             "https://flask-robert.herokuapp.com/static/cityImage/Birmingham.jpg"
         ]
+        
+        for path in paths{
+            let url = URL(string: path)!
+            self.downloader.download(url: url) { (url:URL?) in
+                print(url!)
+            }
+        }
     }
 
 
