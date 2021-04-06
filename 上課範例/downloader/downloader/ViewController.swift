@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func doDownLoad(_ sender:UIButton){
+    @IBAction func doDownLoad(_ sender:UIBarButtonItem){
         let paths = [ "https://flask-robert.herokuapp.com/static/cityImage/Auckland.jpg",
             "https://flask-robert.herokuapp.com/static/cityImage/Berlin.jpg",
             "https://flask-robert.herokuapp.com/static/cityImage/Birmingham.jpg"
@@ -32,6 +32,7 @@ class ViewController: UIViewController {
             let url = URL(string: path)!
             self.downloader.download(url: url) { (url:URL?) in
                 print(url!)
+                print("下載完成")
             }
         }
     }
