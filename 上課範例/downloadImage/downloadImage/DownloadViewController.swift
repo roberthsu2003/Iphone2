@@ -62,5 +62,16 @@ class DownloadViewController: UIViewController {
         }
         
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        //結束session所有的任務
+        session.finishTasksAndInvalidate()
+        print("結束session所有的任務")
+    }
+    
+    deinit {
+        print("再見")
+    }
 
 }
