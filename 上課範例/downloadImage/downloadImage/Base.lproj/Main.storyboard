@@ -37,14 +37,46 @@
                     <view key="view" contentMode="scaleToFill" id="dEG-0v-Xyb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gwh-Df-G9J">
+                                <rect key="frame" x="16" y="71" width="343" height="225"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Gwh-Df-G9J" secondAttribute="height" multiplier="343:225" id="nJo-YT-Qbh"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZI6-iw-4fg">
+                                <rect key="frame" x="24" y="318" width="153" height="30"/>
+                                <state key="normal" title="執行有下載進度的下載"/>
+                                <connections>
+                                    <action selector="doElaborateHTTP:" destination="cEn-9c-Fwq" eventType="touchUpInside" id="8nb-Uk-WKr"/>
+                                </connections>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5em-kf-cML">
+                                <rect key="frame" x="0.0" y="44" width="375" height="4"/>
+                            </progressView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="C61-zC-feL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZI6-iw-4fg" firstAttribute="top" secondItem="Gwh-Df-G9J" secondAttribute="bottom" constant="22" id="Awo-tm-jEm"/>
+                            <constraint firstItem="Gwh-Df-G9J" firstAttribute="leading" secondItem="C61-zC-feL" secondAttribute="leading" constant="16" id="IN7-LB-EV8"/>
+                            <constraint firstItem="5em-kf-cML" firstAttribute="leading" secondItem="C61-zC-feL" secondAttribute="leading" id="Sbh-X2-M1g"/>
+                            <constraint firstItem="Gwh-Df-G9J" firstAttribute="top" secondItem="C61-zC-feL" secondAttribute="top" constant="27" id="b6t-qJ-s1a"/>
+                            <constraint firstItem="ZI6-iw-4fg" firstAttribute="leading" secondItem="C61-zC-feL" secondAttribute="leading" constant="24" id="n5f-Wg-Kzw"/>
+                            <constraint firstItem="5em-kf-cML" firstAttribute="trailing" secondItem="C61-zC-feL" secondAttribute="trailing" id="t7P-f0-cJ6"/>
+                            <constraint firstItem="C61-zC-feL" firstAttribute="trailing" secondItem="Gwh-Df-G9J" secondAttribute="trailing" constant="16" id="xRm-pv-oDi"/>
+                            <constraint firstItem="5em-kf-cML" firstAttribute="top" secondItem="C61-zC-feL" secondAttribute="top" id="zNy-wS-utX"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ztf-ys-dE2"/>
+                    <connections>
+                        <outlet property="cityImageView" destination="Gwh-Df-G9J" id="MCC-23-Yhl"/>
+                        <outlet property="progressView" destination="5em-kf-cML" id="hQB-C8-bIr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3xG-KV-XKx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1708" y="35"/>
+            <point key="canvasLocation" x="1708" y="34.632683658170919"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KjB-bi-aBc">

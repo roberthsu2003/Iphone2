@@ -8,7 +8,8 @@
 import UIKit
 
 class DownloadViewController: UIViewController {
-
+    @IBOutlet var cityImageView:UIImageView!
+    @IBOutlet var progressView:UIProgressView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -16,14 +17,8 @@ class DownloadViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func doElaborateHTTP(_ sender:UIButton){
+        
     }
-    */
 
 }
