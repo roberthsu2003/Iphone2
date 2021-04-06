@@ -12,6 +12,7 @@ class DownloadViewController: UIViewController {
     @IBOutlet var progressView:UIProgressView!
     let pathString = "https://flask-robert.herokuapp.com/static/cityImage/Akihabara.jpg"
     var ob:NSKeyValueObservation!
+    var task:URLSessionDownloadTask!
     lazy var session:URLSession = {
         let config = URLSessionConfiguration.ephemeral
         config.allowsCellularAccess = true
@@ -29,7 +30,7 @@ class DownloadViewController: UIViewController {
     @IBAction func doElaborateHTTP(_ sender:UIButton){
         cityImageView.image = nil
         let url = URL(string: pathString)!
-        let task = session.downloadTask(with: url) { (url:URL?, response:URLResponse?, error:Error?) in
+        self.task = session.downloadTask(with: url) { (url:URL?, response:URLResponse?, error:Error?) in
             guard let url = url, let response = response, error == nil else{
                 print("下載出現問題")
                 return
@@ -66,6 +67,7 @@ class DownloadViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         //結束session所有的任務
+        self.task.cancel()
         session.finishTasksAndInvalidate()
         print("結束session所有的任務")
     }
