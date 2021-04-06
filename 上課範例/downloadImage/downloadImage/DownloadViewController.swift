@@ -11,6 +11,7 @@ class DownloadViewController: UIViewController {
     @IBOutlet var cityImageView:UIImageView!
     @IBOutlet var progressView:UIProgressView!
     let pathString = "https://flask-robert.herokuapp.com/static/cityImage/Akihabara.jpg"
+    var ob:NSKeyValueObservation!
     lazy var session:URLSession = {
         let config = URLSessionConfiguration.ephemeral
         config.allowsCellularAccess = true
@@ -21,8 +22,7 @@ class DownloadViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        progressView.progress = 0.0
     }
     
 
@@ -46,12 +46,21 @@ class DownloadViewController: UIViewController {
             if let data = try? Data(contentsOf: url){
                 let cityImage = UIImage(data: data)
                 DispatchQueue.main.async {
+                    self.progressView.progress = 0.0
                     self.cityImageView.image = cityImage
                 }
             }
             
         }
         task.resume()
+        let progress = task.progress
+        self.ob = progress.observe(\.fractionCompleted) { (prog:Progress, change:NSKeyValueObservedChange<Double>) in
+            print("downloaded:\(prog.fractionCompleted)")
+            DispatchQueue.main.async {
+                self.progressView.progress = Float(prog.fractionCompleted)
+            }
+        }
+        
     }
 
 }
