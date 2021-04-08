@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,7 +14,6 @@
 		93EDE23C261F210200DD8D9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93EDE23A261F210200DD8D9C /* Main.storyboard */; };
 		93EDE23E261F210300DD8D9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93EDE23D261F210300DD8D9C /* Assets.xcassets */; };
 		93EDE241261F210300DD8D9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93EDE23F261F210300DD8D9C /* LaunchScreen.storyboard */; };
-		93EDE24B261F221200DD8D9C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93EDE24A261F221200DD8D9C /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +28,6 @@
 		93EDE23D261F210300DD8D9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93EDE240261F210300DD8D9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93EDE242261F210300DD8D9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		93EDE24A261F221200DD8D9C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +63,6 @@
 		93EDE233261F210200DD8D9C /* ios1 */ = {
 			isa = PBXGroup;
 			children = (
-				93EDE24A261F221200DD8D9C /* GoogleService-Info.plist */,
 				93EDE234261F210200DD8D9C /* AppDelegate.swift */,
 				93EDE236261F210200DD8D9C /* SceneDelegate.swift */,
 				93EDE238261F210200DD8D9C /* ViewController.swift */,
@@ -83,7 +80,6 @@
 				27D2726E992D243EFE2FE998 /* Pods-ios1.debug.xcconfig */,
 				14378DA934AF5446035960B5 /* Pods-ios1.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -155,7 +151,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				93EDE241261F210300DD8D9C /* LaunchScreen.storyboard in Resources */,
-				93EDE24B261F221200DD8D9C /* GoogleService-Info.plist in Resources */,
 				93EDE23E261F210300DD8D9C /* Assets.xcassets in Resources */,
 				93EDE23C261F210200DD8D9C /* Main.storyboard in Resources */,
 			);
