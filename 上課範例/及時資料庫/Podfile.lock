@@ -24,6 +24,7 @@ PODS:
   - FirebaseDatabase (7.10.0):
     - FirebaseCore (~> 7.0)
     - leveldb-library (~> 1.22)
+  - FlexColorPicker (1.4.2)
   - GoogleDataTransport (8.4.0):
     - GoogleUtilities/Environment (~> 7.2)
     - nanopb (~> 2.30908.0)
@@ -55,6 +56,7 @@ PODS:
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Database
+  - FlexColorPicker
 
 SPEC REPOS:
   trunk:
@@ -63,6 +65,7 @@ SPEC REPOS:
     - FirebaseCore
     - FirebaseCoreDiagnostics
     - FirebaseDatabase
+    - FlexColorPicker
     - GoogleDataTransport
     - GoogleUtilities
     - GTMSessionFetcher
@@ -76,6 +79,7 @@ SPEC CHECKSUMS:
   FirebaseCore: ec566d917b2195fc2610aeb148dae99f57a788f9
   FirebaseCoreDiagnostics: 5662a3823ffcc0acbaa9a21ba5ed302fac634705
   FirebaseDatabase: ed9c5fc2568e92a22a40cab1ccaf4e0e9e9c8ae6
+  FlexColorPicker: d7ed5cfd8ceb936f2930e4e30629f9448967a5f8
   GoogleDataTransport: cd9db2180fcecd8da1b561aea31e3e56cf834aa7
   GoogleUtilities: e1d9ed4e544fc32a93e00e721400cbc3f377200d
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
@@ -83,6 +87,6 @@ SPEC CHECKSUMS:
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
 
-PODFILE CHECKSUM: 99fcc8075bd6b36d76a0801c34f077c1eed998cc
+PODFILE CHECKSUM: 2df8d4e89600072f019ed3475c6c0f1e3a7a1fae
 
 COCOAPODS: 1.10.1
