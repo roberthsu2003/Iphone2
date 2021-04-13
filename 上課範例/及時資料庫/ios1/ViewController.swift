@@ -43,7 +43,12 @@ class ViewController: UIViewController {
     func doAnotherThing(){
         relayRef = Database.database().reference(withPath: "relay/d1")
         relayRef.observe(.value) { (snapshot:DataSnapshot) in
-            print("資料改變了")
+            let d1Value = snapshot.value as! Bool
+            if d1Value {
+                print("燈開著")
+            }else{
+                print("燈關著")
+            }
         }
     }
 
