@@ -9,11 +9,9 @@ import UIKit
 import Firebase
 
 class ViewController: UIViewController {
+    @IBOutlet var lightBtn:UIButton!
     var relayRef:DatabaseReference!
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,9 +43,11 @@ class ViewController: UIViewController {
         relayRef.observe(.value) { (snapshot:DataSnapshot) in
             let d1Value = snapshot.value as! Bool
             if d1Value {
-                print("燈開著")
+                self.navigationItem.prompt = "目前狀態:開啟"
+                self.lightBtn.setImage(UIImage.init(named: "open_light"), for: .normal)
             }else{
-                print("燈關著")
+                self.navigationItem.prompt = "目前狀態:關閉"
+                self.lightBtn.setImage(UIImage.init(named: "close_light"), for: .normal)
             }
         }
     }
