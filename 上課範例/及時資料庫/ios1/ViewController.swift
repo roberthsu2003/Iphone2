@@ -18,8 +18,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if Auth.auth().currentUser != nil {
-          print("登入完成")
-            print(Auth.auth().currentUser?.uid)
+            print("登入完成")
+            print(Auth.auth().currentUser!.uid)
+            doAnotherThing()
+            
         } else {
             //暱名登入
             Auth.auth().signInAnonymously { (result:AuthDataResult?, error:Error?) in
@@ -30,10 +32,15 @@ class ViewController: UIViewController {
                
                 if user.isAnonymous{
                     print(user.uid)
+                    self.doAnotherThing()
                 }
                 
             }
         }
+        
+    }
+    
+    func doAnotherThing(){
         relayRef = Database.database().reference(withPath: "relay/d1")
         relayRef.observe(.value) { (snapshot:DataSnapshot) in
             print("資料改變了")
