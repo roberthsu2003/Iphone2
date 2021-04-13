@@ -51,6 +51,13 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func userClick(_ sender:UIButton){
+        relayRef.observeSingleEvent(of: .value) { (snapshot:DataSnapshot) in
+            let d1State = snapshot.value as! Bool
+            self.relayRef.setValue(!d1State)
+        }
+    }
 
 
 }

@@ -23,6 +23,9 @@
                                     <constraint firstAttribute="width" constant="172" id="mSe-Ec-pWL"/>
                                 </constraints>
                                 <state key="normal" image="close_light"/>
+                                <connections>
+                                    <action selector="userClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f5h-6b-xjk"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
