@@ -7,14 +7,27 @@
 
 import UIKit
 import FlexColorPicker
+import Firebase
 
 class ColorViewController: UIViewController {
     let defaultColorPickerViewController = DefaultColorPickerViewController()
+    let rgbRef = Database.database().reference(withPath: "RGB")
 
     override func viewDidLoad() {
         super.viewDidLoad()
         defaultColorPickerViewController.delegate = self;
         self.navigationController?.pushViewController(defaultColorPickerViewController, animated: false)
+        
+        rgbRef.observe(.value) { (snapshot:DataSnapshot) in
+            guard let values = snapshot.value as? [String:Int] else{
+                print("取值失敗")
+                return
+            }
+            print("R=\(values["R"] ?? 0)")
+            print("G=\(values["G"] ?? 0)")
+            print("B=\(values["B"] ?? 0)")
+            
+        }
         
     }
 }
