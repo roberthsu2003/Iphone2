@@ -15,6 +15,7 @@ class ColorViewController: UIViewController {
         super.viewDidLoad()
         defaultColorPickerViewController.delegate = self;
         self.navigationController?.pushViewController(defaultColorPickerViewController, animated: false)
+        
     }
 }
 
@@ -26,6 +27,11 @@ extension ColorViewController: ColorPickerDelegate {
     
     func colorPicker(_ colorPicker: ColorPickerController, confirmedColor: UIColor, usingControl: ColorControl) {
         // code to handle that user has confirmed selected color
-        print(confirmedColor)
+        let red = confirmedColor.ciColor.red
+        let green = confirmedColor.ciColor.green
+        let blue = confirmedColor.ciColor.blue
+        print("red=\(red)")
+        print("green=\(green)")
+        print("blue=\(blue)")
     }
 }
