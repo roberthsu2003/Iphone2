@@ -9,6 +9,15 @@ import UIKit
 import Firebase
 
 class ViewController: UIViewController {
+    var firestore = Firestore.firestore()
+    var presidents:[[String:String]] = {
+        let pathURL = Bundle.main.url(forResource: "PresidentList", withExtension: "plist")
+        guard let rootDictionary = NSDictionary(contentsOf: pathURL!) as? [String:Any] else{
+            return [[:]]
+        }
+        let presidents = rootDictionary["presidents"]
+        return presidents as! [[String:String]]
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +37,7 @@ class ViewController: UIViewController {
 
     func doAnotherThing(){
         print("登入後要做事的地方")
+        print(presidents)
     }
 }
 
