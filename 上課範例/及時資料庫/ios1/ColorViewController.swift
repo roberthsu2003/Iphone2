@@ -12,6 +12,7 @@ import Firebase
 class ColorViewController: UIViewController {
     let defaultColorPickerViewController = DefaultColorPickerViewController()
     let rgbRef = Database.database().reference(withPath: "RGB")
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,9 +61,17 @@ extension ColorViewController: ColorPickerDelegate {
         var blue:CGFloat = 0
         var alpha:CGFloat = 0
         confirmedColor.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+        /*
         print("red:\(red)")
         print("green:\(green)")
         print("blue:\(blue)")
         print("alpha:\(alpha)")
+ */
+        let redValue = Int(red * 255)
+        let greenValue = Int(green * 255)
+        let blueValue = Int(blue * 255)
+        let alphaValue = Int(alpha * 255)
+        
+        rgbRef.setValue(["R":redValue, "G":greenValue, "B":blueValue])
     }
 }
