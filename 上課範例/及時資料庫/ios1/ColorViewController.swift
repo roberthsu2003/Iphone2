@@ -17,7 +17,7 @@ class ColorViewController: UIViewController {
         super.viewDidLoad()
         defaultColorPickerViewController.delegate = self;
         self.navigationController?.pushViewController(defaultColorPickerViewController, animated: false)
-        
+        /* firebase 更新就會執行
         rgbRef.observe(.value) { (snapshot:DataSnapshot) in
             guard let values = snapshot.value as? [String:Int] else{
                 print("取值失敗")
@@ -28,6 +28,21 @@ class ColorViewController: UIViewController {
             print("B=\(values["B"] ?? 0)")
             
         }
+ */
+        rgbRef.observeSingleEvent(of: .value) { (snapshot:DataSnapshot) in
+            guard let values = snapshot.value as? [String:Int] else{
+                print("取值失敗")
+                return
+            }
+            print("R=\(values["R"] ?? 0)")
+            print("G=\(values["G"] ?? 0)")
+            print("B=\(values["B"] ?? 0)")
+            let r = values["R"] ?? 0
+            let g = values["G"] ?? 0
+            let b = values["B"] ?? 0
+            self.defaultColorPickerViewController.selectedColor = UIColor(red: CGFloat(r)/255.0, green: CGFloat(g)/255, blue: CGFloat(b)/255, alpha: 1)
+        }
+        
         
     }
 }
