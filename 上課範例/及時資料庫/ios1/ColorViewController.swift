@@ -27,11 +27,14 @@ extension ColorViewController: ColorPickerDelegate {
     
     func colorPicker(_ colorPicker: ColorPickerController, confirmedColor: UIColor, usingControl: ColorControl) {
         // code to handle that user has confirmed selected color
-        let red = confirmedColor.ciColor.red
-        let green = confirmedColor.ciColor.green
-        let blue = confirmedColor.ciColor.blue
-        print("red=\(red)")
-        print("green=\(green)")
-        print("blue=\(blue)")
+        var red:CGFloat = 0
+        var green:CGFloat = 0
+        var blue:CGFloat = 0
+        var alpha:CGFloat = 0
+        confirmedColor.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+        print("red:\(red)")
+        print("green:\(green)")
+        print("blue:\(blue)")
+        print("alpha:\(alpha)")
     }
 }
