@@ -6,14 +6,28 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        if Auth.auth().currentUser != nil{
+            print("登入完成")
+            doAnotherThing()
+        }else{
+            Auth.auth().signInAnonymously { (result:AuthDataResult?, error:Error?) in
+                guard let _ = result, error == nil else{
+                    print("登入錯誤")
+                    return
+                }
+                self.doAnotherThing()
+            }
+        }
     }
 
-
+    func doAnotherThing(){
+        print("登入後要做事的地方")
+    }
 }
 

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		93ACCCBA26286B0E00C45F16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93ACCCB926286B0E00C45F16 /* Assets.xcassets */; };
 		93ACCCBD26286B0E00C45F16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93ACCCBB26286B0E00C45F16 /* LaunchScreen.storyboard */; };
 		93ACCCC726286B8700C45F16 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93ACCCC626286B8700C45F16 /* GoogleService-Info.plist */; };
+		93ACCCE1262870EC00C45F16 /* PresidentList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93ACCCE0262870EC00C45F16 /* PresidentList.plist */; };
 		9FD8C23254A98AD8DC7C885C /* Pods_ios1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08B066AD95F4674225C0E595 /* Pods_ios1.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		93ACCCBC26286B0E00C45F16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93ACCCBE26286B0E00C45F16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93ACCCC626286B8700C45F16 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		93ACCCE0262870EC00C45F16 /* PresidentList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PresidentList.plist; sourceTree = "<group>"; };
 		BF63185A4C852C7B23241F67 /* Pods-ios1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios1.debug.xcconfig"; path = "Target Support Files/Pods-ios1/Pods-ios1.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -50,7 +52,6 @@
 				BF63185A4C852C7B23241F67 /* Pods-ios1.debug.xcconfig */,
 				53C218A35C904057A3674E0B /* Pods-ios1.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -83,6 +84,7 @@
 		93ACCCAF26286B0C00C45F16 /* ios1 */ = {
 			isa = PBXGroup;
 			children = (
+				93ACCCE0262870EC00C45F16 /* PresidentList.plist */,
 				93ACCCC626286B8700C45F16 /* GoogleService-Info.plist */,
 				93ACCCB026286B0C00C45F16 /* AppDelegate.swift */,
 				93ACCCB226286B0C00C45F16 /* SceneDelegate.swift */,
@@ -157,6 +159,7 @@
 				93ACCCBD26286B0E00C45F16 /* LaunchScreen.storyboard in Resources */,
 				93ACCCC726286B8700C45F16 /* GoogleService-Info.plist in Resources */,
 				93ACCCBA26286B0E00C45F16 /* Assets.xcassets in Resources */,
+				93ACCCE1262870EC00C45F16 /* PresidentList.plist in Resources */,
 				93ACCCB826286B0C00C45F16 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,7 +372,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.roberthsu2003.ios1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -388,7 +391,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.roberthsu2003.ios1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
