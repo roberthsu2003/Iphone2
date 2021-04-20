@@ -15,8 +15,20 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fvS-JE-Kfl">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fvS-JE-Kfl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="71u-lJ-te2"/>
+                            <constraint firstItem="fvS-JE-Kfl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7Oe-KX-i3g"/>
+                            <constraint firstItem="fvS-JE-Kfl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="aBO-YH-fjb"/>
+                            <constraint firstItem="fvS-JE-Kfl" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="uqh-9B-wa9"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="b0G-il-RLV">
                         <barButtonItem key="rightBarButtonItem" title="加入一筆資料" id="cp1-Gc-yR7">
@@ -25,10 +37,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="fvS-JE-Kfl" id="JOm-Ug-wdk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="284" y="-31"/>
+            <point key="canvasLocation" x="284" y="-31.03448275862069"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="f7g-Du-9IM">

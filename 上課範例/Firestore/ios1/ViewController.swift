@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 
 class ViewController: UIViewController {
+    @IBOutlet var tableView:UITableView!
     var firestore = Firestore.firestore()
     var queryDocuments:[QueryDocumentSnapshot]!
     lazy var presidents:[[String:String]] = {
