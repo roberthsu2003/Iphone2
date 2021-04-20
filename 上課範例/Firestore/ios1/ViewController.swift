@@ -10,6 +10,7 @@ import Firebase
 
 class ViewController: UIViewController {
     var firestore = Firestore.firestore()
+    var queryDocuments:[QueryDocumentSnapshot]!
     lazy var presidents:[[String:String]] = {
         let pathURL = Bundle.main.url(forResource: "PresidentList", withExtension: "plist")
         guard let rootDictionary = NSDictionary(contentsOf: pathURL!) as? [String:Any] else{
@@ -59,10 +60,13 @@ class ViewController: UIViewController {
             if snapshot.isEmpty {
                 print("沒有資料")
             }else{
-                let queryDocuments = snapshot.documents
-                for queryDocument in queryDocuments{
+                self.queryDocuments = snapshot.documents
+                
+                /*
+                for queryDocument in self.queryDocuments{
                     print(queryDocument.data())
                 }
+                 */
             }
             
             
