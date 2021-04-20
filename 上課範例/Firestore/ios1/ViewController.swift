@@ -108,9 +108,18 @@ extension ViewController:UITableViewDataSource{
         let name = data["name"] as? String ?? ""
         let url = data["url"] as? String ?? ""
         let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
-        cell.textLabel?.text = name
-        cell.detailTextLabel?.text = url
+        if #available(iOS 15, *){
+            var cellConfiguration = cell.defaultContentConfiguration()
+            cellConfiguration.text = name
+            cellConfiguration.secondaryText = url
+            cell.contentConfiguration = cellConfiguration
+        }else{
+            cell.textLabel?.text = name
+            cell.detailTextLabel?.text = url
+        }
+        
         return cell
+        
     }
 }
 
