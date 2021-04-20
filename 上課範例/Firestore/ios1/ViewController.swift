@@ -41,8 +41,13 @@ class ViewController: UIViewController {
     }
     
     @IBAction func uploadData(_ sender:UIBarButtonItem){
-        print("上傳資料")
-        print(presidents)
+        firestore.collection("presidents").document("abc").setData(presidents[0]) { (error:Error?) in
+            if error == nil{
+                print("加入資料成功")
+            }else{
+                print("加入錯誤")
+            }
+        }
     }
 }
 

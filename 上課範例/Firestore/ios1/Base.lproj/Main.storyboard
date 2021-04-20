@@ -19,7 +19,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="b0G-il-RLV">
-                        <barButtonItem key="rightBarButtonItem" title="匯入資料" id="cp1-Gc-yR7">
+                        <barButtonItem key="rightBarButtonItem" title="加入一筆資料" id="cp1-Gc-yR7">
                             <connections>
                                 <action selector="uploadData:" destination="BYZ-38-t0r" id="UmD-u8-fjB"/>
                             </connections>
