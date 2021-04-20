@@ -41,11 +41,17 @@ class ViewController: UIViewController {
     }
     
     @IBAction func uploadData(_ sender:UIBarButtonItem){
-        firestore.collection("presidents").document("abc").setData(presidents[0]) { (error:Error?) in
+        let batch = firestore.batch()
+        for president in presidents{
+            let documentRef = firestore.collection("presidents").document()
+            batch.setData(president, forDocument: documentRef)
+        }
+        
+        batch.commit { (error:Error?) in
             if error == nil{
-                print("加入資料成功")
+                print("batch成功")
             }else{
-                print("加入錯誤")
+                print("batch失敗")
             }
         }
     }
