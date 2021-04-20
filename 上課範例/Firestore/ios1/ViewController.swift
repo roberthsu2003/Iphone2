@@ -36,6 +36,7 @@ class ViewController: UIViewController {
     }
 
     func doAnotherThing(){
+        /* 取得特定文件名稱的資料
         let docRef = firestore.collection("presidents").document("5Eg79ELFLfX4AYCNdyXJ")
 
         docRef.getDocument { (document, error) in
@@ -46,6 +47,25 @@ class ViewController: UIViewController {
             } else {
                 print("沒有資料")
             }
+        }
+ */
+        
+        //取得所有collection的documents
+        firestore.collection("presidents").getDocuments { (snapshot:QuerySnapshot?, error:Error?) in
+            guard let snapshot = snapshot, error == nil else{
+                print("取得所有documents失敗")
+               return
+            }
+            if snapshot.isEmpty {
+                print("沒有資料")
+            }else{
+                let queryDocuments = snapshot.documents
+                for queryDocument in queryDocuments{
+                    print(queryDocument.data())
+                }
+            }
+            
+            
         }
 
         
