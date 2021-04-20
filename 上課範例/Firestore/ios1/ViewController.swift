@@ -36,7 +36,18 @@ class ViewController: UIViewController {
     }
 
     func doAnotherThing(){
-        print("登入後要做事的地方")
+        let docRef = firestore.collection("presidents").document("5Eg79ELFLfX4AYCNdyXJ")
+
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                print(document.get("name") as! String)
+                print(document.get("url") as! String)
+                print("有資料")
+            } else {
+                print("沒有資料")
+            }
+        }
+
         
     }
     
