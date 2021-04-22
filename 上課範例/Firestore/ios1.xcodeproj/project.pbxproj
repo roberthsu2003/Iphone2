@@ -16,6 +16,7 @@
 		93ACCCC726286B8700C45F16 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93ACCCC626286B8700C45F16 /* GoogleService-Info.plist */; };
 		93ACCCE1262870EC00C45F16 /* PresidentList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93ACCCE0262870EC00C45F16 /* PresidentList.plist */; };
 		93F5329C26319DC800825222 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F5329B26319DC800825222 /* DetailViewController.swift */; };
+		93F5329F2631AEFD00825222 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F5329E2631AEFC00825222 /* EditViewController.swift */; };
 		9FD8C23254A98AD8DC7C885C /* Pods_ios1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08B066AD95F4674225C0E595 /* Pods_ios1.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		93ACCCC626286B8700C45F16 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		93ACCCE0262870EC00C45F16 /* PresidentList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PresidentList.plist; sourceTree = "<group>"; };
 		93F5329B26319DC800825222 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		93F5329E2631AEFC00825222 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		BF63185A4C852C7B23241F67 /* Pods-ios1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios1.debug.xcconfig"; path = "Target Support Files/Pods-ios1/Pods-ios1.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,6 +98,7 @@
 				93ACCCBB26286B0E00C45F16 /* LaunchScreen.storyboard */,
 				93ACCCBE26286B0E00C45F16 /* Info.plist */,
 				93F5329B26319DC800825222 /* DetailViewController.swift */,
+				93F5329E2631AEFC00825222 /* EditViewController.swift */,
 			);
 			path = ios1;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93F5329F2631AEFD00825222 /* EditViewController.swift in Sources */,
 				93ACCCB526286B0C00C45F16 /* ViewController.swift in Sources */,
 				93ACCCB126286B0C00C45F16 /* AppDelegate.swift in Sources */,
 				93ACCCB326286B0C00C45F16 /* SceneDelegate.swift in Sources */,
