@@ -66,6 +66,9 @@ class ViewController: UIViewController {
             }else{
                 self.queryDocuments = snapshot.documents
                 self.tableView.reloadData()
+                self.navigationItem.rightBarButtonItems = [
+                    UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
+                ]
                 /*
                 for queryDocument in self.queryDocuments{
                     print(queryDocument.data())
@@ -98,7 +101,9 @@ class ViewController: UIViewController {
         batch.commit { (error:Error?) in
             if error == nil{
                 print("batch成功")
-                self.navigationItem.rightBarButtonItem = nil
+                self.navigationItem.rightBarButtonItems = [
+                    UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
+                ]
                 self.doAnotherThing()
             }else{
                 print("batch失敗")
