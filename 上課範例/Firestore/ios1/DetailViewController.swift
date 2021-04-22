@@ -6,14 +6,26 @@
 //
 
 import UIKit
+import Firebase
 
 class DetailViewController: UIViewController {
     var name:String!
+    var firestore = Firestore.firestore()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        print(name!)
+        firestore.collection("presidents").whereField("name", isEqualTo: name!).getDocuments { (snapshot:QuerySnapshot?, error:Error?) in
+            guard let snapshot = snapshot, error == nil else{
+                print("取得資料錯誤")
+                return
+            }
+            let documents = snapshot.documents
+            guard let queryDocumentsnapshot = documents.first else{
+                return
+            }
+            print(queryDocumentsnapshot.data())
+        }
+        
     }
     
 
