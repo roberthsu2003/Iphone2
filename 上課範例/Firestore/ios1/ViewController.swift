@@ -60,7 +60,7 @@ class ViewController: UIViewController {
                return
             }
             if snapshot.isEmpty {
-                print("沒有資料")
+                self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "匯入資料", style: .plain, target: self, action: #selector(self.uploadData(_:)))
             }else{
                 self.queryDocuments = snapshot.documents
                 self.tableView.reloadData()
@@ -77,7 +77,7 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func uploadData(_ sender:UIBarButtonItem){
+    @objc func uploadData(_ sender:UIBarButtonItem){
         let batch = firestore.batch()
         for president in presidents{
             let documentRef = firestore.collection("presidents").document()
@@ -87,6 +87,7 @@ class ViewController: UIViewController {
         batch.commit { (error:Error?) in
             if error == nil{
                 print("batch成功")
+                self.navigationItem.rightBarButtonItem = nil
             }else{
                 print("batch失敗")
             }
