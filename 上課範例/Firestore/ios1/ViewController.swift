@@ -88,6 +88,7 @@ class ViewController: UIViewController {
             if error == nil{
                 print("batch成功")
                 self.navigationItem.rightBarButtonItem = nil
+                self.doAnotherThing()
             }else{
                 print("batch失敗")
             }
