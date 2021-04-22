@@ -88,6 +88,10 @@ class ViewController: UIViewController {
             let detailViewController = segue.destination as! DetailViewController
             detailViewController.name = name
             
+        }else if segue.identifier == "goEdit"{
+            let name = sender as! String
+            let editViewController = segue.destination as! EditViewController
+            editViewController.name = name
         }
     }
     
