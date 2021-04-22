@@ -59,6 +59,7 @@
                     <navigationItem key="navigationItem" id="b0G-il-RLV"/>
                     <connections>
                         <outlet property="tableView" destination="fvS-JE-Kfl" id="JOm-Ug-wdk"/>
+                        <segue destination="imR-2D-yVq" kind="show" identifier="goDetail" id="e8a-e8-p3q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -75,6 +76,7 @@
                         <viewLayoutGuide key="safeArea" id="ykQ-7g-TLI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="TdZ-VN-vix"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tef-LQ-1eb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

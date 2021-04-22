@@ -24,6 +24,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        tableView.delegate = self
+        
         if Auth.auth().currentUser != nil{
             print("登入完成")
             doAnotherThing()
@@ -141,6 +143,21 @@ extension ViewController:UITableViewDataSource{
             }
             
         }
+    }
+}
+
+
+extension ViewController:UITableViewDelegate{
+    func tableView(_ tableView: UITableView,
+                   didSelectRowAt indexPath: IndexPath){
+        let indexRow = indexPath.row
+        let queryDocumentSnapshot = queryDocuments[indexRow]
+        guard let name = queryDocumentSnapshot.get("name") as? String else{
+            return
+        }
+        print(name)
+        
+        
     }
 }
 
