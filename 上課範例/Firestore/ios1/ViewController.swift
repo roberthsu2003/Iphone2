@@ -130,7 +130,16 @@ extension ViewController:UITableViewDataSource{
         if editingStyle == .delete {
             let indexRow = indexPath.row
             let queryDocumentSnapshot = queryDocuments[indexRow]
-            print("要刪除")
+            let documentId = queryDocumentSnapshot.documentID
+            firestore.collection("presidents").document(documentId).delete { (error:Error?) in
+                if error == nil {
+                    self.queryDocuments.remove(at: indexRow)
+                    tableView.deleteRows(at: [indexPath], with: .automatic)
+                }else{
+                    print("刪除錯誤")
+                }
+            }
+            
         }
     }
 }
