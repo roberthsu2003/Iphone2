@@ -79,6 +79,15 @@ class ViewController: UIViewController {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goDetail"{
+            let name = sender as! String
+            let detailViewController = segue.destination as! DetailViewController
+            detailViewController.name = name
+            
+        }
+    }
+    
     @objc func uploadData(_ sender:UIBarButtonItem){
         let batch = firestore.batch()
         for president in presidents{
@@ -155,7 +164,7 @@ extension ViewController:UITableViewDelegate{
         guard let name = queryDocumentSnapshot.get("name") as? String else{
             return
         }
-        print(name)
+        performSegue(withIdentifier: "goDetail", sender: name)
         
         
     }
