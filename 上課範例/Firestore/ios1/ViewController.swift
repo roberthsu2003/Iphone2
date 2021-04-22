@@ -173,5 +173,15 @@ extension ViewController:UITableViewDelegate{
         
         
     }
+    
+    func tableView(_ tableView: UITableView,
+                   accessoryButtonTappedForRowWith indexPath: IndexPath){
+        let indexRow = indexPath.row
+        let queryDocumentSnapshot = queryDocuments[indexRow]
+        guard let name = queryDocumentSnapshot.get("name") as? String else{
+            return
+        }
+        performSegue(withIdentifier: "goEdit", sender: name)
+    }
 }
 
