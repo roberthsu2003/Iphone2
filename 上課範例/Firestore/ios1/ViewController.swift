@@ -123,5 +123,15 @@ extension ViewController:UITableViewDataSource{
         return cell
         
     }
+    
+    func tableView(_ tableView: UITableView,
+                     commit editingStyle: UITableViewCell.EditingStyle,
+                     forRowAt indexPath: IndexPath){
+        if editingStyle == .delete {
+            let indexRow = indexPath.row
+            let queryDocumentSnapshot = queryDocuments[indexRow]
+            print("要刪除")
+        }
+    }
 }
 
