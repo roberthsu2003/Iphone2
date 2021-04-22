@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import WebKit
 import Firebase
 
 class DetailViewController: UIViewController {
+    @IBOutlet var webView:WKWebView!
     var name:String!
     var firestore = Firestore.firestore()
 
@@ -23,7 +25,15 @@ class DetailViewController: UIViewController {
             guard let queryDocumentsnapshot = documents.first else{
                 return
             }
-            print(queryDocumentsnapshot.data())
+            let president = queryDocumentsnapshot.data()
+            guard let urlString = president["url"] as? String else{
+                return
+            }
+            guard let url = URL(string: urlString) else{
+                return
+            }
+            let request = URLRequest(url: url)
+            self.webView.load(request)
         }
         
     }

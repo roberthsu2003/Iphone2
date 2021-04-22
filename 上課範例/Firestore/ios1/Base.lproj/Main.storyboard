@@ -73,14 +73,33 @@
                     <view key="view" contentMode="scaleToFill" id="kND-KE-Vkj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="muG-6W-MUM">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ykQ-7g-TLI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="muG-6W-MUM" firstAttribute="trailing" secondItem="ykQ-7g-TLI" secondAttribute="trailing" id="8qG-em-hgN"/>
+                            <constraint firstItem="muG-6W-MUM" firstAttribute="top" secondItem="ykQ-7g-TLI" secondAttribute="top" id="KUG-4G-Dq4"/>
+                            <constraint firstItem="muG-6W-MUM" firstAttribute="leading" secondItem="ykQ-7g-TLI" secondAttribute="leading" id="ksE-SA-nBi"/>
+                            <constraint firstItem="muG-6W-MUM" firstAttribute="bottom" secondItem="ykQ-7g-TLI" secondAttribute="bottom" id="t8R-wm-eMB"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="TdZ-VN-vix"/>
+                    <connections>
+                        <outlet property="webView" destination="muG-6W-MUM" id="Qpi-ZH-OEU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tef-LQ-1eb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1063" y="-44"/>
+            <point key="canvasLocation" x="1061.5999999999999" y="-44.527736131934034"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="f7g-Du-9IM">
