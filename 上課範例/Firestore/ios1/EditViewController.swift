@@ -18,6 +18,10 @@ class EditViewController: UITableViewController {
         nameField.text = name
        
     }
+    
+    @IBAction func userPressDone(_ sender:UIBarButtonItem){
+        print("更新本地端資料，更新雲端資料，回ViewController")
+    }
 
     
 }

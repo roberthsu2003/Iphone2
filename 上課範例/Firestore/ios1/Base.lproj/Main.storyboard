@@ -107,7 +107,13 @@
                             <outlet property="delegate" destination="r0l-Ml-7g3" id="dXj-KU-EhY"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="修改內容" id="B1m-6I-gbw"/>
+                    <navigationItem key="navigationItem" title="修改內容" id="B1m-6I-gbw">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="lVY-SI-zW8">
+                            <connections>
+                                <action selector="userPressDone:" destination="r0l-Ml-7g3" id="tB7-qs-CdN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="nameField" destination="5Ta-cw-7qv" id="nIm-pw-qv7"/>
                     </connections>
