@@ -6,13 +6,15 @@
 //
 
 import UIKit
+import Firebase
 
 class EditViewController: UITableViewController {
-    var name:String!
+    var queryDocumentSnapshot:QueryDocumentSnapshot!
     @IBOutlet var nameField:UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let name = queryDocumentSnapshot.get("name") as! String
         nameField.text = name
        
     }

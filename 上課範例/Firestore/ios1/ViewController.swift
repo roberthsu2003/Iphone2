@@ -100,9 +100,9 @@ class ViewController: UIViewController {
             detailViewController.name = name
             
         }else if segue.identifier == "goEdit"{
-            let name = sender as! String
+            let name = sender as! QueryDocumentSnapshot
             let editViewController = segue.destination as! EditViewController
-            editViewController.name = name
+            editViewController.queryDocumentSnapshot = name
         }
     }
     
@@ -193,10 +193,12 @@ extension ViewController:UITableViewDelegate{
                    accessoryButtonTappedForRowWith indexPath: IndexPath){
         let indexRow = indexPath.row
         let queryDocumentSnapshot = queryDocuments[indexRow]
+        /*
         guard let name = queryDocumentSnapshot.get("name") as? String else{
             return
         }
-        performSegue(withIdentifier: "goEdit", sender: name)
+         */
+        performSegue(withIdentifier: "goEdit", sender: queryDocumentSnapshot)
     }
 }
 
