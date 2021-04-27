@@ -11,6 +11,7 @@ import Firebase
 class EditViewController: UITableViewController {
     var queryDocumentSnapshot:QueryDocumentSnapshot!
     var data:[String:Any]!
+    var callViewControllerClosure:(() -> Void)!
     @IBOutlet var nameField:UITextField!
     
     override func viewDidLoad() {
@@ -26,6 +27,12 @@ class EditViewController: UITableViewController {
         data["name"] = nameField.text
         Firestore.firestore().collection("presidents").document(documentId).updateData(data)
         navigationController!.popViewController(animated: true)
+        //執行ViewController內的closure
+        callViewControllerClosure()
+    }
+    
+    func getClosure(c:@escaping() -> Void){
+        callViewControllerClosure = c
     }
 
     

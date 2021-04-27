@@ -103,6 +103,12 @@ class ViewController: UIViewController {
             let name = sender as! QueryDocumentSnapshot
             let editViewController = segue.destination as! EditViewController
             editViewController.queryDocumentSnapshot = name
+            editViewController.getClosure {
+                print("使用者按下Done了")
+                self.doAnotherThing()
+                self.tableView.reloadData()
+                
+            }
         }
     }
     
