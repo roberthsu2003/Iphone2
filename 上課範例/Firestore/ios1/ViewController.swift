@@ -30,6 +30,8 @@ class ViewController: UIViewController {
         //加入UISearchBar至tableView的Header
         let searchBar = searchController.searchBar
         tableView.tableHeaderView = searchBar
+        //告知代理人
+        searchController.searchResultsUpdater = self
         
         if Auth.auth().currentUser != nil{
             print("登入完成")
@@ -191,6 +193,15 @@ extension ViewController:UITableViewDelegate{
             return
         }
         performSegue(withIdentifier: "goEdit", sender: name)
+    }
+}
+
+extension ViewController: UISearchResultsUpdating{
+    func updateSearchResults(for searchController: UISearchController){
+        let searchBar = searchController.searchBar
+        let searchString = searchBar.text!
+        print(searchString)
+        
     }
 }
 
