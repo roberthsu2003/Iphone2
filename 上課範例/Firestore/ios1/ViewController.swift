@@ -10,6 +10,7 @@ import Firebase
 
 class ViewController: UIViewController {
     @IBOutlet var tableView:UITableView!
+    var searchController = UISearchController(searchResultsController: nil)
     var firestore = Firestore.firestore()
     var queryDocuments:[QueryDocumentSnapshot] = [QueryDocumentSnapshot]()
     lazy var presidents:[[String:String]] = {
@@ -25,6 +26,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        
+        //加入UISearchBar至tableView的Header
+        let searchBar = searchController.searchBar
+        tableView.tableHeaderView = searchBar
         
         if Auth.auth().currentUser != nil{
             print("登入完成")
