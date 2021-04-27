@@ -13,6 +13,9 @@ class ViewController: UIViewController {
     var searchController = UISearchController(searchResultsController: nil)
     var firestore = Firestore.firestore()
     var queryDocuments:[QueryDocumentSnapshot] = [QueryDocumentSnapshot]()
+    
+    var allQueryDocuments:[QueryDocumentSnapshot] = [QueryDocumentSnapshot]()
+    
     lazy var presidents:[[String:String]] = {
         let pathURL = Bundle.main.url(forResource: "PresidentList", withExtension: "plist")
         guard let rootDictionary = NSDictionary(contentsOf: pathURL!) as? [String:Any] else{
@@ -72,6 +75,7 @@ class ViewController: UIViewController {
                 self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "匯入資料", style: .plain, target: self, action: #selector(self.uploadData(_:)))
             }else{
                 self.queryDocuments = snapshot.documents
+                self.allQueryDocuments = snapshot.documents
                 self.tableView.reloadData()
                 self.navigationItem.rightBarButtonItems = [
                     UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
@@ -199,8 +203,22 @@ extension ViewController:UITableViewDelegate{
 extension ViewController: UISearchResultsUpdating{
     func updateSearchResults(for searchController: UISearchController){
         let searchBar = searchController.searchBar
-        let searchString = searchBar.text!
-        print(searchString)
+        if let searchString = searchBar.text, searchString != ""{
+            var searchQueryDocuments = [QueryDocumentSnapshot]()
+            for queryDocumentSnapshot in allQueryDocuments{
+                let name = queryDocumentSnapshot.get("name") as! String
+                if name.contains(searchString){
+                    searchQueryDocuments.append(queryDocumentSnapshot)
+                }
+            }
+            self.queryDocuments = searchQueryDocuments
+            
+            
+        }else{
+            //搜尋的文字是空字串
+            self.queryDocuments = self.allQueryDocuments
+        }
+        self.tableView.reloadData()
         
     }
 }
