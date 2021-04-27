@@ -10,17 +10,22 @@ import Firebase
 
 class EditViewController: UITableViewController {
     var queryDocumentSnapshot:QueryDocumentSnapshot!
+    var data:[String:Any]!
     @IBOutlet var nameField:UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let name = queryDocumentSnapshot.get("name") as! String
-        nameField.text = name
+        data = queryDocumentSnapshot.data()
+        nameField.text = data["name"] as? String
        
     }
     
     @IBAction func userPressDone(_ sender:UIBarButtonItem){
-        print("更新本地端資料，更新雲端資料，回ViewController")
+        print("更新雲端資料，回ViewController，重新載入新的資料")
+        let documentId = queryDocumentSnapshot.documentID
+        data["name"] = nameField.text
+        Firestore.firestore().collection("presidents").document(documentId).updateData(data)
+        navigationController!.popViewController(animated: true)
     }
 
     
