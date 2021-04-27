@@ -78,12 +78,25 @@
                         <sections>
                             <tableViewSection headerTitle="name" id="Gk5-oU-Eh3">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="gqE-AJ-XMC">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="63" id="gqE-AJ-XMC">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="63"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gqE-AJ-XMC" id="rnX-vg-8ut">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="63"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Ta-cw-7qv">
+                                                    <rect key="frame" x="27" y="14" width="300" height="34"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="5Ta-cw-7qv" secondAttribute="trailing" constant="32" id="4yA-f8-Xzq"/>
+                                                <constraint firstItem="5Ta-cw-7qv" firstAttribute="leading" secondItem="rnX-vg-8ut" secondAttribute="leadingMargin" constant="11" id="V0J-c1-Eoi"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="5Ta-cw-7qv" secondAttribute="bottom" constant="4" id="fPn-SY-reL"/>
+                                                <constraint firstItem="5Ta-cw-7qv" firstAttribute="top" secondItem="rnX-vg-8ut" secondAttribute="topMargin" constant="3" id="oRt-8q-CRY"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -95,10 +108,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="修改內容" id="B1m-6I-gbw"/>
+                    <connections>
+                        <outlet property="nameField" destination="5Ta-cw-7qv" id="nIm-pw-qv7"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e8L-Cu-act" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1321" y="-732"/>
+            <point key="canvasLocation" x="1320.8" y="-732.68365817091455"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="jne-OG-Nqe">

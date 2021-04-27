@@ -9,11 +9,12 @@ import UIKit
 
 class EditViewController: UITableViewController {
     var name:String!
+    @IBOutlet var nameField:UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       print(name!)
+        nameField.text = name
+       
     }
 
     
