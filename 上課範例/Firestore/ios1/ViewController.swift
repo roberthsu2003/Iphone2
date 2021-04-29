@@ -78,7 +78,7 @@ class ViewController: UIViewController {
                 self.allQueryDocuments = snapshot.documents
                 self.tableView.reloadData()
                 self.navigationItem.rightBarButtonItems = [
-                    UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
+                    UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.addPresident(_:)))
                 ]
                 /*
                 for queryDocument in self.queryDocuments{
@@ -131,8 +131,12 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    @objc func addPresident(_ sender:UIBarButtonItem){
+        performSegue(withIdentifier: "goAdd", sender: nil)
+    }
 }
-
+// MARK: - UITableViewDataSource
 extension ViewController:UITableViewDataSource{
     func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int{
@@ -181,7 +185,7 @@ extension ViewController:UITableViewDataSource{
     }
 }
 
-
+// MARK: - UITableViewDelegate
 extension ViewController:UITableViewDelegate{
     func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath){
@@ -207,7 +211,7 @@ extension ViewController:UITableViewDelegate{
         performSegue(withIdentifier: "goEdit", sender: queryDocumentSnapshot)
     }
 }
-
+// MARK: - UISearchResultsUpdatig
 extension ViewController: UISearchResultsUpdating{
     func updateSearchResults(for searchController: UISearchController){
         let searchBar = searchController.searchBar

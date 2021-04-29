@@ -68,7 +68,7 @@
             </objects>
             <point key="canvasLocation" x="284" y="-31.03448275862069"/>
         </scene>
-        <!--Add View Controller-->
+        <!--增加內容-->
         <scene sceneID="PmY-cv-cwe">
             <objects>
                 <tableViewController id="697-R7-YHE" customClass="AddViewController" customModule="ios1" customModuleProvider="target" sceneMemberID="viewController">
@@ -91,11 +91,11 @@
                             <outlet property="delegate" destination="697-R7-YHE" id="tsK-Hr-gmP"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="fdN-OW-l5D"/>
+                    <navigationItem key="navigationItem" title="增加內容" id="fdN-OW-l5D"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cz7-g2-clj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="564" y="-1011"/>
+            <point key="canvasLocation" x="570" y="-770"/>
         </scene>
         <!--修改內容-->
         <scene sceneID="jkA-rS-TyP">
