@@ -112,8 +112,16 @@ class ViewController: UIViewController {
         }else if segue.identifier == "goAdd"{
             let addViewController = segue.destination as! AddViewController
             addViewController.registerCallBackData { (name:String, url:String) in
-                print(name)
-                print(url)
+                //新增資料傳回
+                self.firestore.collection("presidents").addDocument(data: ["name":name,"url":url]) { (error:Error?) in
+                    if error == nil {
+                        print("加入成功")
+                        self.doAnotherThing()
+                        self.navigationController?.popViewController(animated: true)
+                    }else{
+                        print("有錯誤")
+                    }
+                }
             }
         }
     }
