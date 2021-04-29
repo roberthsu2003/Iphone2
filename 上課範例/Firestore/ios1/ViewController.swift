@@ -109,6 +109,12 @@ class ViewController: UIViewController {
                 self.tableView.reloadData()
                 
             }
+        }else if segue.identifier == "goAdd"{
+            let addViewController = segue.destination as! AddViewController
+            addViewController.registerCallBackData { (name:String, url:String) in
+                print(name)
+                print(url)
+            }
         }
     }
     

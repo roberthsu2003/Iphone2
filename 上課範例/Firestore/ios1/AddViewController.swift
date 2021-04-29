@@ -10,6 +10,7 @@ import UIKit
 class AddViewController: UITableViewController {
     @IBOutlet var nameField:UITextField!
     @IBOutlet var urlField:UITextField!
+    var callBackFunc:((String,String) -> Void)!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,9 +33,12 @@ class AddViewController: UITableViewController {
             print("第2欄不可以是空的")
             return
         case let(name, url):
-            print(name)
-            print(url)
+            callBackFunc(name,url)
         }
+    }
+    
+    func registerCallBackData(f:@escaping (String,String) -> Void){
+        callBackFunc = f
     }
 
     
