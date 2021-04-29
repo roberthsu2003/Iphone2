@@ -14,7 +14,6 @@
 		93ACCCB826286B0C00C45F16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93ACCCB626286B0C00C45F16 /* Main.storyboard */; };
 		93ACCCBA26286B0E00C45F16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93ACCCB926286B0E00C45F16 /* Assets.xcassets */; };
 		93ACCCBD26286B0E00C45F16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93ACCCBB26286B0E00C45F16 /* LaunchScreen.storyboard */; };
-		93ACCCC726286B8700C45F16 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93ACCCC626286B8700C45F16 /* GoogleService-Info.plist */; };
 		93ACCCE1262870EC00C45F16 /* PresidentList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93ACCCE0262870EC00C45F16 /* PresidentList.plist */; };
 		93F5329C26319DC800825222 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F5329B26319DC800825222 /* DetailViewController.swift */; };
 		93F5329F2631AEFD00825222 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F5329E2631AEFC00825222 /* EditViewController.swift */; };
@@ -33,7 +32,6 @@
 		93ACCCB926286B0E00C45F16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93ACCCBC26286B0E00C45F16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93ACCCBE26286B0E00C45F16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		93ACCCC626286B8700C45F16 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		93ACCCE0262870EC00C45F16 /* PresidentList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PresidentList.plist; sourceTree = "<group>"; };
 		93F5329B26319DC800825222 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		93F5329E2631AEFC00825222 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
@@ -91,7 +89,6 @@
 			isa = PBXGroup;
 			children = (
 				93ACCCE0262870EC00C45F16 /* PresidentList.plist */,
-				93ACCCC626286B8700C45F16 /* GoogleService-Info.plist */,
 				93ACCCB026286B0C00C45F16 /* AppDelegate.swift */,
 				93ACCCB226286B0C00C45F16 /* SceneDelegate.swift */,
 				93ACCCB426286B0C00C45F16 /* ViewController.swift */,
@@ -166,7 +163,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				93ACCCBD26286B0E00C45F16 /* LaunchScreen.storyboard in Resources */,
-				93ACCCC726286B8700C45F16 /* GoogleService-Info.plist in Resources */,
 				93ACCCBA26286B0E00C45F16 /* Assets.xcassets in Resources */,
 				93ACCCE1262870EC00C45F16 /* PresidentList.plist in Resources */,
 				93ACCCB826286B0C00C45F16 /* Main.storyboard in Resources */,
