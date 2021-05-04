@@ -11,7 +11,7 @@ import Firebase
 class ViewController: UIViewController {
     let firestore = Firestore.firestore()
     //closure的執行,只會執行一次
-    lazy var cities:[[String:String]] = {        
+    lazy var cities:[[String:String]] = {
         let pathURL = Bundle.main.url(forResource: "citylist", withExtension: "plist")!
         let cities = NSArray(contentsOf: pathURL) as! [[String:String]]
         return cities
@@ -49,8 +49,22 @@ class ViewController: UIViewController {
     
 
     @objc func uploadData(_ sender:UIBarButtonItem){
+        let batch = firestore.batch()
+        for city in cities{
+            let documentRef = firestore.collection("cities").document()
+            batch.setData(city, forDocument: documentRef)
+        }
         
-        print(cities)
+        batch.commit { (error:Error?) in
+            if error == nil{
+                print("批次上傳Firestore成功")
+                //上傳圖片
+            }else{
+                print("批次上傳Firestore失敗")
+            }
+        }
+        
+        
     }
 }
 
