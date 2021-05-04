@@ -16,6 +16,7 @@
 		939E139A263AEB8C0012DB66 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 939E1399263AEB8C0012DB66 /* GoogleService-Info.plist */; };
 		93BC4FD3264162F200B9522C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BC4FD2264162F200B9522C /* LoginViewController.swift */; };
 		93BC4FD52641679A00B9522C /* citylist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93BC4FD42641679A00B9522C /* citylist.plist */; };
+		93BC4FD72641895D00B9522C /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BC4FD62641895D00B9522C /* CityCell.swift */; };
 		BF72BC70D6D522BA9E7809A8 /* Pods_ios1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE1B39FDACFDF3CD4ED3F3E8 /* Pods_ios1.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		939E1399263AEB8C0012DB66 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		93BC4FD2264162F200B9522C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		93BC4FD42641679A00B9522C /* citylist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = citylist.plist; sourceTree = "<group>"; };
+		93BC4FD62641895D00B9522C /* CityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
 		CE1B39FDACFDF3CD4ED3F3E8 /* Pods_ios1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -88,6 +90,7 @@
 				939E138F263AEB640012DB66 /* LaunchScreen.storyboard */,
 				939E1392263AEB640012DB66 /* Info.plist */,
 				93BC4FD2264162F200B9522C /* LoginViewController.swift */,
+				93BC4FD62641895D00B9522C /* CityCell.swift */,
 			);
 			path = ios1;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 			files = (
 				93BC4FD3264162F200B9522C /* LoginViewController.swift in Sources */,
 				939E1389263AEB620012DB66 /* ViewController.swift in Sources */,
+				93BC4FD72641895D00B9522C /* CityCell.swift in Sources */,
 				939E1385263AEB620012DB66 /* AppDelegate.swift in Sources */,
 				939E1387263AEB620012DB66 /* SceneDelegate.swift in Sources */,
 			);
