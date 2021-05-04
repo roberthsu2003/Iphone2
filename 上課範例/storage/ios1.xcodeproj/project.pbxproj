@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		939E138E263AEB640012DB66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 939E138D263AEB640012DB66 /* Assets.xcassets */; };
 		939E1391263AEB640012DB66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 939E138F263AEB640012DB66 /* LaunchScreen.storyboard */; };
 		939E139A263AEB8C0012DB66 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 939E1399263AEB8C0012DB66 /* GoogleService-Info.plist */; };
+		93BC4FD3264162F200B9522C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BC4FD2264162F200B9522C /* LoginViewController.swift */; };
 		BF72BC70D6D522BA9E7809A8 /* Pods_ios1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE1B39FDACFDF3CD4ED3F3E8 /* Pods_ios1.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		939E1390263AEB640012DB66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		939E1392263AEB640012DB66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		939E1399263AEB8C0012DB66 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		93BC4FD2264162F200B9522C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CE1B39FDACFDF3CD4ED3F3E8 /* Pods_ios1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -50,7 +52,6 @@
 				6E5DADD8E22942A1DFD0C160 /* Pods-ios1.debug.xcconfig */,
 				1CA79E6420FDC2E66F2CDDF8 /* Pods-ios1.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -83,6 +84,7 @@
 				939E138D263AEB640012DB66 /* Assets.xcassets */,
 				939E138F263AEB640012DB66 /* LaunchScreen.storyboard */,
 				939E1392263AEB640012DB66 /* Info.plist */,
+				93BC4FD2264162F200B9522C /* LoginViewController.swift */,
 			);
 			path = ios1;
 			sourceTree = "<group>";
@@ -210,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93BC4FD3264162F200B9522C /* LoginViewController.swift in Sources */,
 				939E1389263AEB620012DB66 /* ViewController.swift in Sources */,
 				939E1385263AEB620012DB66 /* AppDelegate.swift in Sources */,
 				939E1387263AEB620012DB66 /* SceneDelegate.swift in Sources */,
@@ -362,6 +365,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ios1/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -369,7 +373,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.roberthsu2003.ios1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -381,6 +385,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ios1/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -388,7 +393,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.roberthsu2003.ios1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

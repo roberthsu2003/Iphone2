@@ -12,7 +12,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("viewDidLoad")
         if Auth.auth().currentUser == nil{
             print("nil")
             performSegue(withIdentifier: "goLoading", sender: nil)
@@ -20,7 +19,6 @@ class ViewController: UIViewController {
             print("not nil")
             performSegue(withIdentifier: "goLoading", sender: nil)
         }
-        
     }
 
 
