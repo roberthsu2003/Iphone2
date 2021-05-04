@@ -10,6 +10,8 @@ import Firebase
 
 class ViewController: UIViewController {
     let firestore = Firestore.firestore()
+    let storage = Storage.storage()
+    
     //closure的執行,只會執行一次
     lazy var cities:[[String:String]] = {
         let pathURL = Bundle.main.url(forResource: "citylist", withExtension: "plist")!
@@ -68,7 +70,23 @@ class ViewController: UIViewController {
     }
     
     func uploadImage(){
-        
+        let storageImageRef = storage.reference(withPath: "h2/images")
+        for city in cities{
+            let cityImageName = city["Image"]!;
+            let cityImage = UIImage(named: cityImageName)!
+            if let cityImageData = cityImage.jpegData(compressionQuality: 1.0){
+                let imageNameRef = storageImageRef.child(cityImageName)
+                let metaData = StorageMetadata();
+                metaData.contentType = "image/jpg"
+                imageNameRef.putData(cityImageData, metadata: metaData)
+            }
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "顯示資料", style: .plain, target: self, action: #selector(displayCities(_:))
+           )
+        }
+    }
+    
+    @objc func displayCities(_ sender:UIBarButtonItem){
+        print("顯示資料")
     }
 }
 
