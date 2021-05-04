@@ -15,6 +15,7 @@
 		939E1391263AEB640012DB66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 939E138F263AEB640012DB66 /* LaunchScreen.storyboard */; };
 		939E139A263AEB8C0012DB66 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 939E1399263AEB8C0012DB66 /* GoogleService-Info.plist */; };
 		93BC4FD3264162F200B9522C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BC4FD2264162F200B9522C /* LoginViewController.swift */; };
+		93BC4FD52641679A00B9522C /* citylist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93BC4FD42641679A00B9522C /* citylist.plist */; };
 		BF72BC70D6D522BA9E7809A8 /* Pods_ios1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE1B39FDACFDF3CD4ED3F3E8 /* Pods_ios1.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		939E1392263AEB640012DB66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		939E1399263AEB8C0012DB66 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		93BC4FD2264162F200B9522C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		93BC4FD42641679A00B9522C /* citylist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = citylist.plist; sourceTree = "<group>"; };
 		CE1B39FDACFDF3CD4ED3F3E8 /* Pods_ios1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -76,6 +78,7 @@
 		939E1383263AEB620012DB66 /* ios1 */ = {
 			isa = PBXGroup;
 			children = (
+				93BC4FD42641679A00B9522C /* citylist.plist */,
 				939E1399263AEB8C0012DB66 /* GoogleService-Info.plist */,
 				939E1384263AEB620012DB66 /* AppDelegate.swift */,
 				939E1386263AEB620012DB66 /* SceneDelegate.swift */,
@@ -158,6 +161,7 @@
 			files = (
 				939E1391263AEB640012DB66 /* LaunchScreen.storyboard in Resources */,
 				939E139A263AEB8C0012DB66 /* GoogleService-Info.plist in Resources */,
+				93BC4FD52641679A00B9522C /* citylist.plist in Resources */,
 				939E138E263AEB640012DB66 /* Assets.xcassets in Resources */,
 				939E138C263AEB620012DB66 /* Main.storyboard in Resources */,
 			);
