@@ -16,7 +16,7 @@ class ViewController: UIViewController {
             print("nil")
             performSegue(withIdentifier: "goLoading", sender: nil)
         }else{
-            print("not nil")
+            print("login完成")
             performSegue(withIdentifier: "goLoading", sender: nil)
         }
     }
