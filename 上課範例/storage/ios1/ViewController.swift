@@ -37,7 +37,7 @@ class ViewController: UIViewController {
             }
             
             if snapshot.isEmpty{
-                self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "匯入資料", style: .plain, target: self, action: #selector(self.uploadData(_:)))
+                self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "匯入資料", style: .plain, target: self, action: #selector(self.uploadStoreData(_:)))
             }else{
                 print("已經有資料")
             }
@@ -48,7 +48,7 @@ class ViewController: UIViewController {
     
     
 
-    @objc func uploadData(_ sender:UIBarButtonItem){
+    @objc func uploadStoreData(_ sender:UIBarButtonItem){
         let batch = firestore.batch()
         for city in cities{
             let documentRef = firestore.collection("cities").document()
@@ -58,12 +58,16 @@ class ViewController: UIViewController {
         batch.commit { (error:Error?) in
             if error == nil{
                 print("批次上傳Firestore成功")
-                //上傳圖片
+                self.uploadImage()
             }else{
                 print("批次上傳Firestore失敗")
             }
         }
         
+        
+    }
+    
+    func uploadImage(){
         
     }
 }
