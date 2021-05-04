@@ -10,6 +10,13 @@ import Firebase
 
 class ViewController: UIViewController {
     let firestore = Firestore.firestore()
+    //closure的執行,只會執行一次
+    lazy var cities:[[String:String]] = {        
+        let pathURL = Bundle.main.url(forResource: "citylist", withExtension: "plist")!
+        let cities = NSArray(contentsOf: pathURL) as! [[String:String]]
+        return cities
+    }()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,10 +42,15 @@ class ViewController: UIViewController {
                 print("已經有資料")
             }
         }
+        
+        
     }
+    
+    
 
     @objc func uploadData(_ sender:UIBarButtonItem){
-        print("上傳資料")
+        
+        print(cities)
     }
 }
 
