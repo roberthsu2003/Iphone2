@@ -8,9 +8,28 @@
 import UIKit
 import Firebase
 
-class ViewController: UIViewController {
+class ViewController: UICollectionViewController {
     let firestore = Firestore.firestore()
     let storage = Storage.storage()
+    
+    //抓下firestor的資料來的資料
+    lazy var queryDocuments:[QueryDocumentSnapshot] = {
+        //取得所有collection的documents
+       
+        firestore.collection("cities").getDocuments { (snapshot:QuerySnapshot?, error:Error?) in
+            guard let snapshot = snapshot, error == nil else{
+                print("資料取得失敗")
+                return
+            }
+            var queryDocuments = snapshot.documents
+            self.queryDocuments = queryDocuments
+            self.collectionView.reloadData()
+            print(self.queryDocuments)
+        }
+        
+        return [QueryDocumentSnapshot]()
+    }()
+    
     
     //closure的執行,只會執行一次
     lazy var cities:[[String:String]] = {
@@ -41,7 +60,7 @@ class ViewController: UIViewController {
             if snapshot.isEmpty{
                 self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "匯入資料", style: .plain, target: self, action: #selector(self.uploadStoreData(_:)))
             }else{
-                print("已經有資料")
+                self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "顯示資料", style: .plain, target: self, action: #selector(self.displayCities(_:)))
             }
         }
         
@@ -86,7 +105,7 @@ class ViewController: UIViewController {
     }
     
     @objc func displayCities(_ sender:UIBarButtonItem){
-        print("顯示資料")
+        print(queryDocuments)
     }
 }
 
