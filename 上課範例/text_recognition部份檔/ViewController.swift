@@ -15,6 +15,17 @@ class ViewController: UIViewController {
         
         
     }
+    @IBAction func userSelectedImage(_ sender:UIBarButtonItem){
+        
+    }
+    
+    @IBAction func onDeviceTextRecognition(_ sender:UIButton){
+        
+    }
+    
+    @IBAction func onCloudTextRecognition(_ sender:UIButton){
+        
+    }
 
 
 }
