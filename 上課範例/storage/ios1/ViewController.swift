@@ -126,6 +126,19 @@ extension ViewController{
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CELL", for: indexPath) as! CityCell
         cell.cityNameLabel.text = cityData["City"]
+        let imageName = cityData["Image"]
+        let imagePathRef = storage.reference(withPath: "h2/images/\(imageName!)")
+        imagePathRef.getData(maxSize: 1*1024*1024) { (data:Data?, error:Error? ) in
+            guard let data = data, error == nil else{
+                print("圖片下載錯誤")
+                return;
+            }
+            guard let image = UIImage(data: data) else{
+                return
+            }
+            cell.cityImageView.image = image
+            
+        }
         
         return cell
     }
