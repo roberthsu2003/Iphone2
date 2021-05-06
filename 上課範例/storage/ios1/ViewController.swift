@@ -24,8 +24,7 @@ class ViewController: UICollectionViewController {
             var queryDocuments = snapshot.documents
             self.queryDocuments = queryDocuments
             self.collectionView.reloadData()
-            print(self.queryDocuments)
-        }
+           }
         
         return [QueryDocumentSnapshot]()
     }()
@@ -105,7 +104,32 @@ class ViewController: UICollectionViewController {
     }
     
     @objc func displayCities(_ sender:UIBarButtonItem){
-        print(queryDocuments)
+        let _ = self.queryDocuments
     }
+}
+
+extension ViewController{
+    //MARK: - UICollectionviewDataSource
+    override func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int{
+        return self.queryDocuments.count
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
+        let index = indexPath.row
+        let queryDocumentSnapshot = queryDocuments[index]
+        guard let cityData = queryDocumentSnapshot.data() as? [String:String] else{
+            print("沒有取出資料")
+            return UICollectionViewCell()
+        }
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CELL", for: indexPath) as! CityCell
+        cell.cityNameLabel.text = cityData["City"]
+        
+        return cell
+    }
+    
+    
 }
 
