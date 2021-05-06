@@ -16,7 +16,13 @@ class ViewController: UIViewController {
         
     }
     @IBAction func userSelectedImage(_ sender:UIBarButtonItem){
-        
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self;
+            imagePicker.allowsEditing = false;
+            imagePicker.sourceType = .photoLibrary
+            present(imagePicker, animated: true, completion: nil)
+        }
     }
     
     @IBAction func onDeviceTextRecognition(_ sender:UIButton){
@@ -28,5 +34,9 @@ class ViewController: UIViewController {
     }
 
 
+}
+
+extension ViewController:UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+    
 }
 
