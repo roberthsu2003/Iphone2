@@ -10,6 +10,7 @@ import MLKit
 
 class ViewController: UIViewController {
     @IBOutlet var photoImageView:UIImageView!
+    @IBOutlet var messageTextView:UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,9 +39,11 @@ class ViewController: UIViewController {
                 return
             }
             //print(result.text)
+            self.messageTextView.text = ""
             for (index,block) in result.blocks.enumerated(){
                 let blockText = block.text
-                print("block\(index):\(blockText)")
+                //print("block\(index):\(blockText)")
+                self.messageTextView.text += "block\(index):\(blockText)\n"
             }
         }
         
