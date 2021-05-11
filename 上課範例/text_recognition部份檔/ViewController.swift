@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import MLKitTextRecognition
+import MLKit
 
 class ViewController: UIViewController {
 
@@ -37,6 +37,9 @@ class ViewController: UIViewController {
 }
 
 extension ViewController:UIImagePickerControllerDelegate,UINavigationControllerDelegate{
-    
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
+        let original = info[.originalImage] as? UIImage
+    }
 }
 
