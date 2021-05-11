@@ -37,7 +37,11 @@ class ViewController: UIViewController {
                 print("辦識有問題")
                 return
             }
-            print(result.text)
+            //print(result.text)
+            for (index,block) in result.blocks.enumerated(){
+                let blockText = block.text
+                print("block\(index):\(blockText)")
+            }
         }
         
     }
