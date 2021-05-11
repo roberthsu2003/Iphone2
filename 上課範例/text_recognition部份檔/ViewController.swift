@@ -9,7 +9,7 @@ import UIKit
 import MLKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet var photoImageView:UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,7 +39,11 @@ class ViewController: UIViewController {
 extension ViewController:UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
-        let original = info[.originalImage] as? UIImage
+        if let original = info[.originalImage] as? UIImage{
+            photoImageView.image = original;
+            photoImageView.clipsToBounds = true
+        }
+        dismiss(animated: true, completion: nil)
     }
 }
 
