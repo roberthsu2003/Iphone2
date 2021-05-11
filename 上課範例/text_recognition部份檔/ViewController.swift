@@ -26,6 +26,19 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onDeviceTextRecognition(_ sender:UIButton){
+        guard let originalImage = photoImageView.image else{
+            print("沒有選取圖片")
+            return
+        }
+        let visionImage = VisionImage(image: originalImage)
+        let textRecognizer = TextRecognizer.textRecognizer()
+        textRecognizer.process(visionImage) { (text:Text?, error:Error?) in
+            guard error == nil,let result = text else{
+                print("辦識有問題")
+                return
+            }
+            print(result.text)
+        }
         
     }
     
