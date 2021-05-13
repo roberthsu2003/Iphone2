@@ -19,7 +19,7 @@ class ViewController: UIViewController {
             performSegue(withIdentifier: "goLogin", sender: nil)
         }else{
             print("已經登入")
-            performSegue(withIdentifier: "goLogin", sender: nil)
+            //performSegue(withIdentifier: "goLogin", sender: nil)
         }
         
         
@@ -59,6 +59,11 @@ class ViewController: UIViewController {
     
     @IBAction func onCloudTextRecognition(_ sender:UIButton){
         
+    }
+    
+    @IBAction func loginGoBack(_ sender:UIStoryboardSegue){
+        let loginViewController = sender.source as! LoginViewController
+        print(loginViewController.math)
     }
 
 
