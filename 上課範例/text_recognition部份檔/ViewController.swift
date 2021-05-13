@@ -12,6 +12,8 @@ import Firebase
 class ViewController: UIViewController {
     @IBOutlet var photoImageView:UIImageView!
     @IBOutlet var messageTextView:UITextView!
+    lazy var functions = Functions.functions()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if Auth.auth().currentUser == nil {
@@ -58,6 +60,58 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onCloudTextRecognition(_ sender:UIButton){
+        guard let uiImage = photoImageView.image else{
+            print("請先選擇圖片")
+            return
+            
+        }
+        
+        guard let imageData = uiImage.jpegData(compressionQuality: 1.0) else { return }
+        
+        let base64encodeImage = imageData.base64EncodedString()
+        
+        let requestData = [
+          "image": ["content": base64encodeImage],
+          "features": ["type": "TEXT_DETECTION"],
+          "imageContext": ["languageHints": ["en"]]
+        ]
+        
+        functions.httpsCallable("annotateImage").call(requestData){ (result:HTTPSCallableResult?, error:Error?) in
+            if let error = error as NSError?{
+                if error.domain == FunctionsErrorDomain{
+                    print("有錯誤")
+                    if let code = FunctionsErrorCode(rawValue: error.code){
+                        print(code)
+                        return
+                        
+                    }
+                    let message = error.localizedDescription
+                    print(message)
+                    if let detail = error.userInfo[FunctionsErrorDetailsKey] {
+                        print(detail)
+                        return
+                        
+                    }
+                    
+                   
+                   
+                   
+                    
+                   
+                }
+                
+                guard let annotation = (result?.data as? [String:Any])?["fullTextAnnotation"] as? [String:Any] else{
+                    print("沒有解析")
+                    return
+                }
+                
+                print("解析完成")
+                let text = annotation["text"] as? String ?? ""
+                print(text)
+            }
+        }
+        
+        
         
     }
     
