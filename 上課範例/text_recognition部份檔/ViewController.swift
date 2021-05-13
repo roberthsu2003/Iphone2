@@ -7,12 +7,20 @@
 
 import UIKit
 import MLKit
+import Firebase
 
 class ViewController: UIViewController {
     @IBOutlet var photoImageView:UIImageView!
     @IBOutlet var messageTextView:UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        if Auth.auth().currentUser == nil {
+            print("尚未登入")
+            performSegue(withIdentifier: "goLogin", sender: nil)
+        }else{
+            print("已經登入")
+            performSegue(withIdentifier: "goLogin", sender: nil)
+        }
         
         
     }
