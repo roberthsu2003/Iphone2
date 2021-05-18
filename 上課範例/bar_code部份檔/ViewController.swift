@@ -51,6 +51,7 @@ class ViewController: UIViewController {
                 let valueType = barcode.valueType
                 switch valueType{
                 case .wiFi:
+                    self.messageTextView.text += "wifi\n"
                     if let ssid = barcode.wifi?.ssid{
                         self.messageTextView.text += "ssid:\(ssid)\n"
                     }
@@ -62,9 +63,21 @@ class ViewController: UIViewController {
                     if let encryptionType = barcode.wifi?.type{
                         self.messageTextView.text += "encryptionType:\(encryptionType)\n"
                     }
+                    
+                case .URL:
+                    self.messageTextView.text += "url\n"
+                    if let title = barcode.url?.title{
+                        self.messageTextView.text += "title:\(title)"
+                    }
+                    
+                    if let url = barcode.url?.url{
+                        self.messageTextView.text += "url:\(url)"
+                    }
                 default:
-                    print("其它類型")
+                    self.messageTextView.text += "其它格式\n"
                 }
+                
+                
                 self.messageTextView.text += "===================\n\n"
             }
             
