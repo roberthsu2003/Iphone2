@@ -33,6 +33,13 @@ class ViewController: UIViewController {
                 return
             }
             self.messageTextView.text = "人數=\(faces.count)"
+            
+            let eyeView = UIView()
+            eyeView.frame = CGRect.init(x: 10, y: 10, width: 100, height: 100)
+            eyeView.backgroundColor = UIColor.clear
+            eyeView.layer.borderColor = UIColor.red.cgColor
+            eyeView.layer.borderWidth = 2
+            self.photoImageView.addSubview(eyeView)
         }
     }
     
