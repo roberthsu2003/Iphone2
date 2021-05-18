@@ -28,9 +28,22 @@ class ViewController: UIViewController {
             imagePicker.sourceType = .photoLibrary
             present(imagePicker, animated: true, completion: nil)
         }
-    } 
+    }
     
-   
+    @IBAction func barCodeScan(_ sender:UIButton){
+        let barcodeOptions = BarcodeScannerOptions(formats: .all)
+        let barcodeScanner = BarcodeScanner.barcodeScanner(options: barcodeOptions)
+        guard let image = photoImageView.image else {return}
+        let barcodeImage = VisionImage(image: image)
+        barcodeScanner.process(barcodeImage) { (barcodes:[Barcode]?, error:Error?) in
+            print("scanner完成")
+            //顯示結果
+        }
+        print("跳出closure")
+        
+        
+        
+    }
     
   
 
