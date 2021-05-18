@@ -75,9 +75,23 @@ class ViewController: UIViewController {
                     }
                 default:
                     self.messageTextView.text += "其它格式\n"
+                    if let displayValue = barcode.displayValue{
+                        self.messageTextView.text += "displayValue:\(displayValue)\n"
+                    }
                 }
                 
-                
+                if let corners = barcode.cornerPoints{
+                    for corner in corners{
+                        var frameValue = CGRect(x: 0, y: 0, width: 0, height: 0)
+                        corner.getValue(&frameValue)
+                        self.messageTextView.text += "x:\(frameValue.origin.x)\n"
+                        self.messageTextView.text += "y:\(frameValue.origin.y)\n"
+                        self.messageTextView.text += "width:\(frameValue.size.width)\n"
+                        self.messageTextView.text += "height:\(frameValue.size.height)\n"
+                    }
+                    
+                    
+                }
                 self.messageTextView.text += "===================\n\n"
             }
             
