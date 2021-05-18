@@ -16,7 +16,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+    }
+    
+    @IBAction func contourFaces(_ sender:UIButton){
+        
+    }
+    
+    @IBAction func userClassification(_ sender:UIButton){
         
     }
     @IBAction func userSelectedImage(_ sender:UIBarButtonItem){
