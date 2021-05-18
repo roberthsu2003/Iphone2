@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         
         faceDetector.process(visionImage) { (faces:[Face]?, error:Error?)in
             guard let faces = faces, !faces.isEmpty, error == nil else{
-                print(error!.localizedDescription)
+                print(error?.localizedDescription ?? "錯誤是nil")
                 return
             }
             self.messageTextView.text = "人數=\(faces.count)"
