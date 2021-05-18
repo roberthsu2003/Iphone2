@@ -19,7 +19,21 @@ class ViewController: UIViewController {
     }
     
     @IBAction func contourFaces(_ sender:UIButton){
+        let options = FaceDetectorOptions()
+        options.performanceMode = .accurate
+        let faceDetector = FaceDetector.faceDetector(options: options)
         
+        guard let originalImage = photoImageView.image else {return}
+        print("imageSize=\(originalImage.size)")
+        let visionImage = VisionImage(image: originalImage)
+        
+        faceDetector.process(visionImage) { (faces:[Face]?, error:Error?)in
+            guard let faces = faces, !faces.isEmpty, error == nil else{
+                print(error!.localizedDescription)
+                return
+            }
+            self.messageTextView.text = "人數=\(faces.count)"
+        }
     }
     
     @IBAction func userClassification(_ sender:UIButton){
