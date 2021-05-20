@@ -79,7 +79,41 @@ class ViewController: UIViewController {
     }
     
     @IBAction func userClassification(_ sender:UIButton){
-        
+        let options = FaceDetectorOptions()
+        options.performanceMode = .fast
+        options.classificationMode = .all
+        let faceDetector = FaceDetector.faceDetector(options: options)
+        guard var originalImage = photoImageView.image else {return}
+        let faceImage = VisionImage(image: originalImage)
+        faceDetector.process(faceImage) { (faces:[Face]?, error:Error? ) in
+            guard let faces = faces, !faces.isEmpty, error == nil else{
+                print(error?.localizedDescription ?? "不知的錯誤")
+                return
+            }
+            
+            var message:String = "表情:"
+            for face in faces{
+                if face.hasSmilingProbability{
+                    message += "開心\n"
+                }else{
+                    message += "不開心\n"
+                }
+                
+                if face.hasRightEyeOpenProbability{
+                    message += "右眼開\n"
+                }else{
+                    message += "右眼閉\n"
+                }
+                
+                if face.hasLeftEyeOpenProbability{
+                    message += "左眼開\n"
+                }else{
+                    message += "左眼閉\n"
+                }
+                message += "======================\n"
+            }
+            self.messageTextView.text = message
+        }
     }
     @IBAction func userSelectedImage(_ sender:UIBarButtonItem){
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
