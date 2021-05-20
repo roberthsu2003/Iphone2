@@ -58,8 +58,24 @@ class ViewController: UIViewController {
     }
     
     func drawRectangleLine(faceFrame:CGRect,originImage:UIImage)-> UIImage{
-        print("畫圖")
-        return UIImage()
+        let imageSize = originImage.size
+        UIGraphicsBeginImageContextWithOptions(imageSize, false, 0)
+        let context = UIGraphicsGetCurrentContext()
+        
+        originImage.draw(at: CGPoint.zero)
+        context?.setFillColor(UIColor.init(red: 1, green: 0, blue: 0, alpha: 0.8).cgColor)
+        /*
+        context?.fill([CGRect.init(x: 0, y: 0, width: 100, height: 100)])
+        
+        context?.fillEllipse(in: CGRect.init(x: 100, y: 100, width: 100, height: 100))
+        */
+        context?.setStrokeColor(UIColor.red.cgColor)
+        context?.setLineWidth(5.0)
+        context!.addRect(faceFrame)
+        context?.drawPath(using: .stroke)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage!
     }
     
     @IBAction func userClassification(_ sender:UIButton){
