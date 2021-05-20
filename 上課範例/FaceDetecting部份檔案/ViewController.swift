@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         options.performanceMode = .accurate
         let faceDetector = FaceDetector.faceDetector(options: options)
         
-        guard let originalImage = photoImageView.image else {return}
+        guard var originalImage = photoImageView.image else {return}
         print("imageSize=\(originalImage.size)")
         let visionImage = VisionImage(image: originalImage)
         
@@ -33,14 +33,33 @@ class ViewController: UIViewController {
                 return
             }
             self.messageTextView.text = "人數=\(faces.count)"
+            /*
+            for faceInfo in faces{
+                let frame = faceInfo.frame
+                let faceView = UIView()
+                faceView.frame = frame
+                faceView.backgroundColor = UIColor.clear
+                faceView.layer.borderColor = UIColor.red.cgColor
+                faceView.layer.borderWidth = 2
+                self.photoImageView.addSubview(faceView)
+            }
+            */
             
-            let eyeView = UIView()
-            eyeView.frame = CGRect.init(x: 10, y: 10, width: 100, height: 100)
-            eyeView.backgroundColor = UIColor.clear
-            eyeView.layer.borderColor = UIColor.red.cgColor
-            eyeView.layer.borderWidth = 2
-            self.photoImageView.addSubview(eyeView)
+            for faceInfo in faces{
+                originalImage = self.drawRectangleLine(faceFrame: faceInfo.frame, originImage: originalImage)
+            }
+            
+            self.photoImageView.image = originalImage
+            
+            
+            
+            
         }
+    }
+    
+    func drawRectangleLine(faceFrame:CGRect,originImage:UIImage)-> UIImage{
+        print("畫圖")
+        return UIImage()
     }
     
     @IBAction func userClassification(_ sender:UIButton){
